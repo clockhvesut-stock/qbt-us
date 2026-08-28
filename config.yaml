@@ -108,7 +108,36 @@ costs:
   min_commission: 0
 
 # -----------------------------------------------------------------------------
-#  6. 検証方法
+#  6. 情報源（世界情勢のRSS）
+#
+#     個別銘柄に紐づかない材料 — 金融政策、地政学、政策変更 — を拾う。
+#     ここを書き換えれば、追いたいニュース源を自由に足せる。
+#     形式は [URL, 表示名] の並び。APIキーは不要。
+# -----------------------------------------------------------------------------
+feeds:
+  rss:
+    - ["https://www.federalreserve.gov/feeds/press_all.xml", "FRB発表"]
+    - ["https://home.treasury.gov/system/files/126/press-releases.xml", "米財務省"]
+    - ["https://feeds.a.dj.com/rss/RSSWorldNews.xml", "世界情勢"]
+    - ["https://feeds.a.dj.com/rss/RSSMarketsMain.xml", "市場"]
+    - ["https://feeds.a.dj.com/rss/RSSWSJD.xml", "テクノロジー"]
+    - ["https://www.ecb.europa.eu/rss/press.html", "ECB発表"]
+
+  # SEC EDGARの全文検索で追う語。開示の「本文」に出てきたら拾う。
+  # 業績見通しの変更、減損、リストラは株価が動く前触れになることが多い。
+  edgar_queries:
+    - "lowered guidance"
+    - "impairment charge"
+    - "restructuring plan"
+    - "material weakness"
+    - "going concern"
+
+  # Redditの言及数を集計するか。非商用なら無料。
+  # 言及数そのものではなく「急増」を異常検知として使う。
+  reddit: true
+
+# -----------------------------------------------------------------------------
+#  7. 検証方法
 # -----------------------------------------------------------------------------
 validation:
   split_date: "2022-01-01"
@@ -118,7 +147,7 @@ validation:
     test_years:  1
 
 # -----------------------------------------------------------------------------
-#  7. パラメータ感度の調査
+#  8. パラメータ感度の調査
 #
 #     max_hold_days をここに入れてあるのが重要。
 #     「何日保有すべきか」を思い込みで決めず、同じデータで全部比較する。

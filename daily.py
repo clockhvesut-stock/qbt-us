@@ -31,7 +31,7 @@ import pandas as pd
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from qbt import feeds, universe  # noqa: E402
+from qbt import feeds, quality, universe  # noqa: E402
 from qbt.engine import build_signal_frame, eval_expr  # noqa: E402
 from qbt.indicators import atr_pct, roc, rsi, sma, zscore  # noqa: E402
 
@@ -197,8 +197,8 @@ def main() -> int:
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--max-symbols", type=int, default=None,
                     help="デバッグ用。処理する銘柄数を制限する")
-    ap.add_argument("--news-symbols", type=int, default=25,
-                    help="ニュースを集める銘柄数（上位候補のみ）")
+    ap.add_argument("--news-symbols", type=int, default=22,
+                    help="ニュースを集める銘柄数の目安。実際はこの約3倍が上限")
     args = ap.parse_args()
 
     import yaml
@@ -276,6 +276,35 @@ def main() -> int:
     feat = compute_features(data)
     out["universe_size"] = int(len(feat))
 
+    # セクター集計（相対強度の計算に必要なので、ここで先に出す）
+    sector_map = uni.set_index("symbol")["sector"].to_dict() if "sector" in uni else {}
+
+    def _sectors():
+        f = feat.copy()
+        f["sector"] = f["symbol"].map(sector_map)
+        g = f[f["sector"].notna() & (f["sector"] != "")].groupby("sector").agg(
+            銘柄数=("symbol", "size"), 平均1日=("chg_1d", "mean"),
+            平均5日=("chg_5d", "mean"), 平均21日=("chg_21d", "mean"),
+            MA200超え比率=("vs_ma200", lambda x: float((x > 0).mean())))
+        return json.loads(g.round(4).reset_index().to_json(orient="records"))
+
+    out["sectors"] = safe(_sectors, "セクター集計", []) or []
+
+    # 銘柄固有の弱さか、業種全体の弱さかを切り分ける
+    feat = safe(lambda: quality.sector_relative(feat, sector_map, out["sectors"]),
+                "セクター相対強度", feat) or feat
+
+    # データの鮮度検査。ここで弾かないと、未完成の日足で判断してしまう
+    fresh = safe(lambda: quality.check_freshness(
+        out["data_date"], out["generated_at"],
+        feat["vol_ratio"] if "vol_ratio" in feat else None), "鮮度チェック", {}) or {}
+    out["data_quality"] = fresh
+    if fresh.get("problems"):
+        for pmsg in fresh["problems"]:
+            log(f"  [データ警告] {pmsg}")
+    else:
+        log("  データは大引け後の確定値です")
+
     rules = cfg.get("rules", {})
     params = cfg.get("params", {})
 
@@ -319,48 +348,174 @@ def main() -> int:
     if rules.get("market_filter") and "^GSPC" in macro:
         out["market_filter_pass"] = bool(macro["^GSPC"].get("vs_ma200", 0) > 0)
 
-    # ---------- 5. ニュースとSEC提出書類（トラックB用の材料） ----------
-    watch = [s["symbol"] for s in signals[:args.news_symbols]]
-    held = [p.get("symbol") for p in load_positions()]
-    watch = list(dict.fromkeys(watch + held))[:args.news_symbols + 10]
+    # ---------- 5. 市場スキャン（買いルールとは無関係に「何かが起きた」銘柄を拾う） ----------
+    log("市場をスキャン中...")
+    scan = safe(lambda: feeds.market_scan(feat), "市場スキャン", {}) or {}
+    out["scan"] = scan
+    log(f"  大幅高 {len(scan.get('gainers',[]))} / 大幅安 {len(scan.get('losers',[]))} / "
+        f"出来高異常 {len(scan.get('unusual_volume',[]))} / "
+        f"高値更新 {len(scan.get('breakouts',[]))} / 安値更新 {len(scan.get('breakdowns',[]))}")
 
-    log(f"ニュースを収集中（{len(watch)}銘柄）...")
-    news = safe(lambda: feeds.alpaca_news(watch), "Alpacaニュース", []) or []
-    if not news:
-        news = safe(lambda: feeds.yahoo_news(watch), "Yahooニュース", []) or []
-    out["news"] = news[:80]
-    log(f"  {len(news)} 件")
+    # ---------- 6. ニュース ----------
+    held = [p.get("symbol") for p in load_positions() if p.get("symbol")]
+    watch = feeds.build_watchlist(feat, signals, held, scan,
+                                  per_bucket=max(4, args.news_symbols // 3),
+                                  cap=args.news_symbols * 3)
+    out["watchlist"] = watch
+    log(f"個別ニュースを収集中（{len(watch)}銘柄）...")
 
+    stock_news = safe(lambda: feeds.alpaca_news(list(watch)), "Alpacaニュース", []) or []
+    if not stock_news:
+        stock_news = safe(lambda: feeds.yahoo_news(list(watch)), "Yahooニュース", []) or []
+    for n in stock_news:
+        n["scope"] = "stock"
+        n["topic"] = watch.get(n.get("symbol"), "")
+    out["news"] = feeds._dedupe_news(stock_news)[:60]
+    log(f"  {len(out['news'])} 件")
+
+    # ---------- 7. 世界情勢とマクロ ----------
+    log("世界情勢を収集中...")
+    fcfg = cfg.get("feeds", {}) or {}
+    world = safe(lambda: feeds.rss_headlines(fcfg.get("rss")), "RSS", []) or []
+    mac = safe(feeds.macro_news, "マクロニュース", []) or []
+    out["world_news"] = feeds._dedupe_news(world + mac)[:45]
+    log(f"  {len(out['world_news'])} 件（RSS {len(world)} / 銘柄経由 {len(mac)}）")
+
+    # ---------- 8. SEC提出書類と決算予定 ----------
     log("SEC提出書類を確認中...")
-    filings = safe(lambda: feeds.sec_recent_filings(
-        {s: ciks.get(s, "") for s in watch if ciks.get(s)}), "SEC EDGAR", []) or []
+    sec_targets = {s: ciks.get(s, "") for s in watch if ciks.get(s)}
+    filings = safe(lambda: feeds.sec_recent_filings(sec_targets), "SEC EDGAR", []) or []
+    # 項目コードから「何が起きたか」を分類する（追加のリクエストは不要）
+    filings = [feeds.classify_filing(f) for f in filings]
     out["filings"] = filings[:40]
-    log(f"  {len(filings)} 件")
+    sig_n = sum(1 for f in filings if f.get("significant"))
+    log(f"  {len(filings)} 件（うち重要 {sig_n} 件 / {len(sec_targets)}銘柄を照会）")
 
-    out["earnings"] = safe(lambda: feeds.earnings_calendar(watch), "決算予定", []) or []
+    # 開示の本文を検索する。書類が出た事実だけでなく、中身に何が書かれているか
+    if cfg.get("feeds", {}).get("edgar_queries"):
+        log("EDGAR全文検索中...")
+        hits = []
+        for q in cfg["feeds"]["edgar_queries"][:6]:
+            hits += safe(lambda q=q: feeds.sec_fulltext_search(q), f"全文検索({q})", []) or []
+        out["edgar_fulltext"] = hits[:40]
+        log(f"  {len(hits)} 件")
 
-    # ---------- 6. 保有ポジション ----------
+    # ---------- 9. 決算日と配当落ち日 ----------
+    # 優位性ではなく事故防止。決算跨ぎと配当落ちは、ルールの小さな優位性を簡単に吹き飛ばす
+    log("決算日・配当落ち日を確認中...")
+    ev_targets = list(dict.fromkeys(
+        held + [s.get("symbol") for s in signals[:20]] + list(watch)[:35]))
+    events = safe(lambda: feeds.corporate_events(
+        ev_targets, max_hold_days=int(rules.get("max_hold_days") or 20)),
+        "コーポレートアクション", {}) or {}
+    out["corporate_events"] = events
+    if events.get("alerts"):
+        for a in events["alerts"][:8]:
+            log(f"  [注意] {a['symbol']}: {a['risk']} {a['date']}（{a['note']}）")
+    log(f"  決算予定 {len(events.get('earnings',[]))} / "
+        f"配当落ち {len(events.get('ex_dividends',[]))} / "
+        f"要注意 {len(events.get('alerts',[]))}")
+
+    # ---------- 10. Reddit の言及急増 ----------
+    if cfg.get("feeds", {}).get("reddit", True):
+        log("Redditの言及を集計中...")
+        rd = safe(lambda: feeds.reddit_mentions(
+            [s for s in feat["symbol"].tolist()]), "Reddit", {}) or {}
+        if rd.get("counts"):
+            out["reddit_spikes"] = safe(lambda: feeds.reddit_spikes(
+                rd, os.path.join(STATE, "reddit_history.json")), "Reddit急増検知", []) or []
+            log(f"  {len(rd['counts'])}銘柄の言及を検出 / "
+                f"急増 {len(out.get('reddit_spikes',[]))} 件")
+        else:
+            log("  取得できませんでした（Redditに弾かれた可能性）")
+
+    # ---------- 11. 相関と集中度 ----------
+    log("相関と集中度を確認中...")
+    corr_targets = held + [s.get("symbol") for s in signals[:8]]
+    out["correlation"] = safe(lambda: quality.correlation_check(data, corr_targets),
+                              "相関チェック", {}) or {}
+    out["concentration"] = safe(
+        lambda: quality.concentration(load_positions(), signals, sector_map),
+        "集中度チェック", {}) or {}
+    if out["correlation"].get("pairs"):
+        for pr in out["correlation"]["pairs"][:5]:
+            log(f"  [注意] {pr['a']} と {pr['b']} の相関 {pr['corr']} — 実質同じ賭け")
+
+    # ---------- 12. 保有ポジション ----------
     positions = load_positions()
     out["positions"] = evaluate_positions(positions, data, cfg)
     out["cash"] = _read_json(os.path.join(STATE, "account.json"), {}).get(
         "cash", cfg.get("portfolio", {}).get("initial_cash", 2000))
 
-    # ---------- 7. セクター動向 ----------
-    def _sectors():
-        sec_map = uni.set_index("symbol")["sector"].to_dict()
-        f = feat.copy()
-        f["sector"] = f["symbol"].map(sec_map)
-        g = f[f["sector"].notna() & (f["sector"] != "")].groupby("sector").agg(
-            銘柄数=("symbol", "size"), 平均1日=("chg_1d", "mean"),
-            平均5日=("chg_5d", "mean"), 平均21日=("chg_21d", "mean"),
-            MA200超え比率=("vs_ma200", lambda x: float((x > 0).mean())))
-        return json.loads(g.round(4).reset_index().to_json(orient="records"))
-
-    out["sectors"] = safe(_sectors, "セクター集計", []) or []
+    # ---------- 13. 口座と成績 ----------
+    acct = _read_json(os.path.join(STATE, "account.json"), {})
+    out["account"] = {
+        "cash": acct.get("cash", cfg.get("portfolio", {}).get("initial_cash", 2000)),
+        "initial_cash": acct.get("initial_cash",
+                                 cfg.get("portfolio", {}).get("initial_cash", 2000)),
+    }
+    out["performance"] = _performance(out)
 
     _write(out, args.dry_run)
+
+    # ---------- 14. ダッシュボードを生成 ----------
+    # Claudeの解釈が既にあればそれも読み込む。無ければ事実だけのページになる。
+    verdict = _read_json(os.path.join(HERE, "outbox", f"{out['date']}_message.json"), {})
+    if not args.dry_run:
+        try:
+            from qbt import dashboard
+            path = os.path.join(HERE, "dashboard.html")
+            dashboard.build(out, verdict, out_path=path)
+            log(f"ダッシュボード: {path}")
+        except Exception as e:
+            log(f"  [失敗] ダッシュボード生成: {e}")
+            traceback.print_exc(limit=2)
+
     log("完了")
     return 0
+
+
+def _performance(out: dict) -> dict:
+    """
+    資産推移の記録を更新する。
+    毎日その日の評価額を1行追記していくだけの単純な仕組み。
+    ペーパートレードの成績がバックテストの想定から外れ始めたら、検証に戻る合図になる。
+    """
+    path = os.path.join(STATE, "equity.json")
+    hist = _read_json(path, {"initial": None, "equity": [], "stats": {}})
+    initial = hist.get("initial") or out["account"]["initial_cash"]
+
+    mv = sum(float(p.get("shares") or 0) * float(p.get("price") or 0)
+             for p in out.get("positions", []))
+    equity = float(out["account"]["cash"]) + mv
+
+    eq = [e for e in hist.get("equity", []) if e and e[0] != out["date"]]
+    eq.append([out["date"], round(equity, 2)])
+    eq = eq[-500:]
+
+    vals = [e[1] for e in eq]
+    peak, mdd = vals[0] if vals else initial, 0.0
+    for v in vals:
+        peak = max(peak, v)
+        mdd = min(mdd, v / peak - 1 if peak else 0.0)
+
+    trades = _read_json(os.path.join(STATE, "trades.json"), [])
+    wins = [t for t in trades if float(t.get("pnl_pct") or 0) > 0]
+    streak = worst = 0
+    for t in trades:
+        streak = streak + 1 if float(t.get("pnl_pct") or 0) <= 0 else 0
+        worst = max(worst, streak)
+
+    stats = {
+        "max_dd": round(mdd, 4),
+        "trades": len(trades),
+        "win_rate": round(len(wins) / len(trades), 4) if trades else 0.0,
+        "losing_streak": worst,
+    }
+    hist = {"initial": initial, "equity": eq, "stats": stats}
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(hist, f, ensure_ascii=False, indent=1)
+    return hist
 
 
 def _read_json(path: str, default):
