@@ -1,0 +1,52 @@
+# LINEへの送信。データ収集とClaudeの解釈が済んだ後に走る。
+#
+# outbox/ にClaudeが書いた解釈があればそれを送り、
+# 無ければ raw.json から機械的に要約を作って送る。
+# どちらにしても必ず何かが届く。「今日は何も来なかった」が一番困るため。
+
+name: LINE通知
+
+on:
+  schedule:
+    - cron: "15 23 * * 1-5"     # 平日 23:15 UTC = 日本時間 翌朝08:15
+  workflow_dispatch:
+    inputs:
+      test:
+        description: "疎通確認のテストメッセージを送る"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: notify
+  cancel-in-progress: false
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 依存をインストール
+        run: pip install requests -q
+
+      - name: 送信
+        env:
+          LINE_CHANNEL_TOKEN: ${{ secrets.LINE_CHANNEL_TOKEN }}
+          LINE_USER_ID: ${{ secrets.LINE_USER_ID }}
+        run: |
+          if [ "${{ github.event.inputs.test }}" = "true" ]; then
+            python notify.py --test
+          else
+            python notify.py
+          fi

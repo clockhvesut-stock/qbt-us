@@ -1,0 +1,95 @@
+# 毎日のデータ収集。米国市場の大引け後に走る。
+#
+# 時刻について:
+#   米国市場の大引けは 16:00 ET。夏時間なら 20:00 UTC、冬時間なら 21:00 UTC。
+#   両方に対応するため 22:00 UTC に固定してある（日本時間 翌07:00）。
+#   GitHub Actions のcronは混雑時に最大15分ほど遅れることがあるので、
+#   後続の通知ジョブとの間には余裕を取ってある。
+
+name: データ収集
+
+on:
+  schedule:
+    - cron: "0 22 * * 1-5"      # 平日 22:00 UTC = 日本時間 翌朝07:00
+  workflow_dispatch:             # 手動実行もできる
+    inputs:
+      max_symbols:
+        description: "処理する銘柄数の上限（デバッグ用。空なら全銘柄）"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: collect
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: 依存をインストール
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: ユニバースが無ければ作る
+        run: |
+          if [ ! -f data/universe.json ]; then
+            echo "ユニバース未作成。S&P500とETFで初期化します"
+            python build_universe.py --quick
+          fi
+
+      - name: データ収集を実行
+        env:
+          ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+        run: |
+          ARGS=""
+          if [ -n "${{ github.event.inputs.max_symbols }}" ]; then
+            ARGS="--max-symbols ${{ github.event.inputs.max_symbols }}"
+          fi
+          python daily.py $ARGS
+
+      - name: 結果をコミット
+        run: |
+          git config user.name  "qbt-bot"
+          git config user.email "qbt-bot@users.noreply.github.com"
+          git add reports/ data/ state/ || true
+          if git diff --cached --quiet; then
+            echo "変更なし"
+          else
+            git commit -m "データ収集 $(date -u +%Y-%m-%d)"
+            git pull --rebase --autostash origin ${{ github.ref_name }} || true
+            git push
+          fi
+
+      - name: 失敗したら通知する
+        if: failure()
+        env:
+          LINE_CHANNEL_TOKEN: ${{ secrets.LINE_CHANNEL_TOKEN }}
+          LINE_USER_ID: ${{ secrets.LINE_USER_ID }}
+        run: |
+          pip install requests -q
+          python - <<'PY'
+          import os, requests
+          t, u = os.environ.get("LINE_CHANNEL_TOKEN"), os.environ.get("LINE_USER_ID")
+          if t and u:
+              requests.post("https://api.line.me/v2/bot/message/push",
+                  headers={"Authorization": f"Bearer {t}"},
+                  json={"to": u, "messages": [{"type": "text",
+                        "text": "⚠️ データ収集に失敗しました。\n"
+                                "GitHubのActionsタブでログを確認してください。"}]},
+                  timeout=20)
+          PY
