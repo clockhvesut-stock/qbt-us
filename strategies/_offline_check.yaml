@@ -1,0 +1,36 @@
+name: "米国株_動作確認_合成データ"
+data:
+  source: synthetic
+  start: "2015-01-01"
+  end: "2025-12-31"
+  seed: 11
+  symbols: [S01,S02,S03,S04,S05,S06,S07,S08,S09,S10,S11,S12,S13,S14,S15,S16,S17,S18,S19,S20]
+  benchmark: "SPYX"
+rules:
+  entry: >
+    close > sma(close, {ma_trend})
+    and cross_above(rsi(close, {rsi_n}), {rsi_buy})
+    and atr_pct(high, low, close, 14) < {max_vol}
+  exit: >
+    rsi(close, {rsi_n}) > {rsi_sell}
+    or cross_below(close, sma(close, {ma_exit}))
+  rank: "roc(shift(close, 21), 231)"
+  universe_filter: "sma(volume, 20) * close > 1000000"
+  market_filter: "close > sma(close, 200)"
+  stop_loss_pct: 0.08
+  max_hold_days: 20
+params: {ma_trend: 200, ma_exit: 20, rsi_n: 14, rsi_buy: 35, rsi_sell: 70, max_vol: 0.20}
+portfolio: {initial_cash: 2000, max_positions: 8, lot_size: 1, allow_fractional: true}
+costs: {commission_bps: 0.0, slippage_bps: 8.0}
+validation:
+  split_date: "2022-01-01"
+  monte_carlo: true
+  walk_forward: {train_years: 4, test_years: 1}
+param_grid:
+  ma_trend: [100, 200]
+  ma_exit: [20, 50]
+  rsi_n: [14]
+  rsi_buy: [30, 35]
+  rsi_sell: [70]
+  max_vol: [0.20]
+  max_hold_days: [3, 10, 20, 60]
