@@ -31,7 +31,7 @@ import pandas as pd
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from qbt import feeds, quality, universe  # noqa: E402
+from qbt import feeds, paper, quality, universe  # noqa: E402
 from qbt.engine import build_signal_frame, eval_expr  # noqa: E402
 from qbt.indicators import atr_pct, roc, rsi, sma, zscore  # noqa: E402
 
@@ -441,19 +441,69 @@ def main() -> int:
         for pr in out["correlation"]["pairs"][:5]:
             log(f"  [注意] {pr['a']} と {pr['b']} の相関 {pr['corr']} — 実質同じ賭け")
 
-    # ---------- 12. 保有ポジション ----------
-    positions = load_positions()
-    out["positions"] = evaluate_positions(positions, data, cfg)
-    out["cash"] = _read_json(os.path.join(STATE, "account.json"), {}).get(
-        "cash", cfg.get("portfolio", {}).get("initial_cash", 2000))
+    # ---------- 12. ペーパートレードの執行 ----------
+    #
+    # バックテストとまったく同じ約定ルールで、1営業日ぶん前に進める。
+    # ここがずれると、検証で見た数字と実際の記録が比較できなくなる。
+    #
+    # データが未完成のとき（取引時間中の実行など）は執行しない。
+    # 途中経過の寄付値で建玉を作ると、記録そのものが汚れる。
+    if fresh.get("level") == "bad":
+        log("データが未完成のため、ペーパートレードの執行は見送ります")
+        out["paper"] = {"skipped": True,
+                        "reason": "データ品質が基準を満たさないため執行を見送りました"}
+        book = None
+    else:
+        log("ペーパートレードを執行中...")
+        book = paper.PaperBook(STATE, cfg, name="rule")
 
-    # ---------- 13. 口座と成績 ----------
-    acct = _read_json(os.path.join(STATE, "account.json"), {})
-    out["account"] = {
-        "cash": acct.get("cash", cfg.get("portfolio", {}).get("initial_cash", 2000)),
-        "initial_cash": acct.get("initial_cash",
-                                 cfg.get("portfolio", {}).get("initial_cash", 2000)),
-    }
+        # 今日の四本値。約定はすべてこの値で行う
+        bars = {}
+        for sym, df in data.items():
+            r = df.iloc[-1]
+            bars[sym] = {"open": float(r["open"]), "high": float(r["high"]),
+                         "low": float(r["low"]), "close": float(r["close"])}
+
+        snap = book.step(out["data_date"], bars, rules)
+
+        # 保有中の銘柄について、手仕舞い条件を判定する
+        exit_expr = _fmt(rules.get("exit")) if rules.get("exit") else None
+        exit_flags = {}
+        for pos in book.positions:
+            sym = pos["symbol"]
+            if not exit_expr or sym not in data:
+                continue
+            try:
+                if bool(eval_expr(exit_expr, data[sym]).iloc[-1]):
+                    exit_flags[sym] = ["手仕舞いシグナル"]
+            except Exception:
+                pass
+        book.queue_exits(bars, rules, exit_flags)
+
+        # 明日の寄付で建てる注文を決める
+        market_ok = out.get("market_filter_pass", True)
+        book.queue_entries(signals, market_ok=market_ok)
+        book.save(out["data_date"])
+
+        snap = book.snapshot(bars)
+        out["paper"] = snap
+        out["positions"] = snap["positions"]
+        out["cash"] = snap["cash"]
+        out["account"] = {"cash": snap["cash"], "initial_cash": snap["initial_cash"]}
+        for line in book.log:
+            log(f"  {line}")
+        log(f"  評価額 ${snap['equity']:,.2f}（元本 ${snap['initial_cash']:,.0f} / "
+            f"{snap['return_pct']*100:+.2f}%）保有 {len(snap['positions'])} / "
+            f"明日の注文 {len(snap['pending'])}")
+
+    if book is None:
+        out["positions"] = evaluate_positions(load_positions(), data, cfg)
+        acct = _read_json(os.path.join(STATE, "account.json"), {})
+        out["cash"] = acct.get("cash", cfg.get("portfolio", {}).get("initial_cash", 2000))
+        out["account"] = {"cash": out["cash"],
+                          "initial_cash": acct.get("initial_cash", out["cash"])}
+
+    # ---------- 13. 成績の記録 ----------
     out["performance"] = _performance(out)
 
     _write(out, args.dry_run)

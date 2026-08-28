@@ -206,6 +206,25 @@ def _today_section(verdict, raw):
 </section>"""
 
 
+def _pending_section(raw):
+    """明日の寄付で自動執行される注文。ペーパートレードの実際の動きを見せる"""
+    pp = raw.get("paper") or {}
+    if pp.get("skipped"):
+        return (f'<section id="pending"><h2>ペーパートレード</h2>'
+                f'<p class="none">{esc(pp.get("reason",""))}</p></section>')
+    pend = pp.get("pending") or []
+    if not pend:
+        return ""
+    rows = "".join(
+        f'<div class="pd"><span class="tag buy">建てる</span>'
+        f'<span class="tk">{esc(o.get("symbol"))}</span>'
+        f'<span class="px">{esc(o.get("reason",""))}</span></div>' for o in pend[:8])
+    return (f'<section id="pending"><h2>明日の寄付で自動執行 '
+            f'<span class="cnt">{len(pend)}</span></h2>'
+            f'<p class="hint2">ペーパートレードとして記録されます。実弾は動きません。</p>'
+            f'<div class="pds">{rows}</div></section>')
+
+
 def _risk_section(raw):
     """決算跨ぎ・配当落ち・相関の集中。判断の前に目に入る位置に置く"""
     rows = []
@@ -305,12 +324,20 @@ def _market_line(raw, verdict=None):
 </section>"""
 
 
-def _score_section(perf, account):
+def _score_section(perf, account, paper=None):
     initial = float((perf or {}).get("initial") or account.get("initial_cash") or 2000)
     points = (perf or {}).get("equity") or []
     last = float(points[-1][1]) if points else initial
+    # ペーパートレードの実績があればそちらを優先（こちらが正）
+    if paper and not paper.get("skipped"):
+        last = float(paper.get("equity", last))
+        initial = float(paper.get("initial_cash", initial))
     ret = last / initial - 1 if initial else 0
-    st = (perf or {}).get("stats") or {}
+    st = dict((perf or {}).get("stats") or {})
+    if paper and not paper.get("skipped"):
+        st["trades"] = paper.get("trades_total", st.get("trades", 0))
+        st["win_rate"] = paper.get("win_rate", st.get("win_rate"))
+        st["losing_streak"] = paper.get("losing_streak", st.get("losing_streak", 0))
     return f"""
 <section id="score">
   <h2>成績</h2>
@@ -484,10 +511,11 @@ def build(raw: dict, verdict: dict | None = None, out_path: str | None = None,
                    + "　".join(esc(e) for e in raw["errors"]) + "</div>")
 
     body = (_today_section(verdict, raw)
+            + _pending_section(raw)
             + _risk_section(raw)
             + _holdings_section(positions, account)
             + _market_line(raw, verdict)
-            + _score_section(perf, account)
+            + _score_section(perf, account, raw.get("paper"))
             + _details_section(raw, verdict))
 
     doc = f"""<!doctype html>
@@ -677,6 +705,12 @@ padding:7px 0;border-bottom:1px solid var(--line);font-size:13px}
 
 .note b{display:block;margin-bottom:4px}
 .note div{font-weight:400;line-height:1.7}
+.pds{display:flex;flex-direction:column;gap:7px}
+.pd{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--up);
+border-radius:11px;padding:11px 15px;display:flex;gap:11px;align-items:baseline}
+.pd .tk{font-size:16px}
+.pd .px{color:var(--ink3);font-size:12.5px}
+.hint2{color:var(--ink3);font-size:12.5px;margin:-6px 0 10px}
 .rks{display:flex;flex-direction:column;gap:7px}
 .rk{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--warn);
 border-radius:11px;padding:11px 15px;display:grid;grid-template-columns:auto auto 1fr;
