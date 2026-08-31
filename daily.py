@@ -39,6 +39,9 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 REPORTS = os.path.join(HERE, "reports")
 STATE = os.path.join(HERE, "state")
 
+# 価格を何銘柄ずつ取りに行くか。大きすぎると Yahoo に弾かれる
+CHUNK = 60
+
 
 def log(msg: str):
     print(f"[{datetime.now(timezone.utc).strftime('%H:%M:%S')}] {msg}", flush=True)
@@ -230,11 +233,9 @@ def main() -> int:
     log("価格データを取得中...")
     import yfinance as yf
 
-    def _prices():
-        raw = yf.download(syms, period="2y", auto_adjust=True, progress=False,
-                          group_by="column", threads=True)
+    def _unpack(raw, chunk: list[str]) -> dict:
         d = {}
-        for s in syms:
+        for s in chunk:
             try:
                 if isinstance(raw.columns, pd.MultiIndex):
                     df = pd.DataFrame({
@@ -253,12 +254,56 @@ def main() -> int:
             d[s] = df.sort_index()
         return d
 
+    def _prices():
+        """
+        銘柄を小分けにして取る。
+
+        500銘柄を1回で投げると Yahoo 側に弾かれることがある。
+        弾かれたとき、1回の呼び出しにまとめていると全滅する。
+        小分けにしておけば、失敗したのはその塊だけで済む。
+        塊ごとに数回まで待って入れ直す。
+        """
+        import time
+        d, failed = {}, []
+        for i in range(0, len(syms), CHUNK):
+            chunk = syms[i:i + CHUNK]
+            for attempt in range(3):
+                try:
+                    raw = yf.download(chunk, period="2y", auto_adjust=True,
+                                      progress=False, group_by="column",
+                                      threads=True, timeout=45)
+                    got = _unpack(raw, chunk)
+                    if got:
+                        d.update(got)
+                        break
+                    raise RuntimeError("空の応答")
+                except Exception as e:
+                    if attempt == 2:
+                        failed.append((chunk[0], str(e)[:60]))
+                        log(f"  [失敗] {chunk[0]}〜 の {len(chunk)}銘柄: {e}")
+                    else:
+                        time.sleep(4 * (attempt + 1))
+            time.sleep(1.0)
+        if failed:
+            out["errors"].append(
+                f"価格取得に失敗した塊が {len(failed)} 件（例: {failed[0][0]} — {failed[0][1]}）")
+        return d
+
     data = safe(_prices, "価格取得", {}) or {}
     log(f"  {len(data)} 銘柄の価格を取得")
     if not data:
+        # ここで黙って落ちると、リポジトリには古いJSONが残ったままになる。
+        # 翌朝それを読んだ側は「昨日と同じ」と誤解する。失敗も必ず書き残す。
         out["errors"].append("価格データを1銘柄も取得できませんでした")
+        out["data_quality"] = {"level": "bad", "usable": False,
+                               "problems": ["価格データを取得できませんでした"],
+                               "note": "この日の判断には使えません"}
         _write(out, args.dry_run)
+        _write_status(out, ok=False, dry=args.dry_run)
         return 1
+    if len(data) < len(syms) * 0.5:
+        out["errors"].append(
+            f"取得できたのは {len(data)}/{len(syms)} 銘柄のみ。判断材料が不足しています")
     out["data_date"] = str(max(df.index[-1] for df in data.values()).date())
 
     # ---------- 3. 相場環境 ----------
@@ -291,8 +336,12 @@ def main() -> int:
     out["sectors"] = safe(_sectors, "セクター集計", []) or []
 
     # 銘柄固有の弱さか、業種全体の弱さかを切り分ける
-    feat = safe(lambda: quality.sector_relative(feat, sector_map, out["sectors"]),
-                "セクター相対強度", feat) or feat
+    # `... or feat` と書くと DataFrame の真偽値評価になって必ず落ちる。
+    # 中身の有無で判断すること。
+    _rel = safe(lambda: quality.sector_relative(feat, sector_map, out["sectors"]),
+                "セクター相対強度", None)
+    if isinstance(_rel, pd.DataFrame) and not _rel.empty:
+        feat = _rel
 
     # データの鮮度検査。ここで弾かないと、未完成の日足で判断してしまう
     fresh = safe(lambda: quality.check_freshness(
@@ -521,7 +570,8 @@ def main() -> int:
             log(f"  [失敗] ダッシュボード生成: {e}")
             traceback.print_exc(limit=2)
 
-    log("完了")
+    _write_status(out, ok=not out["errors"], dry=args.dry_run)
+    log(f"完了（記録した不具合 {len(out['errors'])} 件）")
     return 0
 
 
@@ -568,6 +618,34 @@ def _performance(out: dict) -> dict:
     return hist
 
 
+def _write_status(out: dict | None, ok: bool, dry: bool = False, error: str = ""):
+    """
+    実行の結果を state/last_run.json に必ず残す。
+
+    これが無いと、収集が落ちた日はリポジトリに何も変化が起きず、
+    翌朝に読む側からは「昨日と同じデータ」と「収集が落ちた」の区別がつかない。
+    区別がつかないまま古い数字で判断するのが一番まずい。
+    """
+    if dry:
+        return
+    st = {
+        "finished_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "ok": bool(ok),
+        "data_date": (out or {}).get("data_date"),
+        "generated_at": (out or {}).get("generated_at"),
+        "symbols": (out or {}).get("universe_size"),
+        "errors": list((out or {}).get("errors") or []),
+    }
+    if error:
+        st["errors"].append(error)
+    try:
+        os.makedirs(STATE, exist_ok=True)
+        with open(os.path.join(STATE, "last_run.json"), "w", encoding="utf-8") as f:
+            json.dump(st, f, ensure_ascii=False, indent=1)
+    except Exception:
+        pass
+
+
 def _read_json(path: str, default):
     try:
         return json.load(open(path, encoding="utf-8"))
@@ -589,4 +667,12 @@ def _write(out: dict, dry: bool):
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    try:
+        sys.exit(main())
+    except SystemExit:
+        raise
+    except Exception as e:
+        # 想定外で落ちたときも、落ちたという事実だけは必ず残す
+        traceback.print_exc()
+        _write_status(None, ok=False, error=f"{type(e).__name__}: {e}")
+        sys.exit(1)
