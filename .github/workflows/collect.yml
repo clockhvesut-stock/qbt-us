@@ -3,15 +3,13 @@
 # 時刻について:
 #   米国市場の大引けは 16:00 ET。夏時間なら 20:00 UTC、冬時間なら 21:00 UTC。
 #   両方に対応するため 22:00 UTC に固定してある（日本時間 翌07:00）。
-#   GitHub Actions のcronは混雑時に最大15分ほど遅れることがあるので、
-#   後続の通知ジョブとの間には余裕を取ってある。
 
 name: データ収集
 
 on:
   schedule:
     - cron: "0 22 * * 1-5"      # 平日 22:00 UTC = 日本時間 翌朝07:00
-  workflow_dispatch:             # 手動実行もできる
+  workflow_dispatch:
     inputs:
       max_symbols:
         description: "処理する銘柄数の上限（デバッグ用。空なら全銘柄）"
@@ -62,11 +60,18 @@ jobs:
           fi
           python daily.py $ARGS
 
+      # 失敗した日も必ずコミットする。
+      #
+      # ここを if: always() にしていないと、収集が落ちた日はリポジトリに
+      # 何の変化も起きない。翌朝それを読む側からは「昨日と同じ」と
+      # 「昨日は落ちた」の区別がつかず、古い数字で判断してしまう。
+      # state/last_run.json に結果が入るので、失敗も記録として残る。
       - name: 結果をコミット
+        if: always()
         run: |
           git config user.name  "qbt-bot"
           git config user.email "qbt-bot@users.noreply.github.com"
-          git add reports/ data/ state/ || true
+          git add reports/ data/ state/ dashboard.html || true
           if git diff --cached --quiet; then
             echo "変更なし"
           else
@@ -74,22 +79,3 @@ jobs:
             git pull --rebase --autostash origin ${{ github.ref_name }} || true
             git push
           fi
-
-      - name: 失敗したら通知する
-        if: failure()
-        env:
-          LINE_CHANNEL_TOKEN: ${{ secrets.LINE_CHANNEL_TOKEN }}
-          LINE_USER_ID: ${{ secrets.LINE_USER_ID }}
-        run: |
-          pip install requests -q
-          python - <<'PY'
-          import os, requests
-          t, u = os.environ.get("LINE_CHANNEL_TOKEN"), os.environ.get("LINE_USER_ID")
-          if t and u:
-              requests.post("https://api.line.me/v2/bot/message/push",
-                  headers={"Authorization": f"Bearer {t}"},
-                  json={"to": u, "messages": [{"type": "text",
-                        "text": "⚠️ データ収集に失敗しました。\n"
-                                "GitHubのActionsタブでログを確認してください。"}]},
-                  timeout=20)
-          PY
