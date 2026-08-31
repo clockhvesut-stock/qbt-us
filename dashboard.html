@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>米国株デイリー</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@400;500;700;800&family=M+PLUS+1+Code:wght@400;500;600&display=swap">
+<style>
+:root{color-scheme:light;
+--bg:#f6f7f9;--card:#fff;--soft:#eef1f4;
+--ink:#151a20;--ink2:#5a6472;--ink3:#8c96a3;
+--line:#e3e7ec;--line2:#cdd4dc;
+--accent:#1d5c7a;--accent-bg:#1d5c7a12;
+--up:#12795a;--up-bg:#12795a12;--down:#a83a35;--down-bg:#a83a3512;
+--warn:#a3690f;--warn-bg:#a3690f12}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;
+--bg:#0f1317;--card:#181d23;--soft:#212831;
+--ink:#eff2f5;--ink2:#a9b3bf;--ink3:#79838f;
+--line:#262d36;--line2:#39424d;
+--accent:#5aa8c8;--accent-bg:#5aa8c81c;
+--up:#3ba887;--up-bg:#3ba8871c;--down:#d8736e;--down-bg:#d8736e1c;
+--warn:#d5a54e;--warn-bg:#d5a54e1c}}
+:root[data-theme="dark"]{color-scheme:dark;
+--bg:#0f1317;--card:#181d23;--soft:#212831;
+--ink:#eff2f5;--ink2:#a9b3bf;--ink3:#79838f;
+--line:#262d36;--line2:#39424d;
+--accent:#5aa8c8;--accent-bg:#5aa8c81c;
+--up:#3ba887;--up-bg:#3ba8871c;--down:#d8736e;--down-bg:#d8736e1c;
+--warn:#d5a54e;--warn-bg:#d5a54e1c}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:"M PLUS 2","Hiragino Sans",system-ui,sans-serif;
+font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased}
+.page{max-width:660px;margin:0 auto;padding:34px 20px 90px}
+.tk,.tv,.pr,.pl,.hp,.bn,td.r,.tl,.nd{font-family:"M PLUS 1 Code",ui-monospace,monospace;
+font-variant-numeric:tabular-nums}
+.up{color:var(--up)}.down{color:var(--down)}.flat{color:var(--ink3)}
+
+.note{background:var(--warn-bg);color:var(--warn);border-radius:9px;
+padding:9px 14px;margin-bottom:20px;font-size:13px;font-weight:600}
+.note.bad{background:var(--down-bg);color:var(--down)}
+
+header{margin-bottom:30px}
+.date{font-family:"M PLUS 1 Code",monospace;font-size:12px;color:var(--ink3);margin:0 0 6px}
+h1{font-size:clamp(26px,6vw,36px);font-weight:800;letter-spacing:-.025em;
+margin:0;line-height:1.3}
+
+section{margin:0 0 38px}
+h2{font-size:13px;font-weight:700;color:var(--ink3);letter-spacing:.06em;
+margin:0 0 12px;display:flex;align-items:center;gap:8px}
+h2 .cnt{font-family:"M PLUS 1 Code",monospace;background:var(--soft);color:var(--ink2);
+padding:1px 8px;border-radius:20px;font-size:12px}
+.none{color:var(--ink3);font-size:13.5px;margin:10px 0 0}
+.say{color:var(--ink2);font-size:15px;line-height:1.85;margin:0 0 16px;
+padding-left:14px;border-left:3px solid var(--accent)}
+
+/* 今日 */
+.nothing{background:var(--card);border:1px solid var(--line);border-radius:16px;
+padding:22px 24px}
+.nothing .nh{font-size:22px;font-weight:800;margin-bottom:6px;letter-spacing:-.02em}
+.nothing p{margin:0;color:var(--ink2);font-size:14.5px;line-height:1.85}
+.cards{display:flex;flex-direction:column;gap:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;
+padding:20px 22px;border-left:4px solid var(--line2)}
+.card.buy{border-left-color:var(--up)}
+.card.sell{border-left-color:var(--down)}
+.ch{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.tag{font-size:11px;font-weight:700;padding:3px 9px;border-radius:6px;
+font-family:"M PLUS 1 Code",monospace}
+.tag.buy{background:var(--up-bg);color:var(--up)}
+.tag.sell{background:var(--down-bg);color:var(--down)}
+.tk{font-size:20px;font-weight:700;letter-spacing:-.02em}
+.pr{font-size:15px;color:var(--ink2)}
+.pl{margin-left:auto;font-size:15px;font-weight:600}
+.cw{margin:0 0 12px;font-size:14.5px;color:var(--ink2);line-height:1.85}
+.cf{font-family:"M PLUS 1 Code",monospace;font-size:12.5px;color:var(--ink3);
+padding-top:11px;border-top:1px solid var(--line)}
+
+/* 保有 */
+.holds{display:flex;flex-direction:column;gap:8px}
+.hold{background:var(--card);border:1px solid var(--line);border-radius:13px;
+padding:14px 18px;display:grid;grid-template-columns:1fr auto;gap:4px 12px;align-items:baseline}
+.hold.warn{border-color:var(--down);background:var(--down-bg)}
+.hl{display:flex;align-items:baseline;gap:10px}
+.hl .tk{font-size:17px}
+.hd{font-size:12px;color:var(--ink3)}
+.hr{text-align:right}
+.hp{font-size:17px;font-weight:700;display:block}
+.hs{font-size:11.5px;color:var(--ink3);font-family:"M PLUS 1 Code",monospace}
+.hf{grid-column:1/-1;font-size:12.5px;color:var(--down);font-weight:600;
+padding-top:8px;border-top:1px solid var(--line)}
+
+/* 相場・成績 */
+.chip{font-family:"M PLUS 1 Code",monospace;font-size:11px;font-weight:700;
+padding:3px 9px;border-radius:6px;background:var(--accent-bg);color:var(--accent);
+margin-right:4px;white-space:nowrap}
+.chip.順行{background:var(--up-bg);color:var(--up)}
+.chip.混乱,.chip.調整{background:var(--down-bg);color:var(--down)}
+.chip.選別{background:var(--warn-bg);color:var(--warn)}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:12px;
+padding:12px 13px}
+.tl{font-size:10.5px;color:var(--ink3);white-space:nowrap;overflow:hidden;
+text-overflow:ellipsis;margin-bottom:2px}
+.tv{font-size:18px;font-weight:600;letter-spacing:-.02em;line-height:1.3}
+.td{font-size:12px;font-family:"M PLUS 1 Code",monospace;margin-top:1px}
+.big{margin-bottom:14px}
+.bn{font-size:44px;font-weight:800;letter-spacing:-.04em;line-height:1.05}
+.bs{font-family:"M PLUS 1 Code",monospace;font-size:13px;color:var(--ink3);margin-top:4px}
+.chart{width:100%;height:auto;display:block;background:var(--card);
+border:1px solid var(--line);border-radius:13px;margin-top:14px;padding:6px 0}
+.grid{stroke:var(--line);stroke-width:1}
+.baseline{stroke:var(--line2);stroke-width:1;stroke-dasharray:4 4}
+.tick{fill:var(--ink3);font-size:10.5px;font-family:"M PLUS 1 Code",monospace}
+.line.up{stroke:var(--up)}.line.down{stroke:var(--down)}
+.area.up{fill:var(--up);opacity:.09}.area.down{fill:var(--down);opacity:.09}
+.dot.up{fill:var(--up)}.dot.down{fill:var(--down)}
+
+/* 詳細（畳んである） */
+details{background:var(--card);border:1px solid var(--line);border-radius:13px;
+margin-bottom:8px;overflow:hidden}
+summary{cursor:pointer;list-style:none;padding:14px 18px;font-weight:600;font-size:14px;
+display:flex;gap:10px;align-items:center;color:var(--ink2)}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"›";font-size:17px;color:var(--accent);
+transition:transform .18s;display:inline-block}
+details[open] summary::before{transform:rotate(90deg)}
+summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.db{padding:0 18px 18px}
+.nws{display:flex;flex-direction:column;gap:14px}
+.nw{padding-bottom:14px;border-bottom:1px solid var(--line)}
+.nw:last-child{border-bottom:none;padding-bottom:0}
+.nw .nh{display:flex;gap:8px;align-items:baseline;margin-bottom:3px}
+.nw .tk{font-size:12.5px}
+.lv{font-size:10px;font-weight:700;padding:2px 7px;border-radius:5px;
+font-family:"M PLUS 1 Code",monospace}
+.lv.強気{background:var(--up-bg);color:var(--up)}
+.lv.弱気{background:var(--down-bg);color:var(--down)}
+.lv.中立,.lv.軽微{background:var(--soft);color:var(--ink3)}
+.nd{font-size:10.5px;color:var(--ink3);margin-left:auto}
+.nt{font-size:13.5px;line-height:1.65}
+.nv{font-size:12.5px;color:var(--ink2);margin-top:5px;padding-left:11px;
+border-left:2px solid var(--line2);line-height:1.7}
+.tw{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:13px;min-width:320px}
+th{text-align:left;padding:7px 10px 7px 0;font-size:10.5px;color:var(--ink3);
+font-family:"M PLUS 1 Code",monospace;font-weight:600;border-bottom:1px solid var(--line);
+white-space:nowrap}
+th.r,td.r{text-align:right}
+td{padding:9px 10px 9px 0;border-bottom:1px solid var(--line);white-space:nowrap}
+tr:last-child td{border-bottom:none}
+.form{font-family:"M PLUS 1 Code",monospace;font-size:10.5px;background:var(--accent-bg);
+color:var(--accent);padding:2px 7px;border-radius:5px;font-weight:600}
+.sectorlist{display:flex;flex-direction:column}
+.secrow{display:grid;grid-template-columns:1fr 110px 58px;gap:10px;align-items:center;
+padding:7px 0;border-bottom:1px solid var(--line);font-size:13px}
+.secrow:last-child{border-bottom:none}
+.secname{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.secbar{position:relative;height:12px;background:var(--soft);border-radius:3px}
+.secbar > i{position:absolute;top:2px;height:8px;border-radius:2px}
+.secbar > i.up{background:var(--up)}.secbar > i.down{background:var(--down)}
+.secbar .mid{position:absolute;left:50%;top:0;width:1px;height:12px;background:var(--line2)}
+.secval{font-family:"M PLUS 1 Code",monospace;font-size:12px;text-align:right}
+.secma{display:none}
+
+.note b{display:block;margin-bottom:4px}
+.note div{font-weight:400;line-height:1.7}
+.pds{display:flex;flex-direction:column;gap:7px}
+.pd{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--up);
+border-radius:11px;padding:11px 15px;display:flex;gap:11px;align-items:baseline}
+.pd .tk{font-size:16px}
+.pd .px{color:var(--ink3);font-size:12.5px}
+.hint2{color:var(--ink3);font-size:12.5px;margin:-6px 0 10px}
+.rks{display:flex;flex-direction:column;gap:7px}
+.rk{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--warn);
+border-radius:11px;padding:11px 15px;display:grid;grid-template-columns:auto auto 1fr;
+gap:10px;align-items:baseline;font-size:13.5px}
+.rt{font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:5px;background:var(--warn-bg);
+color:var(--warn);font-family:"M PLUS 1 Code",monospace;white-space:nowrap}
+.rs{font-family:"M PLUS 1 Code",monospace;font-weight:700;white-space:nowrap}
+.rx{color:var(--ink2);line-height:1.7}
+td.sm{white-space:normal;font-size:12px;color:var(--ink3);max-width:260px}
+.world{margin-top:14px;background:var(--card);border:1px solid var(--line);
+border-radius:12px;padding:14px 16px}
+.wh{font-size:11px;color:var(--ink3);font-weight:700;letter-spacing:.06em;margin-bottom:8px}
+.wr{display:flex;gap:10px;align-items:baseline;padding:5px 0;font-size:13.5px;line-height:1.7}
+.wr+.wr{border-top:1px solid var(--line)}
+.wt{font-size:10px;font-weight:700;padding:2px 7px;border-radius:5px;background:var(--accent-bg);
+color:var(--accent);font-family:"M PLUS 1 Code",monospace;white-space:nowrap;flex:none}
+.wx{color:var(--ink2)}
+.scg{margin-bottom:12px}
+.scg:last-child{margin-bottom:0}
+.scl{font-size:11px;color:var(--ink3);font-weight:700;margin-bottom:5px}
+.scr{display:flex;flex-wrap:wrap;gap:6px}
+.sc{display:inline-flex;gap:5px;align-items:baseline;background:var(--soft);
+border-radius:7px;padding:3px 9px;font-family:"M PLUS 1 Code",monospace;font-size:11.5px}
+.sc b{font-weight:700}.sc i{font-style:normal}.sc u{text-decoration:none;color:var(--ink3)}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);
+font-family:"M PLUS 1 Code",monospace;font-size:11px;color:var(--ink3);line-height:1.9}
+
+@media (max-width:560px){
+.page{padding:24px 15px 70px}
+.tiles{grid-template-columns:repeat(2,1fr)}
+.secrow{grid-template-columns:1fr 58px}
+.secbar{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head>
+<body>
+<div class="page">
+<div class="note bad"><b>このデータは判断に使えません</b><div>・取引時間中に取得しているため、当日の足はまだ完成していません。RSI・ATR・出来高はすべて途中経過の値です</div><div>・当日出来高が20日平均の22%しかありません。1日分の取引が終わっていない可能性が高いです</div></div>
+<header>
+  <p class="date">2026-08-31 の終値時点</p>
+  <h1>今日は何もしない</h1>
+</header>
+
+<section id="today">
+  <div class="nothing">
+    <p>買いの条件を満たす銘柄はなく、保有銘柄にも手仕舞いの合図も出ていません。
+       見送りも判断のうちです。</p>
+  </div>
+  
+</section><section id="pending"><h2>ペーパートレード</h2><p class="none">データ品質が基準を満たさないため執行を見送りました</p></section>
+<section id="holdings">
+  <h2>保有</h2>
+  <p class="none">なし　現金 $2,000.00</p>
+</section>
+<section id="market">
+  <h2>相場</h2>
+  <p class="say"><span class="chip 順行">順行</span>
+    トレンドフォロー・モメンタムが効きやすい局面</p>
+  <div class="tiles">
+<div class="tile">
+  <div class="tl">S&amp;P500</div>
+  <div class="tv">7,677</div>
+  <div class="td down">-0.5%</div>
+</div>
+<div class="tile">
+  <div class="tl">VIX(恐怖指数)</div>
+  <div class="tv">15.18</div>
+  <div class="td down">+5.2%</div>
+</div>
+<div class="tile">
+  <div class="tl">米10年金利</div>
+  <div class="tv">4.76</div>
+  <div class="td up">+0.8%</div>
+</div>
+<div class="tile">
+  <div class="tl">ドル指数</div>
+  <div class="tv">99.41</div>
+  <div class="td down">-0.3%</div>
+</div></div>
+  <p class="none">200日線を上回る銘柄 70%
+    （半分を割ると、指数が上でも中身は弱い）</p>
+  
+</section>
+<section id="score">
+  <h2>成績</h2>
+  <div class="big">
+    <div class="bn flat">+0.0%</div>
+    <div class="bs">$2,000.00　元本 $2,000.00</div>
+  </div>
+  <div class="tiles">
+    <div class="tile"><div class="tl">最大下落</div>
+      <div class="tv down">+0.0%</div></div>
+    <div class="tile"><div class="tl">取引</div>
+      <div class="tv">0</div></div>
+    <div class="tile"><div class="tl">勝率</div>
+      <div class="tv">0%</div></div>
+    <div class="tile"><div class="tl">連敗</div>
+      <div class="tv">0</div></div>
+  </div>
+  <p class="empty">まだ記録がありません。ペーパートレードを始めると、ここに資産の推移が出ます。</p>
+</section><section id="more"><h2>詳細</h2><details><summary>世界情勢・マクロ</summary><div class="db"><div class="nws">
+<div class="nw">
+  <div class="nh"><span class="wt">米国株全体</span>
+    <span class="nd">2026-08-31</span></div>
+  <div class="nt">Scale and Longevity of Earnings Inflection Create Compelling Entry Point in Analog Devices (ADI)</div>
+</div>
+<div class="nw">
+  <div class="nh"><span class="wt">金・実物資産</span>
+    <span class="nd">2026-08-31</span></div>
+  <div class="nt">Zacks Market Edge Highlights: GLD, GDX and NEM</div>
+</div>
+<div class="nw">
+  <div class="nh"><span class="wt">米国株全体</span>
+    <span class="nd">2026-08-31</span></div>
+  <div class="nt">Opendoor Sinks 4% on Modest Market Pullback: Is High-Beta Selling the Whole Story?</div>
+</div>
+<div class="nw">
+  <div class="nh"><span class="wt">米国株全体</span>
+    <span class="nd">2026-08-31</span></div>
+  <div class="nt">Affirm Drops 4% as Post-Earnings Rally Unwinds Despite 36% GMV Growth</div>
+</div>
+<div class="nw">
+  <div class="nh"><span class="wt">米国株全体</span>
+    <span class="nd">2026-08-31</span></div>
+  <div class="nt">Tesla Jumps 4% as Oil Climbs to $86: Is the Gas-Price Trade Back?</div>
+</div>
+<div class="nw">
+  <div class="nh"><span class="wt">エネルギー</span>
+    <span class="nd">2026-08-31</span></div>
+  <div class="nt">Chevron and Exxon Mobil Rise 3% as U.S. Strikes on Iran Push WTI Crude Oil to $86</div>
+</div>
+<div class="nw">
+  <div class="nh"><span class="wt">ハイテク</span>
+    <span class="nd">2026-08-31</span></div>
+  <div class="nt">Best-Performing Leveraged ETFs of August</div>
+</div>
+<div class="nw">
+  <div class="nh"><span class="wt">原油・エネルギー</span>
+    <span class="nd">2026-08-31</span></div>
+  <div class="nt">Sector Update: Energy Stocks Advance Premarket Monday</div>
+</div>
+<div class="nw">
+  <div class="nh"><span class="wt">ハイテク</span>
+    <span class="nd">2026-08-31</span></div>
+  <div class="nt">Exchange-Traded Funds, Equity Futures Lower Pre-Bell Monday as US, Iran Exchange Attacks</div>
+</div>
+<div class="nw">
+  <div class="nh"><span class="wt">ハイテク</span>
+    <span class="nd">2026-08-31</span></div>
+  <div class="nt">Trade Desk Rises 5% on Kokai Zuma Agentic AI Launch, AppLovin and Magnite Barely Budge</div>
+</div>
+<div class="nw">
+  <div class="nh"><span class="wt">米国株全体</span>
+    <span class="nd">2026-08-31</span></div>
+  <div class="nt">After an &#x27;extraordinary&#x27; earnings season, here&#x27;s the next big positive for stocks</div>
+</div>
+<div class="nw">
+  <div class="nh"><span class="wt">米国株全体</span>
+    <span class="nd">2026-08-31</span></div>
+  <div class="nt">Stock market today: Dow, S&amp;P 500, Nasdaq fall as US strikes Iran, rate-hike bets jump</div>
+</div>
+<div class="nw">
+  <div class="nh"><span class="wt">リスク認識</span>
+    <span class="nd">2026-08-30</span></div>
+  <div class="nt">Wall Street&#x27;s summer calm is colliding with the year&#x27;s most volatile stretch: Chart of the Day</div>
+</div></div></div></details><details><summary>ニュース</summary><div class="db"><div class="nws">
+<div class="nw">
+  <div class="nh"><span class="tk">SLB</span>
+    
+    <span class="wt">52週高値圏</span>
+    <span class="nd">2026-08-31</span></div>
+  <div class="nt">SLB to Strengthen Data Center Business with $4.1 Billion Acquisition of Kelvion From Apollo</div>
+  
+</div>
+<div class="nw">
+  <div class="nh"><span class="tk">PCG</span>
+    
+    <span class="wt">出来高異常</span>
+    <span class="nd">2026-08-31</span></div>
+  <div class="nt">Top Midday Stories: Stocks Fall, Oil Rises Amid Renewed Fighting in Middle East; Utility Shares Fall After California Wildfire Legislation</div>
+  
+</div>
+<div class="nw">
+  <div class="nh"><span class="tk">TSLA</span>
+    
+    <span class="wt">大幅高</span>
+    <span class="nd">2026-08-31</span></div>
+  <div class="nt">Tesla Just Cut the Model 3 Entry Price by 8.5%</div>
+  
+</div>
+<div class="nw">
+  <div class="nh"><span class="tk">PCG</span>
+    
+    <span class="wt">出来高異常</span>
+    <span class="nd">2026-08-31</span></div>
+  <div class="nt">PCG, EIX Stocks Crash As Wall Street Warns Of Liability Exposure On California’s Latest Wildfire Legislation – Retail Calls Selloff An ‘Overreaction’</div>
+  
+</div>
+<div class="nw">
+  <div class="nh"><span class="tk">BSX</span>
+    
+    <span class="wt">大幅高</span>
+    <span class="nd">2026-08-31</span></div>
+  <div class="nt">Aging Population Drives Healthcare Growth: Stocks to Watch</div>
+  
+</div>
+<div class="nw">
+  <div class="nh"><span class="tk">PCG</span>
+    
+    <span class="wt">出来高異常</span>
+    <span class="nd">2026-08-31</span></div>
+  <div class="nt">California Utility Stocks Plummet After Wildfire Legislation Announced</div>
+  
+</div>
+<div class="nw">
+  <div class="nh"><span class="tk">TSLA</span>
+    
+    <span class="wt">大幅高</span>
+    <span class="nd">2026-08-31</span></div>
+  <div class="nt">Stock Market Today: Dow Skids, Oil Stocks Pop As Trump Says This On Iran; PG&amp;E Plunges (Live Coverage)</div>
+  
+</div>
+<div class="nw">
+  <div class="nh"><span class="tk">AON</span>
+    
+    <span class="wt">大幅安</span>
+    <span class="nd">2026-08-31</span></div>
+  <div class="nt">Aon expands mid-market reach with $17 billion USI deal</div>
+  
+</div>
+<div class="nw">
+  <div class="nh"><span class="tk">CRWD</span>
+    
+    <span class="wt">大幅高</span>
+    <span class="nd">2026-08-31</span></div>
+  <div class="nt">DKS, OKTA, and CRWD: 3 Trending Stocks Making Big Moves</div>
+  
+</div>
+<div class="nw">
+  <div class="nh"><span class="tk">UBER</span>
+    
+    <span class="wt">大幅安</span>
+    <span class="nd">2026-08-31</span></div>
+  <div class="nt">Zacks Investment Ideas feature highlights: Salesforce, Cisco, Dell, Uber and Robinhood</div>
+  
+</div>
+<div class="nw">
+  <div class="nh"><span class="tk">TSLA</span>
+    
+    <span class="wt">大幅高</span>
+    <span class="nd">2026-08-31</span></div>
+  <div class="nt">SpaceX investors must consider this urgent new signal</div>
+  
+</div>
+<div class="nw">
+  <div class="nh"><span class="tk">TSLA</span>
+    
+    <span class="wt">大幅高</span>
+    <span class="nd">2026-08-31</span></div>
+  <div class="nt">Next Up for Tesla’s Self-Driving Tech: Potholes</div>
+  
+</div>
+<div class="nw">
+  <div class="nh"><span class="tk">UBER</span>
+    
+    <span class="wt">大幅安</span>
+    <span class="nd">2026-08-31</span></div>
+  <div class="nt">Serve Robotics vs. Symbotic: Which Robotics Stock Is More Compelling?</div>
+  
+</div>
+<div class="nw">
+  <div class="nh"><span class="tk">CRWD</span>
+    
+    <span class="wt">大幅高</span>
+    <span class="nd">2026-08-31</span></div>
+  <div class="nt">The Zacks Analyst Blog Highlights Okta, Microsoft, CrowdStrike and Cisco Systems</div>
+  
+</div>
+<div class="nw">
+  <div class="nh"><span class="tk">PCG</span>
+    
+    <span class="wt">出来高異常</span>
+    <span class="nd">2026-08-31</span></div>
+  <div class="nt">Energy stocks lead in subdued final trading day of August, utilities under pressure: AlphaCheck</div>
+  
+</div>
+<div class="nw">
+  <div class="nh"><span class="tk">DE</span>
+    
+    <span class="wt">大幅高</span>
+    <span class="nd">2026-08-31</span></div>
+  <div class="nt">How Deere Stock Can Hit $800. A Farming Recovery Is Coming.</div>
+  
+</div>
+<div class="nw">
+  <div class="nh"><span class="tk">EIX</span>
+    
+    <span class="wt">出来高異常</span>
+    <span class="nd">2026-08-31</span></div>
+  <div class="nt">PG&amp;E, Edison Head for Biggest Stock Drop in Years on California Wildfire Legislation</div>
+  
+</div>
+<div class="nw">
+  <div class="nh"><span class="tk">AON</span>
+    
+    <span class="wt">大幅安</span>
+    <span class="nd">2026-08-31</span></div>
+  <div class="nt">Update: Aon to Acquire USI Insurance Services for $17 Billion</div>
+  
+</div>
+<div class="nw">
+  <div class="nh"><span class="tk">CRWD</span>
+    
+    <span class="wt">大幅高</span>
+    <span class="nd">2026-08-31</span></div>
+  <div class="nt">CrowdStrike Rallies 4% as Fal.Con Puts Falcon on Google Cloud and Arms Partners With AI Agents</div>
+  
+</div>
+<div class="nw">
+  <div class="nh"><span class="tk">AON</span>
+    
+    <span class="wt">大幅安</span>
+    <span class="nd">2026-08-31</span></div>
+  <div class="nt">Aon to Acquire USI Insurance Services From KKR in $17 Billion Deal</div>
+  
+</div></div></div></details><details><summary>ルールが出した候補</summary><div class="db"><div class="tw"><table><thead><tr><th></th><th>銘柄</th><th class="r">株価</th><th class="r">RSI</th><th class="r">21日</th></tr></thead><tbody><tr><td>1</td><td class="tk">ODFL</td><td class="r">$200.07</td><td class="r">36.9</td><td class="r down">-5.7%</td></tr></tbody></table></div></div></details><details><summary>決算発表の予定</summary><div class="db"><div class="tw"><table><thead><tr><th>銘柄</th><th>発表日</th><th class="r">残り</th></tr></thead><tbody><tr><td class="tk">CCL</td><td>2026-09-28</td><td class="r">28日後</td></tr><tr><td class="tk">TSLA</td><td>2026-10-21</td><td class="r">51日後</td></tr><tr><td class="tk">PCG</td><td>2026-10-22</td><td class="r">52日後</td></tr><tr><td class="tk">SLB</td><td>2026-10-23</td><td class="r">53日後</td></tr><tr><td class="tk">EIX</td><td>2026-10-27</td><td class="r">57日後</td></tr><tr><td class="tk">ODFL</td><td>2026-10-28</td><td class="r">58日後</td></tr><tr><td class="tk">BSX</td><td>2026-10-28</td><td class="r">58日後</td></tr><tr><td class="tk">AON</td><td>2026-10-30</td><td class="r">60日後</td></tr></tbody></table></div></div></details><details><summary>市場スキャン</summary><div class="db"><div class="scg"><div class="scl">出来高異常</div><div class="scr"><span class="sc"><b>PCG</b><i class="down">-19.9%</i><u>x2.5</u></span><span class="sc"><b>EIX</b><i class="down">-23.5%</i><u>x2.4</u></span></div></div><div class="scg"><div class="scl">大幅高</div><div class="scr"><span class="sc"><b>TSLA</b><i class="up">+4.8%</i></span><span class="sc"><b>CRWD</b><i class="up">+4.4%</i></span><span class="sc"><b>ULTA</b><i class="up">+4.3%</i></span><span class="sc"><b>VEEV</b><i class="up">+3.8%</i></span><span class="sc"><b>BSX</b><i class="up">+3.3%</i></span><span class="sc"><b>DE</b><i class="up">+3.1%</i></span><span class="sc"><b>MRNA</b><i class="up">+2.6%</i></span><span class="sc"><b>SLB</b><i class="up">+2.6%</i></span><span class="sc"><b>QCOM</b><i class="up">+2.5%</i></span><span class="sc"><b>MOS</b><i class="up">+2.5%</i></span></div></div><div class="scg"><div class="scl">大幅安</div><div class="scr"><span class="sc"><b>EIX</b><i class="down">-23.5%</i></span><span class="sc"><b>PCG</b><i class="down">-19.9%</i></span><span class="sc"><b>HWM</b><i class="down">-7.8%</i></span><span class="sc"><b>AON</b><i class="down">-7.0%</i></span><span class="sc"><b>TTWO</b><i class="down">-6.5%</i></span><span class="sc"><b>CLX</b><i class="down">-4.3%</i></span><span class="sc"><b>UBER</b><i class="down">-3.7%</i></span><span class="sc"><b>AXON</b><i class="down">-3.5%</i></span><span class="sc"><b>WDAY</b><i class="down">-3.3%</i></span><span class="sc"><b>RDDT</b><i class="down">-3.1%</i></span></div></div><div class="scg"><div class="scl">52週高値圏</div><div class="scr"><span class="sc"><b>CRWD</b><i class="up">+4.4%</i></span><span class="sc"><b>SLB</b><i class="up">+2.6%</i></span><span class="sc"><b>GEN</b><i class="down">-0.4%</i></span><span class="sc"><b>SJM</b><i class="up">+0.4%</i></span><span class="sc"><b>VLO</b><i class="up">+0.1%</i></span><span class="sc"><b>EXPD</b><i class="up">+0.2%</i></span><span class="sc"><b>MPC</b><i class="down">-0.3%</i></span><span class="sc"><b>PFE</b><i class="up">+1.3%</i></span><span class="sc"><b>MSI</b><i class="up">+0.1%</i></span><span class="sc"><b>STT</b><i class="down">-0.3%</i></span></div></div><div class="scg"><div class="scl">52週安値圏</div><div class="scr"><span class="sc"><b>PCG</b><i class="down">-19.9%</i></span><span class="sc"><b>WYNN</b><i class="down">-2.9%</i></span><span class="sc"><b>CCL</b><i class="down">-2.7%</i></span><span class="sc"><b>LVS</b><i class="down">-2.1%</i></span><span class="sc"><b>MNST</b><i class="down">-1.7%</i></span><span class="sc"><b>LOW</b><i class="down">-0.9%</i></span><span class="sc"><b>TJX</b><i class="down">-0.8%</i></span><span class="sc"><b>BLDR</b><i class="down">-1.1%</i></span><span class="sc"><b>VIXY</b><i class="down">-0.8%</i></span><span class="sc"><b>VICI</b><i class="down">-0.5%</i></span></div></div></div></details><details><summary>セクター動向</summary><div class="db"><div class="sectorlist"><div class="secrow"><span class="secname">Information Technology</span><span class="secbar"><i class="up" style="left:50.0%;width:44.0%"></i><b class="mid"></b></span><span class="secval up">+2.7%</span><span class="secma">MA200超 82%</span></div><div class="secrow"><span class="secname">Energy</span><span class="secbar"><i class="up" style="left:50.0%;width:15.2%"></i><b class="mid"></b></span><span class="secval up">+0.9%</span><span class="secma">MA200超 86%</span></div><div class="secrow"><span class="secname">Communication Services</span><span class="secbar"><i class="down" style="left:44.2%;width:5.8%"></i><b class="mid"></b></span><span class="secval down">-0.4%</span><span class="secma">MA200超 54%</span></div><div class="secrow"><span class="secname">ETF</span><span class="secbar"><i class="down" style="left:38.3%;width:11.7%"></i><b class="mid"></b></span><span class="secval down">-0.7%</span><span class="secma">MA200超 68%</span></div><div class="secrow"><span class="secname">Health Care</span><span class="secbar"><i class="down" style="left:34.3%;width:15.7%"></i><b class="mid"></b></span><span class="secval down">-1.0%</span><span class="secma">MA200超 78%</span></div><div class="secrow"><span class="secname">Financials</span><span class="secbar"><i class="down" style="left:32.4%;width:17.6%"></i><b class="mid"></b></span><span class="secval down">-1.1%</span><span class="secma">MA200超 89%</span></div><div class="secrow"><span class="secname">Materials</span><span class="secbar"><i class="down" style="left:25.7%;width:24.3%"></i><b class="mid"></b></span><span class="secval down">-1.5%</span><span class="secma">MA200超 76%</span></div><div class="secrow"><span class="secname">Industrials</span><span class="secbar"><i class="down" style="left:17.5%;width:32.5%"></i><b class="mid"></b></span><span class="secval down">-2.0%</span><span class="secma">MA200超 63%</span></div><div class="secrow"><span class="secname">Utilities</span><span class="secbar"><i class="down" style="left:11.2%;width:38.8%"></i><b class="mid"></b></span><span class="secval down">-2.4%</span><span class="secma">MA200超 26%</span></div><div class="secrow"><span class="secname">Consumer Discretionary</span><span class="secbar"><i class="down" style="left:4.2%;width:45.8%"></i><b class="mid"></b></span><span class="secval down">-2.8%</span><span class="secma">MA200超 47%</span></div><div class="secrow"><span class="secname">Consumer Staples</span><span class="secbar"><i class="down" style="left:1.6%;width:48.4%"></i><b class="mid"></b></span><span class="secval down">-3.0%</span><span class="secma">MA200超 59%</span></div><div class="secrow"><span class="secname">Real Estate</span><span class="secbar"><i class="down" style="left:0.0%;width:50.0%"></i><b class="mid"></b></span><span class="secval down">-3.1%</span><span class="secma">MA200超 80%</span></div></div></div></details></section>
+<footer>更新 2026-08-31 15:46 UTC<br>
+情報提供を目的としたもので、投資助言ではありません。</footer>
+</div>
+</body></html>

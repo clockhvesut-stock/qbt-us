@@ -1,0 +1,15 @@
+{
+ "initial": 2000,
+ "equity": [
+  [
+   "2026-08-31",
+   2000.0
+  ]
+ ],
+ "stats": {
+  "max_dd": 0.0,
+  "trades": 0,
+  "win_rate": 0.0,
+  "losing_streak": 0
+ }
+}
