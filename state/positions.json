@@ -1,1 +1,24 @@
-[]
+[
+ {
+  "symbol": "ODFL",
+  "shares": 1.2506,
+  "entry_price": 199.8998,
+  "entry_date": "2026-09-01",
+  "entry_fee": 0.0,
+  "bars_held": 1,
+  "high_water": 201.75759887695312,
+  "stop_price": 183.9078,
+  "reason": "ルールのシグナル"
+ },
+ {
+  "symbol": "D",
+  "shares": 3.7705,
+  "entry_price": 66.303,
+  "entry_date": "2026-09-01",
+  "entry_fee": 0.0,
+  "bars_held": 1,
+  "high_water": 66.6500015258789,
+  "stop_price": 60.9988,
+  "reason": "ルールのシグナル"
+ }
+]
