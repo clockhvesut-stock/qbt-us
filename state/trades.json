@@ -1,1 +1,15 @@
-[]
+[
+ {
+  "symbol": "ODFL",
+  "entry_date": "2026-09-01",
+  "exit_date": "2026-09-02",
+  "entry_price": 199.8998,
+  "exit_price": 183.7607,
+  "shares": 1.2506,
+  "pnl": -20.18,
+  "pnl_pct": -0.0807,
+  "bars_held": 1,
+  "exit_reason": "損切り",
+  "book": "rule"
+ }
+]

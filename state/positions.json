@@ -1,24 +1,68 @@
 [
  {
-  "symbol": "ODFL",
-  "shares": 1.2506,
-  "entry_price": 199.8998,
-  "entry_date": "2026-09-01",
-  "entry_fee": 0.0,
-  "bars_held": 1,
-  "high_water": 201.75759887695312,
-  "stop_price": 183.9078,
-  "reason": "ルールのシグナル"
- },
- {
   "symbol": "D",
   "shares": 3.7705,
   "entry_price": 66.303,
   "entry_date": "2026-09-01",
   "entry_fee": 0.0,
-  "bars_held": 1,
-  "high_water": 66.6500015258789,
+  "bars_held": 2,
+  "high_water": 66.7300033569336,
   "stop_price": 60.9988,
+  "reason": "ルールのシグナル"
+ },
+ {
+  "symbol": "CASY",
+  "shares": 0.3244,
+  "entry_price": 764.2709,
+  "entry_date": "2026-09-02",
+  "entry_fee": 0.0,
+  "bars_held": 1,
+  "high_water": 766.6099853515625,
+  "stop_price": 703.1292,
+  "reason": "ルールのシグナル"
+ },
+ {
+  "symbol": "HWM",
+  "shares": 0.9611,
+  "entry_price": 257.9762,
+  "entry_date": "2026-09-02",
+  "entry_fee": 0.0,
+  "bars_held": 1,
+  "high_water": 257.6650085449219,
+  "stop_price": 237.3381,
+  "reason": "ルールのシグナル"
+ },
+ {
+  "symbol": "FRT",
+  "shares": 2.1062,
+  "entry_price": 117.7241,
+  "entry_date": "2026-09-02",
+  "entry_fee": 0.0,
+  "bars_held": 1,
+  "high_water": 118.30999755859375,
+  "stop_price": 108.3062,
+  "reason": "ルールのシグナル"
+ },
+ {
+  "symbol": "KIM",
+  "shares": 10.2253,
+  "entry_price": 24.2494,
+  "entry_date": "2026-09-02",
+  "entry_fee": 0.0,
+  "bars_held": 1,
+  "high_water": 24.25,
+  "stop_price": 22.3094,
+  "reason": "ルールのシグナル"
+ },
+ {
+  "symbol": "REG",
+  "shares": 3.2412,
+  "entry_price": 76.5012,
+  "entry_date": "2026-09-02",
+  "entry_fee": 0.0,
+  "bars_held": 1,
+  "high_water": 76.44000244140625,
+  "stop_price": 70.3811,
   "reason": "ルールのシグナル"
  }
 ]
