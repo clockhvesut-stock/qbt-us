@@ -5,8 +5,8 @@
   "entry_price": 66.303,
   "entry_date": "2026-09-01",
   "entry_fee": 0.0,
-  "bars_held": 2,
-  "high_water": 66.7300033569336,
+  "bars_held": 3,
+  "high_water": 66.91999816894531,
   "stop_price": 60.9988,
   "reason": "ルールのシグナル"
  },
@@ -16,7 +16,7 @@
   "entry_price": 764.2709,
   "entry_date": "2026-09-02",
   "entry_fee": 0.0,
-  "bars_held": 1,
+  "bars_held": 2,
   "high_water": 766.6099853515625,
   "stop_price": 703.1292,
   "reason": "ルールのシグナル"
@@ -27,8 +27,8 @@
   "entry_price": 257.9762,
   "entry_date": "2026-09-02",
   "entry_fee": 0.0,
-  "bars_held": 1,
-  "high_water": 257.6650085449219,
+  "bars_held": 2,
+  "high_water": 260.7250061035156,
   "stop_price": 237.3381,
   "reason": "ルールのシグナル"
  },
@@ -38,10 +38,12 @@
   "entry_price": 117.7241,
   "entry_date": "2026-09-02",
   "entry_fee": 0.0,
-  "bars_held": 1,
-  "high_water": 118.30999755859375,
+  "bars_held": 2,
+  "high_water": 118.8499984741211,
   "stop_price": 108.3062,
-  "reason": "ルールのシグナル"
+  "reason": "ルールのシグナル",
+  "exit_queued": true,
+  "exit_reason": "手仕舞いシグナル"
  },
  {
   "symbol": "KIM",
@@ -49,8 +51,8 @@
   "entry_price": 24.2494,
   "entry_date": "2026-09-02",
   "entry_fee": 0.0,
-  "bars_held": 1,
-  "high_water": 24.25,
+  "bars_held": 2,
+  "high_water": 24.260000228881836,
   "stop_price": 22.3094,
   "reason": "ルールのシグナル"
  },
@@ -60,9 +62,31 @@
   "entry_price": 76.5012,
   "entry_date": "2026-09-02",
   "entry_fee": 0.0,
-  "bars_held": 1,
-  "high_water": 76.44000244140625,
+  "bars_held": 2,
+  "high_water": 76.54000091552734,
   "stop_price": 70.3811,
+  "reason": "ルールのシグナル"
+ },
+ {
+  "symbol": "CAT",
+  "shares": 0.3096,
+  "entry_price": 797.5375,
+  "entry_date": "2026-09-03",
+  "entry_fee": 0.0,
+  "bars_held": 1,
+  "high_water": 803.9099731445312,
+  "stop_price": 733.7345,
+  "reason": "ルールのシグナル"
+ },
+ {
+  "symbol": "DVA",
+  "shares": 1.3523,
+  "entry_price": 179.8137,
+  "entry_date": "2026-09-03",
+  "entry_fee": 0.0,
+  "bars_held": 1,
+  "high_water": 183.3300018310547,
+  "stop_price": 165.4286,
   "reason": "ルールのシグナル"
  }
 ]
