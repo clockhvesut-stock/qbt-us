@@ -16,12 +16,16 @@
   [
    "2026-09-03",
    1979.04
+  ],
+  [
+   "2026-09-04",
+   1985.7
   ]
  ],
  "stats": {
   "max_dd": -0.0165,
-  "trades": 1,
+  "trades": 2,
   "win_rate": 0.0,
-  "losing_streak": 1
+  "losing_streak": 2
  }
 }
