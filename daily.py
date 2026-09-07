@@ -242,9 +242,18 @@ def main() -> int:
                         "open": raw[("Open", s)], "high": raw[("High", s)],
                         "low": raw[("Low", s)], "close": raw[("Close", s)],
                         "volume": raw[("Volume", s)]})
+                    # 配当と分割。取れないこともあるので落ちないようにする
+                    for src, dst in (("Dividends", "dividend"),
+                                     ("Stock Splits", "split")):
+                        try:
+                            df[dst] = raw[(src, s)]
+                        except KeyError:
+                            df[dst] = 0.0
                 else:
-                    df = raw.rename(columns=str.lower)[
-                        ["open", "high", "low", "close", "volume"]]
+                    low = raw.rename(columns=str.lower)
+                    df = low[["open", "high", "low", "close", "volume"]].copy()
+                    df["dividend"] = low["dividends"] if "dividends" in low else 0.0
+                    df["split"] = low["stock splits"] if "stock splits" in low else 0.0
             except KeyError:
                 continue
             df = df.dropna(subset=["close"])
@@ -271,7 +280,7 @@ def main() -> int:
                 try:
                     raw = yf.download(chunk, period="2y", auto_adjust=True,
                                       progress=False, group_by="column",
-                                      threads=True, timeout=45)
+                                      threads=True, timeout=45, actions=True)
                     got = _unpack(raw, chunk)
                     if got:
                         d.update(got)
@@ -309,7 +318,15 @@ def main() -> int:
     # ---------- 3. 相場環境 ----------
     log("相場環境を測定中...")
     macro = safe(feeds.macro_snapshot, "マクロ指標", {}) or {}
+    # 銘柄ごとに取得できた日付が1日でもずれると、和集合の日付表に穴が空く。
+    # 穴が過去50日・200日の窓に入ると移動平均が丸ごと NaN になり、
+    # 「200日線を上回る銘柄の割合」が実際の1割程度まで落ちる。
+    # 9/1の実行で実際に踏んだ（セクター別は65〜70%なのに全体は6.4%）。
+    # 8割以上の銘柄に値がある日だけ残し、残った穴は直前の値で埋める。
     closes = pd.DataFrame({s: d["close"] for s, d in data.items()})
+    if not closes.empty:
+        keep = closes.notna().sum(axis=1) >= closes.shape[1] * 0.8
+        closes = closes[keep].ffill()
     breadth = safe(lambda: feeds.market_breadth(closes), "市場の内部状況", {}) or {}
     out["macro"] = macro
     out["breadth"] = breadth
@@ -506,12 +523,16 @@ def main() -> int:
         log("ペーパートレードを執行中...")
         book = paper.PaperBook(STATE, cfg, name="rule")
 
-        # 今日の四本値。約定はすべてこの値で行う
+        # 今日の四本値。約定はすべてこの値で行う。
+        # 配当と分割も渡す。渡さないと、受け取っていない配当のぶんだけ
+        # 損が乗り、配当利回りの高い銘柄ほど逆指値に当たりやすくなる。
         bars = {}
         for sym, df in data.items():
             r = df.iloc[-1]
             bars[sym] = {"open": float(r["open"]), "high": float(r["high"]),
-                         "low": float(r["low"]), "close": float(r["close"])}
+                         "low": float(r["low"]), "close": float(r["close"]),
+                         "dividend": float(r["dividend"]) if "dividend" in df else 0.0,
+                         "split": float(r["split"]) if "split" in df else 0.0}
 
         snap = book.step(out["data_date"], bars, rules)
 
@@ -551,6 +572,21 @@ def main() -> int:
         out["cash"] = acct.get("cash", cfg.get("portfolio", {}).get("initial_cash", 2000))
         out["account"] = {"cash": out["cash"],
                           "initial_cash": acct.get("initial_cash", out["cash"])}
+
+    # ---------- 12.5 会社名と決済済みの取引 ----------
+    # ティッカーだけでは何の会社か分からない。画面に出す銘柄のぶんだけ名前を載せる。
+    name_map = uni.set_index("symbol")["name"].to_dict() if "name" in uni else {}
+    shown = {p.get("symbol") for p in (out.get("positions") or [])}
+    shown |= {o.get("symbol") for o in ((out.get("paper") or {}).get("pending") or [])}
+    shown |= {s.get("symbol") for s in signals}
+    for lst in (out.get("scan") or {}).values():
+        if isinstance(lst, list):
+            shown |= {i.get("symbol") for i in lst if isinstance(i, dict)}
+    out["names"] = {s: name_map[s] for s in sorted(x for x in shown if x)
+                    if name_map.get(s)}
+
+    # 決済済みの取引。保有日数の分布を見るために画面へ渡す
+    out["trades"] = _read_json(os.path.join(STATE, "trades.json"), [])[-40:]
 
     # ---------- 13. 成績の記録 ----------
     out["performance"] = _performance(out)
