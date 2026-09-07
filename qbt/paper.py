@@ -100,7 +100,8 @@ class PaperBook:
         notional = shares * price
         fee = self.fee(notional)
         cost = shares * float(pos["entry_price"]) + float(pos.get("entry_fee", 0.0))
-        pnl = notional - fee - cost
+        div = float(pos.get("dividends", 0.0))     # 保有中に受け取った配当（現金は受取済み）
+        pnl = notional - fee + div - cost
         self.cash += notional - fee
         self.trades.append({
             "symbol": pos["symbol"],
@@ -108,6 +109,7 @@ class PaperBook:
             "entry_price": round(float(pos["entry_price"]), 4),
             "exit_price": round(price, 4),
             "shares": shares,
+            "dividends": round(div, 2),
             "pnl": round(pnl, 2),
             "pnl_pct": round(pnl / cost, 4) if cost else 0.0,
             "bars_held": int(pos.get("bars_held", 0)),
@@ -116,6 +118,50 @@ class PaperBook:
         })
         self.log.append(
             f"決済 {pos['symbol']} {price:.2f} ({pnl/cost*100:+.1f}%) — {reason}")
+
+    # ------------------------------------------------------------------
+
+    def _corporate_actions(self, bars: dict[str, dict]):
+        """
+        配当落ちと株式分割を建玉に反映する。
+
+        価格は配当・分割の調整済みで取ってきている。過去の値は配当が出るたびに
+        下へ付け替えられるが、建値は建てた日の数字のまま保存されている。
+        何もしないと、受け取っていないはずの配当のぶんだけ損が乗り、
+        逆指値も実質きつくなって、配当利回りの高い銘柄ほど切られやすくなる。
+        このルールはREITと公益を拾いやすいので、放置すると効いてくる。
+
+        分割は株数と建値の付け替えだけで、評価額は変わらない。
+        """
+        for pos in self.positions:
+            b = bars.get(pos["symbol"]) or {}
+
+            sp = b.get("split")
+            sp = float(sp) if sp not in (None, "") and np.isfinite(float(sp)) else 0.0
+            if sp > 0 and abs(sp - 1.0) > 1e-9:
+                pos["shares"] = round(float(pos["shares"]) * sp, 6)
+                for k in ("entry_price", "stop_ref", "high_water"):
+                    if pos.get(k):
+                        pos[k] = round(float(pos[k]) / sp, 4)
+                if pos.get("stop_price"):
+                    pos["stop_price"] = round(float(pos["stop_price"]) / sp, 4)
+                self.log.append(f"分割 {pos['symbol']} 1株→{sp:g}株")
+
+            dv = b.get("dividend")
+            dv = float(dv) if dv not in (None, "") and np.isfinite(float(dv)) else 0.0
+            close = float(b.get("close") or 0.0)
+            # 株価の15%を超える「配当」は取り違えとみなして無視する
+            if dv > 0 and close > 0 and dv / close < 0.15:
+                amt = float(pos["shares"]) * dv
+                self.cash += amt
+                pos["dividends"] = round(float(pos.get("dividends", 0.0)) + amt, 4)
+                # 逆指値の基準も配当ぶん下げる。権利落ちで切られるのは筋が違う
+                ref = float(pos.get("stop_ref", pos["entry_price"])) - dv
+                pos["stop_ref"] = round(ref, 4)
+                if pos.get("stop_price"):
+                    pos["stop_price"] = round(float(pos["stop_price"]) - dv, 4)
+                self.log.append(
+                    f"配当 {pos['symbol']} ${amt:.2f} 受取（1株 ${dv:.4f}）")
 
     # ------------------------------------------------------------------
 
@@ -136,6 +182,10 @@ class PaperBook:
         if last == date:
             self.log.append(f"{date} はすでに処理済みのため、何もしません")
             return self.snapshot(bars, skipped=True)
+
+        # ---- 0) 配当落ち・分割の反映 ----
+        # 前日の大引け時点で持っていた建玉が対象なので、今日の売買より先に処理する。
+        self._corporate_actions(bars)
 
         # ---- 1) 前日に決めた手仕舞いを、今日の寄付で執行 ----
         still = []
@@ -182,6 +232,9 @@ class PaperBook:
                 "entry_price": round(px, 4), "entry_date": date,
                 "entry_fee": round(fee, 4), "bars_held": 0,
                 "high_water": float(b.get("high") or px),
+                # 逆指値の基準。配当落ちのたびにここを下げる（entry_price は履歴として残す）
+                "stop_ref": round(px, 4),
+                "dividends": 0.0,
                 "stop_price": round(px * (1 - stop_pct), 4) if stop_pct else None,
                 "reason": order.get("reason", ""),
             })
@@ -198,17 +251,20 @@ class PaperBook:
                 pos["high_water"] = max(float(pos.get("high_water", 0)), float(hi))
             hit, reason = None, ""
             ep = float(pos["entry_price"])
+            # 逆指値と利確は「配当落ちを差し引いた基準」で測る。
+            # 古い建玉には stop_ref が無いので、そのときは建値をそのまま使う。
+            ref = float(pos.get("stop_ref") or ep)
             if lo is not None and np.isfinite(lo):
-                if stop_pct and float(lo) <= ep * (1 - stop_pct):
-                    hit, reason = ep * (1 - stop_pct), "損切り"
+                if stop_pct and float(lo) <= ref * (1 - stop_pct):
+                    hit, reason = ref * (1 - stop_pct), "損切り"
                 if hit is None and trail_pct:
                     ts = float(pos["high_water"]) * (1 - trail_pct)
                     if float(lo) <= ts:
                         hit, reason = ts, "トレーリングストップ"
             # 損切りと利確が同日なら損切りを優先する（保守的な側を採る）
             if hit is None and take_pct and hi is not None and np.isfinite(hi):
-                if float(hi) >= ep * (1 + take_pct):
-                    hit, reason = ep * (1 + take_pct), "利確"
+                if float(hi) >= ref * (1 + take_pct):
+                    hit, reason = ref * (1 + take_pct), "利確"
             if hit is not None:
                 self._close(pos, float(hit) * (1 - self.slip), date, reason)
             else:
@@ -266,10 +322,16 @@ class PaperBook:
             px = float(b.get("close") or p["entry_price"])
             mv += float(p["shares"]) * px
             ep = float(p["entry_price"])
+            sh = float(p["shares"])
+            div = float(p.get("dividends", 0.0))
+            cost = ep * sh
             rows.append({
-                "symbol": p["symbol"], "shares": float(p["shares"]),
+                "symbol": p["symbol"], "shares": sh,
                 "entry_price": ep, "entry_date": p["entry_date"],
-                "price": round(px, 2), "pnl_pct": round(px / ep - 1, 4),
+                "price": round(px, 2),
+                # 受け取った配当を含めた損益。含めないと配当銘柄が不当に悪く見える
+                "pnl_pct": round((px * sh + div - cost) / cost, 4) if cost else 0.0,
+                "dividends": round(div, 2),
                 "bars_held": int(p.get("bars_held", 0)),
                 "stop_price": p.get("stop_price"),
                 "exit_flags": (["翌営業日の寄付で手仕舞い予定"]
