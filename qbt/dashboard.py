@@ -43,6 +43,12 @@ def esc(x):
     return html.escape(str(x if x is not None else ""))
 
 
+def cname(names, sym) -> str:
+    """ティッカーの隣に出す会社名。無ければ何も出さない"""
+    n = (names or {}).get(sym)
+    return f'<span class="cn">{esc(n)}</span>' if n else ""
+
+
 def tone_of(x, good_high=True):
     """数値の符号から意味色を決める"""
     try:
@@ -168,11 +174,19 @@ def _today_section(verdict, raw):
     summary = (verdict or {}).get("summary") or ""
 
     if not buys and not sells:
+        pp = raw.get("paper") or {}
+        n_pend = 0 if pp.get("skipped") else len(pp.get("pending") or [])
+        if n_pend:
+            # ルールの注文は下の欄に出る。ここで「何もしない」と書くと矛盾する
+            lead = (f"ルールが出した {n_pend} 件は明日の寄付で自動執行されます。"
+                    f"それに足す判断はありません。")
+        else:
+            lead = ("買いの条件を満たす銘柄はなく、保有銘柄にも手仕舞いの合図も"
+                    "出ていません。見送りも判断のうちです。")
         return f"""
 <section id="today">
   <div class="nothing">
-    <p>買いの条件を満たす銘柄はなく、保有銘柄にも手仕舞いの合図も出ていません。
-       見送りも判断のうちです。</p>
+    <p>{lead}</p>
   </div>
   {f'<p class="say">{esc(summary)}</p>' if summary else ''}
 </section>"""
@@ -215,9 +229,11 @@ def _pending_section(raw):
     pend = pp.get("pending") or []
     if not pend:
         return ""
+    names = raw.get("names") or {}
     rows = "".join(
         f'<div class="pd"><span class="tag buy">建てる</span>'
         f'<span class="tk">{esc(o.get("symbol"))}</span>'
+        f'{cname(names, o.get("symbol"))}'
         f'<span class="px">{esc(o.get("reason",""))}</span></div>' for o in pend[:8])
     return (f'<section id="pending"><h2>明日の寄付で自動執行 '
             f'<span class="cnt">{len(pend)}</span></h2>'
@@ -249,7 +265,7 @@ def _risk_section(raw):
     return f'<section id="risk"><h2>気をつけること</h2><div class="rks">{"".join(rows)}</div></section>'
 
 
-def _holdings_section(positions, account):
+def _holdings_section(positions, account, names=None):
     if not positions:
         return f"""
 <section id="holdings">
@@ -264,6 +280,7 @@ def _holdings_section(positions, account):
 <div class="hold{' warn' if flags else ''}">
   <div class="hl">
     <span class="tk">{esc(p.get('symbol'))}</span>
+    {cname(names, p.get('symbol'))}
     <span class="hd">{esc(p.get('bars_held'))}日目</span>
   </div>
   <div class="hr">
@@ -278,6 +295,57 @@ def _holdings_section(positions, account):
   <div class="holds">{''.join(rows)}</div>
   <p class="none">現金 {money(account.get('cash'))}</p>
 </section>"""
+
+
+def _auto_world(macro, breadth) -> list[dict]:
+    """
+    解釈が無いときに、数字そのものから一言だけ組み立てる。
+
+    自動生成のページ（GitHub Pages 側）にも相場の温度が出るようにする。
+    書くのは水準の話だけ。予想はしない。
+    """
+    out = []
+
+    def p1(sym):
+        m = macro.get(sym) or {}
+        return m, m.get("pctile_1y"), m.get("last")
+
+    m, q, v = p1("^TNX")
+    if q is not None and v is not None:
+        if q >= 0.9:
+            out.append({"topic": "金利", "note":
+                        f"米10年金利 {v:.3f}% は1年で上位{(1-q)*100:.0f}%の高水準。"
+                        f"REITと公益には逆風"})
+        elif q <= 0.1:
+            out.append({"topic": "金利", "note":
+                        f"米10年金利 {v:.3f}% は1年で下位{q*100:.0f}%の低水準"})
+
+    m, q, v = p1("^VIX")
+    if q is not None and v is not None:
+        if q <= 0.15:
+            out.append({"topic": "リスク認識", "note":
+                        f"VIX {v:.2f} は1年で下位{q*100:.0f}%。警戒感が薄い"})
+        elif q >= 0.85:
+            out.append({"topic": "リスク認識", "note":
+                        f"VIX {v:.2f} は1年で上位{(1-q)*100:.0f}%。警戒が強い"})
+
+    m = macro.get("CL=F") or {}
+    c20, v = m.get("chg_20d"), m.get("last")
+    if c20 is not None and v is not None and abs(float(c20)) >= 0.10:
+        out.append({"topic": "原油", "note":
+                    f"WTI {v:.2f}ドル。20日で{float(c20)*100:+.1f}%"})
+
+    m, q, v = p1("^GSPC")
+    if q is not None and q >= 0.9:
+        out.append({"topic": "指数", "note":
+                    f"S&P500 は1年で上位{(1-q)*100:.0f}%の位置。上値では買いにくい"})
+
+    b = (breadth or {}).get("above_ma200_pct")
+    if b is not None and float(b) < 0.4:
+        out.append({"topic": "中身", "note":
+                    f"200日線を上回るのは{float(b)*100:.0f}%。指数の強さに中身が伴っていない"})
+
+    return out[:4]
 
 
 def _market_line(raw, verdict=None):
@@ -304,13 +372,18 @@ def _market_line(raw, verdict=None):
 
     # 世界情勢のうち、AIが「効く」と判断したものだけを表に出す
     wn = (verdict or {}).get("world") or []
+    head = "世界の動き"
+    if not wn:
+        # 解釈が無い日でも、数字の水準だけは自動で出す
+        wn = _auto_world(macro, breadth)
+        head = "数字の水準（自動）"
     world = ""
     if wn:
         rows = "".join(
             f'<div class="wr"><span class="wt">{esc(w.get("topic",""))}</span>'
             f'<span class="wx">{esc(w.get("note") or w.get("title",""))}</span></div>'
             for w in wn[:5])
-        world = f'<div class="world"><div class="wh">世界の動き</div>{rows}</div>'
+        world = f'<div class="world"><div class="wh">{head}</div>{rows}</div>'
 
     return f"""
 <section id="market">
@@ -324,7 +397,34 @@ def _market_line(raw, verdict=None):
 </section>"""
 
 
-def _score_section(perf, account, paper=None):
+def _median(xs):
+    xs = sorted(float(x) for x in xs if x is not None)
+    if not xs:
+        return None
+    n = len(xs)
+    return xs[n // 2] if n % 2 else (xs[n // 2 - 1] + xs[n // 2]) / 2
+
+
+def _hold_stats(trades) -> dict:
+    """
+    保有日数の分布。ここが一番早く「入口の善し悪し」を教えてくれる。
+
+    逆指値までの日数が短いほど、底を打った銘柄ではなく落下中の銘柄を
+    掴んでいることになる。勝率より先にこちらが動く。
+    """
+    tr = [t for t in (trades or []) if isinstance(t, dict)]
+    if not tr:
+        return {}
+    stops = [t for t in tr if t.get("exit_reason") == "損切り"]
+    return {
+        "avg_hold": _median([t.get("bars_held") for t in tr]),
+        "stop_days": _median([t.get("bars_held") for t in stops]),
+        "stop_ratio": len(stops) / len(tr),
+        "dividends": sum(float(t.get("dividends") or 0) for t in tr),
+    }
+
+
+def _score_section(perf, account, paper=None, trades=None):
     initial = float((perf or {}).get("initial") or account.get("initial_cash") or 2000)
     points = (perf or {}).get("equity") or []
     last = float(points[-1][1]) if points else initial
@@ -338,6 +438,25 @@ def _score_section(perf, account, paper=None):
         st["trades"] = paper.get("trades_total", st.get("trades", 0))
         st["win_rate"] = paper.get("win_rate", st.get("win_rate"))
         st["losing_streak"] = paper.get("losing_streak", st.get("losing_streak", 0))
+
+    hs = _hold_stats(trades)
+    hold = ""
+    if hs:
+        sd = hs.get("stop_days")
+        hold = f"""
+  <div class="tiles" style="margin-top:8px">
+    <div class="tile"><div class="tl">保有日数の中央値</div>
+      <div class="tv">{num(hs.get('avg_hold'), 0)}日</div></div>
+    <div class="tile"><div class="tl">損切りまで</div>
+      <div class="tv {'down' if sd is not None and sd <= 2 else ''}">
+        {(num(sd, 0) + '日') if sd is not None else '—'}</div></div>
+    <div class="tile"><div class="tl">損切りの割合</div>
+      <div class="tv">{pct(hs.get('stop_ratio'), 0, sign=False)}</div></div>
+    <div class="tile"><div class="tl">受取配当</div>
+      <div class="tv">{money(hs.get('dividends'))}</div></div>
+  </div>
+  <p class="none">損切りまでが2日以下で続くようなら、底ではなく落下中を掴んでいます。
+    件数が10件を超えてから読んでください。</p>"""
     return f"""
 <section id="score">
   <h2>成績</h2>
@@ -355,6 +474,7 @@ def _score_section(perf, account, paper=None):
     <div class="tile"><div class="tl">連敗</div>
       <div class="tv">{st.get('losing_streak',0)}</div></div>
   </div>
+  {hold}
   {equity_chart(points, initial)}
 </section>"""
 
@@ -394,17 +514,35 @@ def _details_section(raw, verdict):
         blocks.append(("ニュース", f'<div class="nws">{"".join(items)}</div>'))
 
     sigs = raw.get("track_a_signals") or []
+    names = raw.get("names") or {}
     if sigs:
         rows = "".join(
             f'<tr><td>{esc(s.get("rank"))}</td><td class="tk">{esc(s.get("symbol"))}</td>'
+            f'<td class="sm">{esc(names.get(s.get("symbol"), ""))}</td>'
             f'<td class="r">{money(s.get("price"))}</td>'
             f'<td class="r">{num(s.get("rsi14"),1)}</td>'
             f'<td class="r {tone_of(s.get("chg_21d"))}">{pct(s.get("chg_21d"))}</td></tr>'
             for s in sigs[:15])
         blocks.append(("ルールが出した候補",
                        f'<div class="tw"><table><thead><tr><th></th><th>銘柄</th>'
+                       f'<th>会社</th>'
                        f'<th class="r">株価</th><th class="r">RSI</th>'
                        f'<th class="r">21日</th></tr></thead><tbody>{rows}</tbody></table></div>'))
+
+    tr = raw.get("trades") or []
+    if tr:
+        rows = "".join(
+            f'<tr><td class="tk">{esc(t.get("symbol"))}</td>'
+            f'<td class="sm">{esc(names.get(t.get("symbol"), ""))}</td>'
+            f'<td>{esc(t.get("exit_date"))}</td>'
+            f'<td class="r">{esc(t.get("bars_held"))}日</td>'
+            f'<td class="r {tone_of(t.get("pnl_pct"))}">{pct(t.get("pnl_pct"))}</td>'
+            f'<td class="sm">{esc(t.get("exit_reason"))}</td></tr>'
+            for t in list(reversed(tr))[:20])
+        blocks.append(("決済した取引",
+                       f'<div class="tw"><table><thead><tr><th>銘柄</th><th>会社</th>'
+                       f'<th>決済日</th><th class="r">保有</th><th class="r">損益</th>'
+                       f'<th>理由</th></tr></thead><tbody>{rows}</tbody></table></div>'))
 
     spikes = raw.get("reddit_spikes") or []
     if spikes:
@@ -482,6 +620,11 @@ def build(raw: dict, verdict: dict | None = None, out_path: str | None = None,
 
     n_buy = len(verdict.get("buys") or [])
     n_sell = len(verdict.get("sells") or [])
+    # 「今日は何もしない」の下に自動執行の注文が並んでいると意味が通らない。
+    # ルールが出した注文の件数も見出しに反映する。
+    pp = raw.get("paper") or {}
+    n_pend = 0 if pp.get("skipped") else len(pp.get("pending") or [])
+    n_exit = sum(1 for p in positions if (p.get("exit_flags") or []))
     if n_buy or n_sell:
         parts = []
         if n_buy:
@@ -489,6 +632,13 @@ def build(raw: dict, verdict: dict | None = None, out_path: str | None = None,
         if n_sell:
             parts.append(f"売り {n_sell}")
         headline = " / ".join(parts)
+    elif n_pend or n_exit:
+        parts = []
+        if n_pend:
+            parts.append(f"{n_pend}件を建てる")
+        if n_exit:
+            parts.append(f"{n_exit}件を手仕舞う")
+        headline = "明日の寄付で " + " / ".join(parts)
     else:
         headline = "今日は何もしない"
 
@@ -513,9 +663,9 @@ def build(raw: dict, verdict: dict | None = None, out_path: str | None = None,
     body = (_today_section(verdict, raw)
             + _pending_section(raw)
             + _risk_section(raw)
-            + _holdings_section(positions, account)
+            + _holdings_section(positions, account, raw.get("names"))
             + _market_line(raw, verdict)
-            + _score_section(perf, account, raw.get("paper"))
+            + _score_section(perf, account, raw.get("paper"), raw.get("trades"))
             + _details_section(raw, verdict))
 
     doc = f"""<!doctype html>
@@ -624,6 +774,9 @@ padding:14px 18px;display:grid;grid-template-columns:1fr auto;gap:4px 12px;align
 .hl{display:flex;align-items:baseline;gap:10px}
 .hl .tk{font-size:17px}
 .hd{font-size:12px;color:var(--ink3)}
+.cn{font-size:11.5px;color:var(--ink3);font-weight:400;white-space:nowrap;
+overflow:hidden;text-overflow:ellipsis;max-width:170px;display:inline-block;
+vertical-align:baseline}
 .hr{text-align:right}
 .hp{font-size:17px;font-weight:700;display:block}
 .hs{font-size:11.5px;color:var(--ink3);font-family:"M PLUS 1 Code",monospace}
