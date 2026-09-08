@@ -24,5 +24,19 @@
   "bars_held": 2,
   "exit_reason": "手仕舞いシグナル",
   "book": "rule"
+ },
+ {
+  "symbol": "HWM",
+  "entry_date": "2026-09-02",
+  "exit_date": "2026-09-08",
+  "entry_price": 257.9762,
+  "exit_price": 237.1482,
+  "shares": 0.9611,
+  "dividends": 0.0,
+  "pnl": -20.02,
+  "pnl_pct": -0.0807,
+  "bars_held": 3,
+  "exit_reason": "損切り",
+  "book": "rule"
  }
 ]
