@@ -38,5 +38,19 @@
   "bars_held": 3,
   "exit_reason": "損切り",
   "book": "rule"
+ },
+ {
+  "symbol": "CASY",
+  "entry_date": "2026-09-02",
+  "exit_date": "2026-09-09",
+  "entry_price": 764.2709,
+  "exit_price": 702.5667,
+  "shares": 0.3244,
+  "dividends": 0.0,
+  "pnl": -20.02,
+  "pnl_pct": -0.0807,
+  "bars_held": 4,
+  "exit_reason": "損切り",
+  "book": "rule"
  }
 ]
