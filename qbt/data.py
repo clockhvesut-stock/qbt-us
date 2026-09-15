@@ -94,11 +94,49 @@ def _unflatten(flat: pd.DataFrame) -> dict[str, pd.DataFrame]:
 
 # ------------------------------------------------------------------ yfinance
 
+CHUNK = 60   # 一度に取りに行く銘柄数。多すぎると弾かれる
+
+
 def _load_yfinance(symbols: list[str], start: str, end: str) -> dict[str, pd.DataFrame]:
+    """
+    銘柄を小分けにして取る。
+
+    500銘柄を1回で投げると Yahoo 側に弾かれることがあり、
+    まとめて投げていると全滅する。小分けなら失敗はその塊だけで済む。
+    """
+    import time
+
+    out: dict[str, pd.DataFrame] = {}
+    failed = []
+    for i in range(0, len(symbols), CHUNK):
+        chunk = symbols[i:i + CHUNK]
+        got = None
+        for attempt in range(3):
+            try:
+                got = _yf_chunk(chunk, start, end)
+                if got:
+                    break
+                raise RuntimeError("空の応答")
+            except Exception as e:
+                if attempt == 2:
+                    failed.append(chunk[0])
+                    print(f"  [警告] {chunk[0]}〜 の {len(chunk)}銘柄を取得できません: {e}")
+                else:
+                    time.sleep(4 * (attempt + 1))
+        if got:
+            out.update(got)
+        print(f"  取得 {len(out)}/{len(symbols)} 銘柄", flush=True)
+        time.sleep(1.0)
+    if failed:
+        print(f"  [警告] 取得できなかった塊 {len(failed)} 件")
+    return out
+
+
+def _yf_chunk(symbols: list[str], start: str, end: str) -> dict[str, pd.DataFrame]:
     import yfinance as yf
 
     raw = yf.download(
-        symbols, start=start, end=end,
+        symbols, start=start, end=end, timeout=60,
         auto_adjust=True, progress=False, group_by="column", threads=True,
     )
     out: dict[str, pd.DataFrame] = {}

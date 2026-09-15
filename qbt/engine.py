@@ -81,18 +81,71 @@ def _compile_expr(expr: str):
 _EXPR_CACHE: dict[str, object] = {}
 
 
-def eval_expr(expr: str, df: pd.DataFrame, extra: dict | None = None) -> pd.Series:
+# 指標計算の使い回し。
+#
+# パラメータ探索では同じ rsi(close,14) を何百回も計算することになる。
+# 銘柄・関数・列・引数が同じなら結果も同じなので、一度だけ計算して覚えておく。
+# これがないと528銘柄×360通りの探索が現実的な時間で終わらない。
+#
+# 前提: 同じ memo_key に対してデータが変わらないこと。
+#       別のデータセットに移るときは clear_memo() を呼ぶ。
+_MEMO: dict = {}
+_MEMO_LIMIT = 200_000
+
+
+def clear_memo():
+    """データセットを切り替えるときに呼ぶ。呼び忘れると古い計算結果を使ってしまう"""
+    _MEMO.clear()
+
+
+def _memoized(fn, name: str, df: pd.DataFrame):
+    """
+    鍵は「銘柄コード」ではなく「DataFrameそのものの同一性」にする。
+
+    銘柄コードを鍵にすると、別のデータセットに同じコードの銘柄があったとき、
+    前のデータの計算結果を使ってしまう。テストで実際に踏んだ。
+    値と一緒に DataFrame への参照も持つことで、
+    ガベージコレクションによる id の使い回しも防ぐ。
+    """
+    def inner(*args, **kw):
+        try:
+            cols = tuple(getattr(a, "name", None) for a in args if isinstance(a, pd.Series))
+            rest = tuple(a for a in args if not isinstance(a, pd.Series))
+            k = (id(df), name, cols, rest, tuple(sorted(kw.items())))
+            hash(k)
+        except TypeError:
+            return fn(*args, **kw)      # 鍵にできない引数が来たら素通し
+        hit = _MEMO.get(k)
+        if hit is not None:
+            return hit[1]
+        v = fn(*args, **kw)
+        if len(_MEMO) < _MEMO_LIMIT:
+            _MEMO[k] = (df, v)          # dfを掴んでおくと id が再利用されない
+        return v
+    return inner
+
+
+def eval_expr(expr: str, df: pd.DataFrame, extra: dict | None = None,
+              memo_key: str | None = None) -> pd.Series:
     """
     戦略ファイルに書かれた1行の式を、1銘柄のOHLCVに対して評価する。
 
     式の中では open/high/low/close/volume と、indicators.py の関数が使える。
     例: "close > sma(close, 200) and rsi(close, 14) < 30"
+
+    memo_key に銘柄コードを渡すと、指標の計算結果を使い回す。
+    パラメータ探索のように同じ指標を何度も計算する場面で効く。
     """
-    ns = dict(INDICATOR_NAMESPACE)
+    if memo_key:
+        ns = {n: (_memoized(f, n, df) if callable(f) else f)
+              for n, f in INDICATOR_NAMESPACE.items()}
+    else:
+        ns = dict(INDICATOR_NAMESPACE)
     for c in ("open", "high", "low", "close", "volume"):
         if c in df.columns:
             ns[c] = df[c]
-    ns["typical"] = (df["high"] + df["low"] + df["close"]) / 3.0
+    if {"high", "low", "close"} <= set(df.columns):
+        ns["typical"] = (df["high"] + df["low"] + df["close"]) / 3.0
     if extra:
         ns.update(extra)
 
@@ -115,7 +168,7 @@ def build_signal_frame(expr: str | None, data: dict[str, pd.DataFrame],
                             columns=list(data.keys()))
     cols = {}
     for sym, df in data.items():
-        s = eval_expr(expr, df)
+        s = eval_expr(expr, df, memo_key=sym)
         if boolean:
             s = s.fillna(False).astype(bool)
         cols[sym] = s.reindex(calendar)
