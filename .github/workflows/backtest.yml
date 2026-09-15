@@ -6,15 +6,15 @@ on:
       universe_limit:
         description: "銘柄数の上限（空なら全銘柄）"
         required: false
-        default: "150"
+        default: ""
       max_combos:
-        description: "パラメータの組み合わせ数の上限（空なら全部＝360通り）"
+        description: "パラメータの組み合わせ数の上限（空なら360通り全部）"
         required: false
-        default: "24"
+        default: ""
       skip_walk_forward:
         description: "ウォークフォワード検証を飛ばす"
         type: boolean
-        default: true
+        default: false
       start:
         description: "開始日（空なら config の 2015-01-01）"
         required: false
@@ -49,9 +49,9 @@ jobs:
         uses: actions/cache@v4
         with:
           path: data_cache
-          key: qbt-prices-${{ github.event.inputs.start || '2015-01-01' }}-${{ github.event.inputs.universe_limit || 'all' }}-v1
+          key: qbt-prices-v2-${{ inputs.start }}-${{ inputs.universe_limit }}
           restore-keys: |
-            qbt-prices-
+            qbt-prices-v2-
 
       - name: ユニバースが無ければ作る
         run: |
@@ -60,28 +60,43 @@ jobs:
           fi
 
       - name: バックテストを実行
+        env:
+          IN_LIMIT: ${{ inputs.universe_limit }}
+          IN_COMBOS: ${{ inputs.max_combos }}
+          IN_START: ${{ inputs.start }}
+          IN_SKIP_WF: ${{ inputs.skip_walk_forward }}
         run: |
           ARGS=""
-          [ -n "${{ github.event.inputs.universe_limit }}" ] && ARGS="$ARGS --universe-limit ${{ github.event.inputs.universe_limit }}"
-          [ -n "${{ github.event.inputs.max_combos }}" ]     && ARGS="$ARGS --max-combos ${{ github.event.inputs.max_combos }}"
-          [ -n "${{ github.event.inputs.start }}" ]          && ARGS="$ARGS --start ${{ github.event.inputs.start }}"
-          [ "${{ github.event.inputs.skip_walk_forward }}" = "true" ] && ARGS="$ARGS --skip-walk-forward"
-          echo "オプション: $ARGS"
+          if [ -n "$IN_LIMIT" ];  then ARGS="$ARGS --universe-limit $IN_LIMIT"; fi
+          if [ -n "$IN_COMBOS" ]; then ARGS="$ARGS --max-combos $IN_COMBOS"; fi
+          if [ -n "$IN_START" ];  then ARGS="$ARGS --start $IN_START"; fi
+          if [ "$IN_SKIP_WF" = "true" ]; then ARGS="$ARGS --skip-walk-forward"; fi
+          echo "▶ オプション: [$ARGS]"
+          mkdir -p reports
           python backtest.py \
             --out reports/backtest.html \
             --json-out reports/backtest_summary.json \
             $ARGS
+          echo "▶ バックテスト終了"
 
       - name: 結果をコミット
         if: always()
         run: |
+          set +e
           git config user.name  "qbt-bot"
           git config user.email "qbt-bot@users.noreply.github.com"
-          git add reports/backtest.html reports/backtest_summary.json reports/*_trades.csv data/ || true
-          if git diff --cached --quiet; then
-            echo "変更なし"
-          else
-            git commit -m "バックテスト $(date -u +%Y-%m-%d_%H%M)"
-            git pull --rebase --autostash origin ${{ github.ref_name }} || true
-            git push
+          git add -A reports data
+          git commit -m "バックテスト $(date -u +%Y-%m-%d_%H%M)"
+          if [ $? -ne 0 ]; then
+            echo "▶ コミットする変更はありません"
+            exit 0
           fi
+          for i in 1 2 3; do
+            git push && { echo "▶ 送信しました（$i回目）"; exit 0; }
+            echo "▶ 送信に失敗。取り込み直して再試行します（$i回目）"
+            git fetch origin "${{ github.ref_name }}"
+            git merge -X ours --no-edit "origin/${{ github.ref_name }}" || git merge --abort
+            sleep 5
+          done
+          echo "▶ 3回試しても送信できませんでした"
+          exit 1
