@@ -66,5 +66,19 @@
   "bars_held": 3,
   "exit_reason": "手仕舞いシグナル",
   "book": "rule"
+ },
+ {
+  "symbol": "CAT",
+  "entry_date": "2026-09-03",
+  "exit_date": "2026-09-15",
+  "entry_price": 797.5375,
+  "exit_price": 788.8584,
+  "shares": 0.3096,
+  "dividends": 0.0,
+  "pnl": -2.69,
+  "pnl_pct": -0.0109,
+  "bars_held": 7,
+  "exit_reason": "手仕舞いシグナル",
+  "book": "rule"
  }
 ]
