@@ -529,10 +529,15 @@ def main() -> int:
         bars = {}
         for sym, df in data.items():
             r = df.iloc[-1]
+            # 前日の終値も渡す。配当・分割の情報が取れなかったときに、
+            # 前日終値のズレから逆算するための手がかりになる。
+            pc = float(df["close"].iloc[-2]) if len(df) > 1 else None
+            pd_ = str(df.index[-2].date()) if len(df) > 1 else None
             bars[sym] = {"open": float(r["open"]), "high": float(r["high"]),
                          "low": float(r["low"]), "close": float(r["close"]),
                          "dividend": float(r["dividend"]) if "dividend" in df else 0.0,
-                         "split": float(r["split"]) if "split" in df else 0.0}
+                         "split": float(r["split"]) if "split" in df else 0.0,
+                         "prev_close": pc, "prev_date": pd_}
 
         snap = book.step(out["data_date"], bars, rules)
 
@@ -587,6 +592,21 @@ def main() -> int:
 
     # 決済済みの取引。保有日数の分布を見るために画面へ渡す
     out["trades"] = _read_json(os.path.join(STATE, "trades.json"), [])[-40:]
+
+    # 配当・分割の情報がそもそも取れているかの記録。
+    # 取れていないと黙ってゼロになるので、数えて残しておく。
+    def _cnt(col):
+        return int(sum(1 for df in data.values()
+                       if col in df.columns and float(df[col].iloc[-1] or 0) > 0))
+    has_div = any("dividend" in df.columns for df in data.values())
+    out["data_feed"] = {
+        "dividend_column": bool(has_div),
+        "dividends_today": _cnt("dividend"),
+        "splits_today": _cnt("split"),
+    }
+    log(f"  配当列 {'あり' if has_div else 'なし'} / "
+        f"本日の配当 {out['data_feed']['dividends_today']}銘柄 / "
+        f"分割 {out['data_feed']['splits_today']}銘柄")
 
     # ---------- 13. 成績の記録 ----------
     out["performance"] = _performance(out)
