@@ -138,6 +138,31 @@ class PaperBook:
 
             sp = b.get("split")
             sp = float(sp) if sp not in (None, "") and np.isfinite(float(sp)) else 0.0
+            dv = b.get("dividend")
+            dv = float(dv) if dv not in (None, "") and np.isfinite(float(dv)) else 0.0
+
+            # 配当・分割の情報そのものが取れないことがある（提供側の都合）。
+            # そのときは値そのものから逆算する。
+            # 昨日の終値として記録した値と、今日取り直したデータの中の
+            # 「昨日の終値」がずれていたら、その差は必ず配当か分割による付け替え。
+            # ずれの大きさで、どちらかを見分ける。
+            if sp == 0.0 and dv == 0.0:
+                prev = b.get("prev_close")
+                seen = pos.get("last_close")
+                same_day = (b.get("prev_date") == pos.get("last_close_date")
+                            and b.get("prev_date") is not None)
+                if same_day and prev and seen and float(seen) > 0:
+                    f = float(prev) / float(seen)
+                    if 0.2 < f < 0.995:
+                        if f < 0.9:                      # 1割を超える差は分割とみなす
+                            sp = round(1.0 / f, 4)
+                            self.log.append(
+                                f"分割を推定 {pos['symbol']} 係数 {f:.4f}")
+                        else:
+                            dv = round(float(seen) - float(prev), 4)
+                            self.log.append(
+                                f"配当を推定 {pos['symbol']} 1株 ${dv:.4f}")
+
             if sp > 0 and abs(sp - 1.0) > 1e-9:
                 pos["shares"] = round(float(pos["shares"]) * sp, 6)
                 for k in ("entry_price", "stop_ref", "high_water"):
@@ -147,8 +172,6 @@ class PaperBook:
                     pos["stop_price"] = round(float(pos["stop_price"]) / sp, 4)
                 self.log.append(f"分割 {pos['symbol']} 1株→{sp:g}株")
 
-            dv = b.get("dividend")
-            dv = float(dv) if dv not in (None, "") and np.isfinite(float(dv)) else 0.0
             close = float(b.get("close") or 0.0)
             # 株価の15%を超える「配当」は取り違えとみなして無視する
             if dv > 0 and close > 0 and dv / close < 0.15:
@@ -274,6 +297,12 @@ class PaperBook:
         # ---- 4) 大引け: 保有日数を進めて時価評価 ----
         for pos in self.positions:
             pos["bars_held"] = int(pos.get("bars_held", 0)) + 1
+            # 明日「付け替えがあったか」を見分けるために、今日の終値を控えておく
+            b = bars.get(pos["symbol"]) or {}
+            c = b.get("close")
+            if c is not None and np.isfinite(float(c)) and float(c) > 0:
+                pos["last_close"] = round(float(c), 4)
+                pos["last_close_date"] = date
 
         return self.snapshot(bars)
 
