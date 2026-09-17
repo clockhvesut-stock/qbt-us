@@ -1,0 +1,59 @@
+name: "米国株_12-1モメンタム_v1"
+
+data:
+  source: yfinance
+  start: "2015-01-01"
+  end:   "2025-12-31"
+  universe: sp500
+  universe_limit: null
+  benchmark: "SPY"
+
+rules:
+  entry: >
+    close > sma(close, {ma_trend})
+    and roc(shift(close, 21), 231) > {mom_min}
+
+  exit: >
+    cross_below(close, sma(close, {ma_exit}))
+
+  rank: "roc(shift(close, 21), 231)"
+  rank_ascending: false
+
+  universe_filter: "sma(volume, 20) * close > 20000000"
+  market_filter: "close > sma(close, 200)"
+
+  stop_loss_pct:   0.08
+  take_profit_pct: null
+  trail_stop_pct:  null
+  max_hold_days:   60
+
+params:
+  ma_trend:      200
+  mom_min:       0.15
+  ma_exit:       50
+  max_hold_days: 60
+
+portfolio:
+  initial_cash:  2000
+  max_positions: 8
+  position_pct:  null
+  lot_size:      1
+  allow_fractional: true
+
+costs:
+  commission_bps: 0.0
+  slippage_bps:   8.0
+  min_commission: 0
+
+validation:
+  split_date: "2022-01-01"
+  monte_carlo: true
+  walk_forward:
+    train_years: 4
+    test_years:  1
+
+param_grid:
+  ma_trend:      [100, 200]
+  mom_min:       [0.0, 0.15, 0.30]
+  ma_exit:       [20, 50, 100]
+  max_hold_days: [20, 60, 120]
