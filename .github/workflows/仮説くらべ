@@ -1,0 +1,93 @@
+name: 仮説くらべ
+
+on:
+  workflow_dispatch:
+    inputs:
+      universe_limit:
+        description: "銘柄数の上限（空なら全銘柄）"
+        required: false
+        default: ""
+      max_combos:
+        description: "1つの仮説あたりのパラメータ組み合わせ数"
+        required: false
+        default: "27"
+      only:
+        description: "特定の仮説だけ試す（例: A_momentum,B_breakout）"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: backtest
+  cancel-in-progress: false
+
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: 依存をインストール
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: 価格データのキャッシュ
+        uses: actions/cache@v4
+        with:
+          path: data_cache
+          key: qbt-prices-v2--${{ inputs.universe_limit }}
+          restore-keys: |
+            qbt-prices-v2-
+
+      - name: ユニバースが無ければ作る
+        run: |
+          if [ ! -f data/universe.json ]; then
+            python build_universe.py --quick
+          fi
+
+      - name: 仮説をくらべる
+        env:
+          IN_LIMIT: ${{ inputs.universe_limit }}
+          IN_COMBOS: ${{ inputs.max_combos }}
+          IN_ONLY: ${{ inputs.only }}
+        run: |
+          ARGS=""
+          if [ -n "$IN_LIMIT" ];  then ARGS="$ARGS --universe-limit $IN_LIMIT"; fi
+          if [ -n "$IN_COMBOS" ]; then ARGS="$ARGS --max-combos $IN_COMBOS"; fi
+          if [ -n "$IN_ONLY" ];   then ARGS="$ARGS --only $IN_ONLY"; fi
+          echo "▶ オプション: [$ARGS]"
+          mkdir -p reports
+          python compare.py --json-out reports/compare_summary.json $ARGS
+          echo "▶ 終了"
+
+      - name: 結果をコミット
+        if: always()
+        run: |
+          set +e
+          git config user.name  "qbt-bot"
+          git config user.email "qbt-bot@users.noreply.github.com"
+          git add -A reports data
+          git commit -m "仮説くらべ $(date -u +%Y-%m-%d_%H%M)"
+          if [ $? -ne 0 ]; then
+            echo "▶ コミットする変更はありません"
+            exit 0
+          fi
+          for i in 1 2 3; do
+            git push && { echo "▶ 送信しました（$i回目）"; exit 0; }
+            echo "▶ 送信に失敗。取り込み直して再試行します（$i回目）"
+            git fetch origin "${{ github.ref_name }}"
+            git merge -X ours --no-edit "origin/${{ github.ref_name }}" || git merge --abort
+            sleep 5
+          done
+          echo "▶ 3回試しても送信できませんでした"
+          exit 1
