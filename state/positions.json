@@ -5,12 +5,12 @@
   "entry_price": 66.303,
   "entry_date": "2026-09-01",
   "entry_fee": 0.0,
-  "bars_held": 13,
+  "bars_held": 14,
   "high_water": 66.91999816894531,
   "stop_price": 60.9988,
   "reason": "ルールのシグナル",
-  "last_close": 63.58,
-  "last_close_date": "2026-09-18"
+  "last_close": 62.82,
+  "last_close_date": "2026-09-21"
  },
  {
   "symbol": "KIM",
@@ -18,12 +18,12 @@
   "entry_price": 24.2494,
   "entry_date": "2026-09-02",
   "entry_fee": 0.0,
-  "bars_held": 12,
+  "bars_held": 13,
   "high_water": 24.260000228881836,
   "stop_price": 22.3094,
   "reason": "ルールのシグナル",
-  "last_close": 22.53,
-  "last_close_date": "2026-09-18"
+  "last_close": 22.54,
+  "last_close_date": "2026-09-21"
  },
  {
   "symbol": "REG",
@@ -31,12 +31,12 @@
   "entry_price": 76.5012,
   "entry_date": "2026-09-02",
   "entry_fee": 0.0,
-  "bars_held": 12,
+  "bars_held": 13,
   "high_water": 76.54000091552734,
   "stop_price": 70.3811,
   "reason": "ルールのシグナル",
-  "last_close": 72.95,
-  "last_close_date": "2026-09-18"
+  "last_close": 72.92,
+  "last_close_date": "2026-09-21"
  },
  {
   "symbol": "DVA",
@@ -44,12 +44,12 @@
   "entry_price": 179.8137,
   "entry_date": "2026-09-03",
   "entry_fee": 0.0,
-  "bars_held": 11,
+  "bars_held": 12,
   "high_water": 195.72999572753906,
   "stop_price": 165.4286,
   "reason": "ルールのシグナル",
-  "last_close": 183.86,
-  "last_close_date": "2026-09-18"
+  "last_close": 182.34,
+  "last_close_date": "2026-09-21"
  },
  {
   "symbol": "SPG",
@@ -57,14 +57,14 @@
   "entry_price": 209.6776,
   "entry_date": "2026-09-09",
   "entry_fee": 0.0,
-  "bars_held": 8,
+  "bars_held": 9,
   "high_water": 210.44000244140625,
   "stop_ref": 209.6776,
   "dividends": 0.0,
   "stop_price": 192.9034,
   "reason": "ルールのシグナル",
-  "last_close": 205.32,
-  "last_close_date": "2026-09-18"
+  "last_close": 204.98,
+  "last_close_date": "2026-09-21"
  },
  {
   "symbol": "EXPE",
@@ -72,14 +72,14 @@
   "entry_price": 280.7244,
   "entry_date": "2026-09-11",
   "entry_fee": 0.0,
-  "bars_held": 6,
+  "bars_held": 7,
   "high_water": 294.69000244140625,
   "stop_ref": 280.7244,
   "dividends": 0.0,
   "stop_price": 258.2664,
   "reason": "ルールのシグナル",
-  "last_close": 279.35,
-  "last_close_date": "2026-09-18"
+  "last_close": 281.02,
+  "last_close_date": "2026-09-21"
  },
  {
   "symbol": "PKG",
@@ -87,14 +87,14 @@
   "entry_price": 235.6183,
   "entry_date": "2026-09-11",
   "entry_fee": 0.0,
-  "bars_held": 6,
-  "high_water": 236.1699981689453,
+  "bars_held": 7,
+  "high_water": 242.625,
   "stop_ref": 235.6183,
   "dividends": 0.0,
   "stop_price": 216.7689,
   "reason": "ルールのシグナル",
-  "last_close": 232.77,
-  "last_close_date": "2026-09-18"
+  "last_close": 238.31,
+  "last_close_date": "2026-09-21"
  },
  {
   "symbol": "MNST",
@@ -102,13 +102,13 @@
   "entry_price": 44.0352,
   "entry_date": "2026-09-15",
   "entry_fee": 0.0,
-  "bars_held": 4,
+  "bars_held": 5,
   "high_water": 45.07500076293945,
   "stop_ref": 44.0352,
   "dividends": 0.0,
   "stop_price": 40.5124,
   "reason": "ルールのシグナル",
-  "last_close": 44.71,
-  "last_close_date": "2026-09-18"
+  "last_close": 44.0,
+  "last_close_date": "2026-09-21"
  }
 ]
