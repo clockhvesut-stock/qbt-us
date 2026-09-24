@@ -108,5 +108,19 @@
   "bars_held": 8,
   "exit_reason": "損切り",
   "book": "rule"
+ },
+ {
+  "symbol": "D",
+  "entry_date": "2026-09-01",
+  "exit_date": "2026-09-24",
+  "entry_price": 66.303,
+  "exit_price": 60.95,
+  "shares": 3.7705,
+  "dividends": 0.0,
+  "pnl": -20.18,
+  "pnl_pct": -0.0807,
+  "bars_held": 16,
+  "exit_reason": "損切り",
+  "book": "rule"
  }
 ]
