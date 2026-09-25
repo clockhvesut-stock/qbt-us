@@ -76,12 +76,16 @@
   [
    "2026-09-24",
    1843.05
+  ],
+  [
+   "2026-09-25",
+   1847.41
   ]
  ],
  "stats": {
   "max_dd": -0.0785,
-  "trades": 9,
+  "trades": 10,
   "win_rate": 0.0,
-  "losing_streak": 9
+  "losing_streak": 10
  }
 }

@@ -122,5 +122,19 @@
   "bars_held": 16,
   "exit_reason": "損切り",
   "book": "rule"
+ },
+ {
+  "symbol": "DVA",
+  "entry_date": "2026-09-03",
+  "exit_date": "2026-09-25",
+  "entry_price": 179.8137,
+  "exit_price": 175.2397,
+  "shares": 1.3523,
+  "dividends": 0.0,
+  "pnl": -6.19,
+  "pnl_pct": -0.0254,
+  "bars_held": 15,
+  "exit_reason": "手仕舞いシグナル",
+  "book": "rule"
  }
 ]
