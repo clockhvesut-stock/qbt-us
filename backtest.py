@@ -12,6 +12,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import os
 import sys
 import webbrowser
@@ -218,6 +219,51 @@ def main() -> int:
                 print(f"    → 学習 {deg['学習平均']:.2f} / 検証 {deg['検証平均']:.2f} "
                       f"（劣化率 {deg['劣化率']*100:.0f}%）")
 
+    # ---------------- 頑健性の追試 ----------------
+    # 「良い数字が出た」あとに必ずやること。前提を厳しくしても残るかを見る。
+    # 検証期間だけで回す（開発期間はもう見てしまっているので参考にならない）。
+    rob = []
+    if cfg.get("robustness", True) and split:
+        sectors = {}
+        try:
+            uni_rows = json.load(open(os.path.join(HERE, "data", "universe.json"),
+                                      encoding="utf-8"))
+            sectors = {r["symbol"]: r.get("sector") or "" for r in uni_rows}
+        except Exception as e:
+            print(f"  [注意] 業種データを読めません: {e}")
+        base_slip = ccfg.get("slippage_bps", 8.0)
+        hard_slip = base_slip * 2.5
+        variants = [
+            ("基準", None, base_slip),
+            ("同一業種2銘柄まで", 2, base_slip),
+            (f"滑りを2.5倍({hard_slip:.0f}bps)", None, hard_slip),
+            ("両方きつくする", 2, hard_slip),
+        ]
+        print("\n  頑健性の追試（検証期間のみ）...")
+        for vname, mps, slip in variants:
+            c2 = Costs(commission_bps=ccfg.get("commission_bps", 0.0),
+                       slippage_bps=slip,
+                       min_commission=ccfg.get("min_commission", 0.0))
+            try:
+                r = Backtest(data, rules, pf, c2, benchmark,
+                             sectors=sectors if mps else None,
+                             max_per_sector=mps).run(start=split, end=dcfg["end"])
+                s = M.summary(r.equity, r.trades_df, r.exposure, r.benchmark)
+                row = {"条件": vname,
+                       "年率": s["年率リターン(CAGR)"], "シャープ": s["シャープレシオ"],
+                       "最大DD": s["最大ドローダウン"], "取引": s["取引回数"],
+                       "超過年率": s.get("超過年率")}
+            except Exception as e:
+                row = {"条件": vname, "エラー": str(e)[:80]}
+            rob.append(row)
+            if "エラー" in row:
+                print(f"    {vname}: エラー {row['エラー']}")
+            else:
+                print("    %-22s 年率%7.2f%%  シャープ%5.2f  最大DD%7.2f%%  取引%4d  超過%+7.2f%%"
+                      % (vname, row["年率"]*100, row["シャープ"], row["最大DD"]*100,
+                         row["取引"], (row["超過年率"] or 0)*100))
+        extras["robustness"] = rob
+
     # ---------------- 合否の判定 ----------------
     # 「良さそう」で終わらせないために、先に決めた5つの関門を機械的に当てる。
     # ここを通らない限り実弾には進まない。
@@ -258,6 +304,13 @@ def main() -> int:
     else:
         gate("ウォークフォワードの劣化が5割未満", False, "未実施")
 
+    # 前提を厳しくしても指数に勝てるか。ここが崩れるなら実弾には使えない。
+    hard = next((r for r in rob if r.get("条件") == "両方きつくする"), None)
+    if hard and "エラー" not in hard:
+        gate("業種制限＋滑り2.5倍でもSPYより良い",
+             (hard.get("超過年率") or -1) > 0,
+             f"年率 {hard['年率']*100:.2f}%（超過 {(hard.get('超過年率') or 0)*100:+.2f}%）")
+
     passed = sum(1 for g in gates if g["合格"])
     print("\n  ---- 合否 ----")
     for g in gates:
@@ -278,6 +331,7 @@ def main() -> int:
                         for k, s in summaries.items()},
             "monte_carlo": extras.get("monte_carlo"),
             "sensitivity": sens,
+            "robustness": rob,
             "sweep_top": (sweep_df.head(10).to_dict("records")
                           if sweep_df is not None and len(sweep_df) else []),
             "sweep_n": int(len(sweep_df)) if sweep_df is not None else 0,
