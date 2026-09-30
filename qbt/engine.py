@@ -280,12 +280,19 @@ class Result:
 class Backtest:
     def __init__(self, data: dict[str, pd.DataFrame], rules: Rules,
                  portfolio: Portfolio, costs: Costs,
-                 benchmark: pd.DataFrame | None = None):
+                 benchmark: pd.DataFrame | None = None,
+                 sectors: dict[str, str] | None = None,
+                 max_per_sector: int | None = None):
         self.data = data
         self.rules = rules
         self.pf = portfolio
         self.costs = costs
         self.benchmark = benchmark
+        # 同一業種の持ちすぎを止める。
+        # 銘柄を8つ持っていても、全部同じ業種なら分散は1銘柄分でしかない。
+        # 実運用でREIT3銘柄を同時に抱えて揃って沈んだので入れた。
+        self.sectors = sectors or {}
+        self.max_per_sector = max_per_sector
         self.calendar = self._calendar()
 
     def _calendar(self) -> pd.DatetimeIndex:
@@ -448,7 +455,7 @@ class Backtest:
                                                   if np.isfinite(rv.get(s, np.nan))
                                                   else (np.inf if self.rules.rank_ascending else -np.inf)),
                                    reverse=not self.rules.rank_ascending)
-                pending_entries = cands[:slots]
+                pending_entries = self._pick(cands, slots, positions, pending_exits)
 
         eq = pd.Series(eq_vals, index=cal, name="equity")
         bench = None
@@ -464,6 +471,40 @@ class Backtest:
                       exposure=pd.Series(expo_vals, index=cal),
                       benchmark=bench, label=label,
                       skipped_unaffordable=skipped_unaffordable)
+
+    # ------------------------------------------------------------------
+
+    def _pick(self, cands: list[str], slots: int,
+              positions: dict, pending_exits: list) -> list[str]:
+        """
+        順位の高いものから枠のぶんだけ採る。業種の上限があればそれも守る。
+
+        明日出ていく建玉は枠も業種の数も空けるものとして数える。
+        そうしないと、入れ替えのたびに1日ぶん枠が死ぬ。
+        """
+        if not self.max_per_sector or not self.sectors:
+            return cands[:slots]
+
+        leaving = {s for s, _ in pending_exits}
+        used: dict[str, int] = {}
+        for sym in positions:
+            if sym in leaving:
+                continue
+            k = self.sectors.get(sym)
+            if k:
+                used[k] = used.get(k, 0) + 1
+
+        picked = []
+        for s in cands:
+            if len(picked) >= slots:
+                break
+            k = self.sectors.get(s)
+            if k and used.get(k, 0) >= self.max_per_sector:
+                continue
+            picked.append(s)
+            if k:
+                used[k] = used.get(k, 0) + 1
+        return picked
 
     # ------------------------------------------------------------------
 
