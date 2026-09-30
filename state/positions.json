@@ -5,12 +5,12 @@
   "entry_price": 76.5012,
   "entry_date": "2026-09-02",
   "entry_fee": 0.0,
-  "bars_held": 18,
+  "bars_held": 19,
   "high_water": 76.54000091552734,
   "stop_price": 70.3811,
   "reason": "ルールのシグナル",
   "last_close": 73.33,
-  "last_close_date": "2026-09-28"
+  "last_close_date": "2026-09-29"
  },
  {
   "symbol": "SPG",
@@ -18,14 +18,14 @@
   "entry_price": 209.6776,
   "entry_date": "2026-09-09",
   "entry_fee": 0.0,
-  "bars_held": 14,
+  "bars_held": 15,
   "high_water": 210.44000244140625,
   "stop_ref": 209.6776,
   "dividends": 0.0,
   "stop_price": 192.9034,
   "reason": "ルールのシグナル",
   "last_close": 204.53,
-  "last_close_date": "2026-09-28"
+  "last_close_date": "2026-09-29"
  },
  {
   "symbol": "PKG",
@@ -33,14 +33,14 @@
   "entry_price": 235.6183,
   "entry_date": "2026-09-11",
   "entry_fee": 0.0,
-  "bars_held": 12,
+  "bars_held": 13,
   "high_water": 242.625,
   "stop_ref": 235.6183,
   "dividends": 0.0,
   "stop_price": 216.7689,
   "reason": "ルールのシグナル",
   "last_close": 234.52,
-  "last_close_date": "2026-09-28"
+  "last_close_date": "2026-09-29"
  },
  {
   "symbol": "MNST",
@@ -48,14 +48,14 @@
   "entry_price": 44.0352,
   "entry_date": "2026-09-15",
   "entry_fee": 0.0,
-  "bars_held": 10,
+  "bars_held": 11,
   "high_water": 45.07500076293945,
   "stop_ref": 44.0352,
   "dividends": 0.0,
   "stop_price": 40.5124,
   "reason": "ルールのシグナル",
   "last_close": 41.86,
-  "last_close_date": "2026-09-28"
+  "last_close_date": "2026-09-29"
  },
  {
   "symbol": "CSX",
@@ -63,14 +63,14 @@
   "entry_price": 47.0676,
   "entry_date": "2026-09-24",
   "entry_fee": 0.0,
-  "bars_held": 3,
+  "bars_held": 4,
   "high_water": 47.33000183105469,
   "stop_ref": 47.0676,
   "dividends": 0.0,
   "stop_price": 43.3022,
   "reason": "ルールのシグナル",
   "last_close": 46.76,
-  "last_close_date": "2026-09-28"
+  "last_close_date": "2026-09-29"
  },
  {
   "symbol": "NSC",
@@ -78,14 +78,14 @@
   "entry_price": 315.0018,
   "entry_date": "2026-09-24",
   "entry_fee": 0.0,
-  "bars_held": 3,
+  "bars_held": 4,
   "high_water": 316.83990478515625,
   "stop_ref": 315.0018,
   "dividends": 0.0,
   "stop_price": 289.8017,
   "reason": "ルールのシグナル",
   "last_close": 313.05,
-  "last_close_date": "2026-09-28"
+  "last_close_date": "2026-09-29"
  },
  {
   "symbol": "CAH",
@@ -93,14 +93,14 @@
   "entry_price": 222.1776,
   "entry_date": "2026-09-25",
   "entry_fee": 0.0,
-  "bars_held": 2,
+  "bars_held": 3,
   "high_water": 223.02000427246094,
   "stop_ref": 222.1776,
   "dividends": 0.0,
   "stop_price": 204.4034,
   "reason": "ルールのシグナル",
   "last_close": 220.29,
-  "last_close_date": "2026-09-28"
+  "last_close_date": "2026-09-29"
  },
  {
   "symbol": "BMY",
@@ -108,13 +108,13 @@
   "entry_price": 61.7994,
   "entry_date": "2026-09-25",
   "entry_fee": 0.0,
-  "bars_held": 2,
+  "bars_held": 3,
   "high_water": 63.93000030517578,
   "stop_ref": 61.7994,
   "dividends": 0.0,
   "stop_price": 56.8554,
   "reason": "ルールのシグナル",
   "last_close": 63.88,
-  "last_close_date": "2026-09-28"
+  "last_close_date": "2026-09-29"
  }
 ]
