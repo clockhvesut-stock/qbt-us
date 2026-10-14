@@ -1,99 +1,99 @@
 {
- "generated_at": "2026-10-13T02:46:48+00:00",
- "date": "2026-10-13",
+ "generated_at": "2026-10-14T00:45:12+00:00",
+ "date": "2026-10-14",
  "strategy": "米国株_12-1モメンタム_v1",
  "errors": [],
  "data_date": "2026-10-12",
  "macro": {
   "^GSPC": {
    "label": "S&P500",
-   "last": 7807.2402,
-   "chg_1d": -0.00055,
-   "chg_5d": 0.00428,
-   "chg_20d": 0.02457,
-   "vs_ma200": 0.0761,
-   "pctile_1y": 0.988
+   "last": 7805.4502,
+   "chg_1d": -0.00023,
+   "chg_5d": -0.00172,
+   "chg_20d": 0.02896,
+   "vs_ma200": 0.07521,
+   "pctile_1y": 0.984
   },
   "^VIX": {
    "label": "VIX(恐怖指数)",
-   "last": 15.21,
-   "chg_1d": 0.02493,
-   "chg_5d": -0.01997,
-   "chg_20d": -0.11053,
-   "vs_ma200": -0.15856,
-   "pctile_1y": 0.146
+   "last": 15.27,
+   "chg_1d": 0.00394,
+   "chg_5d": 0.01732,
+   "chg_20d": -0.11221,
+   "vs_ma200": -0.15549,
+   "pctile_1y": 0.154
   },
   "^TNX": {
    "label": "米10年金利",
-   "last": 5.24,
-   "chg_1d": -0.00076,
-   "chg_5d": -0.01337,
-   "chg_20d": 0.05624,
-   "vs_ma200": 0.16868,
-   "pctile_1y": 0.968
+   "last": 5.217,
+   "chg_1d": -0.00439,
+   "chg_5d": -0.00987,
+   "chg_20d": 0.04424,
+   "vs_ma200": 0.16215,
+   "pctile_1y": 0.952
   },
   "^IRX": {
    "label": "米3ヶ月金利",
-   "last": 4.05,
-   "chg_1d": -0.00173,
-   "chg_5d": 0.00796,
-   "chg_20d": 0.02922,
-   "vs_ma200": 0.10258,
+   "last": 4.057,
+   "chg_1d": 0.00173,
+   "chg_5d": 0.00495,
+   "chg_20d": 0.02449,
+   "vs_ma200": 0.10374,
    "pctile_1y": 0.976
   },
   "DX-Y.NYB": {
    "label": "ドル指数",
-   "last": 102.409,
-   "chg_1d": 0.00195,
-   "chg_5d": 0.00234,
-   "chg_20d": 0.02965,
-   "vs_ma200": 0.03038,
-   "pctile_1y": 0.996
+   "last": 102.169,
+   "chg_1d": -0.00401,
+   "chg_5d": 0.00333,
+   "chg_20d": 0.02528,
+   "vs_ma200": 0.02774,
+   "pctile_1y": 0.98
   },
   "CL=F": {
    "label": "WTI原油",
-   "last": 92.66,
-   "chg_1d": 0.00882,
-   "chg_5d": 0.03612,
-   "chg_20d": -0.0861,
-   "vs_ma200": 0.11105,
-   "pctile_1y": 0.753
+   "last": 94.98,
+   "chg_1d": 0.01323,
+   "chg_5d": 0.06194,
+   "chg_20d": -0.10252,
+   "vs_ma200": 0.1363,
+   "pctile_1y": 0.813
   },
   "GC=F": {
    "label": "金",
-   "last": 4196.2002,
-   "chg_1d": -0.00477,
-   "chg_5d": 0.00948,
-   "chg_20d": -0.03578,
-   "vs_ma200": -0.07704,
-   "pctile_1y": 0.271
+   "last": 4183.2002,
+   "chg_1d": -0.00177,
+   "chg_5d": -0.00093,
+   "chg_20d": -0.03453,
+   "vs_ma200": -0.07957,
+   "pctile_1y": 0.258
   },
   "HG=F": {
    "label": "銅",
-   "last": 6.7185,
-   "chg_1d": 0.01144,
-   "chg_5d": 0.0202,
-   "chg_20d": 0.06137,
-   "vs_ma200": 0.09177,
-   "pctile_1y": 0.98
+   "last": 6.7265,
+   "chg_1d": 0.00418,
+   "chg_5d": 0.02002,
+   "chg_20d": 0.05621,
+   "vs_ma200": 0.09199,
+   "pctile_1y": 0.984
   },
   "BTC-USD": {
    "label": "ビットコイン",
-   "last": 82738.8203,
-   "chg_1d": -0.01124,
-   "chg_5d": -0.00645,
-   "chg_20d": -0.03984,
-   "vs_ma200": 0.14836,
-   "pctile_1y": 0.644
+   "last": 83598.4922,
+   "chg_1d": 0.02245,
+   "chg_5d": 0.02353,
+   "chg_20d": -0.0093,
+   "vs_ma200": 0.15898,
+   "pctile_1y": 0.658
   },
   "^N225": {
    "label": "日経平均",
-   "last": 67292.3906,
-   "chg_1d": -0.02518,
-   "chg_5d": -0.03795,
-   "chg_20d": 0.033,
-   "vs_ma200": 0.10545,
-   "pctile_1y": 0.851
+   "last": 67995.1406,
+   "chg_1d": -0.015,
+   "chg_5d": -0.0279,
+   "chg_20d": 0.04379,
+   "vs_ma200": 0.11693,
+   "pctile_1y": 0.872
   },
   "^STOXX50E": {
    "label": "欧州株",
@@ -106,32 +106,32 @@
   }
  },
  "breadth": {
-  "above_ma50_pct": 0.367,
-  "above_ma200_pct": 0.517,
-  "advancers_pct": 0.634,
+  "above_ma50_pct": 0.368,
+  "above_ma200_pct": 0.518,
+  "advancers_pct": 0.636,
   "near_52w_high_pct": 0.159,
   "near_52w_low_pct": 0.121,
-  "symbols_counted": 528
+  "symbols_counted": 527
  },
  "regime": {
   "regime": "順行",
   "note": "トレンドフォロー・モメンタムが効きやすい局面",
   "spy_above_ma200": true,
   "breadth_healthy": true,
-  "vix": 15.21,
-  "vix_percentile_1y": 0.146,
-  "rate_10y": 5.24,
-  "rate_10y_chg_20d": 0.05624
+  "vix": 15.27,
+  "vix_percentile_1y": 0.154,
+  "rate_10y": 5.217,
+  "rate_10y_chg_20d": 0.04424
  },
- "universe_size": 527,
+ "universe_size": 526,
  "sectors": [
   {
    "sector": "Communication Services",
-   "銘柄数": 23,
-   "平均1日": 0.0024,
-   "平均5日": -0.0082,
-   "平均21日": -0.0611,
-   "MA200超え比率": 0.3913
+   "銘柄数": 22,
+   "平均1日": 0.0025,
+   "平均5日": -0.0057,
+   "平均21日": -0.0579,
+   "MA200超え比率": 0.4091
   },
   {
    "sector": "Consumer Discretionary",
@@ -185,8 +185,8 @@
    "sector": "Industrials",
    "銘柄数": 81,
    "平均1日": -0.0002,
-   "平均5日": 0.0001,
-   "平均21日": -0.0155,
+   "平均5日": -0.0001,
+   "平均21日": -0.0157,
    "MA200超え比率": 0.4074
   },
   {
@@ -223,15 +223,17 @@
   }
  ],
  "data_quality": {
-  "level": "ok",
+  "level": "warn",
   "usable": true,
   "data_date": "2026-10-12",
-  "expected_trading_day": "2026-10-12",
-  "generated_at_utc": "2026-10-13T02:46:48+00:00",
+  "expected_trading_day": "2026-10-13",
+  "generated_at_utc": "2026-10-14T00:45:12+00:00",
   "market_open_at_fetch": false,
   "volume_ratio_median": 0.71,
-  "problems": [],
-  "summary": "データは大引け後の確定値です"
+  "problems": [
+   "データが1日古いままです（直近の取引日は2026-10-13）。祝日か、データ取得の失敗が考えられます"
+  ],
+  "summary": "データが1日古いままです（直近の取引日は2026-10-13）。祝日か、データ取得の失敗が考えられます"
  },
  "track_a_signals": [
   {
@@ -249,8 +251,8 @@
    "vs_ma50": -0.0634,
    "vs_ma200": 0.2522,
    "atr_pct": 0.065,
-   "vol_ratio": 1.03,
-   "dollar_vol": 13371543458,
+   "vol_ratio": 1.04,
+   "dollar_vol": 13392569359,
    "from_52w_high": -0.363,
    "from_52w_low": 11.722,
    "sector": "Information Technology",
@@ -272,7 +274,7 @@
    "vs_ma50": 0.075,
    "vs_ma200": 0.2974,
    "atr_pct": 0.0714,
-   "vol_ratio": 1.32,
+   "vol_ratio": 1.33,
    "dollar_vol": 4440182207,
    "from_52w_high": -0.1217,
    "from_52w_low": 5.6534,
@@ -295,7 +297,7 @@
    "vs_ma50": 0.5112,
    "vs_ma200": 1.9065,
    "atr_pct": 0.0715,
-   "vol_ratio": 0.72,
+   "vol_ratio": 0.73,
    "dollar_vol": 3073579919,
    "from_52w_high": -0.05,
    "from_52w_low": 8.559,
@@ -318,8 +320,8 @@
    "vs_ma50": 0.0097,
    "vs_ma200": 0.4026,
    "atr_pct": 0.0468,
-   "vol_ratio": 0.93,
-   "dollar_vol": 23439470986,
+   "vol_ratio": 0.94,
+   "dollar_vol": 23573980423,
    "from_52w_high": -0.1849,
    "from_52w_low": 4.4516,
    "sector": "Information Technology",
@@ -387,7 +389,7 @@
    "vs_ma50": -0.0189,
    "vs_ma200": 0.2158,
    "atr_pct": 0.0569,
-   "vol_ratio": 0.68,
+   "vol_ratio": 0.69,
    "dollar_vol": 11744354100,
    "from_52w_high": -0.2809,
    "from_52w_low": 2.0146,
@@ -433,7 +435,7 @@
    "vs_ma50": 0.117,
    "vs_ma200": 0.5404,
    "atr_pct": 0.0556,
-   "vol_ratio": 0.98,
+   "vol_ratio": 0.99,
    "dollar_vol": 4415303140,
    "from_52w_high": -0.1594,
    "from_52w_low": 2.6093,
@@ -571,7 +573,7 @@
    "vs_ma50": 0.0819,
    "vs_ma200": 0.2851,
    "atr_pct": 0.0338,
-   "vol_ratio": 0.45,
+   "vol_ratio": 0.46,
    "dollar_vol": 883146750,
    "from_52w_high": -0.0669,
    "from_52w_low": 1.2825,
@@ -668,8 +670,8 @@
    "from_52w_high": -0.2069,
    "from_52w_low": 1.0758,
    "sector": "Industrials",
-   "rel_chg_5d": -0.0439,
-   "rel_chg_21d": -0.0157
+   "rel_chg_5d": -0.0437,
+   "rel_chg_21d": -0.0155
   },
   {
    "rank": 20,
@@ -990,8 +992,8 @@
    "from_52w_high": -0.0037,
    "from_52w_low": 0.7275,
    "sector": "Industrials",
-   "rel_chg_5d": -0.0038,
-   "rel_chg_21d": 0.0197
+   "rel_chg_5d": -0.0036,
+   "rel_chg_21d": 0.0199
   },
   {
    "rank": 34,
@@ -1308,7 +1310,7 @@
     "symbol": "LITE",
     "price": 995.41,
     "chg_1d": -0.0978,
-    "vol_ratio": 1.32,
+    "vol_ratio": 1.33,
     "rsi14": 50.9,
     "vs_ma200": 0.2974,
     "from_52w_high": -0.1217
@@ -1335,7 +1337,7 @@
     "symbol": "GLW",
     "price": 147.28,
     "chg_1d": -0.06,
-    "vol_ratio": 1.04,
+    "vol_ratio": 1.05,
     "rsi14": 44.0,
     "vs_ma200": -0.0325,
     "from_52w_high": -0.4229
@@ -1344,7 +1346,7 @@
     "symbol": "SNDK",
     "price": 1487.33,
     "chg_1d": -0.0597,
-    "vol_ratio": 1.03,
+    "vol_ratio": 1.04,
     "rsi14": 38.6,
     "vs_ma200": 0.2522,
     "from_52w_high": -0.363
@@ -1353,7 +1355,7 @@
     "symbol": "MRNA",
     "price": 213.74,
     "chg_1d": -0.05,
-    "vol_ratio": 0.72,
+    "vol_ratio": 0.73,
     "rsi14": 65.6,
     "vs_ma200": 1.9065,
     "from_52w_high": -0.05
@@ -1398,7 +1400,7 @@
     "symbol": "SMCI",
     "price": 39.98,
     "chg_1d": -0.0449,
-    "vol_ratio": 0.71,
+    "vol_ratio": 0.72,
     "rsi14": 48.1,
     "vs_ma200": 0.2353,
     "from_52w_high": -0.2736
@@ -1425,7 +1427,7 @@
     "symbol": "MU",
     "price": 989.04,
     "chg_1d": -0.0388,
-    "vol_ratio": 0.93,
+    "vol_ratio": 0.94,
     "rsi14": 44.7,
     "vs_ma200": 0.4026,
     "from_52w_high": -0.1849
@@ -1620,7 +1622,7 @@
     "symbol": "CPRT",
     "price": 26.48,
     "chg_1d": -0.0307,
-    "vol_ratio": 0.7,
+    "vol_ratio": 0.71,
     "rsi14": 33.5,
     "vs_ma200": -0.2008,
     "from_52w_high": -0.4213
@@ -1674,7 +1676,7 @@
     "symbol": "CMCSA",
     "price": 20.68,
     "chg_1d": 0.001,
-    "vol_ratio": 0.74,
+    "vol_ratio": 0.75,
     "rsi14": 26.6,
     "vs_ma200": -0.1965,
     "from_52w_high": -0.337
@@ -1759,7 +1761,28 @@
   "BLDR": "52週安値圏"
  },
  "news": [],
- "world_news": [],
+ "world_news": [
+  {
+   "symbol": "",
+   "topic": "ECB発表",
+   "scope": "world",
+   "title": "Philip R. Lane: The AI opportunity for Europe",
+   "summary": "",
+   "publisher": "ECB発表",
+   "published_at": "2026-10-13T20:30:00+02:00",
+   "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261013~9db9bf4fd6.en.html"
+  },
+  {
+   "symbol": "",
+   "topic": "FRB発表",
+   "scope": "world",
+   "title": "Minutes of the Board's discount rate meetings on August 17, September 9, and September 16, 2026",
+   "summary": "Minutes of the Board&#39;s discount rate meetings on August 17, September 9, and September 16, 2026",
+   "publisher": "FRB発表",
+   "published_at": "2026-10-13T18:00:00+00:00",
+   "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261013a.htm"
+  }
+ ],
  "filings": [],
  "edgar_fulltext": [],
  "corporate_events": {
@@ -1767,212 +1790,218 @@
    {
     "symbol": "PKG",
     "date": "2026-10-21",
-    "days_until": 8
+    "days_until": 7
    },
    {
     "symbol": "CSX",
     "date": "2026-10-21",
-    "days_until": 8
+    "days_until": 7
    },
    {
     "symbol": "TER",
     "date": "2026-10-21",
-    "days_until": 8
+    "days_until": 7
    },
    {
     "symbol": "LRCX",
     "date": "2026-10-21",
-    "days_until": 8
+    "days_until": 7
    },
    {
     "symbol": "META",
     "date": "2026-10-21",
-    "days_until": 8
+    "days_until": 7
    },
    {
     "symbol": "NSC",
     "date": "2026-10-22",
-    "days_until": 9
+    "days_until": 8
    },
    {
     "symbol": "VLO",
     "date": "2026-10-22",
-    "days_until": 9
+    "days_until": 8
    },
    {
     "symbol": "FIX",
     "date": "2026-10-22",
-    "days_until": 9
+    "days_until": 8
    },
    {
     "symbol": "STX",
     "date": "2026-10-27",
-    "days_until": 14
+    "days_until": 13
    },
    {
     "symbol": "GLW",
     "date": "2026-10-27",
-    "days_until": 14
+    "days_until": 13
    },
    {
     "symbol": "PSX",
     "date": "2026-10-28",
-    "days_until": 15
+    "days_until": 14
    },
    {
     "symbol": "TYL",
     "date": "2026-10-28",
-    "days_until": 15
+    "days_until": 14
    },
    {
     "symbol": "CVNA",
     "date": "2026-10-28",
-    "days_until": 15
+    "days_until": 14
    },
    {
     "symbol": "BMY",
     "date": "2026-10-29",
-    "days_until": 16
+    "days_until": 15
    },
    {
     "symbol": "SNDK",
     "date": "2026-10-29",
-    "days_until": 16
+    "days_until": 15
    },
    {
     "symbol": "INTC",
     "date": "2026-10-29",
-    "days_until": 16
+    "days_until": 15
    },
    {
     "symbol": "PLTR",
     "date": "2026-11-02",
-    "days_until": 20
+    "days_until": 19
    },
    {
     "symbol": "AMD",
     "date": "2026-11-03",
-    "days_until": 21
+    "days_until": 20
    },
    {
     "symbol": "MPC",
     "date": "2026-11-03",
-    "days_until": 21
+    "days_until": 20
    },
    {
     "symbol": "KDP",
     "date": "2026-11-03",
-    "days_until": 21
+    "days_until": 20
    },
    {
     "symbol": "FICO",
     "date": "2026-11-04",
-    "days_until": 22
+    "days_until": 21
    },
    {
     "symbol": "ZBH",
     "date": "2026-11-04",
-    "days_until": 22
+    "days_until": 21
    },
    {
     "symbol": "PODD",
     "date": "2026-11-04",
-    "days_until": 22
+    "days_until": 21
    },
    {
     "symbol": "COHR",
     "date": "2026-11-04",
-    "days_until": 22
+    "days_until": 21
    },
    {
     "symbol": "REG",
     "date": "2026-11-05",
-    "days_until": 23
+    "days_until": 22
    },
    {
     "symbol": "SPG",
     "date": "2026-11-05",
-    "days_until": 23
+    "days_until": 22
    },
    {
     "symbol": "MNST",
     "date": "2026-11-05",
-    "days_until": 23
+    "days_until": 22
    },
    {
     "symbol": "CAH",
     "date": "2026-11-05",
-    "days_until": 23
+    "days_until": 22
    },
    {
     "symbol": "LITE",
     "date": "2026-11-05",
-    "days_until": 23
+    "days_until": 22
    },
    {
     "symbol": "MRNA",
-    "date": "2026-11-05",
+    "date": "2026-11-06",
     "days_until": 23
    },
    {
     "symbol": "HUM",
     "date": "2026-11-06",
-    "days_until": 24
+    "days_until": 23
    },
    {
     "symbol": "AMAT",
     "date": "2026-11-12",
-    "days_until": 30
+    "days_until": 29
    },
    {
     "symbol": "MDT",
     "date": "2026-11-17",
-    "days_until": 35
+    "days_until": 34
    },
    {
     "symbol": "KEYS",
     "date": "2026-11-24",
-    "days_until": 42
+    "days_until": 41
    },
    {
     "symbol": "DELL",
     "date": "2026-11-27",
-    "days_until": 45
+    "days_until": 44
    },
    {
     "symbol": "MRVL",
     "date": "2026-12-01",
-    "days_until": 49
+    "days_until": 48
    },
    {
     "symbol": "BF-B",
     "date": "2026-12-03",
-    "days_until": 51
+    "days_until": 50
    }
   ],
   "ex_dividends": [
    {
     "symbol": "MRVL",
     "date": "2026-10-09",
-    "days_until": -4,
+    "days_until": -5,
     "amount": null
    },
    {
     "symbol": "MU",
     "date": "2026-10-14",
-    "days_until": 1,
+    "days_until": 0,
     "amount": null
    },
    {
     "symbol": "DELL",
     "date": "2026-10-20",
-    "days_until": 7,
+    "days_until": 6,
     "amount": null
    },
    {
     "symbol": "HUM",
     "date": "2026-10-30",
-    "days_until": 17,
+    "days_until": 16,
+    "amount": null
+   },
+   {
+    "symbol": "GLW",
+    "date": "2026-11-13",
+    "days_until": 30,
     "amount": null
    }
   ],
@@ -1980,76 +2009,76 @@
    {
     "symbol": "REG",
     "date": "2026-11-05",
-    "days_until": 23,
+    "days_until": 22,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "SPG",
     "date": "2026-11-05",
-    "days_until": 23,
+    "days_until": 22,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "PKG",
     "date": "2026-10-21",
-    "days_until": 8,
+    "days_until": 7,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "MNST",
     "date": "2026-11-05",
-    "days_until": 23,
+    "days_until": 22,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "CSX",
     "date": "2026-10-21",
-    "days_until": 8,
+    "days_until": 7,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "NSC",
     "date": "2026-10-22",
-    "days_until": 9,
+    "days_until": 8,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "CAH",
     "date": "2026-11-05",
-    "days_until": 23,
+    "days_until": 22,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "BMY",
     "date": "2026-10-29",
-    "days_until": 16,
+    "days_until": 15,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "SNDK",
     "date": "2026-10-29",
-    "days_until": 16,
+    "days_until": 15,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "LITE",
     "date": "2026-11-05",
-    "days_until": 23,
+    "days_until": 22,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "MRNA",
-    "date": "2026-11-05",
+    "date": "2026-11-06",
     "days_until": 23,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
@@ -2057,7 +2086,7 @@
    {
     "symbol": "MU",
     "date": "2026-10-14",
-    "days_until": 1,
+    "days_until": 0,
     "amount": null,
     "risk": "配当落ち",
     "note": "権利落ちによる機械的な下げ。押し目ではない"
@@ -2065,182 +2094,182 @@
    {
     "symbol": "STX",
     "date": "2026-10-27",
-    "days_until": 14,
+    "days_until": 13,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "DELL",
     "date": "2026-11-27",
-    "days_until": 45,
+    "days_until": 44,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "INTC",
     "date": "2026-10-29",
-    "days_until": 16,
+    "days_until": 15,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "TER",
     "date": "2026-10-21",
-    "days_until": 8,
+    "days_until": 7,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "MRVL",
     "date": "2026-12-01",
-    "days_until": 49,
+    "days_until": 48,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "VLO",
     "date": "2026-10-22",
-    "days_until": 9,
+    "days_until": 8,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "AMD",
     "date": "2026-11-03",
-    "days_until": 21,
+    "days_until": 20,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "MPC",
     "date": "2026-11-03",
-    "days_until": 21,
+    "days_until": 20,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "LRCX",
     "date": "2026-10-21",
-    "days_until": 8,
+    "days_until": 7,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "AMAT",
     "date": "2026-11-12",
-    "days_until": 30,
+    "days_until": 29,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "PSX",
     "date": "2026-10-28",
-    "days_until": 15,
+    "days_until": 14,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "FIX",
     "date": "2026-10-22",
-    "days_until": 9,
+    "days_until": 8,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "KEYS",
     "date": "2026-11-24",
-    "days_until": 42,
+    "days_until": 41,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "BF-B",
     "date": "2026-12-03",
-    "days_until": 51,
+    "days_until": 50,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "FICO",
     "date": "2026-11-04",
-    "days_until": 22,
+    "days_until": 21,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "MDT",
     "date": "2026-11-17",
-    "days_until": 35,
+    "days_until": 34,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "ZBH",
     "date": "2026-11-04",
-    "days_until": 22,
+    "days_until": 21,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "META",
     "date": "2026-10-21",
-    "days_until": 8,
+    "days_until": 7,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "PODD",
     "date": "2026-11-04",
-    "days_until": 22,
+    "days_until": 21,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "TYL",
     "date": "2026-10-28",
-    "days_until": 15,
+    "days_until": 14,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "KDP",
     "date": "2026-11-03",
-    "days_until": 21,
+    "days_until": 20,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "COHR",
     "date": "2026-11-04",
-    "days_until": 22,
+    "days_until": 21,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "CVNA",
     "date": "2026-10-28",
-    "days_until": 15,
+    "days_until": 14,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "GLW",
     "date": "2026-10-27",
-    "days_until": 14,
+    "days_until": 13,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "PLTR",
     "date": "2026-11-02",
-    "days_until": 20,
+    "days_until": 19,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "HUM",
     "date": "2026-11-06",
-    "days_until": 24,
+    "days_until": 23,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    }
@@ -2416,10 +2445,7 @@
   "losing_streak": 10,
   "skipped": false,
   "log": [
-   "配当を推定 CAH 1株 $1.3900",
-   "配当 CAH $1.44 受取（1株 $1.3900）",
-   "配当を推定 BMY 1株 $0.4600",
-   "配当 BMY $1.72 受取（1株 $0.4600）"
+   "2026-10-12 はすでに処理済みのため、何もしません"
   ]
  },
  "positions": [
@@ -2909,6 +2935,10 @@
    ],
    [
     "2026-10-13",
+    1851.5
+   ],
+   [
+    "2026-10-14",
     1851.5
    ]
   ],
