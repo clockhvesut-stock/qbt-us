@@ -1,0 +1,1880 @@
+{
+ "generated_at": "2026-10-23T00:16:02+00:00",
+ "date": "2026-10-23",
+ "strategy": "米国株_12-1モメンタム_v1",
+ "errors": [],
+ "data_date": "2026-10-22",
+ "macro": {
+  "^GSPC": {
+   "label": "S&P500",
+   "last": 7663.4302,
+   "chg_1d": -0.01208,
+   "chg_5d": -0.01041,
+   "chg_20d": -0.00528,
+   "vs_ma200": 0.05154,
+   "pctile_1y": 0.825
+  },
+  "^VIX": {
+   "label": "VIX(恐怖指数)",
+   "last": 19.03,
+   "chg_1d": 0.14089,
+   "chg_5d": 0.15614,
+   "chg_20d": 0.21442,
+   "vs_ma200": 0.04653,
+   "pctile_1y": 0.756
+  },
+  "^TNX": {
+   "label": "米10年金利",
+   "last": 4.953,
+   "chg_1d": -0.0375,
+   "chg_5d": -0.02672,
+   "chg_20d": -0.04049,
+   "vs_ma200": 0.09523,
+   "pctile_1y": 0.885
+  },
+  "^IRX": {
+   "label": "米3ヶ月金利",
+   "last": 4.022,
+   "chg_1d": -0.01009,
+   "chg_5d": -0.01614,
+   "chg_20d": -0.01131,
+   "vs_ma200": 0.08866,
+   "pctile_1y": 0.925
+  },
+  "DX-Y.NYB": {
+   "label": "ドル指数",
+   "last": 101.523,
+   "chg_1d": -0.00253,
+   "chg_5d": -0.00468,
+   "chg_20d": 0.0023,
+   "vs_ma200": 0.01993,
+   "pctile_1y": 0.933
+  },
+  "CL=F": {
+   "label": "WTI原油",
+   "last": 99.36,
+   "chg_1d": 0.02275,
+   "chg_5d": 0.01419,
+   "chg_20d": 0.05021,
+   "vs_ma200": 0.16825,
+   "pctile_1y": 0.881
+  },
+  "GC=F": {
+   "label": "金",
+   "last": 4035.8999,
+   "chg_1d": -0.02749,
+   "chg_5d": -0.03218,
+   "chg_20d": -0.06098,
+   "vs_ma200": -0.11006,
+   "pctile_1y": 0.06
+  },
+  "HG=F": {
+   "label": "銅",
+   "last": 6.3955,
+   "chg_1d": -0.02254,
+   "chg_5d": -0.01781,
+   "chg_20d": -0.04808,
+   "vs_ma200": 0.03368,
+   "pctile_1y": 0.71
+  },
+  "BTC-USD": {
+   "label": "ビットコイン",
+   "last": 81050.0234,
+   "chg_1d": -0.03526,
+   "chg_5d": -0.00408,
+   "chg_20d": -0.0408,
+   "vs_ma200": 0.11341,
+   "pctile_1y": 0.619
+  },
+  "^N225": {
+   "label": "日経平均",
+   "last": 62601.0781,
+   "chg_1d": -0.03126,
+   "chg_5d": -0.02833,
+   "chg_20d": -0.03719,
+   "vs_ma200": 0.01953,
+   "pctile_1y": 0.562
+  },
+  "^STOXX50E": {
+   "label": "欧州株",
+   "last": 6207.52,
+   "chg_1d": 0.01403,
+   "chg_5d": 0.00277,
+   "chg_20d": -0.01465,
+   "vs_ma200": 0.01707,
+   "pctile_1y": 0.676
+  }
+ },
+ "breadth": {
+  "above_ma50_pct": 0.546,
+  "above_ma200_pct": 0.558,
+  "advancers_pct": 0.556,
+  "near_52w_high_pct": 0.222,
+  "near_52w_low_pct": 0.061,
+  "symbols_counted": 527
+ },
+ "regime": {
+  "regime": "順行",
+  "note": "トレンドフォロー・モメンタムが効きやすい局面",
+  "spy_above_ma200": true,
+  "breadth_healthy": true,
+  "vix": 19.03,
+  "vix_percentile_1y": 0.756,
+  "rate_10y": 4.953,
+  "rate_10y_chg_20d": -0.04049
+ },
+ "universe_size": 526,
+ "sectors": [
+  {
+   "sector": "Communication Services",
+   "銘柄数": 22,
+   "平均1日": -0.0119,
+   "平均5日": 0.0099,
+   "平均21日": -0.0269,
+   "MA200超え比率": 0.3636
+  },
+  {
+   "sector": "Consumer Discretionary",
+   "銘柄数": 47,
+   "平均1日": -0.0079,
+   "平均5日": 0.0323,
+   "平均21日": 0.0237,
+   "MA200超え比率": 0.4043
+  },
+  {
+   "sector": "Consumer Staples",
+   "銘柄数": 34,
+   "平均1日": -0.0088,
+   "平均5日": 0.0181,
+   "平均21日": 0.0463,
+   "MA200超え比率": 0.6471
+  },
+  {
+   "sector": "ETF",
+   "銘柄数": 28,
+   "平均1日": -0.0011,
+   "平均5日": 0.0058,
+   "平均21日": -0.0074,
+   "MA200超え比率": 0.5357
+  },
+  {
+   "sector": "Energy",
+   "銘柄数": 21,
+   "平均1日": 0.0029,
+   "平均5日": 0.0105,
+   "平均21日": 0.0837,
+   "MA200超え比率": 0.7619
+  },
+  {
+   "sector": "Financials",
+   "銘柄数": 76,
+   "平均1日": 0.0065,
+   "平均5日": 0.0355,
+   "平均21日": 0.0193,
+   "MA200超え比率": 0.6711
+  },
+  {
+   "sector": "Health Care",
+   "銘柄数": 59,
+   "平均1日": -0.0013,
+   "平均5日": 0.0287,
+   "平均21日": 0.0561,
+   "MA200超え比率": 0.8136
+  },
+  {
+   "sector": "Industrials",
+   "銘柄数": 81,
+   "平均1日": 0.0074,
+   "平均5日": 0.02,
+   "平均21日": 0.0066,
+   "MA200超え比率": 0.4198
+  },
+  {
+   "sector": "Information Technology",
+   "銘柄数": 72,
+   "平均1日": 0.0161,
+   "平均5日": 0.006,
+   "平均21日": -0.0171,
+   "MA200超え比率": 0.6806
+  },
+  {
+   "sector": "Materials",
+   "銘柄数": 25,
+   "平均1日": 0.0006,
+   "平均5日": 0.0275,
+   "平均21日": 0.0011,
+   "MA200超え比率": 0.64
+  },
+  {
+   "sector": "Real Estate",
+   "銘柄数": 30,
+   "平均1日": -0.0068,
+   "平均5日": 0.0186,
+   "平均21日": -0.0108,
+   "MA200超え比率": 0.3
+  },
+  {
+   "sector": "Utilities",
+   "銘柄数": 31,
+   "平均1日": 0.0039,
+   "平均5日": 0.0101,
+   "平均21日": 0.0426,
+   "MA200超え比率": 0.2258
+  }
+ ],
+ "data_quality": {
+  "level": "ok",
+  "usable": true,
+  "data_date": "2026-10-22",
+  "expected_trading_day": "2026-10-22",
+  "generated_at_utc": "2026-10-23T00:16:02+00:00",
+  "market_open_at_fetch": false,
+  "volume_ratio_median": 0.9,
+  "problems": [],
+  "summary": "データは大引け後の確定値です"
+ },
+ "track_a_signals": [],
+ "market_filter_pass": true,
+ "scan": {
+  "gainers": [
+   {
+    "symbol": "SMCI",
+    "price": 35.57,
+    "chg_1d": 0.0955,
+    "vol_ratio": 2.29,
+    "rsi14": 43.4,
+    "vs_ma200": 0.0939,
+    "from_52w_high": -0.3511
+   },
+   {
+    "symbol": "CRL",
+    "price": 344.87,
+    "chg_1d": 0.0933,
+    "vol_ratio": 2.65,
+    "rsi14": 75.6,
+    "vs_ma200": 0.5904,
+    "from_52w_high": 0.0
+   },
+   {
+    "symbol": "ECHO",
+    "price": 92.64,
+    "chg_1d": 0.0723,
+    "vol_ratio": 1.38,
+    "rsi14": 53.0,
+    "vs_ma200": -0.1404,
+    "from_52w_high": -0.3467
+   },
+   {
+    "symbol": "DDOG",
+    "price": 273.09,
+    "chg_1d": 0.065,
+    "vol_ratio": 1.0,
+    "rsi14": 55.3,
+    "vs_ma200": 0.411,
+    "from_52w_high": -0.0688
+   },
+   {
+    "symbol": "CIEN",
+    "price": 361.34,
+    "chg_1d": 0.0567,
+    "vol_ratio": 1.03,
+    "rsi14": 47.0,
+    "vs_ma200": -0.1002,
+    "from_52w_high": -0.4237
+   },
+   {
+    "symbol": "DELL",
+    "price": 485.88,
+    "chg_1d": 0.0527,
+    "vol_ratio": 1.0,
+    "rsi14": 42.6,
+    "vs_ma200": 0.5267,
+    "from_52w_high": -0.1731
+   },
+   {
+    "symbol": "CRWD",
+    "price": 239.34,
+    "chg_1d": 0.0526,
+    "vol_ratio": 1.14,
+    "rsi14": 46.5,
+    "vs_ma200": 0.4746,
+    "from_52w_high": -0.1417
+   },
+   {
+    "symbol": "PLTR",
+    "price": 201.72,
+    "chg_1d": 0.0474,
+    "vol_ratio": 0.96,
+    "rsi14": 59.2,
+    "vs_ma200": 0.3185,
+    "from_52w_high": -0.0351
+   },
+   {
+    "symbol": "CEG",
+    "price": 270.74,
+    "chg_1d": 0.046,
+    "vol_ratio": 0.69,
+    "rsi14": 48.1,
+    "vs_ma200": -0.0405,
+    "from_52w_high": -0.3218
+   },
+   {
+    "symbol": "GNRC",
+    "price": 203.14,
+    "chg_1d": 0.0439,
+    "vol_ratio": 0.82,
+    "rsi14": 48.7,
+    "vs_ma200": -0.0639,
+    "from_52w_high": -0.3126
+   },
+   {
+    "symbol": "DHR",
+    "price": 233.86,
+    "chg_1d": 0.0429,
+    "vol_ratio": 1.83,
+    "rsi14": 64.7,
+    "vs_ma200": 0.166,
+    "from_52w_high": -0.028
+   },
+   {
+    "symbol": "VRT",
+    "price": 212.15,
+    "chg_1d": 0.0422,
+    "vol_ratio": 1.24,
+    "rsi14": 34.2,
+    "vs_ma200": -0.2106,
+    "from_52w_high": -0.4359
+   },
+   {
+    "symbol": "HAS",
+    "price": 114.0,
+    "chg_1d": 0.0409,
+    "vol_ratio": 2.24,
+    "rsi14": 86.0,
+    "vs_ma200": 0.2616,
+    "from_52w_high": 0.0
+   },
+   {
+    "symbol": "GEV",
+    "price": 925.92,
+    "chg_1d": 0.04,
+    "vol_ratio": 1.38,
+    "rsi14": 44.0,
+    "vs_ma200": -0.0117,
+    "from_52w_high": -0.2119
+   },
+   {
+    "symbol": "UAL",
+    "price": 101.67,
+    "chg_1d": 0.0399,
+    "vol_ratio": 2.17,
+    "rsi14": 42.7,
+    "vs_ma200": -0.0629,
+    "from_52w_high": -0.253
+   }
+  ],
+  "losers": [
+   {
+    "symbol": "T",
+    "price": 21.91,
+    "chg_1d": -0.0645,
+    "vol_ratio": 1.81,
+    "rsi14": 32.6,
+    "vs_ma200": -0.1059,
+    "from_52w_high": -0.2203
+   },
+   {
+    "symbol": "DXCM",
+    "price": 80.26,
+    "chg_1d": -0.0639,
+    "vol_ratio": 2.38,
+    "rsi14": 36.0,
+    "vs_ma200": 0.0813,
+    "from_52w_high": -0.1308
+   },
+   {
+    "symbol": "NFLX",
+    "price": 65.04,
+    "chg_1d": -0.0531,
+    "vol_ratio": 2.53,
+    "rsi14": 32.6,
+    "vs_ma200": -0.2118,
+    "from_52w_high": -0.4761
+   },
+   {
+    "symbol": "CMG",
+    "price": 28.12,
+    "chg_1d": -0.0516,
+    "vol_ratio": 1.27,
+    "rsi14": 26.9,
+    "vs_ma200": -0.1831,
+    "from_52w_high": -0.3362
+   },
+   {
+    "symbol": "UNG",
+    "price": 9.97,
+    "chg_1d": -0.0505,
+    "vol_ratio": 0.83,
+    "rsi14": 39.1,
+    "vs_ma200": -0.114,
+    "from_52w_high": -0.4101
+   },
+   {
+    "symbol": "EXPE",
+    "price": 285.64,
+    "chg_1d": -0.0503,
+    "vol_ratio": 0.88,
+    "rsi14": 53.4,
+    "vs_ma200": 0.1036,
+    "from_52w_high": -0.1565
+   },
+   {
+    "symbol": "SBAC",
+    "price": 173.41,
+    "chg_1d": -0.0418,
+    "vol_ratio": 1.46,
+    "rsi14": 45.9,
+    "vs_ma200": -0.0798,
+    "from_52w_high": -0.2149
+   },
+   {
+    "symbol": "DASH",
+    "price": 184.45,
+    "chg_1d": -0.0377,
+    "vol_ratio": 0.89,
+    "rsi14": 42.2,
+    "vs_ma200": 0.001,
+    "from_52w_high": -0.3067
+   },
+   {
+    "symbol": "LULU",
+    "price": 96.53,
+    "chg_1d": -0.0341,
+    "vol_ratio": 0.81,
+    "rsi14": 45.4,
+    "vs_ma200": -0.2978,
+    "from_52w_high": -0.5529
+   },
+   {
+    "symbol": "BKNG",
+    "price": 158.38,
+    "chg_1d": -0.0338,
+    "vol_ratio": 1.2,
+    "rsi14": 39.2,
+    "vs_ma200": -0.1119,
+    "from_52w_high": -0.2738
+   },
+   {
+    "symbol": "HUBB",
+    "price": 445.8,
+    "chg_1d": -0.0325,
+    "vol_ratio": 1.8,
+    "rsi14": 36.5,
+    "vs_ma200": -0.0844,
+    "from_52w_high": -0.196
+   },
+   {
+    "symbol": "AMT",
+    "price": 177.64,
+    "chg_1d": -0.0323,
+    "vol_ratio": 0.82,
+    "rsi14": 54.4,
+    "vs_ma200": 0.0227,
+    "from_52w_high": -0.0662
+   },
+   {
+    "symbol": "CCI",
+    "price": 78.65,
+    "chg_1d": -0.0307,
+    "vol_ratio": 1.39,
+    "rsi14": 59.7,
+    "vs_ma200": -0.0222,
+    "from_52w_high": -0.1617
+   },
+   {
+    "symbol": "CLX",
+    "price": 84.77,
+    "chg_1d": -0.0306,
+    "vol_ratio": 0.83,
+    "rsi14": 46.3,
+    "vs_ma200": -0.1431,
+    "from_52w_high": -0.3171
+   },
+   {
+    "symbol": "INCY",
+    "price": 113.44,
+    "chg_1d": -0.0273,
+    "vol_ratio": 0.83,
+    "rsi14": 42.5,
+    "vs_ma200": 0.0532,
+    "from_52w_high": -0.1269
+   }
+  ],
+  "unusual_volume": [
+   {
+    "symbol": "WAB",
+    "price": 288.96,
+    "chg_1d": 0.0195,
+    "vol_ratio": 2.82,
+    "rsi14": 53.8,
+    "vs_ma200": 0.0878,
+    "from_52w_high": -0.0541
+   },
+   {
+    "symbol": "TDY",
+    "price": 630.1,
+    "chg_1d": -0.0033,
+    "vol_ratio": 2.75,
+    "rsi14": 60.0,
+    "vs_ma200": -0.0001,
+    "from_52w_high": -0.0885
+   },
+   {
+    "symbol": "STE",
+    "price": 221.48,
+    "chg_1d": -0.0164,
+    "vol_ratio": 2.69,
+    "rsi14": 57.4,
+    "vs_ma200": -0.0145,
+    "from_52w_high": -0.1685
+   },
+   {
+    "symbol": "CRL",
+    "price": 344.87,
+    "chg_1d": 0.0933,
+    "vol_ratio": 2.65,
+    "rsi14": 75.6,
+    "vs_ma200": 0.5904,
+    "from_52w_high": 0.0
+   },
+   {
+    "symbol": "NFLX",
+    "price": 65.04,
+    "chg_1d": -0.0531,
+    "vol_ratio": 2.53,
+    "rsi14": 32.6,
+    "vs_ma200": -0.2118,
+    "from_52w_high": -0.4761
+   },
+   {
+    "symbol": "FOXA",
+    "price": 65.84,
+    "chg_1d": -0.0173,
+    "vol_ratio": 2.44,
+    "rsi14": 57.7,
+    "vs_ma200": 0.0577,
+    "from_52w_high": -0.1269
+   },
+   {
+    "symbol": "DXCM",
+    "price": 80.26,
+    "chg_1d": -0.0639,
+    "vol_ratio": 2.38,
+    "rsi14": 36.0,
+    "vs_ma200": 0.0813,
+    "from_52w_high": -0.1308
+   },
+   {
+    "symbol": "ABT",
+    "price": 100.51,
+    "chg_1d": -0.0189,
+    "vol_ratio": 2.33,
+    "rsi14": 45.5,
+    "vs_ma200": -0.0062,
+    "from_52w_high": -0.2112
+   },
+   {
+    "symbol": "SMCI",
+    "price": 35.57,
+    "chg_1d": 0.0955,
+    "vol_ratio": 2.29,
+    "rsi14": 43.4,
+    "vs_ma200": 0.0939,
+    "from_52w_high": -0.3511
+   },
+   {
+    "symbol": "HAS",
+    "price": 114.0,
+    "chg_1d": 0.0409,
+    "vol_ratio": 2.24,
+    "rsi14": 86.0,
+    "vs_ma200": 0.2616,
+    "from_52w_high": 0.0
+   },
+   {
+    "symbol": "ISRG",
+    "price": 428.12,
+    "chg_1d": -0.0226,
+    "vol_ratio": 2.2,
+    "rsi14": 61.2,
+    "vs_ma200": -0.0218,
+    "from_52w_high": -0.2779
+   },
+   {
+    "symbol": "FLEX",
+    "price": 86.25,
+    "chg_1d": -0.0142,
+    "vol_ratio": 2.19,
+    "rsi14": 27.3,
+    "vs_ma200": -0.1574,
+    "from_52w_high": -0.4678
+   },
+   {
+    "symbol": "UAL",
+    "price": 101.67,
+    "chg_1d": 0.0399,
+    "vol_ratio": 2.17,
+    "rsi14": 42.7,
+    "vs_ma200": -0.0629,
+    "from_52w_high": -0.253
+   },
+   {
+    "symbol": "HWM",
+    "price": 208.15,
+    "chg_1d": -0.0164,
+    "vol_ratio": 2.07,
+    "rsi14": 29.4,
+    "vs_ma200": -0.165,
+    "from_52w_high": -0.2887
+   },
+   {
+    "symbol": "MCO",
+    "price": 481.05,
+    "chg_1d": 0.012,
+    "vol_ratio": 2.07,
+    "rsi14": 57.0,
+    "vs_ma200": 0.0299,
+    "from_52w_high": -0.1026
+   }
+  ],
+  "breakouts": [
+   {
+    "symbol": "HAS",
+    "price": 114.0,
+    "chg_1d": 0.0409,
+    "vol_ratio": 2.24,
+    "rsi14": 86.0,
+    "vs_ma200": 0.2616,
+    "from_52w_high": 0.0
+   },
+   {
+    "symbol": "CRL",
+    "price": 344.87,
+    "chg_1d": 0.0933,
+    "vol_ratio": 2.65,
+    "rsi14": 75.6,
+    "vs_ma200": 0.5904,
+    "from_52w_high": 0.0
+   },
+   {
+    "symbol": "HLT",
+    "price": 362.25,
+    "chg_1d": 0.0082,
+    "vol_ratio": 1.57,
+    "rsi14": 80.4,
+    "vs_ma200": 0.1365,
+    "from_52w_high": 0.0
+   },
+   {
+    "symbol": "FDS",
+    "price": 319.91,
+    "chg_1d": 0.0245,
+    "vol_ratio": 0.69,
+    "rsi14": 71.0,
+    "vs_ma200": 0.2911,
+    "from_52w_high": 0.0
+   },
+   {
+    "symbol": "HST",
+    "price": 25.09,
+    "chg_1d": 0.0117,
+    "vol_ratio": 1.13,
+    "rsi14": 79.3,
+    "vs_ma200": 0.1944,
+    "from_52w_high": -0.0088
+   },
+   {
+    "symbol": "MAR",
+    "price": 404.0,
+    "chg_1d": 0.0168,
+    "vol_ratio": 1.27,
+    "rsi14": 81.8,
+    "vs_ma200": 0.1461,
+    "from_52w_high": 0.0
+   },
+   {
+    "symbol": "MRNA",
+    "price": 245.81,
+    "chg_1d": 0.0154,
+    "vol_ratio": 0.9,
+    "rsi14": 69.1,
+    "vs_ma200": 2.0533,
+    "from_52w_high": 0.0
+   },
+   {
+    "symbol": "VEEV",
+    "price": 320.55,
+    "chg_1d": 0.0059,
+    "vol_ratio": 0.97,
+    "rsi14": 75.2,
+    "vs_ma200": 0.5536,
+    "from_52w_high": 0.0
+   },
+   {
+    "symbol": "BBY",
+    "price": 94.12,
+    "chg_1d": 0.0024,
+    "vol_ratio": 0.67,
+    "rsi14": 60.9,
+    "vs_ma200": 0.2924,
+    "from_52w_high": -0.0074
+   },
+   {
+    "symbol": "TRV",
+    "price": 398.95,
+    "chg_1d": 0.0081,
+    "vol_ratio": 1.32,
+    "rsi14": 74.4,
+    "vs_ma200": 0.2317,
+    "from_52w_high": 0.0
+   },
+   {
+    "symbol": "IQV",
+    "price": 276.63,
+    "chg_1d": 0.0328,
+    "vol_ratio": 1.32,
+    "rsi14": 63.4,
+    "vs_ma200": 0.3276,
+    "from_52w_high": 0.0
+   },
+   {
+    "symbol": "CTAS",
+    "price": 220.15,
+    "chg_1d": 0.0144,
+    "vol_ratio": 1.38,
+    "rsi14": 75.6,
+    "vs_ma200": 0.1673,
+    "from_52w_high": 0.0
+   },
+   {
+    "symbol": "CDW",
+    "price": 158.28,
+    "chg_1d": 0.0212,
+    "vol_ratio": 0.7,
+    "rsi14": 65.9,
+    "vs_ma200": 0.2067,
+    "from_52w_high": 0.0
+   },
+   {
+    "symbol": "EBAY",
+    "price": 122.9,
+    "chg_1d": 0.0141,
+    "vol_ratio": 0.92,
+    "rsi14": 73.5,
+    "vs_ma200": 0.1983,
+    "from_52w_high": -0.0001
+   },
+   {
+    "symbol": "EG",
+    "price": 394.78,
+    "chg_1d": 0.004,
+    "vol_ratio": 0.86,
+    "rsi14": 70.9,
+    "vs_ma200": 0.1348,
+    "from_52w_high": -0.0044
+   }
+  ],
+  "breakdowns": [
+   {
+    "symbol": "CMG",
+    "price": 28.12,
+    "chg_1d": -0.0516,
+    "vol_ratio": 1.27,
+    "rsi14": 26.9,
+    "vs_ma200": -0.1831,
+    "from_52w_high": -0.3362
+   },
+   {
+    "symbol": "NFLX",
+    "price": 65.04,
+    "chg_1d": -0.0531,
+    "vol_ratio": 2.53,
+    "rsi14": 32.6,
+    "vs_ma200": -0.2118,
+    "from_52w_high": -0.4761
+   },
+   {
+    "symbol": "MOS",
+    "price": 17.68,
+    "chg_1d": -0.0101,
+    "vol_ratio": 1.29,
+    "rsi14": 21.7,
+    "vs_ma200": -0.2577,
+    "from_52w_high": -0.4257
+   },
+   {
+    "symbol": "UBER",
+    "price": 67.62,
+    "chg_1d": -0.0191,
+    "vol_ratio": 1.13,
+    "rsi14": 39.3,
+    "vs_ma200": -0.0864,
+    "from_52w_high": -0.3219
+   },
+   {
+    "symbol": "FSLR",
+    "price": 174.82,
+    "chg_1d": 0.0022,
+    "vol_ratio": 0.65,
+    "rsi14": 41.0,
+    "vs_ma200": -0.1995,
+    "from_52w_high": -0.4507
+   },
+   {
+    "symbol": "MGM",
+    "price": 28.87,
+    "chg_1d": -0.001,
+    "vol_ratio": 0.61,
+    "rsi14": 22.3,
+    "vs_ma200": -0.2647,
+    "from_52w_high": -0.4305
+   },
+   {
+    "symbol": "HYG",
+    "price": 76.98,
+    "chg_1d": 0.002,
+    "vol_ratio": 0.57,
+    "rsi14": 39.9,
+    "vs_ma200": -0.0118,
+    "from_52w_high": -0.0272
+   },
+   {
+    "symbol": "WY",
+    "price": 18.98,
+    "chg_1d": -0.0186,
+    "vol_ratio": 0.68,
+    "rsi14": 36.5,
+    "vs_ma200": -0.1926,
+    "from_52w_high": -0.281
+   },
+   {
+    "symbol": "IEF",
+    "price": 90.23,
+    "chg_1d": -0.0002,
+    "vol_ratio": 0.78,
+    "rsi14": 52.6,
+    "vs_ma200": -0.0255,
+    "from_52w_high": -0.0544
+   },
+   {
+    "symbol": "VICI",
+    "price": 23.15,
+    "chg_1d": -0.0094,
+    "vol_ratio": 0.77,
+    "rsi14": 44.7,
+    "vs_ma200": -0.1188,
+    "from_52w_high": -0.2116
+   },
+   {
+    "symbol": "PNR",
+    "price": 52.86,
+    "chg_1d": -0.0004,
+    "vol_ratio": 0.68,
+    "rsi14": 38.4,
+    "vs_ma200": -0.316,
+    "from_52w_high": -0.5166
+   },
+   {
+    "symbol": "APP",
+    "price": 267.9,
+    "chg_1d": -0.0167,
+    "vol_ratio": 0.6,
+    "rsi14": 38.8,
+    "vs_ma200": -0.3758,
+    "from_52w_high": -0.6348
+   },
+   {
+    "symbol": "WYNN",
+    "price": 75.76,
+    "chg_1d": -0.0218,
+    "vol_ratio": 1.04,
+    "rsi14": 38.7,
+    "vs_ma200": -0.2395,
+    "from_52w_high": -0.4266
+   }
+  ]
+ },
+ "watchlist": {
+  "REG": "保有中",
+  "SPG": "保有中",
+  "PKG": "保有中",
+  "MNST": "保有中",
+  "CSX": "保有中",
+  "NSC": "保有中",
+  "CAH": "保有中",
+  "BMY": "保有中",
+  "WAB": "出来高異常",
+  "TDY": "出来高異常",
+  "STE": "出来高異常",
+  "CRL": "出来高異常",
+  "NFLX": "出来高異常",
+  "FOXA": "出来高異常",
+  "DXCM": "出来高異常",
+  "SMCI": "大幅高",
+  "ECHO": "大幅高",
+  "DDOG": "大幅高",
+  "CIEN": "大幅高",
+  "DELL": "大幅高",
+  "CRWD": "大幅高",
+  "T": "大幅安",
+  "CMG": "大幅安",
+  "UNG": "大幅安",
+  "EXPE": "大幅安",
+  "SBAC": "大幅安",
+  "HAS": "52週高値圏",
+  "HLT": "52週高値圏",
+  "MOS": "52週安値圏"
+ },
+ "news": [],
+ "world_news": [],
+ "filings": [],
+ "edgar_fulltext": [],
+ "corporate_events": {
+  "earnings": [
+   {
+    "symbol": "PKG",
+    "date": "2026-10-21",
+    "days_until": -2
+   },
+   {
+    "symbol": "CSX",
+    "date": "2026-10-21",
+    "days_until": -2
+   },
+   {
+    "symbol": "WAB",
+    "date": "2026-10-21",
+    "days_until": -2
+   },
+   {
+    "symbol": "T",
+    "date": "2026-10-21",
+    "days_until": -2
+   },
+   {
+    "symbol": "NSC",
+    "date": "2026-10-22",
+    "days_until": -1
+   },
+   {
+    "symbol": "HLT",
+    "date": "2026-10-27",
+    "days_until": 4
+   },
+   {
+    "symbol": "CMG",
+    "date": "2026-10-28",
+    "days_until": 5
+   },
+   {
+    "symbol": "BMY",
+    "date": "2026-10-29",
+    "days_until": 6
+   },
+   {
+    "symbol": "DXCM",
+    "date": "2026-10-29",
+    "days_until": 6
+   },
+   {
+    "symbol": "FOXA",
+    "date": "2026-11-02",
+    "days_until": 10
+   },
+   {
+    "symbol": "SBAC",
+    "date": "2026-11-02",
+    "days_until": 10
+   },
+   {
+    "symbol": "SMCI",
+    "date": "2026-11-03",
+    "days_until": 11
+   },
+   {
+    "symbol": "MOS",
+    "date": "2026-11-03",
+    "days_until": 11
+   },
+   {
+    "symbol": "STE",
+    "date": "2026-11-04",
+    "days_until": 12
+   },
+   {
+    "symbol": "CRL",
+    "date": "2026-11-04",
+    "days_until": 12
+   },
+   {
+    "symbol": "DDOG",
+    "date": "2026-11-04",
+    "days_until": 12
+   },
+   {
+    "symbol": "EXPE",
+    "date": "2026-11-04",
+    "days_until": 12
+   },
+   {
+    "symbol": "REG",
+    "date": "2026-11-05",
+    "days_until": 13
+   },
+   {
+    "symbol": "SPG",
+    "date": "2026-11-05",
+    "days_until": 13
+   },
+   {
+    "symbol": "MNST",
+    "date": "2026-11-05",
+    "days_until": 13
+   },
+   {
+    "symbol": "CAH",
+    "date": "2026-11-05",
+    "days_until": 13
+   },
+   {
+    "symbol": "ECHO",
+    "date": "2026-11-05",
+    "days_until": 13
+   },
+   {
+    "symbol": "DELL",
+    "date": "2026-11-27",
+    "days_until": 35
+   },
+   {
+    "symbol": "CRWD",
+    "date": "2026-12-01",
+    "days_until": 39
+   }
+  ],
+  "ex_dividends": [
+   {
+    "symbol": "DELL",
+    "date": "2026-10-20",
+    "days_until": -3,
+    "amount": null
+   },
+   {
+    "symbol": "WAB",
+    "date": "2026-11-17",
+    "days_until": 25,
+    "amount": null
+   }
+  ],
+  "alerts": [
+   {
+    "symbol": "REG",
+    "date": "2026-11-05",
+    "days_until": 13,
+    "risk": "決算跨ぎ",
+    "note": "保有期間(60日)の中に決算がある"
+   },
+   {
+    "symbol": "SPG",
+    "date": "2026-11-05",
+    "days_until": 13,
+    "risk": "決算跨ぎ",
+    "note": "保有期間(60日)の中に決算がある"
+   },
+   {
+    "symbol": "MNST",
+    "date": "2026-11-05",
+    "days_until": 13,
+    "risk": "決算跨ぎ",
+    "note": "保有期間(60日)の中に決算がある"
+   },
+   {
+    "symbol": "CAH",
+    "date": "2026-11-05",
+    "days_until": 13,
+    "risk": "決算跨ぎ",
+    "note": "保有期間(60日)の中に決算がある"
+   },
+   {
+    "symbol": "BMY",
+    "date": "2026-10-29",
+    "days_until": 6,
+    "risk": "決算跨ぎ",
+    "note": "保有期間(60日)の中に決算がある"
+   },
+   {
+    "symbol": "STE",
+    "date": "2026-11-04",
+    "days_until": 12,
+    "risk": "決算跨ぎ",
+    "note": "保有期間(60日)の中に決算がある"
+   },
+   {
+    "symbol": "CRL",
+    "date": "2026-11-04",
+    "days_until": 12,
+    "risk": "決算跨ぎ",
+    "note": "保有期間(60日)の中に決算がある"
+   },
+   {
+    "symbol": "FOXA",
+    "date": "2026-11-02",
+    "days_until": 10,
+    "risk": "決算跨ぎ",
+    "note": "保有期間(60日)の中に決算がある"
+   },
+   {
+    "symbol": "DXCM",
+    "date": "2026-10-29",
+    "days_until": 6,
+    "risk": "決算跨ぎ",
+    "note": "保有期間(60日)の中に決算がある"
+   },
+   {
+    "symbol": "SMCI",
+    "date": "2026-11-03",
+    "days_until": 11,
+    "risk": "決算跨ぎ",
+    "note": "保有期間(60日)の中に決算がある"
+   },
+   {
+    "symbol": "ECHO",
+    "date": "2026-11-05",
+    "days_until": 13,
+    "risk": "決算跨ぎ",
+    "note": "保有期間(60日)の中に決算がある"
+   },
+   {
+    "symbol": "DDOG",
+    "date": "2026-11-04",
+    "days_until": 12,
+    "risk": "決算跨ぎ",
+    "note": "保有期間(60日)の中に決算がある"
+   },
+   {
+    "symbol": "DELL",
+    "date": "2026-11-27",
+    "days_until": 35,
+    "risk": "決算跨ぎ",
+    "note": "保有期間(60日)の中に決算がある"
+   },
+   {
+    "symbol": "DELL",
+    "date": "2026-10-20",
+    "days_until": -3,
+    "amount": null,
+    "risk": "配当落ち",
+    "note": "権利落ちによる機械的な下げ。押し目ではない"
+   },
+   {
+    "symbol": "CRWD",
+    "date": "2026-12-01",
+    "days_until": 39,
+    "risk": "決算跨ぎ",
+    "note": "保有期間(60日)の中に決算がある"
+   },
+   {
+    "symbol": "CMG",
+    "date": "2026-10-28",
+    "days_until": 5,
+    "risk": "決算跨ぎ",
+    "note": "保有期間(60日)の中に決算がある"
+   },
+   {
+    "symbol": "EXPE",
+    "date": "2026-11-04",
+    "days_until": 12,
+    "risk": "決算跨ぎ",
+    "note": "保有期間(60日)の中に決算がある"
+   },
+   {
+    "symbol": "SBAC",
+    "date": "2026-11-02",
+    "days_until": 10,
+    "risk": "決算跨ぎ",
+    "note": "保有期間(60日)の中に決算がある"
+   },
+   {
+    "symbol": "HLT",
+    "date": "2026-10-27",
+    "days_until": 4,
+    "risk": "決算跨ぎ",
+    "note": "保有期間(60日)の中に決算がある"
+   },
+   {
+    "symbol": "MOS",
+    "date": "2026-11-03",
+    "days_until": 11,
+    "risk": "決算跨ぎ",
+    "note": "保有期間(60日)の中に決算がある"
+   }
+  ]
+ },
+ "correlation": {
+  "pairs": [
+   {
+    "a": "CSX",
+    "b": "NSC",
+    "corr": 0.797
+   }
+  ],
+  "max_corr": 0.797,
+  "lookback_days": 60,
+  "note": "1組が相関0.75以上。実質同じ賭けになっている可能性があります"
+ },
+ "concentration": {
+  "held_by_sector": {
+   "Real Estate": 2,
+   "Materials": 1,
+   "Consumer Staples": 1,
+   "Industrials": 2,
+   "Health Care": 2
+  },
+  "held_plus_candidates_by_sector": {
+   "Real Estate": 2,
+   "Materials": 1,
+   "Consumer Staples": 1,
+   "Industrials": 2,
+   "Health Care": 2
+  },
+  "warnings": []
+ },
+ "paper": {
+  "book": "rule",
+  "cash": 15.81,
+  "market_value": 1911.18,
+  "equity": 1926.99,
+  "initial_cash": 2000.0,
+  "return_pct": -0.0365,
+  "positions": [
+   {
+    "symbol": "REG",
+    "shares": 3.2412,
+    "entry_price": 76.5012,
+    "entry_date": "2026-09-02",
+    "price": 72.22,
+    "pnl_pct": -0.0472,
+    "dividends": 2.17,
+    "bars_held": 31,
+    "stop_price": 69.7111,
+    "exit_flags": [],
+    "action": "継続保有",
+    "reason": "ルールのシグナル"
+   },
+   {
+    "symbol": "SPG",
+    "shares": 1.087,
+    "entry_price": 209.6776,
+    "entry_date": "2026-09-09",
+    "price": 205.55,
+    "pnl_pct": -0.0197,
+    "dividends": 0.0,
+    "bars_held": 27,
+    "stop_price": 192.9034,
+    "exit_flags": [],
+    "action": "継続保有",
+    "reason": "ルールのシグナル"
+   },
+   {
+    "symbol": "PKG",
+    "shares": 0.9879,
+    "entry_price": 235.6183,
+    "entry_date": "2026-09-11",
+    "price": 239.0,
+    "pnl_pct": 0.0196,
+    "dividends": 1.23,
+    "bars_held": 25,
+    "stop_price": 215.5289,
+    "exit_flags": [],
+    "action": "継続保有",
+    "reason": "ルールのシグナル"
+   },
+   {
+    "symbol": "MNST",
+    "shares": 5.4459,
+    "entry_price": 44.0352,
+    "entry_date": "2026-09-15",
+    "price": 46.63,
+    "pnl_pct": 0.0589,
+    "dividends": 0.0,
+    "bars_held": 23,
+    "stop_price": 40.5124,
+    "exit_flags": [],
+    "action": "継続保有",
+    "reason": "ルールのシグナル"
+   },
+   {
+    "symbol": "CSX",
+    "shares": 4.8941,
+    "entry_price": 47.0676,
+    "entry_date": "2026-09-24",
+    "price": 48.4,
+    "pnl_pct": 0.0283,
+    "dividends": 0.0,
+    "bars_held": 16,
+    "stop_price": 43.3022,
+    "exit_flags": [],
+    "action": "継続保有",
+    "reason": "ルールのシグナル"
+   },
+   {
+    "symbol": "NSC",
+    "shares": 0.705,
+    "entry_price": 315.0018,
+    "entry_date": "2026-09-24",
+    "price": 328.09,
+    "pnl_pct": 0.0415,
+    "dividends": 0.0,
+    "bars_held": 16,
+    "stop_price": 289.8017,
+    "exit_flags": [],
+    "action": "継続保有",
+    "reason": "ルールのシグナル"
+   },
+   {
+    "symbol": "CAH",
+    "shares": 1.0382,
+    "entry_price": 222.1776,
+    "entry_date": "2026-09-25",
+    "price": 257.46,
+    "pnl_pct": 0.1651,
+    "dividends": 1.44,
+    "bars_held": 15,
+    "stop_price": 203.0134,
+    "exit_flags": [],
+    "action": "継続保有",
+    "reason": "ルールのシグナル"
+   },
+   {
+    "symbol": "BMY",
+    "shares": 3.7328,
+    "entry_price": 61.7994,
+    "entry_date": "2026-09-25",
+    "price": 61.12,
+    "pnl_pct": 0.013,
+    "dividends": 5.52,
+    "bars_held": 15,
+    "stop_price": 55.3754,
+    "exit_flags": [],
+    "action": "継続保有",
+    "reason": "ルールのシグナル"
+   }
+  ],
+  "pending": [],
+  "trades_total": 10,
+  "win_rate": 0.0,
+  "losing_streak": 10,
+  "skipped": false,
+  "log": []
+ },
+ "positions": [
+  {
+   "symbol": "REG",
+   "shares": 3.2412,
+   "entry_price": 76.5012,
+   "entry_date": "2026-09-02",
+   "price": 72.22,
+   "pnl_pct": -0.0472,
+   "dividends": 2.17,
+   "bars_held": 31,
+   "stop_price": 69.7111,
+   "exit_flags": [],
+   "action": "継続保有",
+   "reason": "ルールのシグナル"
+  },
+  {
+   "symbol": "SPG",
+   "shares": 1.087,
+   "entry_price": 209.6776,
+   "entry_date": "2026-09-09",
+   "price": 205.55,
+   "pnl_pct": -0.0197,
+   "dividends": 0.0,
+   "bars_held": 27,
+   "stop_price": 192.9034,
+   "exit_flags": [],
+   "action": "継続保有",
+   "reason": "ルールのシグナル"
+  },
+  {
+   "symbol": "PKG",
+   "shares": 0.9879,
+   "entry_price": 235.6183,
+   "entry_date": "2026-09-11",
+   "price": 239.0,
+   "pnl_pct": 0.0196,
+   "dividends": 1.23,
+   "bars_held": 25,
+   "stop_price": 215.5289,
+   "exit_flags": [],
+   "action": "継続保有",
+   "reason": "ルールのシグナル"
+  },
+  {
+   "symbol": "MNST",
+   "shares": 5.4459,
+   "entry_price": 44.0352,
+   "entry_date": "2026-09-15",
+   "price": 46.63,
+   "pnl_pct": 0.0589,
+   "dividends": 0.0,
+   "bars_held": 23,
+   "stop_price": 40.5124,
+   "exit_flags": [],
+   "action": "継続保有",
+   "reason": "ルールのシグナル"
+  },
+  {
+   "symbol": "CSX",
+   "shares": 4.8941,
+   "entry_price": 47.0676,
+   "entry_date": "2026-09-24",
+   "price": 48.4,
+   "pnl_pct": 0.0283,
+   "dividends": 0.0,
+   "bars_held": 16,
+   "stop_price": 43.3022,
+   "exit_flags": [],
+   "action": "継続保有",
+   "reason": "ルールのシグナル"
+  },
+  {
+   "symbol": "NSC",
+   "shares": 0.705,
+   "entry_price": 315.0018,
+   "entry_date": "2026-09-24",
+   "price": 328.09,
+   "pnl_pct": 0.0415,
+   "dividends": 0.0,
+   "bars_held": 16,
+   "stop_price": 289.8017,
+   "exit_flags": [],
+   "action": "継続保有",
+   "reason": "ルールのシグナル"
+  },
+  {
+   "symbol": "CAH",
+   "shares": 1.0382,
+   "entry_price": 222.1776,
+   "entry_date": "2026-09-25",
+   "price": 257.46,
+   "pnl_pct": 0.1651,
+   "dividends": 1.44,
+   "bars_held": 15,
+   "stop_price": 203.0134,
+   "exit_flags": [],
+   "action": "継続保有",
+   "reason": "ルールのシグナル"
+  },
+  {
+   "symbol": "BMY",
+   "shares": 3.7328,
+   "entry_price": 61.7994,
+   "entry_date": "2026-09-25",
+   "price": 61.12,
+   "pnl_pct": 0.013,
+   "dividends": 5.52,
+   "bars_held": 15,
+   "stop_price": 55.3754,
+   "exit_flags": [],
+   "action": "継続保有",
+   "reason": "ルールのシグナル"
+  }
+ ],
+ "cash": 15.81,
+ "account": {
+  "cash": 15.81,
+  "initial_cash": 2000.0
+ },
+ "names": {
+  "ABT": "Abbott Laboratories",
+  "AMT": "American Tower",
+  "APP": "AppLovin",
+  "BBY": "Best Buy",
+  "BKNG": "Booking Holdings",
+  "BMY": "Bristol Myers Squibb",
+  "CAH": "Cardinal Health",
+  "CCI": "Crown Castle",
+  "CDW": "CDW Corporation",
+  "CEG": "Constellation Energy",
+  "CIEN": "Ciena",
+  "CLX": "Clorox",
+  "CMG": "Chipotle Mexican Grill",
+  "CRL": "Charles River Laboratories",
+  "CRWD": "CrowdStrike",
+  "CSX": "CSX Corporation",
+  "CTAS": "Cintas",
+  "DASH": "DoorDash",
+  "DDOG": "Datadog",
+  "DELL": "Dell Technologies",
+  "DHR": "Danaher Corporation",
+  "DXCM": "Dexcom",
+  "EBAY": "eBay Inc.",
+  "ECHO": "EchoStar",
+  "EG": "Everest Group",
+  "EXPE": "Expedia Group",
+  "FDS": "FactSet",
+  "FLEX": "Flex Ltd.",
+  "FOXA": "Fox Corporation (Class A)",
+  "FSLR": "First Solar",
+  "GEV": "GE Vernova",
+  "GNRC": "Generac",
+  "HAS": "Hasbro",
+  "HLT": "Hilton Worldwide",
+  "HST": "Host Hotels & Resorts",
+  "HUBB": "Hubbell Incorporated",
+  "HWM": "Howmet Aerospace",
+  "HYG": "ハイイールド債",
+  "IEF": "米中期国債7-10年",
+  "INCY": "Incyte",
+  "IQV": "IQVIA",
+  "ISRG": "Intuitive Surgical",
+  "LULU": "Lululemon Athletica",
+  "MAR": "Marriott International",
+  "MCO": "Moody's Corporation",
+  "MGM": "MGM Resorts",
+  "MNST": "Monster Beverage",
+  "MOS": "Mosaic Company (The)",
+  "MRNA": "Moderna",
+  "NFLX": "Netflix",
+  "NSC": "Norfolk Southern",
+  "PKG": "Packaging Corporation of America",
+  "PLTR": "Palantir Technologies",
+  "PNR": "Pentair",
+  "REG": "Regency Centers",
+  "SBAC": "SBA Communications",
+  "SMCI": "Supermicro",
+  "SPG": "Simon Property Group",
+  "STE": "Steris",
+  "T": "AT&T",
+  "TDY": "Teledyne Technologies",
+  "TRV": "Travelers Companies (The)",
+  "UAL": "United Airlines Holdings",
+  "UBER": "Uber",
+  "UNG": "天然ガス",
+  "VEEV": "Veeva Systems",
+  "VICI": "Vici Properties",
+  "VRT": "Vertiv",
+  "WAB": "Wabtec",
+  "WY": "Weyerhaeuser",
+  "WYNN": "Wynn Resorts"
+ },
+ "trades": [
+  {
+   "symbol": "ODFL",
+   "entry_date": "2026-09-01",
+   "exit_date": "2026-09-02",
+   "entry_price": 199.8998,
+   "exit_price": 183.7607,
+   "shares": 1.2506,
+   "pnl": -20.18,
+   "pnl_pct": -0.0807,
+   "bars_held": 1,
+   "exit_reason": "損切り",
+   "book": "rule"
+  },
+  {
+   "symbol": "FRT",
+   "entry_date": "2026-09-02",
+   "exit_date": "2026-09-04",
+   "entry_price": 117.7241,
+   "exit_price": 117.0563,
+   "shares": 2.1062,
+   "pnl": -1.41,
+   "pnl_pct": -0.0057,
+   "bars_held": 2,
+   "exit_reason": "手仕舞いシグナル",
+   "book": "rule"
+  },
+  {
+   "symbol": "HWM",
+   "entry_date": "2026-09-02",
+   "exit_date": "2026-09-08",
+   "entry_price": 257.9762,
+   "exit_price": 237.1482,
+   "shares": 0.9611,
+   "dividends": 0.0,
+   "pnl": -20.02,
+   "pnl_pct": -0.0807,
+   "bars_held": 3,
+   "exit_reason": "損切り",
+   "book": "rule"
+  },
+  {
+   "symbol": "CASY",
+   "entry_date": "2026-09-02",
+   "exit_date": "2026-09-09",
+   "entry_price": 764.2709,
+   "exit_price": 702.5667,
+   "shares": 0.3244,
+   "dividends": 0.0,
+   "pnl": -20.02,
+   "pnl_pct": -0.0807,
+   "bars_held": 4,
+   "exit_reason": "損切り",
+   "book": "rule"
+  },
+  {
+   "symbol": "KLAC",
+   "entry_date": "2026-09-04",
+   "exit_date": "2026-09-10",
+   "entry_price": 178.0974,
+   "exit_price": 176.4487,
+   "shares": 1.3843,
+   "dividends": 0.0,
+   "pnl": -2.28,
+   "pnl_pct": -0.0093,
+   "bars_held": 3,
+   "exit_reason": "手仕舞いシグナル",
+   "book": "rule"
+  },
+  {
+   "symbol": "CAT",
+   "entry_date": "2026-09-03",
+   "exit_date": "2026-09-15",
+   "entry_price": 797.5375,
+   "exit_price": 788.8584,
+   "shares": 0.3096,
+   "dividends": 0.0,
+   "pnl": -2.69,
+   "pnl_pct": -0.0109,
+   "bars_held": 7,
+   "exit_reason": "手仕舞いシグナル",
+   "book": "rule"
+  },
+  {
+   "symbol": "KIM",
+   "entry_date": "2026-09-02",
+   "exit_date": "2026-09-23",
+   "entry_price": 24.2494,
+   "exit_price": 22.2916,
+   "shares": 10.2253,
+   "dividends": 0.0,
+   "pnl": -20.02,
+   "pnl_pct": -0.0807,
+   "bars_held": 14,
+   "exit_reason": "損切り",
+   "book": "rule"
+  },
+  {
+   "symbol": "EXPE",
+   "entry_date": "2026-09-11",
+   "exit_date": "2026-09-23",
+   "entry_price": 280.7244,
+   "exit_price": 258.0598,
+   "shares": 0.8528,
+   "dividends": 0.0,
+   "pnl": -19.33,
+   "pnl_pct": -0.0807,
+   "bars_held": 8,
+   "exit_reason": "損切り",
+   "book": "rule"
+  },
+  {
+   "symbol": "D",
+   "entry_date": "2026-09-01",
+   "exit_date": "2026-09-24",
+   "entry_price": 66.303,
+   "exit_price": 60.95,
+   "shares": 3.7705,
+   "dividends": 0.0,
+   "pnl": -20.18,
+   "pnl_pct": -0.0807,
+   "bars_held": 16,
+   "exit_reason": "損切り",
+   "book": "rule"
+  },
+  {
+   "symbol": "DVA",
+   "entry_date": "2026-09-03",
+   "exit_date": "2026-09-25",
+   "entry_price": 179.8137,
+   "exit_price": 175.2397,
+   "shares": 1.3523,
+   "dividends": 0.0,
+   "pnl": -6.19,
+   "pnl_pct": -0.0254,
+   "bars_held": 15,
+   "exit_reason": "手仕舞いシグナル",
+   "book": "rule"
+  }
+ ],
+ "data_feed": {
+  "dividend_column": true,
+  "dividends_today": 1,
+  "splits_today": 0
+ },
+ "performance": {
+  "initial": 2000,
+  "equity": [
+   [
+    "2026-08-31",
+    2000.0
+   ],
+   [
+    "2026-09-01",
+    1984.17
+   ],
+   [
+    "2026-09-02",
+    1967.06
+   ],
+   [
+    "2026-09-03",
+    1979.04
+   ],
+   [
+    "2026-09-04",
+    1985.7
+   ],
+   [
+    "2026-09-07",
+    1985.7
+   ],
+   [
+    "2026-09-08",
+    1964.35
+   ],
+   [
+    "2026-09-09",
+    1934.09
+   ],
+   [
+    "2026-09-10",
+    1916.61
+   ],
+   [
+    "2026-09-11",
+    1914.31
+   ],
+   [
+    "2026-09-14",
+    1919.53
+   ],
+   [
+    "2026-09-15",
+    1921.75
+   ],
+   [
+    "2026-09-16",
+    1911.19
+   ],
+   [
+    "2026-09-17",
+    1902.25
+   ],
+   [
+    "2026-09-18",
+    1894.47
+   ],
+   [
+    "2026-09-21",
+    1892.21
+   ],
+   [
+    "2026-09-22",
+    1896.86
+   ],
+   [
+    "2026-09-23",
+    1865.59
+   ],
+   [
+    "2026-09-24",
+    1843.05
+   ],
+   [
+    "2026-09-25",
+    1847.41
+   ],
+   [
+    "2026-09-28",
+    1841.8
+   ],
+   [
+    "2026-09-30",
+    1841.8
+   ],
+   [
+    "2026-10-01",
+    1838.23
+   ],
+   [
+    "2026-10-02",
+    1826.39
+   ],
+   [
+    "2026-10-03",
+    1834.87
+   ],
+   [
+    "2026-10-06",
+    1842.87
+   ],
+   [
+    "2026-10-07",
+    1846.19
+   ],
+   [
+    "2026-10-08",
+    1846.19
+   ],
+   [
+    "2026-10-09",
+    1851.83
+   ],
+   [
+    "2026-10-10",
+    1851.83
+   ],
+   [
+    "2026-10-13",
+    1851.5
+   ],
+   [
+    "2026-10-14",
+    1851.5
+   ],
+   [
+    "2026-10-15",
+    1907.11
+   ],
+   [
+    "2026-10-17",
+    1907.11
+   ],
+   [
+    "2026-10-20",
+    1914.22
+   ],
+   [
+    "2026-10-21",
+    1903.28
+   ],
+   [
+    "2026-10-22",
+    1932.73
+   ],
+   [
+    "2026-10-23",
+    1926.99
+   ]
+  ],
+  "stats": {
+   "max_dd": -0.0868,
+   "trades": 10,
+   "win_rate": 0.0,
+   "losing_streak": 10
+  }
+ }
+}
