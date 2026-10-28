@@ -136,5 +136,19 @@
   "bars_held": 15,
   "exit_reason": "手仕舞いシグナル",
   "book": "rule"
+ },
+ {
+  "symbol": "BMY",
+  "entry_date": "2026-09-25",
+  "exit_date": "2026-10-26",
+  "entry_price": 61.7994,
+  "exit_price": 61.3409,
+  "shares": 3.7328,
+  "dividends": 5.52,
+  "pnl": 3.81,
+  "pnl_pct": 0.0165,
+  "bars_held": 16,
+  "exit_reason": "手仕舞いシグナル",
+  "book": "rule"
  }
 ]
