@@ -150,5 +150,19 @@
   "bars_held": 16,
   "exit_reason": "手仕舞いシグナル",
   "book": "rule"
+ },
+ {
+  "symbol": "REG",
+  "entry_date": "2026-09-02",
+  "exit_date": "2026-10-29",
+  "entry_price": 76.5012,
+  "exit_price": 74.0007,
+  "shares": 3.2412,
+  "dividends": 2.17,
+  "pnl": -5.93,
+  "pnl_pct": -0.0239,
+  "bars_held": 35,
+  "exit_reason": "手仕舞いシグナル",
+  "book": "rule"
  }
 ]
