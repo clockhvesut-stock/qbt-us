@@ -164,5 +164,19 @@
   "bars_held": 35,
   "exit_reason": "手仕舞いシグナル",
   "book": "rule"
+ },
+ {
+  "symbol": "SNDK",
+  "entry_date": "2026-10-26",
+  "exit_date": "2026-11-02",
+  "entry_price": 1252.8815,
+  "exit_price": 1151.7289,
+  "shares": 0.1963,
+  "dividends": 0.0,
+  "pnl": -19.86,
+  "pnl_pct": -0.0807,
+  "bars_held": 4,
+  "exit_reason": "損切り",
+  "book": "rule"
  }
 ]
