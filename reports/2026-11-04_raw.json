@@ -1,0 +1,3821 @@
+{
+ "generated_at": "2026-11-04T01:46:24+00:00",
+ "date": "2026-11-04",
+ "strategy": "米国株_12-1モメンタム_v1",
+ "errors": [],
+ "data_date": "2026-11-02",
+ "macro": {
+  "^GSPC": {
+   "label": "S&P500",
+   "last": 7568.9199,
+   "chg_1d": 0.00365,
+   "chg_5d": -0.0199,
+   "chg_20d": -0.03197,
+   "vs_ma200": 0.03459,
+   "pctile_1y": 0.721
+  },
+  "^VIX": {
+   "label": "VIX(恐怖指数)",
+   "last": 20.83,
+   "chg_1d": -0.01513,
+   "chg_5d": 0.18893,
+   "chg_20d": 0.38774,
+   "vs_ma200": 0.1393,
+   "pctile_1y": 0.85
+  },
+  "^TNX": {
+   "label": "米10年金利",
+   "last": 4.952,
+   "chg_1d": 0.01185,
+   "chg_5d": -0.00821,
+   "chg_20d": -0.06016,
+   "vs_ma200": 0.08732,
+   "pctile_1y": 0.861
+  },
+  "^IRX": {
+   "label": "米3ヶ月金利",
+   "last": 4.025,
+   "chg_1d": 0.0108,
+   "chg_5d": -0.00371,
+   "chg_20d": -0.00297,
+   "vs_ma200": 0.08396,
+   "pctile_1y": 0.913
+  },
+  "DX-Y.NYB": {
+   "label": "ドル指数",
+   "last": 101.345,
+   "chg_1d": -0.00398,
+   "chg_5d": -0.00953,
+   "chg_20d": -0.00476,
+   "vs_ma200": 0.01697,
+   "pctile_1y": 0.861
+  },
+  "CL=F": {
+   "label": "WTI原油",
+   "last": 95.93,
+   "chg_1d": -0.00549,
+   "chg_5d": -0.03974,
+   "chg_20d": 0.07256,
+   "vs_ma200": 0.10632,
+   "pctile_1y": 0.782
+  },
+  "GC=F": {
+   "label": "金",
+   "last": 3969.6001,
+   "chg_1d": 0.0,
+   "chg_5d": -0.02577,
+   "chg_20d": -0.05195,
+   "vs_ma200": -0.12039,
+   "pctile_1y": 0.008
+  },
+  "HG=F": {
+   "label": "銅",
+   "last": 6.3835,
+   "chg_1d": -0.02445,
+   "chg_5d": -0.03602,
+   "chg_20d": -0.032,
+   "vs_ma200": 0.02753,
+   "pctile_1y": 0.683
+  },
+  "BTC-USD": {
+   "label": "ビットコイン",
+   "last": 76760.0625,
+   "chg_1d": 0.00108,
+   "chg_5d": -0.01305,
+   "chg_20d": -0.05888,
+   "vs_ma200": 0.04928,
+   "pctile_1y": 0.479
+  },
+  "^N225": {
+   "label": "日経平均",
+   "last": 61368.7695,
+   "chg_1d": -0.02716,
+   "chg_5d": -0.03002,
+   "chg_20d": -0.12264,
+   "vs_ma200": -0.00831,
+   "pctile_1y": 0.506
+  },
+  "^STOXX50E": {
+   "label": "欧州株",
+   "last": 6176.0601,
+   "chg_1d": 0.0073,
+   "chg_5d": 0.00978,
+   "chg_20d": -0.01059,
+   "vs_ma200": 0.01095,
+   "pctile_1y": 0.644
+  }
+ },
+ "breadth": {
+  "above_ma50_pct": 0.665,
+  "above_ma200_pct": 0.65,
+  "advancers_pct": 0.686,
+  "near_52w_high_pct": 0.3,
+  "near_52w_low_pct": 0.042,
+  "symbols_counted": 526
+ },
+ "regime": {
+  "regime": "中立",
+  "note": "明確な方向感がない",
+  "spy_above_ma200": true,
+  "breadth_healthy": true,
+  "vix": 20.83,
+  "vix_percentile_1y": 0.85,
+  "rate_10y": 4.952,
+  "rate_10y_chg_20d": -0.06016
+ },
+ "universe_size": 526,
+ "sectors": [
+  {
+   "sector": "Communication Services",
+   "銘柄数": 22,
+   "平均1日": 0.0103,
+   "平均5日": -0.0141,
+   "平均21日": -0.029,
+   "MA200超え比率": 0.3182
+  },
+  {
+   "sector": "Consumer Discretionary",
+   "銘柄数": 47,
+   "平均1日": 0.0272,
+   "平均5日": 0.0558,
+   "平均21日": 0.0998,
+   "MA200超え比率": 0.5957
+  },
+  {
+   "sector": "Consumer Staples",
+   "銘柄数": 33,
+   "平均1日": 0.016,
+   "平均5日": 0.0268,
+   "平均21日": 0.1214,
+   "MA200超え比率": 0.697
+  },
+  {
+   "sector": "ETF",
+   "銘柄数": 28,
+   "平均1日": -0.0007,
+   "平均5日": -0.0038,
+   "平均21日": 0.0047,
+   "MA200超え比率": 0.5714
+  },
+  {
+   "sector": "Energy",
+   "銘柄数": 21,
+   "平均1日": -0.0395,
+   "平均5日": -0.0378,
+   "平均21日": 0.0548,
+   "MA200超え比率": 0.7143
+  },
+  {
+   "sector": "Financials",
+   "銘柄数": 76,
+   "平均1日": 0.0172,
+   "平均5日": 0.0275,
+   "平均21日": 0.0833,
+   "MA200超え比率": 0.8158
+  },
+  {
+   "sector": "Health Care",
+   "銘柄数": 59,
+   "平均1日": 0.0074,
+   "平均5日": 0.0161,
+   "平均21日": 0.0956,
+   "MA200超え比率": 0.8983
+  },
+  {
+   "sector": "Industrials",
+   "銘柄数": 81,
+   "平均1日": 0.0198,
+   "平均5日": 0.0342,
+   "平均21日": 0.0597,
+   "MA200超え比率": 0.5802
+  },
+  {
+   "sector": "Information Technology",
+   "銘柄数": 73,
+   "平均1日": -0.0259,
+   "平均5日": -0.0526,
+   "平均21日": -0.0831,
+   "MA200超え比率": 0.5479
+  },
+  {
+   "sector": "Materials",
+   "銘柄数": 25,
+   "平均1日": 0.0163,
+   "平均5日": 0.0426,
+   "平均21日": 0.0927,
+   "MA200超え比率": 0.68
+  },
+  {
+   "sector": "Real Estate",
+   "銘柄数": 30,
+   "平均1日": 0.0147,
+   "平均5日": 0.0175,
+   "平均21日": 0.0752,
+   "MA200超え比率": 0.4
+  },
+  {
+   "sector": "Utilities",
+   "銘柄数": 31,
+   "平均1日": 0.0059,
+   "平均5日": 0.0262,
+   "平均21日": 0.0975,
+   "MA200超え比率": 0.6774
+  }
+ ],
+ "data_quality": {
+  "level": "warn",
+  "usable": true,
+  "data_date": "2026-11-02",
+  "expected_trading_day": "2026-11-03",
+  "generated_at_utc": "2026-11-04T01:46:24+00:00",
+  "market_open_at_fetch": false,
+  "volume_ratio_median": 1.14,
+  "problems": [
+   "データが1日古いままです（直近の取引日は2026-11-03）。祝日か、データ取得の失敗が考えられます"
+  ],
+  "summary": "データが1日古いままです（直近の取引日は2026-11-03）。祝日か、データ取得の失敗が考えられます"
+ },
+ "track_a_signals": [
+  {
+   "rank": 1,
+   "symbol": "MRNA",
+   "rank_score": 5.7523,
+   "price": 220.83,
+   "chg_1d": -0.004,
+   "chg_5d": 0.1105,
+   "chg_21d": 0.1622,
+   "mom_12_1": 6.482,
+   "rsi14": 56.9,
+   "rsi3": 63.7,
+   "zscore10": 0.2,
+   "vs_ma50": 0.2002,
+   "vs_ma200": 1.5241,
+   "atr_pct": 0.0881,
+   "vol_ratio": 0.44,
+   "dollar_vol": 3715272273,
+   "from_52w_high": -0.1016,
+   "from_52w_low": 8.8761,
+   "sector": "Health Care",
+   "rel_chg_5d": 0.0944,
+   "rel_chg_21d": 0.0666
+  },
+  {
+   "rank": 2,
+   "symbol": "MU",
+   "rank_score": 3.8031,
+   "price": 833.59,
+   "chg_1d": -0.0578,
+   "chg_5d": -0.0776,
+   "chg_21d": -0.2244,
+   "mom_12_1": 3.7594,
+   "rsi14": 37.4,
+   "rsi3": 20.0,
+   "zscore10": -1.68,
+   "vs_ma50": -0.1459,
+   "vs_ma200": 0.1128,
+   "atr_pct": 0.0606,
+   "vol_ratio": 1.12,
+   "dollar_vol": 24321648268,
+   "from_52w_high": -0.3129,
+   "from_52w_low": 3.1443,
+   "sector": "Information Technology",
+   "rel_chg_5d": -0.025,
+   "rel_chg_21d": -0.1413
+  },
+  {
+   "rank": 3,
+   "symbol": "DELL",
+   "rank_score": 2.5257,
+   "price": 392.78,
+   "chg_1d": -0.0743,
+   "chg_5d": -0.1591,
+   "chg_21d": -0.3008,
+   "mom_12_1": 2.4402,
+   "rsi14": 31.9,
+   "rsi3": 11.1,
+   "zscore10": -2.2,
+   "vs_ma50": -0.2333,
+   "vs_ma200": 0.1837,
+   "atr_pct": 0.0818,
+   "vol_ratio": 0.99,
+   "dollar_vol": 3025451937,
+   "from_52w_high": -0.3315,
+   "from_52w_low": 2.5581,
+   "sector": "Information Technology",
+   "rel_chg_5d": -0.1065,
+   "rel_chg_21d": -0.2177
+  },
+  {
+   "rank": 4,
+   "symbol": "HPE",
+   "rank_score": 1.8914,
+   "price": 51.19,
+   "chg_1d": -0.0708,
+   "chg_5d": -0.1282,
+   "chg_21d": -0.2616,
+   "mom_12_1": 1.8498,
+   "rsi14": 35.4,
+   "rsi3": 10.7,
+   "zscore10": -2.19,
+   "vs_ma50": -0.1414,
+   "vs_ma200": 0.2555,
+   "atr_pct": 0.0713,
+   "vol_ratio": 0.92,
+   "dollar_vol": 976600569,
+   "from_52w_high": -0.3032,
+   "from_52w_low": 1.603,
+   "sector": "Information Technology",
+   "rel_chg_5d": -0.0756,
+   "rel_chg_21d": -0.1785
+  },
+  {
+   "rank": 5,
+   "symbol": "AMD",
+   "rank_score": 1.4875,
+   "price": 466.84,
+   "chg_1d": -0.0752,
+   "chg_5d": -0.1213,
+   "chg_21d": -0.2636,
+   "mom_12_1": 1.4666,
+   "rsi14": 34.6,
+   "rsi3": 14.4,
+   "zscore10": -2.02,
+   "vs_ma50": -0.1484,
+   "vs_ma200": 0.134,
+   "atr_pct": 0.0657,
+   "vol_ratio": 1.5,
+   "dollar_vol": 11222042202,
+   "from_52w_high": -0.2811,
+   "from_52w_low": 1.4448,
+   "sector": "Information Technology",
+   "rel_chg_5d": -0.0687,
+   "rel_chg_21d": -0.1805
+  },
+  {
+   "rank": 6,
+   "symbol": "VLO",
+   "rank_score": 1.4392,
+   "price": 381.46,
+   "chg_1d": -0.0455,
+   "chg_5d": -0.1061,
+   "chg_21d": -0.0611,
+   "mom_12_1": 1.5255,
+   "rsi14": 39.4,
+   "rsi3": 28.5,
+   "zscore10": -1.28,
+   "vs_ma50": -0.0422,
+   "vs_ma200": 0.3359,
+   "atr_pct": 0.0474,
+   "vol_ratio": 1.56,
+   "dollar_vol": 1120339003,
+   "from_52w_high": -0.1703,
+   "from_52w_low": 1.3904,
+   "sector": "Energy",
+   "rel_chg_5d": -0.0683,
+   "rel_chg_21d": -0.1159
+  },
+  {
+   "rank": 7,
+   "symbol": "MPC",
+   "rank_score": 1.1949,
+   "price": 430.39,
+   "chg_1d": -0.0322,
+   "chg_5d": -0.0855,
+   "chg_21d": 0.0191,
+   "mom_12_1": 1.2611,
+   "rsi14": 45.8,
+   "rsi3": 30.7,
+   "zscore10": -1.33,
+   "vs_ma50": 0.0267,
+   "vs_ma200": 0.48,
+   "atr_pct": 0.0417,
+   "vol_ratio": 1.39,
+   "dollar_vol": 911180612,
+   "from_52w_high": -0.1125,
+   "from_52w_low": 1.6772,
+   "sector": "Energy",
+   "rel_chg_5d": -0.0477,
+   "rel_chg_21d": -0.0357
+  },
+  {
+   "rank": 8,
+   "symbol": "USO",
+   "rank_score": 1.0551,
+   "price": 156.87,
+   "chg_1d": -0.0708,
+   "chg_5d": -0.0563,
+   "chg_21d": 0.0645,
+   "mom_12_1": 0.9844,
+   "rsi14": 49.4,
+   "rsi3": 17.9,
+   "zscore10": -1.83,
+   "vs_ma50": 0.0421,
+   "vs_ma200": 0.2609,
+   "atr_pct": 0.0352,
+   "vol_ratio": 1.57,
+   "dollar_vol": 733712282,
+   "from_52w_high": -0.0747,
+   "from_52w_low": 1.3707,
+   "sector": "ETF",
+   "rel_chg_5d": -0.0525,
+   "rel_chg_21d": 0.0598
+  },
+  {
+   "rank": 9,
+   "symbol": "CRWD",
+   "rank_score": 1.0052,
+   "price": 241.81,
+   "chg_1d": -0.0344,
+   "chg_5d": -0.0765,
+   "chg_21d": -0.1045,
+   "mom_12_1": 1.0086,
+   "rsi14": 45.5,
+   "rsi3": 17.4,
+   "zscore10": -0.71,
+   "vs_ma50": 0.0023,
+   "vs_ma200": 0.4404,
+   "atr_pct": 0.0548,
+   "vol_ratio": 1.01,
+   "dollar_vol": 2246247559,
+   "from_52w_high": -0.1329,
+   "from_52w_low": 1.7616,
+   "sector": "Information Technology",
+   "rel_chg_5d": -0.0239,
+   "rel_chg_21d": -0.0214
+  },
+  {
+   "rank": 10,
+   "symbol": "APA",
+   "rank_score": 0.9957,
+   "price": 48.82,
+   "chg_1d": -0.0757,
+   "chg_5d": -0.055,
+   "chg_21d": 0.1233,
+   "mom_12_1": 0.9813,
+   "rsi14": 53.1,
+   "rsi3": 25.1,
+   "zscore10": -1.51,
+   "vs_ma50": 0.0736,
+   "vs_ma200": 0.3042,
+   "atr_pct": 0.0357,
+   "vol_ratio": 1.34,
+   "dollar_vol": 251948864,
+   "from_52w_high": -0.0757,
+   "from_52w_low": 1.3184,
+   "sector": "Energy",
+   "rel_chg_5d": -0.0172,
+   "rel_chg_21d": 0.0685
+  },
+  {
+   "rank": 11,
+   "symbol": "PSX",
+   "rank_score": 0.9874,
+   "price": 275.04,
+   "chg_1d": -0.0275,
+   "chg_5d": -0.0478,
+   "chg_21d": 0.0395,
+   "mom_12_1": 1.0399,
+   "rsi14": 49.4,
+   "rsi3": 40.8,
+   "zscore10": -0.81,
+   "vs_ma50": 0.0305,
+   "vs_ma200": 0.3871,
+   "atr_pct": 0.0358,
+   "vol_ratio": 1.54,
+   "dollar_vol": 741312465,
+   "from_52w_high": -0.0748,
+   "from_52w_low": 1.198,
+   "sector": "Energy",
+   "rel_chg_5d": -0.01,
+   "rel_chg_21d": -0.0153
+  },
+  {
+   "rank": 12,
+   "symbol": "NTAP",
+   "rank_score": 0.9835,
+   "price": 185.26,
+   "chg_1d": -0.0699,
+   "chg_5d": -0.1658,
+   "chg_21d": -0.1794,
+   "mom_12_1": 0.9248,
+   "rsi14": 34.6,
+   "rsi3": 7.9,
+   "zscore10": -2.33,
+   "vs_ma50": -0.0951,
+   "vs_ma200": 0.2367,
+   "atr_pct": 0.0567,
+   "vol_ratio": 1.11,
+   "dollar_vol": 516690651,
+   "from_52w_high": -0.2254,
+   "from_52w_low": 0.9891,
+   "sector": "Information Technology",
+   "rel_chg_5d": -0.1132,
+   "rel_chg_21d": -0.0963
+  },
+  {
+   "rank": 13,
+   "symbol": "TRGP",
+   "rank_score": 0.8994,
+   "price": 294.73,
+   "chg_1d": -0.0643,
+   "chg_5d": -0.0288,
+   "chg_21d": 0.0503,
+   "mom_12_1": 0.8933,
+   "rsi14": 50.6,
+   "rsi3": 27.8,
+   "zscore10": -0.73,
+   "vs_ma50": 0.0194,
+   "vs_ma200": 0.1427,
+   "atr_pct": 0.0294,
+   "vol_ratio": 1.64,
+   "dollar_vol": 338934618,
+   "from_52w_high": -0.0643,
+   "from_52w_low": 0.9494,
+   "sector": "Energy",
+   "rel_chg_5d": 0.009,
+   "rel_chg_21d": -0.0045
+  },
+  {
+   "rank": 14,
+   "symbol": "TXN",
+   "rank_score": 0.8778,
+   "price": 302.02,
+   "chg_1d": 0.0039,
+   "chg_5d": 0.018,
+   "chg_21d": 0.033,
+   "mom_12_1": 0.8572,
+   "rsi14": 61.7,
+   "rsi3": 50.1,
+   "zscore10": 0.57,
+   "vs_ma50": 0.0977,
+   "vs_ma200": 0.1721,
+   "atr_pct": 0.0323,
+   "vol_ratio": 1.47,
+   "dollar_vol": 2122846910,
+   "from_52w_high": -0.082,
+   "from_52w_low": 1.0126,
+   "sector": "Information Technology",
+   "rel_chg_5d": 0.0706,
+   "rel_chg_21d": 0.1161
+  },
+  {
+   "rank": 15,
+   "symbol": "PANW",
+   "rank_score": 0.8474,
+   "price": 351.72,
+   "chg_1d": -0.0387,
+   "chg_5d": -0.0992,
+   "chg_21d": -0.1278,
+   "mom_12_1": 0.8469,
+   "rsi14": 42.2,
+   "rsi3": 16.7,
+   "zscore10": -0.93,
+   "vs_ma50": -0.0546,
+   "vs_ma200": 0.2996,
+   "atr_pct": 0.0554,
+   "vol_ratio": 1.19,
+   "dollar_vol": 1969943736,
+   "from_52w_high": -0.1624,
+   "from_52w_low": 1.4827,
+   "sector": "Information Technology",
+   "rel_chg_5d": -0.0466,
+   "rel_chg_21d": -0.0447
+  },
+  {
+   "rank": 16,
+   "symbol": "ADI",
+   "rank_score": 0.8135,
+   "price": 412.85,
+   "chg_1d": -0.0102,
+   "chg_5d": 0.0121,
+   "chg_21d": -0.0103,
+   "mom_12_1": 0.8124,
+   "rsi14": 54.2,
+   "rsi3": 37.1,
+   "zscore10": 0.16,
+   "vs_ma50": 0.0608,
+   "vs_ma200": 0.1122,
+   "atr_pct": 0.0359,
+   "vol_ratio": 1.48,
+   "dollar_vol": 1447690644,
+   "from_52w_high": -0.0704,
+   "from_52w_low": 0.8562,
+   "sector": "Information Technology",
+   "rel_chg_5d": 0.0647,
+   "rel_chg_21d": 0.0728
+  },
+  {
+   "rank": 17,
+   "symbol": "CNC",
+   "rank_score": 0.7987,
+   "price": 66.53,
+   "chg_1d": -0.028,
+   "chg_5d": -0.022,
+   "chg_21d": 0.0562,
+   "mom_12_1": 0.8179,
+   "rsi14": 47.0,
+   "rsi3": 24.7,
+   "zscore10": -1.63,
+   "vs_ma50": 0.0059,
+   "vs_ma200": 0.1999,
+   "atr_pct": 0.0416,
+   "vol_ratio": 1.17,
+   "dollar_vol": 329850596,
+   "from_52w_high": -0.0661,
+   "from_52w_low": 1.0921,
+   "sector": "Health Care",
+   "rel_chg_5d": -0.0381,
+   "rel_chg_21d": -0.0394
+  },
+  {
+   "rank": 18,
+   "symbol": "DDOG",
+   "rank_score": 0.7649,
+   "price": 216.1,
+   "chg_1d": -0.0815,
+   "chg_5d": -0.2289,
+   "chg_21d": -0.2205,
+   "mom_12_1": 0.6978,
+   "rsi14": 33.6,
+   "rsi3": 6.8,
+   "zscore10": -2.26,
+   "vs_ma50": -0.1386,
+   "vs_ma200": 0.0869,
+   "atr_pct": 0.0751,
+   "vol_ratio": 1.54,
+   "dollar_vol": 778373490,
+   "from_52w_high": -0.2631,
+   "from_52w_low": 1.1059,
+   "sector": "Information Technology",
+   "rel_chg_5d": -0.1763,
+   "rel_chg_21d": -0.1374
+  },
+  {
+   "rank": 19,
+   "symbol": "VTRS",
+   "rank_score": 0.7591,
+   "price": 18.67,
+   "chg_1d": -0.0194,
+   "chg_5d": 0.0208,
+   "chg_21d": 0.0608,
+   "mom_12_1": 0.7611,
+   "rsi14": 57.8,
+   "rsi3": 39.8,
+   "zscore10": 0.13,
+   "vs_ma50": 0.0669,
+   "vs_ma200": 0.1837,
+   "atr_pct": 0.0259,
+   "vol_ratio": 0.83,
+   "dollar_vol": 149391428,
+   "from_52w_high": -0.0276,
+   "from_52w_low": 0.9122,
+   "sector": "Health Care",
+   "rel_chg_5d": 0.0047,
+   "rel_chg_21d": -0.0348
+  },
+  {
+   "rank": 20,
+   "symbol": "TGT",
+   "rank_score": 0.7468,
+   "price": 158.38,
+   "chg_1d": 0.0259,
+   "chg_5d": 0.0663,
+   "chg_21d": 0.0153,
+   "mom_12_1": 0.7168,
+   "rsi14": 57.2,
+   "rsi3": 86.0,
+   "zscore10": 1.63,
+   "vs_ma50": 0.0087,
+   "vs_ma200": 0.1904,
+   "atr_pct": 0.0265,
+   "vol_ratio": 1.1,
+   "dollar_vol": 554006240,
+   "from_52w_high": -0.0677,
+   "from_52w_low": 0.9448,
+   "sector": "Consumer Staples",
+   "rel_chg_5d": 0.0395,
+   "rel_chg_21d": -0.1061
+  },
+  {
+   "rank": 21,
+   "symbol": "MRK",
+   "rank_score": 0.7216,
+   "price": 148.36,
+   "chg_1d": -0.0078,
+   "chg_5d": 0.0551,
+   "chg_21d": 0.0281,
+   "mom_12_1": 0.6706,
+   "rsi14": 55.0,
+   "rsi3": 67.2,
+   "zscore10": 0.76,
+   "vs_ma50": 0.0126,
+   "vs_ma200": 0.1801,
+   "atr_pct": 0.0303,
+   "vol_ratio": 0.89,
+   "dollar_vol": 1351114202,
+   "from_52w_high": -0.0461,
+   "from_52w_low": 0.8513,
+   "sector": "Health Care",
+   "rel_chg_5d": 0.039,
+   "rel_chg_21d": -0.0675
+  },
+  {
+   "rank": 22,
+   "symbol": "RVTY",
+   "rank_score": 0.6682,
+   "price": 151.6,
+   "chg_1d": -0.0344,
+   "chg_5d": -0.0548,
+   "chg_21d": 0.0009,
+   "mom_12_1": 0.6848,
+   "rsi14": 47.4,
+   "rsi3": 15.6,
+   "zscore10": -1.79,
+   "vs_ma50": 0.0458,
+   "vs_ma200": 0.3541,
+   "atr_pct": 0.0413,
+   "vol_ratio": 1.57,
+   "dollar_vol": 252376109,
+   "from_52w_high": -0.0855,
+   "from_52w_low": 0.8449,
+   "sector": "Health Care",
+   "rel_chg_5d": -0.0709,
+   "rel_chg_21d": -0.0947
+  },
+  {
+   "rank": 23,
+   "symbol": "NUE",
+   "rank_score": 0.6242,
+   "price": 277.65,
+   "chg_1d": 0.0138,
+   "chg_5d": 0.0789,
+   "chg_21d": 0.155,
+   "mom_12_1": 0.6951,
+   "rsi14": 69.6,
+   "rsi3": 85.5,
+   "zscore10": 1.44,
+   "vs_ma50": 0.0924,
+   "vs_ma200": 0.2416,
+   "atr_pct": 0.0314,
+   "vol_ratio": 1.36,
+   "dollar_vol": 305380067,
+   "from_52w_high": 0.0,
+   "from_52w_low": 0.969,
+   "sector": "Materials",
+   "rel_chg_5d": 0.0363,
+   "rel_chg_21d": 0.0623
+  },
+  {
+   "rank": 24,
+   "symbol": "CRL",
+   "rank_score": 0.6202,
+   "price": 338.54,
+   "chg_1d": -0.0581,
+   "chg_5d": -0.0524,
+   "chg_21d": 0.1666,
+   "mom_12_1": 0.7258,
+   "rsi14": 56.2,
+   "rsi3": 22.5,
+   "zscore10": -0.72,
+   "vs_ma50": 0.1181,
+   "vs_ma200": 0.5225,
+   "atr_pct": 0.0455,
+   "vol_ratio": 1.32,
+   "dollar_vol": 361874422,
+   "from_52w_high": -0.0999,
+   "from_52w_low": 1.258,
+   "sector": "Health Care",
+   "rel_chg_5d": -0.0685,
+   "rel_chg_21d": 0.071
+  },
+  {
+   "rank": 25,
+   "symbol": "EXPD",
+   "rank_score": 0.6181,
+   "price": 200.56,
+   "chg_1d": 0.0086,
+   "chg_5d": 0.021,
+   "chg_21d": 0.042,
+   "mom_12_1": 0.6091,
+   "rsi14": 63.2,
+   "rsi3": 79.2,
+   "zscore10": 1.86,
+   "vs_ma50": 0.0446,
+   "vs_ma200": 0.203,
+   "atr_pct": 0.0203,
+   "vol_ratio": 1.62,
+   "dollar_vol": 217664366,
+   "from_52w_high": 0.0,
+   "from_52w_low": 0.6625,
+   "sector": "Industrials",
+   "rel_chg_5d": -0.0132,
+   "rel_chg_21d": -0.0177
+  },
+  {
+   "rank": 26,
+   "symbol": "CSCO",
+   "rank_score": 0.5674,
+   "price": 101.61,
+   "chg_1d": -0.0277,
+   "chg_5d": -0.0783,
+   "chg_21d": -0.0944,
+   "mom_12_1": 0.5717,
+   "rsi14": 35.5,
+   "rsi3": 11.4,
+   "zscore10": -1.94,
+   "vs_ma50": -0.0727,
+   "vs_ma200": 0.0094,
+   "atr_pct": 0.0314,
+   "vol_ratio": 1.61,
+   "dollar_vol": 1624187120,
+   "from_52w_high": -0.2124,
+   "from_52w_low": 0.4568,
+   "sector": "Information Technology",
+   "rel_chg_5d": -0.0257,
+   "rel_chg_21d": -0.0113
+  },
+  {
+   "rank": 27,
+   "symbol": "STT",
+   "rank_score": 0.5551,
+   "price": 169.31,
+   "chg_1d": -0.0027,
+   "chg_5d": -0.0037,
+   "chg_21d": -0.0378,
+   "mom_12_1": 0.5528,
+   "rsi14": 40.6,
+   "rsi3": 31.2,
+   "zscore10": -0.24,
+   "vs_ma50": -0.0585,
+   "vs_ma200": 0.0684,
+   "atr_pct": 0.0246,
+   "vol_ratio": 0.63,
+   "dollar_vol": 320053426,
+   "from_52w_high": -0.1284,
+   "from_52w_low": 0.5279,
+   "sector": "Financials",
+   "rel_chg_5d": -0.0312,
+   "rel_chg_21d": -0.1211
+  },
+  {
+   "rank": 28,
+   "symbol": "CPAY",
+   "rank_score": 0.5475,
+   "price": 409.29,
+   "chg_1d": 0.0208,
+   "chg_5d": 0.0239,
+   "chg_21d": 0.0372,
+   "mom_12_1": 0.543,
+   "rsi14": 56.4,
+   "rsi3": 81.4,
+   "zscore10": 0.86,
+   "vs_ma50": 0.0153,
+   "vs_ma200": 0.1502,
+   "atr_pct": 0.0222,
+   "vol_ratio": 0.8,
+   "dollar_vol": 165746862,
+   "from_52w_high": -0.0375,
+   "from_52w_low": 0.5721,
+   "sector": "Financials",
+   "rel_chg_5d": -0.0036,
+   "rel_chg_21d": -0.0461
+  },
+  {
+   "rank": 29,
+   "symbol": "DVN",
+   "rank_score": 0.5265,
+   "price": 48.63,
+   "chg_1d": -0.0675,
+   "chg_5d": -0.0583,
+   "chg_21d": 0.0206,
+   "mom_12_1": 0.5144,
+   "rsi14": 45.3,
+   "rsi3": 19.8,
+   "zscore10": -1.91,
+   "vs_ma50": -0.0036,
+   "vs_ma200": 0.0668,
+   "atr_pct": 0.0315,
+   "vol_ratio": 1.31,
+   "dollar_vol": 440026945,
+   "from_52w_high": -0.0675,
+   "from_52w_low": 0.542,
+   "sector": "Energy",
+   "rel_chg_5d": -0.0205,
+   "rel_chg_21d": -0.0342
+  },
+  {
+   "rank": 30,
+   "symbol": "HST",
+   "rank_score": 0.5145,
+   "price": 25.57,
+   "chg_1d": 0.0107,
+   "chg_5d": 0.0204,
+   "chg_21d": 0.1334,
+   "mom_12_1": 0.5121,
+   "rsi14": 72.2,
+   "rsi3": 66.9,
+   "zscore10": 1.35,
+   "vs_ma50": 0.1165,
+   "vs_ma200": 0.1991,
+   "atr_pct": 0.0209,
+   "vol_ratio": 1.22,
+   "dollar_vol": 191011595,
+   "from_52w_high": -0.0051,
+   "from_52w_low": 0.723,
+   "sector": "Real Estate",
+   "rel_chg_5d": 0.0029,
+   "rel_chg_21d": 0.0582
+  },
+  {
+   "rank": 31,
+   "symbol": "BEN",
+   "rank_score": 0.5122,
+   "price": 31.97,
+   "chg_1d": 0.0104,
+   "chg_5d": 0.0316,
+   "chg_21d": -0.0256,
+   "mom_12_1": 0.5261,
+   "rsi14": 51.1,
+   "rsi3": 60.6,
+   "zscore10": 1.07,
+   "vs_ma50": -0.0178,
+   "vs_ma200": 0.0744,
+   "atr_pct": 0.0246,
+   "vol_ratio": 1.05,
+   "dollar_vol": 121661618,
+   "from_52w_high": -0.0971,
+   "from_52w_low": 0.5841,
+   "sector": "Financials",
+   "rel_chg_5d": 0.0041,
+   "rel_chg_21d": -0.1089
+  },
+  {
+   "rank": 32,
+   "symbol": "DVA",
+   "rank_score": 0.5048,
+   "price": 185.74,
+   "chg_1d": -0.0094,
+   "chg_5d": 0.0093,
+   "chg_21d": 0.0395,
+   "mom_12_1": 0.5016,
+   "rsi14": 52.4,
+   "rsi3": 45.5,
+   "zscore10": 0.4,
+   "vs_ma50": 0.0226,
+   "vs_ma200": 0.0469,
+   "atr_pct": 0.0392,
+   "vol_ratio": 1.11,
+   "dollar_vol": 105783251,
+   "from_52w_high": -0.2292,
+   "from_52w_low": 0.7882,
+   "sector": "Health Care",
+   "rel_chg_5d": -0.0068,
+   "rel_chg_21d": -0.0561
+  },
+  {
+   "rank": 33,
+   "symbol": "DE",
+   "rank_score": 0.493,
+   "price": 667.6,
+   "chg_1d": -0.0117,
+   "chg_5d": 0.0411,
+   "chg_21d": -0.0282,
+   "mom_12_1": 0.4947,
+   "rsi14": 55.9,
+   "rsi3": 68.6,
+   "zscore10": 1.42,
+   "vs_ma50": 0.0064,
+   "vs_ma200": 0.107,
+   "atr_pct": 0.0282,
+   "vol_ratio": 1.22,
+   "dollar_vol": 713307022,
+   "from_52w_high": -0.0568,
+   "from_52w_low": 0.4627,
+   "sector": "Industrials",
+   "rel_chg_5d": 0.0069,
+   "rel_chg_21d": -0.0879
+  },
+  {
+   "rank": 34,
+   "symbol": "DAL",
+   "rank_score": 0.4837,
+   "price": 83.42,
+   "chg_1d": 0.0408,
+   "chg_5d": 0.0538,
+   "chg_21d": -0.0052,
+   "mom_12_1": 0.4593,
+   "rsi14": 57.6,
+   "rsi3": 75.0,
+   "zscore10": 1.8,
+   "vs_ma50": 0.0385,
+   "vs_ma200": 0.0925,
+   "atr_pct": 0.035,
+   "vol_ratio": 1.08,
+   "dollar_vol": 526467110,
+   "from_52w_high": -0.1046,
+   "from_52w_low": 0.515,
+   "sector": "Industrials",
+   "rel_chg_5d": 0.0196,
+   "rel_chg_21d": -0.0649
+  },
+  {
+   "rank": 35,
+   "symbol": "COP",
+   "rank_score": 0.4834,
+   "price": 146.84,
+   "chg_1d": -0.0467,
+   "chg_5d": -0.0299,
+   "chg_21d": 0.1585,
+   "mom_12_1": 0.4905,
+   "rsi14": 57.9,
+   "rsi3": 33.9,
+   "zscore10": -0.71,
+   "vs_ma50": 0.0768,
+   "vs_ma200": 0.2178,
+   "atr_pct": 0.0257,
+   "vol_ratio": 1.54,
+   "dollar_vol": 810305803,
+   "from_52w_high": -0.0467,
+   "from_52w_low": 0.7683,
+   "sector": "Energy",
+   "rel_chg_5d": 0.0079,
+   "rel_chg_21d": 0.1037
+  },
+  {
+   "rank": 36,
+   "symbol": "STLD",
+   "rank_score": 0.4824,
+   "price": 251.91,
+   "chg_1d": 0.0044,
+   "chg_5d": 0.0605,
+   "chg_21d": 0.0859,
+   "mom_12_1": 0.5537,
+   "rsi14": 60.2,
+   "rsi3": 67.2,
+   "zscore10": 1.06,
+   "vs_ma50": 0.0581,
+   "vs_ma200": 0.1277,
+   "atr_pct": 0.0341,
+   "vol_ratio": 0.98,
+   "dollar_vol": 210635487,
+   "from_52w_high": -0.1049,
+   "from_52w_low": 0.6793,
+   "sector": "Materials",
+   "rel_chg_5d": 0.0179,
+   "rel_chg_21d": -0.0068
+  },
+  {
+   "rank": 37,
+   "symbol": "XLE",
+   "rank_score": 0.477,
+   "price": 67.25,
+   "chg_1d": -0.0396,
+   "chg_5d": -0.0343,
+   "chg_21d": 0.0705,
+   "mom_12_1": 0.481,
+   "rsi14": 52.5,
+   "rsi3": 29.5,
+   "zscore10": -1.51,
+   "vs_ma50": 0.0369,
+   "vs_ma200": 0.1544,
+   "atr_pct": 0.0221,
+   "vol_ratio": 1.56,
+   "dollar_vol": 2031637430,
+   "from_52w_high": -0.0396,
+   "from_52w_low": 0.5866,
+   "sector": "ETF",
+   "rel_chg_5d": -0.0305,
+   "rel_chg_21d": 0.0658
+  },
+  {
+   "rank": 38,
+   "symbol": "FDX",
+   "rank_score": 0.4721,
+   "price": 318.25,
+   "chg_1d": 0.0159,
+   "chg_5d": 0.0588,
+   "chg_21d": 0.0961,
+   "mom_12_1": 0.4376,
+   "rsi14": 69.1,
+   "rsi3": 90.6,
+   "zscore10": 2.07,
+   "vs_ma50": 0.0475,
+   "vs_ma200": 0.0493,
+   "atr_pct": 0.0232,
+   "vol_ratio": 1.5,
+   "dollar_vol": 326716284,
+   "from_52w_high": -0.0585,
+   "from_52w_low": 0.5946,
+   "sector": "Industrials",
+   "rel_chg_5d": 0.0246,
+   "rel_chg_21d": 0.0364
+  },
+  {
+   "rank": 39,
+   "symbol": "XOM",
+   "rank_score": 0.4715,
+   "price": 179.67,
+   "chg_1d": -0.0405,
+   "chg_5d": -0.0264,
+   "chg_21d": 0.0955,
+   "mom_12_1": 0.4756,
+   "rsi14": 57.1,
+   "rsi3": 34.7,
+   "zscore10": -0.58,
+   "vs_ma50": 0.0691,
+   "vs_ma200": 0.1693,
+   "atr_pct": 0.0235,
+   "vol_ratio": 1.35,
+   "dollar_vol": 2035677324,
+   "from_52w_high": -0.0405,
+   "from_52w_low": 0.6263,
+   "sector": "Energy",
+   "rel_chg_5d": 0.0114,
+   "rel_chg_21d": 0.0407
+  },
+  {
+   "rank": 40,
+   "symbol": "BIIB",
+   "rank_score": 0.4697,
+   "price": 249.01,
+   "chg_1d": -0.0182,
+   "chg_5d": -0.0129,
+   "chg_21d": 0.1325,
+   "mom_12_1": 0.4493,
+   "rsi14": 61.0,
+   "rsi3": 46.2,
+   "zscore10": 0.0,
+   "vs_ma50": 0.0935,
+   "vs_ma200": 0.2353,
+   "atr_pct": 0.0311,
+   "vol_ratio": 0.87,
+   "dollar_vol": 292171187,
+   "from_52w_high": -0.019,
+   "from_52w_low": 0.6675,
+   "sector": "Health Care",
+   "rel_chg_5d": -0.029,
+   "rel_chg_21d": 0.0369
+  }
+ ],
+ "market_filter_pass": true,
+ "scan": {
+  "gainers": [
+   {
+    "symbol": "IDXX",
+    "price": 671.64,
+    "chg_1d": 0.2185,
+    "vol_ratio": 3.13,
+    "rsi14": 76.7,
+    "vs_ma200": 0.1733,
+    "from_52w_high": -0.124
+   },
+   {
+    "symbol": "TAP",
+    "price": 43.23,
+    "chg_1d": 0.0775,
+    "vol_ratio": 2.3,
+    "rsi14": 69.2,
+    "vs_ma200": 0.0373,
+    "from_52w_high": -0.1778
+   },
+   {
+    "symbol": "HWM",
+    "price": 212.99,
+    "chg_1d": 0.0691,
+    "vol_ratio": 1.33,
+    "rsi14": 49.3,
+    "vs_ma200": -0.1429,
+    "from_52w_high": -0.2722
+   },
+   {
+    "symbol": "PNR",
+    "price": 70.56,
+    "chg_1d": 0.0649,
+    "vol_ratio": 1.54,
+    "rsi14": 87.2,
+    "vs_ma200": -0.0629,
+    "from_52w_high": -0.3411
+   },
+   {
+    "symbol": "CRH",
+    "price": 96.59,
+    "chg_1d": 0.0636,
+    "vol_ratio": 1.95,
+    "rsi14": 75.4,
+    "vs_ma200": -0.066,
+    "from_52w_high": -0.2566
+   },
+   {
+    "symbol": "DASH",
+    "price": 190.07,
+    "chg_1d": 0.0619,
+    "vol_ratio": 1.49,
+    "rsi14": 52.9,
+    "vs_ma200": 0.0409,
+    "from_52w_high": -0.2528
+   },
+   {
+    "symbol": "CBRE",
+    "price": 136.75,
+    "chg_1d": 0.0613,
+    "vol_ratio": 1.03,
+    "rsi14": 57.7,
+    "vs_ma200": -0.0339,
+    "from_52w_high": -0.2031
+   },
+   {
+    "symbol": "CPRT",
+    "price": 31.93,
+    "chg_1d": 0.0597,
+    "vol_ratio": 1.01,
+    "rsi14": 72.2,
+    "vs_ma200": -0.0121,
+    "from_52w_high": -0.2576
+   },
+   {
+    "symbol": "SHW",
+    "price": 352.37,
+    "chg_1d": 0.0594,
+    "vol_ratio": 1.74,
+    "rsi14": 64.0,
+    "vs_ma200": 0.0625,
+    "from_52w_high": -0.0475
+   },
+   {
+    "symbol": "ARE",
+    "price": 42.57,
+    "chg_1d": 0.059,
+    "vol_ratio": 1.08,
+    "rsi14": 44.9,
+    "vs_ma200": -0.1179,
+    "from_52w_high": -0.255
+   },
+   {
+    "symbol": "TDG",
+    "price": 1213.62,
+    "chg_1d": 0.0583,
+    "vol_ratio": 1.31,
+    "rsi14": 66.2,
+    "vs_ma200": -0.0094,
+    "from_52w_high": -0.163
+   },
+   {
+    "symbol": "BSX",
+    "price": 44.32,
+    "chg_1d": 0.0557,
+    "vol_ratio": 1.2,
+    "rsi14": 50.9,
+    "vs_ma200": -0.2126,
+    "from_52w_high": -0.5778
+   },
+   {
+    "symbol": "CSGP",
+    "price": 31.82,
+    "chg_1d": 0.0547,
+    "vol_ratio": 0.86,
+    "rsi14": 53.8,
+    "vs_ma200": -0.1285,
+    "from_52w_high": -0.5483
+   },
+   {
+    "symbol": "CVNA",
+    "price": 72.0,
+    "chg_1d": 0.0543,
+    "vol_ratio": 1.77,
+    "rsi14": 67.8,
+    "vs_ma200": 0.0423,
+    "from_52w_high": -0.2476
+   },
+   {
+    "symbol": "BAX",
+    "price": 24.22,
+    "chg_1d": 0.053,
+    "vol_ratio": 1.48,
+    "rsi14": 47.9,
+    "vs_ma200": 0.1347,
+    "from_52w_high": -0.1453
+   }
+  ],
+  "losers": [
+   {
+    "symbol": "LITE",
+    "price": 684.4,
+    "chg_1d": -0.1859,
+    "vol_ratio": 2.63,
+    "rsi14": 34.6,
+    "vs_ma200": -0.1476,
+    "from_52w_high": -0.3962
+   },
+   {
+    "symbol": "MRVL",
+    "price": 171.41,
+    "chg_1d": -0.1272,
+    "vol_ratio": 2.42,
+    "rsi14": 28.8,
+    "vs_ma200": -0.0663,
+    "from_52w_high": -0.458
+   },
+   {
+    "symbol": "CIEN",
+    "price": 284.34,
+    "chg_1d": -0.1134,
+    "vol_ratio": 1.32,
+    "rsi14": 35.3,
+    "vs_ma200": -0.2982,
+    "from_52w_high": -0.5465
+   },
+   {
+    "symbol": "INTC",
+    "price": 59.97,
+    "chg_1d": -0.088,
+    "vol_ratio": 1.86,
+    "rsi14": 23.0,
+    "vs_ma200": -0.3101,
+    "from_52w_high": -0.5745
+   },
+   {
+    "symbol": "ORCL",
+    "price": 119.22,
+    "chg_1d": -0.0876,
+    "vol_ratio": 1.74,
+    "rsi14": 38.5,
+    "vs_ma200": -0.2337,
+    "from_52w_high": -0.5399
+   },
+   {
+    "symbol": "DDOG",
+    "price": 216.1,
+    "chg_1d": -0.0815,
+    "vol_ratio": 1.54,
+    "rsi14": 33.6,
+    "vs_ma200": 0.0869,
+    "from_52w_high": -0.2631
+   },
+   {
+    "symbol": "STX",
+    "price": 593.76,
+    "chg_1d": -0.0788,
+    "vol_ratio": 0.97,
+    "rsi14": 32.7,
+    "vs_ma200": -0.1433,
+    "from_52w_high": -0.4565
+   },
+   {
+    "symbol": "SMCI",
+    "price": 30.44,
+    "chg_1d": -0.0762,
+    "vol_ratio": 1.15,
+    "rsi14": 35.4,
+    "vs_ma200": -0.0683,
+    "from_52w_high": -0.4142
+   },
+   {
+    "symbol": "APA",
+    "price": 48.82,
+    "chg_1d": -0.0757,
+    "vol_ratio": 1.34,
+    "rsi14": 53.1,
+    "vs_ma200": 0.3042,
+    "from_52w_high": -0.0757
+   },
+   {
+    "symbol": "AMD",
+    "price": 466.84,
+    "chg_1d": -0.0752,
+    "vol_ratio": 1.5,
+    "rsi14": 34.6,
+    "vs_ma200": 0.134,
+    "from_52w_high": -0.2811
+   },
+   {
+    "symbol": "WDC",
+    "price": 338.59,
+    "chg_1d": -0.0752,
+    "vol_ratio": 0.79,
+    "rsi14": 38.2,
+    "vs_ma200": -0.1927,
+    "from_52w_high": -0.5461
+   },
+   {
+    "symbol": "DELL",
+    "price": 392.78,
+    "chg_1d": -0.0743,
+    "vol_ratio": 0.99,
+    "rsi14": 31.9,
+    "vs_ma200": 0.1837,
+    "from_52w_high": -0.3315
+   },
+   {
+    "symbol": "FTNT",
+    "price": 126.21,
+    "chg_1d": -0.0725,
+    "vol_ratio": 2.19,
+    "rsi14": 23.6,
+    "vs_ma200": -0.0188,
+    "from_52w_high": -0.3519
+   },
+   {
+    "symbol": "HPE",
+    "price": 51.19,
+    "chg_1d": -0.0708,
+    "vol_ratio": 0.92,
+    "rsi14": 35.4,
+    "vs_ma200": 0.2555,
+    "from_52w_high": -0.3032
+   },
+   {
+    "symbol": "USO",
+    "price": 156.87,
+    "chg_1d": -0.0708,
+    "vol_ratio": 1.57,
+    "rsi14": 49.4,
+    "vs_ma200": 0.2609,
+    "from_52w_high": -0.0747
+   }
+  ],
+  "unusual_volume": [
+   {
+    "symbol": "IDXX",
+    "price": 671.64,
+    "chg_1d": 0.2185,
+    "vol_ratio": 3.13,
+    "rsi14": 76.7,
+    "vs_ma200": 0.1733,
+    "from_52w_high": -0.124
+   },
+   {
+    "symbol": "EW",
+    "price": 93.26,
+    "chg_1d": 0.0136,
+    "vol_ratio": 2.97,
+    "rsi14": 62.8,
+    "vs_ma200": 0.0911,
+    "from_52w_high": -0.0202
+   },
+   {
+    "symbol": "XEL",
+    "price": 79.33,
+    "chg_1d": -0.0061,
+    "vol_ratio": 2.7,
+    "rsi14": 65.5,
+    "vs_ma200": 0.0258,
+    "from_52w_high": -0.0327
+   },
+   {
+    "symbol": "LITE",
+    "price": 684.4,
+    "chg_1d": -0.1859,
+    "vol_ratio": 2.63,
+    "rsi14": 34.6,
+    "vs_ma200": -0.1476,
+    "from_52w_high": -0.3962
+   },
+   {
+    "symbol": "EL",
+    "price": 104.77,
+    "chg_1d": -0.0408,
+    "vol_ratio": 2.43,
+    "rsi14": 53.8,
+    "vs_ma200": 0.1504,
+    "from_52w_high": -0.1149
+   },
+   {
+    "symbol": "MRVL",
+    "price": 171.41,
+    "chg_1d": -0.1272,
+    "vol_ratio": 2.42,
+    "rsi14": 28.8,
+    "vs_ma200": -0.0663,
+    "from_52w_high": -0.458
+   },
+   {
+    "symbol": "TAP",
+    "price": 43.23,
+    "chg_1d": 0.0775,
+    "vol_ratio": 2.3,
+    "rsi14": 69.2,
+    "vs_ma200": 0.0373,
+    "from_52w_high": -0.1778
+   },
+   {
+    "symbol": "FTNT",
+    "price": 126.21,
+    "chg_1d": -0.0725,
+    "vol_ratio": 2.19,
+    "rsi14": 23.6,
+    "vs_ma200": -0.0188,
+    "from_52w_high": -0.3519
+   },
+   {
+    "symbol": "WST",
+    "price": 407.88,
+    "chg_1d": -0.0115,
+    "vol_ratio": 2.17,
+    "rsi14": 69.4,
+    "vs_ma200": 0.2997,
+    "from_52w_high": -0.0211
+   },
+   {
+    "symbol": "AME",
+    "price": 241.91,
+    "chg_1d": 0.0033,
+    "vol_ratio": 2.15,
+    "rsi14": 45.2,
+    "vs_ma200": 0.0346,
+    "from_52w_high": -0.0629
+   },
+   {
+    "symbol": "KDP",
+    "price": 36.82,
+    "chg_1d": 0.0273,
+    "vol_ratio": 2.13,
+    "rsi14": 76.0,
+    "vs_ma200": 0.2402,
+    "from_52w_high": 0.0
+   },
+   {
+    "symbol": "VRTX",
+    "price": 553.15,
+    "chg_1d": -0.0103,
+    "vol_ratio": 2.12,
+    "rsi14": 64.3,
+    "vs_ma200": 0.1529,
+    "from_52w_high": -0.0103
+   },
+   {
+    "symbol": "REGN",
+    "price": 961.26,
+    "chg_1d": 0.036,
+    "vol_ratio": 2.09,
+    "rsi14": 81.9,
+    "vs_ma200": 0.3035,
+    "from_52w_high": 0.0
+   },
+   {
+    "symbol": "GPN",
+    "price": 99.63,
+    "chg_1d": 0.0288,
+    "vol_ratio": 2.05,
+    "rsi14": 74.7,
+    "vs_ma200": 0.2991,
+    "from_52w_high": 0.0
+   },
+   {
+    "symbol": "VLTO",
+    "price": 115.7,
+    "chg_1d": 0.0414,
+    "vol_ratio": 2.02,
+    "rsi14": 84.8,
+    "vs_ma200": 0.2465,
+    "from_52w_high": 0.0
+   }
+  ],
+  "breakouts": [
+   {
+    "symbol": "GPN",
+    "price": 99.63,
+    "chg_1d": 0.0288,
+    "vol_ratio": 2.05,
+    "rsi14": 74.7,
+    "vs_ma200": 0.2991,
+    "from_52w_high": 0.0
+   },
+   {
+    "symbol": "REGN",
+    "price": 961.26,
+    "chg_1d": 0.036,
+    "vol_ratio": 2.09,
+    "rsi14": 81.9,
+    "vs_ma200": 0.3035,
+    "from_52w_high": 0.0
+   },
+   {
+    "symbol": "GM",
+    "price": 89.94,
+    "chg_1d": 0.0291,
+    "vol_ratio": 1.01,
+    "rsi14": 66.2,
+    "vs_ma200": 0.1191,
+    "from_52w_high": -0.0019
+   },
+   {
+    "symbol": "VLTO",
+    "price": 115.7,
+    "chg_1d": 0.0414,
+    "vol_ratio": 2.02,
+    "rsi14": 84.8,
+    "vs_ma200": 0.2465,
+    "from_52w_high": 0.0
+   },
+   {
+    "symbol": "MAS",
+    "price": 83.51,
+    "chg_1d": 0.0356,
+    "vol_ratio": 0.95,
+    "rsi14": 77.6,
+    "vs_ma200": 0.1841,
+    "from_52w_high": 0.0
+   },
+   {
+    "symbol": "LLY",
+    "price": 1410.99,
+    "chg_1d": -0.0046,
+    "vol_ratio": 1.42,
+    "rsi14": 76.2,
+    "vs_ma200": 0.2931,
+    "from_52w_high": -0.0046
+   },
+   {
+    "symbol": "FTV",
+    "price": 66.84,
+    "chg_1d": 0.0247,
+    "vol_ratio": 1.42,
+    "rsi14": 80.3,
+    "vs_ma200": 0.1396,
+    "from_52w_high": 0.0
+   },
+   {
+    "symbol": "J",
+    "price": 160.24,
+    "chg_1d": 0.0363,
+    "vol_ratio": 0.8,
+    "rsi14": 77.7,
+    "vs_ma200": 0.2007,
+    "from_52w_high": 0.0
+   },
+   {
+    "symbol": "EXR",
+    "price": 155.98,
+    "chg_1d": 0.0308,
+    "vol_ratio": 0.99,
+    "rsi14": 81.2,
+    "vs_ma200": 0.1148,
+    "from_52w_high": 0.0
+   },
+   {
+    "symbol": "ROP",
+    "price": 479.54,
+    "chg_1d": 0.0277,
+    "vol_ratio": 1.21,
+    "rsi14": 84.5,
+    "vs_ma200": 0.3187,
+    "from_52w_high": 0.0
+   },
+   {
+    "symbol": "PSA",
+    "price": 333.24,
+    "chg_1d": 0.0261,
+    "vol_ratio": 1.33,
+    "rsi14": 76.3,
+    "vs_ma200": 0.1161,
+    "from_52w_high": 0.0
+   },
+   {
+    "symbol": "NUE",
+    "price": 277.65,
+    "chg_1d": 0.0138,
+    "vol_ratio": 1.36,
+    "rsi14": 69.6,
+    "vs_ma200": 0.2416,
+    "from_52w_high": 0.0
+   },
+   {
+    "symbol": "ICE",
+    "price": 172.28,
+    "chg_1d": 0.0203,
+    "vol_ratio": 1.02,
+    "rsi14": 68.7,
+    "vs_ma200": 0.1212,
+    "from_52w_high": -0.006
+   },
+   {
+    "symbol": "ALLE",
+    "price": 191.73,
+    "chg_1d": 0.0284,
+    "vol_ratio": 0.96,
+    "rsi14": 84.2,
+    "vs_ma200": 0.28,
+    "from_52w_high": 0.0
+   },
+   {
+    "symbol": "SWK",
+    "price": 106.71,
+    "chg_1d": 0.0316,
+    "vol_ratio": 1.33,
+    "rsi14": 79.8,
+    "vs_ma200": 0.2627,
+    "from_52w_high": 0.0
+   }
+  ],
+  "breakdowns": [
+   {
+    "symbol": "RDDT",
+    "price": 90.97,
+    "chg_1d": -0.0083,
+    "vol_ratio": 1.74,
+    "rsi14": 17.3,
+    "vs_ma200": -0.4267,
+    "from_52w_high": -0.6487
+   },
+   {
+    "symbol": "COIN",
+    "price": 137.83,
+    "chg_1d": -0.0398,
+    "vol_ratio": 1.27,
+    "rsi14": 29.7,
+    "vs_ma200": -0.2245,
+    "from_52w_high": -0.5991
+   },
+   {
+    "symbol": "APP",
+    "price": 228.85,
+    "chg_1d": 0.0015,
+    "vol_ratio": 1.38,
+    "rsi14": 25.3,
+    "vs_ma200": -0.4471,
+    "from_52w_high": -0.688
+   },
+   {
+    "symbol": "GOOGL",
+    "price": 278.99,
+    "chg_1d": -0.003,
+    "vol_ratio": 1.42,
+    "rsi14": 21.2,
+    "vs_ma200": -0.1796,
+    "from_52w_high": -0.3062
+   },
+   {
+    "symbol": "GOOG",
+    "price": 278.04,
+    "chg_1d": -0.0006,
+    "vol_ratio": 1.31,
+    "rsi14": 21.0,
+    "vs_ma200": -0.1777,
+    "from_52w_high": -0.3024
+   },
+   {
+    "symbol": "UNG",
+    "price": 9.0,
+    "chg_1d": -0.0088,
+    "vol_ratio": 0.8,
+    "rsi14": 28.7,
+    "vs_ma200": -0.1958,
+    "from_52w_high": -0.4675
+   },
+   {
+    "symbol": "TTWO",
+    "price": 192.1,
+    "chg_1d": 0.0101,
+    "vol_ratio": 1.19,
+    "rsi14": 34.8,
+    "vs_ma200": -0.1251,
+    "from_52w_high": -0.2566
+   },
+   {
+    "symbol": "VST",
+    "price": 134.61,
+    "chg_1d": -0.0272,
+    "vol_ratio": 0.68,
+    "rsi14": 39.2,
+    "vs_ma200": -0.1202,
+    "from_52w_high": -0.2986
+   },
+   {
+    "symbol": "XLC",
+    "price": 100.26,
+    "chg_1d": 0.0036,
+    "vol_ratio": 1.31,
+    "rsi14": 24.7,
+    "vs_ma200": -0.107,
+    "from_52w_high": -0.1574
+   },
+   {
+    "symbol": "NFLX",
+    "price": 62.34,
+    "chg_1d": 0.0042,
+    "vol_ratio": 0.91,
+    "rsi14": 31.8,
+    "vs_ma200": -0.2348,
+    "from_52w_high": -0.4614
+   },
+   {
+    "symbol": "GLD",
+    "price": 361.65,
+    "chg_1d": 0.0165,
+    "vol_ratio": 1.02,
+    "rsi14": 36.9,
+    "vs_ma200": -0.1235,
+    "from_52w_high": -0.2707
+   },
+   {
+    "symbol": "HYG",
+    "price": 76.89,
+    "chg_1d": -0.007,
+    "vol_ratio": 0.92,
+    "rsi14": 38.4,
+    "vs_ma200": -0.0167,
+    "from_52w_high": -0.0326
+   },
+   {
+    "symbol": "IEF",
+    "price": 91.5,
+    "chg_1d": -0.0028,
+    "vol_ratio": 0.8,
+    "rsi14": 62.3,
+    "vs_ma200": -0.0139,
+    "from_52w_high": -0.0443
+   },
+   {
+    "symbol": "UBER",
+    "price": 66.71,
+    "chg_1d": 0.0224,
+    "vol_ratio": 1.09,
+    "rsi14": 42.8,
+    "vs_ma200": -0.0893,
+    "from_52w_high": -0.331
+   }
+  ]
+ },
+ "watchlist": {
+  "SPG": "保有中",
+  "PKG": "保有中",
+  "MNST": "保有中",
+  "CSX": "保有中",
+  "NSC": "保有中",
+  "CAH": "保有中",
+  "MRNA": "保有中",
+  "MU": "買い候補",
+  "DELL": "買い候補",
+  "HPE": "買い候補",
+  "AMD": "買い候補",
+  "VLO": "買い候補",
+  "MPC": "買い候補",
+  "USO": "買い候補",
+  "CRWD": "買い候補",
+  "APA": "買い候補",
+  "PSX": "買い候補",
+  "NTAP": "買い候補",
+  "TRGP": "買い候補",
+  "TXN": "買い候補",
+  "IDXX": "出来高異常",
+  "EW": "出来高異常",
+  "XEL": "出来高異常",
+  "LITE": "出来高異常",
+  "EL": "出来高異常",
+  "MRVL": "出来高異常",
+  "TAP": "出来高異常",
+  "HWM": "大幅高",
+  "PNR": "大幅高",
+  "CRH": "大幅高",
+  "DASH": "大幅高",
+  "CBRE": "大幅高",
+  "CIEN": "大幅安",
+  "INTC": "大幅安",
+  "ORCL": "大幅安",
+  "DDOG": "大幅安",
+  "STX": "大幅安",
+  "GPN": "52週高値圏",
+  "REGN": "52週高値圏",
+  "GM": "52週高値圏",
+  "RDDT": "52週安値圏",
+  "COIN": "52週安値圏",
+  "APP": "52週安値圏"
+ },
+ "news": [
+  {
+   "symbol": "CBRE",
+   "title": "U.S. Hotel RevPAR Surges 7% In Q3, But Expect Easing From Here",
+   "summary": "U.S. hotels recorded third-quarter increases in occupancy, demand and average daily rate, driving a 7% increase in revenue per available room.",
+   "publisher": "Bisnow",
+   "published_at": "2026-11-04T01:23:01+00:00",
+   "url": "https://www.bisnow.com/news/national/hotel/us-hotel-revpar-surges-7-percent-luxury-properties-lead-recovery",
+   "scope": "stock",
+   "topic": "大幅高"
+  },
+  {
+   "symbol": "GPN",
+   "title": "Global Payments (GPN) Tightens Bylaws While Buyout Talk Keeps Valuation In Focus",
+   "summary": "Global Payments (GPN) has moved to tighten its corporate rulebook. Fresh bylaw amendments now route internal corporate disputes to Georgia’s State-wide Business Court and require shareholders to own at least 1% to pursue derivative suits. Global Payments has been volatile in recent weeks, with buyout speculation and the Worldpay integration helping drive a 25.0% 30 day share price return and a 29.8% gain year to date, even though the 5 year total shareholder return is still down 22.4%. Spot...",
+   "publisher": "Simply Wall St.",
+   "published_at": "2026-11-04T01:16:24+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/global-payments-gpn-tightens-bylaws-011624383.html",
+   "scope": "stock",
+   "topic": "52週高値圏"
+  },
+  {
+   "symbol": "DASH",
+   "title": "McDonald's and Qualcomm earnings, ADP labor data: What to Watch",
+   "summary": "Market Domination Overtime Host Jake Conley previews several of the biggest stories to come tomorrow, Wednesday, November 4, including earnings out from Qualcomm (QCOM), McDonald's (MCD), and DoorDash (DASH), as well as the latest employment data out from ADP.",
+   "publisher": "Yahoo Finance Video",
+   "published_at": "2026-11-04T01:00:00+00:00",
+   "url": "https://finance.yahoo.com/video/mcdonalds-qualcomm-earnings-adp-labor-010000492.html",
+   "scope": "stock",
+   "topic": "大幅高"
+  },
+  {
+   "symbol": "LITE",
+   "title": "Lumentum (LITE) Stock Fair Value Edges Lower As Marvell Deal Tempers AI Optics Optimism",
+   "summary": "Lumentum Holdings is under fresh scrutiny after its Fair Value Target shifted to about US$1,143.92 from roughly US$1,177.34, giving investors an updated reference point for what analysts think the stock could be worth. Recent research ties this change to a balance of optimism around Lumentum’s AI optics exposure and the planned all stock Marvell deal, set against concerns about deal risk, sector valuation and how much credit the stock receives for future AI driven demand. As you read on, you...",
+   "publisher": "Simply Wall St.",
+   "published_at": "2026-11-04T00:17:09+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/lumentum-lite-stock-fair-value-001709366.html",
+   "scope": "stock",
+   "topic": "出来高異常"
+  },
+  {
+   "symbol": "CRWD",
+   "title": "CrowdStrike (CRWD) stock trades down, here is why",
+   "summary": "Shares of cybersecurity platform provider CrowdStrike (NASDAQ:CRWD) fell 2.5% in the morning session after software stocks extended the selloff from the previous session as investors continued to reprice valuations amid mounting artificial intelligence capital expenditure concerns and decelerating software bookings.",
+   "publisher": "StockStory",
+   "published_at": "2026-11-03T23:49:36+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/crowdstrike-crwd-stock-trades-down-234936695.html",
+   "scope": "stock",
+   "topic": "買い候補"
+  },
+  {
+   "symbol": "ORCL",
+   "title": "Cloudflare, MongoDB, Datadog, JFrog, and Elastic shares plummet, what you need to know",
+   "summary": "A number of stocks fell in the morning session after software stocks extended the selloff from the previous session as investors continued to reprice valuations amid mounting artificial intelligence capital expenditure concerns and decelerating software bookings.",
+   "publisher": "StockStory",
+   "published_at": "2026-11-03T23:41:36+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/cloudflare-mongodb-datadog-jfrog-elastic-234136948.html",
+   "scope": "stock",
+   "topic": "大幅安"
+  },
+  {
+   "symbol": "VLO",
+   "title": "Breaking Down The Importance of Earnings Season",
+   "summary": "Earnings season is undoubtedly hectic for market participants, with companies finally revealing what's transpired behind closed doors.",
+   "publisher": "Zacks",
+   "published_at": "2026-11-03T23:40:00+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/breaking-down-importance-earnings-season-234000602.html",
+   "scope": "stock",
+   "topic": "買い候補"
+  },
+  {
+   "symbol": "RDDT",
+   "title": "Why Reddit Stock Is In Focus After Strong Q3 And A Google Traffic Warning",
+   "summary": "Reddit reported Q3 2026 revenue of US$894.96 million and net income of US$283.26 million, alongside a completed US$340.37 million share repurchase covering 1.15% of shares. The business paired stronger earnings with a warning about lower daily users and weaker Google search referrals, while preparing a logged in only platform that concentrates on the audience already driving most monetization. We will now examine how Reddit's investment narrative is affected by the sharp Google search...",
+   "publisher": "Simply Wall St.",
+   "published_at": "2026-11-03T23:24:29+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/why-reddit-stock-focus-strong-232429824.html",
+   "scope": "stock",
+   "topic": "52週安値圏"
+  },
+  {
+   "symbol": "IDXX",
+   "title": "IDEXX Laboratories (IDXX) Q3 Earnings Leave Its Premium Valuation In Focus",
+   "summary": "IDEXX Laboratories stock barely moved after its Q3 2026 report, edging up about 0.1% to around US$672. For a business trading on a rich P/E multiple of roughly 45x, that muted reaction might look like a shrug. It is not; the real story sits in the earnings power that is being used to justify that valuation. Quarterly revenue reached about US$1.2b and basic earnings per share came in just over US$4, underpinned by a trailing net profit margin of 25.4%. If you focus only on today’s tiny price...",
+   "publisher": "Simply Wall St.",
+   "published_at": "2026-11-03T23:22:37+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/idexx-laboratories-idxx-q3-earnings-232237894.html",
+   "scope": "stock",
+   "topic": "出来高異常"
+  },
+  {
+   "symbol": "IDXX",
+   "title": "Earnings Calendar and Analysis for This Week",
+   "summary": "Check out our earnings calendar for this week, as well as our previews and recaps of the more noteworthy reports.",
+   "publisher": "Kiplinger",
+   "published_at": "2026-11-03T23:21:18+00:00",
+   "url": "https://www.kiplinger.com/investing/stocks/17494/next-week-earnings-calendar-stocks",
+   "scope": "stock",
+   "topic": "出来高異常"
+  },
+  {
+   "symbol": "ORCL",
+   "title": "Oracle Stock Faces Questions After $20 Billion AI Funding Plan",
+   "summary": "In late October and early November 2026, Oracle raised US$20b through concurrent offerings of US$10b in common stock and US$10b in senior notes to fund heavy AI and cloud infrastructure spending. This included multiple tranches of fixed rate, senior, unsecured bonds with coupons between 7% and 8.65% and a US$10b equity sale at US$116 per share. The financing package, combined with Oracle’s guidance on future free cash flow and a cap on new funding through fiscal 2030, sharpened focus on...",
+   "publisher": "Simply Wall St.",
+   "published_at": "2026-11-03T23:17:07+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/oracle-stock-faces-questions-20-231707584.html",
+   "scope": "stock",
+   "topic": "大幅安"
+  },
+  {
+   "symbol": "INTC",
+   "title": "AMD EPS: Intel's Drag Makes No Sense",
+   "summary": "Recent earnings results show diverging paths for Intel and AMD.",
+   "publisher": "Zacks",
+   "published_at": "2026-11-03T23:13:00+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/amd-eps-intels-drag-makes-231300384.html",
+   "scope": "stock",
+   "topic": "大幅安"
+  },
+  {
+   "symbol": "INTC",
+   "title": "Should You Buy Qualcomm Stock Before Its Nov. 4 Report?",
+   "summary": "Is the chipmaker's 11% one-day drop a chance to buy ahead of earnings?",
+   "publisher": "Motley Fool",
+   "published_at": "2026-11-03T23:12:02+00:00",
+   "url": "https://www.fool.com/investing/2026/11/03/should-you-buy-qualcomm-stock-before-its-nov-4-report/",
+   "scope": "stock",
+   "topic": "大幅安"
+  },
+  {
+   "symbol": "INTC",
+   "title": "Leidos Holdings Inc (LDOS) (Q3 2026) Earnings Call Highlights: Strong Cash Flow and Record ...",
+   "summary": "Leidos Holdings Inc (LDOS) posted 4% revenue growth, a 19% jump in non-GAAP EPS, and a 1.2x book-to-bill ratio, while flagging 2027 as a transition year tied to the VBA recompete.",
+   "publisher": "GuruFocus.com",
+   "published_at": "2026-11-03T23:04:43+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/leidos-holdings-inc-ldos-q3-230443252.html",
+   "scope": "stock",
+   "topic": "大幅安"
+  },
+  {
+   "symbol": "LITE",
+   "title": "Stock Market Today, Nov. 3: Marvell Shares Edge Higher After Premarket Drop on $115 Billion Lumentum Deal",
+   "summary": "Volatile trading marked Marvell's session today, Nov. 3, 2026, as investors weighed the all-stock deal and analyst downgrades.",
+   "publisher": "Motley Fool",
+   "published_at": "2026-11-03T22:45:09+00:00",
+   "url": "https://www.fool.com/coverage/stock-market-today/2026/11/03/stock-market-today-nov-3-marvell-shares-edge-higher-after-premarket-drop-on-usd115-billion-lumentum-deal/",
+   "scope": "stock",
+   "topic": "出来高異常"
+  },
+  {
+   "symbol": "DASH",
+   "title": "Stock Market Today, Nov. 3: Grab Holdings Jumps 9% on Q3 Revenue Beat and Raised 2026 Outlook",
+   "summary": "On Nov. 3, 2026, shares of the Southeast Asian super-app climbed as profitability improved across all three core segments for the first time.",
+   "publisher": "Motley Fool",
+   "published_at": "2026-11-03T22:35:46+00:00",
+   "url": "https://www.fool.com/coverage/stock-market-today/2026/11/03/stock-market-today-nov-3-grab-holdings-jumps-9-on-q3-revenue-beat-and-raised-2026-outlook/",
+   "scope": "stock",
+   "topic": "大幅高"
+  },
+  {
+   "symbol": "INTC",
+   "title": "AMD Forecast Exceeds Estimates as AI Chip Demand Soars",
+   "summary": "Advanced Micro Devices Inc., a key challenger to Nvidia Corp. in artificial intelligence chips, gave a revenue forecast that exceeded analysts' estimates, showing that demand for data center processors remains strong. Fourth-quarter revenue will be $17 billion, plus or minus 3%, the chipmaker said in a statement Tuesday. The outlook provided fresh evidence that AI spending is sustainable, soothing jittery investors. We get reaction from Kunjan Sobhani, Senior Semiconductor Analyst for Bloomberg Intelligence.",
+   "publisher": "Bloomberg",
+   "published_at": "2026-11-03T22:34:34+00:00",
+   "url": "https://finance.yahoo.com/video/amd-forecast-exceeds-estimates-ai-223434603.html",
+   "scope": "stock",
+   "topic": "大幅安"
+  },
+  {
+   "symbol": "MPC",
+   "title": "Marathon Petroleum Corporation Q3 2026 Earnings Call Summary",
+   "summary": "Moby summary of Marathon Petroleum Corporation's Q3 2026 earnings call",
+   "publisher": "Moby",
+   "published_at": "2026-11-03T22:29:54+00:00",
+   "url": "https://app.moby.co/home/research/tools/earningsCalendar/earnings-marathon-petroleum-corporation-q3-2026-earnings-call-summary?utm_source=yahoo_finance&utm_medium=rss",
+   "scope": "stock",
+   "topic": "買い候補"
+  },
+  {
+   "symbol": "AMD",
+   "title": "AMD's Lisa Su: Q3 was 'largest and most profitable in our history'",
+   "summary": "AMD CEO (AMD) Lisa Su reported on a record third quarter on the company's earnings call, driven by record EPYC and Instinct sales and a 97% jump in data center revenue.",
+   "publisher": "Yahoo Finance Video",
+   "published_at": "2026-11-03T22:27:18+00:00",
+   "url": "https://finance.yahoo.com/video/amds-lisa-su-q3-was-largest-and-most-profitable-in-our-history-222718914.html",
+   "scope": "stock",
+   "topic": "買い候補"
+  },
+  {
+   "symbol": "GM",
+   "title": "Stock Market Today, Nov. 3: Stellantis Falls on Reports of Chip Shortage Disrupting Fiat Output",
+   "summary": "On Nov. 3, 2026, Stellantis shares slid as a supplier chip shortage reportedly hit Italian production, raising questions about year-end volumes.",
+   "publisher": "Motley Fool",
+   "published_at": "2026-11-03T22:24:16+00:00",
+   "url": "https://www.fool.com/coverage/stock-market-today/2026/11/03/stock-market-today-nov-3-stellantis-falls-on-reports-of-chip-shortage-disrupting-fiat-output/",
+   "scope": "stock",
+   "topic": "52週高値圏"
+  },
+  {
+   "symbol": "MU",
+   "title": "US tech stocks recover after selloff spooks investors over AI spending",
+   "summary": "Midterms didn’t appear to have huge impact, though predicted wins for Democrats could mean more regulation",
+   "publisher": "The Guardian",
+   "published_at": "2026-11-03T22:18:45+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/us-tech-stocks-recover-selloff-221845320.html",
+   "scope": "stock",
+   "topic": "買い候補"
+  },
+  {
+   "symbol": "XEL",
+   "title": "How Much Did Dominion Stock Really Pay Its Holders?",
+   "summary": "For questions about this article or underlying research, email help@trefis.com.",
+   "publisher": "Trefis",
+   "published_at": "2026-11-03T22:16:59+00:00",
+   "url": "https://www.trefis.com/stock/d/articles/622175/how-much-did-dominion-stock-really-pay-its-holders/2026-11-03",
+   "scope": "stock",
+   "topic": "出来高異常"
+  },
+  {
+   "symbol": "LITE",
+   "title": "What Just Happened To Lumentum Shares?",
+   "summary": "For questions about this article or underlying research, email help@trefis.com.",
+   "publisher": "Trefis",
+   "published_at": "2026-11-03T22:09:50+00:00",
+   "url": "https://www.trefis.com/stock/lite/articles/622215/what-just-happened-to-lumentum-shares/2026-11-03",
+   "scope": "stock",
+   "topic": "出来高異常"
+  },
+  {
+   "symbol": "CRH",
+   "title": "What Is Behind The Move In CRH Stock?",
+   "summary": "For questions about this article or underlying research, email help@trefis.com.",
+   "publisher": "Trefis",
+   "published_at": "2026-11-03T22:03:28+00:00",
+   "url": "https://www.trefis.com/stock/crh/articles/622230/what-is-behind-the-move-in-crh-stock/2026-11-03",
+   "scope": "stock",
+   "topic": "大幅高"
+  },
+  {
+   "symbol": "MRNA",
+   "title": "Pfizer CEO Says Covid Is ‘Irrelevant.’ He’s Betting on Cancer and Weight-Loss Drugs.",
+   "summary": "Pfizer boosts full-year guidance on the back of its latest quarter, citing growth in non-Covid offerings and acquired products.",
+   "publisher": "Barrons.com",
+   "published_at": "2026-11-03T22:00:00+00:00",
+   "url": "https://www.barrons.com/articles/pfizer-earnings-stock-price-2b7eecf3?siteid=yhoof2&yptr=yahoo",
+   "scope": "stock",
+   "topic": "保有中"
+  },
+  {
+   "symbol": "CBRE",
+   "title": "What Just Happened To CBRE Stock?",
+   "summary": "For questions about this article or underlying research, email help@trefis.com.",
+   "publisher": "Trefis",
+   "published_at": "2026-11-03T21:56:37+00:00",
+   "url": "https://www.trefis.com/stock/cbre/articles/622233/what-just-happened-to-cbre-stock/2026-11-03",
+   "scope": "stock",
+   "topic": "大幅高"
+  },
+  {
+   "symbol": "MPC",
+   "title": "Stocks to Watch Recap: Apple, Palantir, AMD",
+   "summary": "↘️ Apple (AAPL): The iPhone maker’s shares slipped 1.9%.",
+   "publisher": "The Wall Street Journal",
+   "published_at": "2026-11-03T21:54:12+00:00",
+   "url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-11-03-2026/card/stocks-to-watch-apple-marathon-petroleum-palantir-lufthansa-IEOGJG7s9Z2v71zTnI3i?siteid=yhoof2&yptr=yahoo",
+   "scope": "stock",
+   "topic": "買い候補"
+  },
+  {
+   "symbol": "NTAP",
+   "title": "Super Micro Computer (SMCI) Beats Q1 Earnings and Revenue Estimates",
+   "summary": "Super Micro (SMCI) delivered earnings and revenue surprises of +45.97% and +26.46%, respectively, for the quarter ended September 2026. Do the numbers hold clues to what lies ahead for the stock?",
+   "publisher": "Zacks",
+   "published_at": "2026-11-03T21:50:08+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/super-micro-computer-smci-beats-215008626.html",
+   "scope": "stock",
+   "topic": "買い候補"
+  },
+  {
+   "symbol": "APA",
+   "title": "SM Energy (SM) Q3 Earnings Lag Estimates",
+   "summary": "SM Energy (SM) delivered earnings and revenue surprises of -3.94% and +10.24%, respectively, for the quarter ended September 2026. Do the numbers hold clues to what lies ahead for the stock?",
+   "publisher": "Zacks",
+   "published_at": "2026-11-03T21:50:07+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/sm-energy-sm-q3-earnings-215007261.html",
+   "scope": "stock",
+   "topic": "買い候補"
+  },
+  {
+   "symbol": "AMD",
+   "title": "AMD beats Q3 estimates with data center business booming",
+   "summary": "Patrick Moorhead, Moor Insights &amp; Strategy Founder, CEO, and Chief Analyst, joins Yahoo Finance Breaking Business News Reporter Jake Conley to discuss AMD's (AMD) third quarter earnings beating estimates, with data center revenue nearly doubling to $8.55 billion.",
+   "publisher": "Yahoo Finance Video",
+   "published_at": "2026-11-03T21:28:30+00:00",
+   "url": "https://finance.yahoo.com/video/amd-beats-q3-estimates-with-data-center-business-booming-212830094.html",
+   "scope": "stock",
+   "topic": "買い候補"
+  },
+  {
+   "symbol": "MU",
+   "title": "Q4 QQQ Roadmap: Navigating AI Turbulence & Market Headwinds",
+   "summary": "As historical seasonality and political gridlock align with favorable risk-reward entries across core infrastructure names, the current pullback presents a compelling backdrop for the next leg higher.",
+   "publisher": "Zacks",
+   "published_at": "2026-11-03T21:26:00+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/q4-qqq-roadmap-navigating-ai-212600565.html",
+   "scope": "stock",
+   "topic": "買い候補"
+  },
+  {
+   "symbol": "MPC",
+   "title": "Marathon Petroleum (MPC) Q3 2026 Earnings Call Transcript",
+   "summary": "Refining margins surged while the company sold two refineries and boosted payouts.",
+   "publisher": "Motley Fool",
+   "published_at": "2026-11-03T21:17:13+00:00",
+   "url": "https://www.fool.com/earnings/call-transcripts/2026/11/03/marathon-petroleum-mpc-q3-2026-earnings-call-transcript/",
+   "scope": "stock",
+   "topic": "買い候補"
+  },
+  {
+   "symbol": "CRWD",
+   "title": "CrowdStrike Launches AI Agent 'Kill Switch,' Plans to Acquire Fiddler AI",
+   "summary": "CrowdStrike's new kill switch lets security teams cut off unauthorized AI agents through a gateway, while its planned Fiddler acquisition aims to make autonomous software easier to monitor and audit.",
+   "publisher": "decrypt",
+   "published_at": "2026-11-03T21:16:03+00:00",
+   "url": "https://decrypt.co/382467/crowdstrike-ai-agent-kill-switch-acquire-fiddler-ai",
+   "scope": "stock",
+   "topic": "買い候補"
+  },
+  {
+   "symbol": "DDOG",
+   "title": "Transcat, Inc. (TRNS) Q2 Earnings and Revenues Top Estimates",
+   "summary": "Transcat (TRNS) delivered earnings and revenue surprises of +52.38% and +5.73%, respectively, for the quarter ended September 2026. Do the numbers hold clues to what lies ahead for the stock?",
+   "publisher": "Zacks",
+   "published_at": "2026-11-03T21:15:03+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/transcat-inc-trns-q2-earnings-211503733.html",
+   "scope": "stock",
+   "topic": "大幅安"
+  },
+  {
+   "symbol": "MU",
+   "title": "Nasdaq ends higher as AI heavyweights rebound ahead of midterm results",
+   "summary": "By Noel Randewich Nov 3 (Reuters) - The Nasdaq ended higher on Tuesday as AI heavyweights rebounded ahead of US midterm election results, while Apple fell after the iPhone maker joined the list of Big",
+   "publisher": "Reuters",
+   "published_at": "2026-11-03T21:14:35+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/us-stock-futures-mixed-apple-104958801.html",
+   "scope": "stock",
+   "topic": "買い候補"
+  },
+  {
+   "symbol": "MRNA",
+   "title": "Moderna's Cancer Vaccine Is Incredibly Promising, but This Could Be a Major Obstacle to Its Success",
+   "summary": "Even if the company's vaccine obtains approval, producing it at scale could be a big challenge.",
+   "publisher": "Motley Fool",
+   "published_at": "2026-11-03T21:12:01+00:00",
+   "url": "https://www.fool.com/investing/2026/11/03/moderna-s-cancer-vaccine-is-incredibly-promising-but-this-could-be-a-major-obstacle-to-its-success/",
+   "scope": "stock",
+   "topic": "保有中"
+  },
+  {
+   "symbol": "VLO",
+   "title": "Oil Edges Lower As U.S. Bombs Iran Before Election Day",
+   "summary": "Crude oil futures fell about 1% to around $96 a barrel.",
+   "publisher": "Investor's Business Daily",
+   "published_at": "2026-11-03T21:07:20+00:00",
+   "url": "https://www.investors.com/news/oil-prices-us-iran-hormuz-trump-exxon-chevron-midterm-election/?src=A00220&yptr=yahoo",
+   "scope": "stock",
+   "topic": "買い候補"
+  },
+  {
+   "symbol": "COIN",
+   "title": "Crypto Fears Set the Stage for Circle Earnings After Binance Hack",
+   "summary": "Circle Internet’s stock got hit after the Binance hack. Solid earnings from the stablecoin issuer could get it back on track.",
+   "publisher": "Barrons.com",
+   "published_at": "2026-11-03T21:07:00+00:00",
+   "url": "https://www.barrons.com/articles/circle-internet-earnings-stock-price-b3bace9c?siteid=yhoof2&yptr=yahoo",
+   "scope": "stock",
+   "topic": "52週安値圏"
+  },
+  {
+   "symbol": "DELL",
+   "title": "Celestica Lost 36% in a Month. CIBC Sees 101% Upside From Here",
+   "summary": "Key TakeawaysCelestica stock is down 36% in the past month, even though it beat its own third-quarter guidance and forecast $40. 0 billion of revenue for 2027.",
+   "publisher": "TIKR",
+   "published_at": "2026-11-03T21:00:31+00:00",
+   "url": "https://www.tikr.com/blog/celestica-lost-36-in-a-month-cibc-sees-101-upside-from-here?ref=yahoofinance&tlnk=yf-261103-2f3gj6wx",
+   "scope": "stock",
+   "topic": "買い候補"
+  },
+  {
+   "symbol": "LITE",
+   "title": "Fabrinet Lost 32% in a Month. Barclays Sees 58% Upside From Here",
+   "summary": "Key TakeawaysFabrinet shares fell 32% in the past month as AI optics stocks, including Coherent, Lumentum and Marvell, sold off on fears about AI funding and hyperscaler spending. Fabrinet had no news of its own during the sell-off.",
+   "publisher": "TIKR",
+   "published_at": "2026-11-03T20:57:46+00:00",
+   "url": "https://www.tikr.com/blog/fabrinet-lost-32-in-a-month-barclays-sees-58-upside-from-here?ref=yahoofinance&tlnk=yf-261103-x97mmqvx",
+   "scope": "stock",
+   "topic": "出来高異常"
+  },
+  {
+   "symbol": "COIN",
+   "title": "Hut 8 Lost 5% in a Week Before Earnings. B. Riley Still Sees $134",
+   "summary": "Key TakeawaysHut 8 stock fell 5% in the past week, mostly after a record Binance hack and a tech selloff that also hit Coinbase, IREN and Cipher Digital. B.",
+   "publisher": "TIKR",
+   "published_at": "2026-11-03T20:54:39+00:00",
+   "url": "https://www.tikr.com/blog/hut-8-lost-5-in-a-week-before-earnings-b-riley-still-sees-134?ref=yahoofinance&tlnk=yf-261103-93ph66v9",
+   "scope": "stock",
+   "topic": "52週安値圏"
+  },
+  {
+   "symbol": "ORCL",
+   "title": "Cerebras Sinks 11% in a Week to a New 52-Week Low. UBS Still Sees 159% Upside",
+   "summary": "Key TakeawaysCerebras stock fell 11% in the past week to a new 52-week low, 75% below its May high. Oracle will offer Cerebras’ inference on its cloud, but a short seller and Oracle’s $20 billion raise outweighed the deal.",
+   "publisher": "TIKR",
+   "published_at": "2026-11-03T20:43:49+00:00",
+   "url": "https://www.tikr.com/blog/cerebras-sinks-11-in-a-week-to-a-new-52-week-low-ubs-still-sees-159-upside?ref=yahoofinance&tlnk=yf-261103-vchxmc7p",
+   "scope": "stock",
+   "topic": "大幅安"
+  },
+  {
+   "symbol": "DELL",
+   "title": "AI investments fail when companies ignore the hard part of transformation",
+   "summary": "The gap between AI promises and business results is becoming harder to ignore.",
+   "publisher": "TheStreet",
+   "published_at": "2026-11-03T20:37:00+00:00",
+   "url": "https://www.thestreet.com/technology/ai-investments-fail-when-companies-ignore-the-hard-part-of-transformation",
+   "scope": "stock",
+   "topic": "買い候補"
+  },
+  {
+   "symbol": "XEL",
+   "title": "The 12-Month Dividend Calendar: How to Get Paid $3,500 Every Single Month From XEL, CL, and TROW",
+   "summary": "Most retirees watch dividend income pile up in some months and vanish in others, but three stocks with staggered payment schedules can close that gap in a way most income portfolios never consider.",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-11-03T20:34:53+00:00",
+   "url": "https://247wallst.com/personal-finance/2026/11/03/the-12-month-dividend-calendar-how-to-get-paid-3500-every-single-month-from-xel-cl-and-trow/",
+   "scope": "stock",
+   "topic": "出来高異常"
+  },
+  {
+   "symbol": "RDDT",
+   "title": "What Did Reddit's Quarter Change For Its Stock?",
+   "summary": "For questions about this article or underlying research, email help@trefis.com.",
+   "publisher": "Trefis",
+   "published_at": "2026-11-03T20:20:16+00:00",
+   "url": "https://www.trefis.com/stock/rddt/articles/622319/what-did-reddits-quarter-change-for-its-stock/2026-11-03",
+   "scope": "stock",
+   "topic": "52週安値圏"
+  },
+  {
+   "symbol": "GM",
+   "title": "Stellantis Is Now Down 58% in 2026: Is STLA Stock Dead Money or the Opportunity of a Lifetime?",
+   "summary": "Stellantis has lost more ground in a single year than most automakers lose in a decade, leaving investors split between a historic buying opportunity and a value trap with a credit rating one step from junk.",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-11-03T20:06:27+00:00",
+   "url": "https://247wallst.com/investing/2026/11/03/stellantis-is-now-down-58-in-2026-is-stla-stock-dead-money-or-the-opportunity-of-a-lifetime/",
+   "scope": "stock",
+   "topic": "52週高値圏"
+  },
+  {
+   "symbol": "DASH",
+   "title": "DoorDash, Inc. (DASH) Is Facing a Changing Competitive Landscape: Can It Maintain Its Growth Edge?",
+   "summary": "Pershing Square Inc. recently released its Q3 2026 investor letter. A copy of the letter can be downloaded here. The letter reported 13% year-over-year growth in third-quarter fee-related earnings (FRE) to $63.7 million, while distributable earnings (DE) before taxes increased 8% to $61.0 million. After taxes, DE totaled $49.5 million, or $0.12 per share, down […]",
+   "publisher": "Insider Monkey",
+   "published_at": "2026-11-03T19:55:43+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/doordash-inc-dash-facing-changing-195543388.html",
+   "scope": "stock",
+   "topic": "大幅高"
+  },
+  {
+   "symbol": "VLO",
+   "title": "Carl Icahn Buys A $4.2 Billion Slice Of The Refining Profit Surge",
+   "summary": "Carl Icahn's oil refinery, CVR Energy, said Tuesday that it's paying $4.2 billion for Marathon Petroleum refineries as earnings boom.",
+   "publisher": "Investor's Business Daily",
+   "published_at": "2026-11-03T19:54:47+00:00",
+   "url": "https://www.investors.com/news/carl-icahn-cvr-energy-inks-4-2-billion-deal-for-marathon-refineries/?src=A00220&yptr=yahoo",
+   "scope": "stock",
+   "topic": "買い候補"
+  },
+  {
+   "symbol": "GM",
+   "title": "Mark Walter in Talks to Sell Cadillac F1 Stake to Red Sox, Liverpool Owners",
+   "summary": "John Henry’s Fenway Sports Group is one of the bidders for the outfit at a valuation believed to be above $3 billion.",
+   "publisher": "The Wall Street Journal",
+   "published_at": "2026-11-03T19:33:00+00:00",
+   "url": "https://www.wsj.com/sports/cadillac-formula-one-mark-walter-john-henry-af86c109?siteid=yhoof2&yptr=yahoo",
+   "scope": "stock",
+   "topic": "52週高値圏"
+  },
+  {
+   "symbol": "APP",
+   "title": "AppLovin Fell 60% Even With Today’s Pop. Tomorrow We Learn if Earnings Fell With It",
+   "summary": "Key TakeawaysAppLovin is down 64% from its high, making it the worst performer in the S&P 500 this year. It reports third-quarter results after the close on Wednesday, Nov.",
+   "publisher": "TIKR",
+   "published_at": "2026-11-03T19:27:21+00:00",
+   "url": "https://www.tikr.com/blog/applovin-fell-60-even-with-todays-pop-tomorrow-we-learn-if-earnings-fell-with-it?ref=yahoofinance&tlnk=yf-261103-7qgfm8wg",
+   "scope": "stock",
+   "topic": "52週安値圏"
+  },
+  {
+   "symbol": "RDDT",
+   "title": "Reddit tests ads in search results as traffic declines and growth concerns mount",
+   "summary": "The new ad placements could help Reddit squeeze more revenue from existing users as Google's AI search changes how people discover its content.",
+   "publisher": "TechCrunch",
+   "published_at": "2026-11-03T19:24:37+00:00",
+   "url": "https://finance.yahoo.com/media-advertising/articles/reddit-tests-ads-search-results-192437439.html",
+   "scope": "stock",
+   "topic": "52週安値圏"
+  },
+  {
+   "symbol": "MNST",
+   "title": "Coca-Cola vs. Monster Beverage: Measuring Quarter-Over-Quarter Revenue Trends",
+   "summary": "Monster's revenue has grown 39% over eight quarters while Coca-Cola's expanded just 17%—a widening gap that reshapes the competitive picture.",
+   "publisher": "Motley Fool",
+   "published_at": "2026-11-03T19:20:02+00:00",
+   "url": "https://www.fool.com/coverage/charts/2026/11/03/coca-cola-vs-monster-beverage-measuring-quarter-over-quarter-revenue-trends/",
+   "scope": "stock",
+   "topic": "保有中"
+  },
+  {
+   "symbol": "DASH",
+   "title": "Uber, DoorDash Partner Weathers Volatile Market; Stock Offers Entry",
+   "summary": "Fintech stock and telecom name IDT is holding gains after a surge of fiscal fourth-quarter earnings.",
+   "publisher": "Investor's Business Daily",
+   "published_at": "2026-11-03T19:14:57+00:00",
+   "url": "https://www.investors.com/research/idt-stock-uber-doordash-sp500/?src=A00220&yptr=yahoo",
+   "scope": "stock",
+   "topic": "大幅高"
+  },
+  {
+   "symbol": "XEL",
+   "title": "Xcel Energy (XEL) Faces Community Pushback Over 780 MW AI Data Center Plan",
+   "summary": "Xcel Energy (NasdaqGS:XEL) and Google announced the 780 MW Project Skyway data center plan, tying new grid investments to AI computing needs. Local residents and environmental groups are challenging the project over expected water use and ecological impact around the proposed facilities. Regulators and consumer advocates are reviewing proposed customer protection measures that aim to separate data center costs from household bills. The Project Skyway backlash and customer safeguards matter,...",
+   "publisher": "Simply Wall St.",
+   "published_at": "2026-11-03T19:11:53+00:00",
+   "url": "https://finance.yahoo.com/energy/articles/xcel-energy-xel-faces-community-191153010.html",
+   "scope": "stock",
+   "topic": "出来高異常"
+  },
+  {
+   "symbol": "DELL",
+   "title": "Dell (DELL): A Top 10 Cheap AI Stock Trading at 13x Forward Earnings",
+   "summary": "We just published the list of the 10 Best and Cheap Stocks to Buy Heading into 2027 and Dell Technologies (NYSE:DELL) ranks 10th on this list. Wall Street’s AI trade took a hard hit on October 30. Reuters reported that a selloff in tech shares pushed MSCI’s global index down 1.5%, after results from Intel […]",
+   "publisher": "Insider Monkey",
+   "published_at": "2026-11-03T18:53:13+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/dell-dell-top-10-cheap-185313697.html",
+   "scope": "stock",
+   "topic": "買い候補"
+  },
+  {
+   "symbol": "MRNA",
+   "title": "Moderna Climbs 5% Ahead of Earnings, Pfizer Eases Despite Raised Outlook, Merck Slides 2% Amid New Phase 3 Trial",
+   "summary": "Moderna surges on pre-earnings momentum, Pfizer dips after beating estimates and raising guidance, and Merck drops despite launching a new trial. When stock prices and headlines point in opposite directions across the sector, something beneath the surface deserves a closer look.",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-11-03T18:53:05+00:00",
+   "url": "https://247wallst.com/investing/2026/11/03/moderna-climbs-5-ahead-of-earnings-pfizer-eases-despite-raised-outlook-merck-slides-2-despite-new-phase-3-trial/",
+   "scope": "stock",
+   "topic": "保有中"
+  },
+  {
+   "symbol": "APP",
+   "title": "Hedge Funds Are Snapping Up AppLovin (APP) at a Steep Discount",
+   "summary": "We just published the list of the 10 Best and Cheap Stocks to Buy Heading into 2027 and AppLovin (NASDAQ:APP) ranks 9th on this list. Wall Street’s AI trade took a hard hit on October 30. Reuters reported that a selloff in tech shares pushed MSCI’s global index down 1.5%, after results from Intel and […]",
+   "publisher": "Insider Monkey",
+   "published_at": "2026-11-03T18:48:45+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/hedge-funds-snapping-applovin-app-184845036.html",
+   "scope": "stock",
+   "topic": "52週安値圏"
+  },
+  {
+   "symbol": "REGN",
+   "title": "BAYRY Q3 Earnings and Revenues Miss Estimates, Pharma Performs Well",
+   "summary": "Bayer's Q3 earnings and revenues miss estimates, but strong growth in Nubeqa and Kerendia boosts pharma performance and lifts 2026 EBITDA guidance.",
+   "publisher": "Zacks",
+   "published_at": "2026-11-03T18:12:00+00:00",
+   "url": "https://finance.yahoo.com/healthcare/articles/bayry-q3-earnings-revenues-miss-181200425.html",
+   "scope": "stock",
+   "topic": "52週高値圏"
+  },
+  {
+   "symbol": "DELL",
+   "title": "Super Micro Fell 7% on a Memory Shortage Warning. Its Margin Has to Answer November 3",
+   "summary": "Key TakeawaysSuper Micro fell 7% on Friday along with Dell and other hardware stocks, after Intel warned that memory prices and shortages are slowing PC demand. Super Micro sells no PCs.",
+   "publisher": "TIKR",
+   "published_at": "2026-11-03T18:10:41+00:00",
+   "url": "https://www.tikr.com/blog/super-micro-fell-7-on-a-memory-shortage-warning-its-margin-has-to-answer-november-3?ref=yahoofinance&tlnk=yf-261103-82cj5w93",
+   "scope": "stock",
+   "topic": "買い候補"
+  },
+  {
+   "symbol": "APA",
+   "title": "What Just Happened To Devon Energy Stock?",
+   "summary": "For questions about this article or underlying research, email help@trefis.com.",
+   "publisher": "Trefis",
+   "published_at": "2026-11-03T18:09:15+00:00",
+   "url": "https://www.trefis.com/stock/dvn/articles/622217/what-just-happened-to-devon-energy-stock/2026-11-03",
+   "scope": "stock",
+   "topic": "買い候補"
+  }
+ ],
+ "world_news": [
+  {
+   "symbol": "^GSPC",
+   "title": "Investors poised for possible Democratic gains in Congress as US awaits election results",
+   "summary": "By Lewis Krauskopf and Suzanne McGee NEW YORK, Nov 3 (Reuters) - Investors were bracing for a potentially strong Democratic showing during Tuesday's midterm elections that could pave the way for",
+   "publisher": "Reuters",
+   "published_at": "2026-11-04T01:34:31+00:00",
+   "url": "https://finance.yahoo.com/news/investors-ready-possible-shake-congress-100659339.html",
+   "topic": "米国株全体",
+   "scope": "macro"
+  },
+  {
+   "symbol": "^GSPC",
+   "title": "Stock Futures Drop as Democrats Post Strong Early Numbers",
+   "summary": "Stock futures are falling as early vote counts show Democrats significantly outperforming their 2024 results.",
+   "publisher": "Barrons.com",
+   "published_at": "2026-11-04T01:09:41+00:00",
+   "url": "https://www.barrons.com/livecoverage/election-results-midterms-2026/card/stock-futures-drop-as-democrats-post-strong-early-numbers-KcTiuxgE3xDM31u4EM27?siteid=yhoof2&yptr=yahoo",
+   "topic": "米国株全体",
+   "scope": "macro"
+  },
+  {
+   "symbol": "^GSPC",
+   "title": "U.S. stock futures steady with midterms in focus; AMD rallies on strong earnings",
+   "summary": "Investing.com-- U.S. stock index futures moved little on Tuesday evening as markets awaited early results from the midterm elections, while chipmaker AMD firmed on clocking strong third-quarter earnings.",
+   "publisher": "Investing.com",
+   "published_at": "2026-11-04T01:06:43+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/u-stock-futures-steady-midterms-010643358.html",
+   "topic": "米国株全体",
+   "scope": "macro"
+  },
+  {
+   "symbol": "SPY",
+   "title": "S&P 500, Nasdaq Recover From AI Rout On US Midterm Election Day —  META, AAPL, AMD, SKHY In Focus",
+   "summary": "The U.S. midterm elections are underway.",
+   "publisher": "Stocktwits",
+   "published_at": "2026-11-03T23:29:55+00:00",
+   "url": "https://stocktwits.com/news-articles/markets/equity/s-and-p-500-nasdaq-recover-from-ai-rout-on-us-midterm-election-day-meta-aapl-amd-skhy-in-focus/cNGXlSbR9dS",
+   "topic": "米国株全体",
+   "scope": "macro"
+  },
+  {
+   "symbol": "SPY",
+   "title": "Suze Orman Says Doing Nothing Can Be the Right Move When Stocks Fall",
+   "summary": "When stocks drop, most investors feel compelled to act fast, but Suze Orman argues that impulse could be quietly destroying your long-term returns in ways the math makes painfully clear.",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-11-03T23:08:27+00:00",
+   "url": "https://247wallst.com/personal-finance/2026/11/03/suze-orman-says-doing-nothing-can-be-the-right-move-when-stocks-fall/",
+   "topic": "米国株全体",
+   "scope": "macro"
+  },
+  {
+   "symbol": "QQQ",
+   "title": "Q4 QQQ Roadmap: Navigating AI Turbulence & Market Headwinds",
+   "summary": "As historical seasonality and political gridlock align with favorable risk-reward entries across core infrastructure names, the current pullback presents a compelling backdrop for the next leg higher.",
+   "publisher": "Zacks",
+   "published_at": "2026-11-03T21:26:00+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/q4-qqq-roadmap-navigating-ai-212600565.html",
+   "topic": "ハイテク",
+   "scope": "macro"
+  },
+  {
+   "symbol": "XLE",
+   "title": "Sector Update: Energy Stocks Fall Late Afternoon",
+   "summary": "Energy stocks were lower late Tuesday afternoon, with the NYSE Energy Sector Index shedding 0.5% and",
+   "publisher": "MT Newswires",
+   "published_at": "2026-11-03T21:03:14+00:00",
+   "url": "https://finance.yahoo.com/energy/articles/sector-energy-stocks-fall-afternoon-210314611.html",
+   "topic": "エネルギー",
+   "scope": "macro"
+  },
+  {
+   "symbol": "XLF",
+   "title": "Sector Update: Financial Stocks Decline Late Afternoon",
+   "summary": "Financial stocks were lower in late Tuesday afternoon trading, with the NYSE Financial Index and the",
+   "publisher": "MT Newswires",
+   "published_at": "2026-11-03T20:48:08+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-decline-afternoon-204808266.html",
+   "topic": "金融",
+   "scope": "macro"
+  },
+  {
+   "symbol": "XLK",
+   "title": "Sector Update: Tech Stocks Gain Late Afternoon",
+   "summary": "Tech stocks were higher late Tuesday afternoon with the State Street Technology Select Sector SPDR E",
+   "publisher": "MT Newswires",
+   "published_at": "2026-11-03T20:44:01+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-gain-afternoon-204401257.html",
+   "topic": "テクノロジー",
+   "scope": "macro"
+  },
+  {
+   "symbol": "SPY",
+   "title": "S&P 500 after midterm elections: what history says and where the market stands",
+   "summary": "Investing.com -- History gives midterm elections one of the cleanest records in market seasonality.",
+   "publisher": "Investing.com",
+   "published_at": "2026-11-03T20:40:37+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/p-500-midterm-elections-history-204037875.html",
+   "topic": "米国株全体",
+   "scope": "macro"
+  },
+  {
+   "symbol": "TLT",
+   "title": "Could Midterm Elections Solve Washington's $1.36 Trillion Interest Bill?",
+   "summary": "There is one bill in Washington that Congress has never voted on. It came to $1.36 trillion in fiscal 2026, the largest interest tab in U.S. history and $140 billion more than the year before. As Americans head to the...",
+   "publisher": "Benzinga Prediction Markets",
+   "published_at": "2026-11-03T20:04:16+00:00",
+   "url": "https://www.benzinga.com/markets/bonds/26/11/62838855/midterms-interest-bill-treasury-yields-gridlock?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral",
+   "topic": "米国債・金利",
+   "scope": "macro"
+  },
+  {
+   "symbol": "XLF",
+   "title": "Is Wall Street Bullish or Bearish on JPMorgan Chase Stock?",
+   "summary": "Although JPMorgan Chase has underperformed the broader market over the past year, Wall Street analysts maintain a moderately optimistic outlook about the stock’s prospects.",
+   "publisher": "Barchart",
+   "published_at": "2026-11-03T19:03:59+00:00",
+   "url": "https://www.barchart.com/story/news/8626620/is-wall-street-bullish-or-bearish-on-jpmorgan-chase-stock",
+   "topic": "金融",
+   "scope": "macro"
+  },
+  {
+   "symbol": "XLF",
+   "title": "Sector Update: Financial Stocks Softer in Afternoon Trading",
+   "summary": "Financial stocks were lower in Tuesday afternoon trading, with the NYSE Financial Index decreasing 0",
+   "publisher": "MT Newswires",
+   "published_at": "2026-11-03T18:52:42+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-softer-afternoon-185242052.html",
+   "topic": "金融",
+   "scope": "macro"
+  },
+  {
+   "symbol": "XLE",
+   "title": "Sector Update: Energy Stocks Decline Tuesday Afternoon",
+   "summary": "Energy stocks were lower Tuesday afternoon with the NYSE Energy Sector Index and the State Street En",
+   "publisher": "MT Newswires",
+   "published_at": "2026-11-03T18:49:14+00:00",
+   "url": "https://finance.yahoo.com/energy/articles/sector-energy-stocks-decline-tuesday-184914955.html",
+   "topic": "エネルギー",
+   "scope": "macro"
+  },
+  {
+   "symbol": "XLK",
+   "title": "Sector Update: Tech Stocks Rise Tuesday Afternoon",
+   "summary": "Tech stocks were higher Tuesday afternoon, with the State Street Technology Select Sector SPDR ETF (",
+   "publisher": "MT Newswires",
+   "published_at": "2026-11-03T18:25:19+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-rise-tuesday-182519139.html",
+   "topic": "テクノロジー",
+   "scope": "macro"
+  },
+  {
+   "symbol": "XLE",
+   "title": "Sector Update: Energy",
+   "summary": "Energy stocks fell Tuesday afternoon with the NYSE Energy Sector Index and the State Street Energy S",
+   "publisher": "MT Newswires",
+   "published_at": "2026-11-03T18:14:44+00:00",
+   "url": "https://finance.yahoo.com/energy/articles/sector-energy-181444380.html",
+   "topic": "エネルギー",
+   "scope": "macro"
+  },
+  {
+   "symbol": "XLK",
+   "title": "Exchange-Traded Funds Higher, US Equities Mixed After Midday",
+   "summary": "Broad Market Indicators Broad-market exchange-traded funds IWM and IVV rose. Actively traded I",
+   "publisher": "MT Newswires",
+   "published_at": "2026-11-03T18:10:52+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-higher-us-181052694.html",
+   "topic": "テクノロジー",
+   "scope": "macro"
+  },
+  {
+   "symbol": "USO",
+   "title": "The U.S. Has Been Striking Iran as Trump Talks Up a Deal",
+   "summary": "Trump posted that oil was crashing because Iran wants peace, then US officials said American jets had just struck Iranian territory. The two stories cannot both be true, and oil traders are now betting on which one to believe.",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-11-03T17:47:24+00:00",
+   "url": "https://247wallst.com/investing/2026/11/03/the-u-s-has-been-striking-iran-as-trump-talks-up-a-deal/",
+   "topic": "原油・エネルギー",
+   "scope": "macro"
+  },
+  {
+   "symbol": "USO",
+   "title": "OPEC+ Holds Output Steady, Maintains 2M BPD Cuts: ETFs in Focus",
+   "summary": "OPEC+ holds December oil output steady amid Iran war disruptions, keeping crude prices elevated. Explore four energy ETFs poised to benefit.",
+   "publisher": "Zacks",
+   "published_at": "2026-11-03T15:23:00+00:00",
+   "url": "https://finance.yahoo.com/energy/articles/opec-holds-output-steady-maintains-152300233.html",
+   "topic": "原油・エネルギー",
+   "scope": "macro"
+  },
+  {
+   "symbol": "^VIX",
+   "title": "Market Fear Gauge Nears 5-Month High as Wall Street Braces for Big Midterm Moves",
+   "summary": "Wall Street’s fear gauge neared its highest reading in five months, with a 25% gain over the past two weeks, as investors brace for broader market turmoil in the wake of U.S. midterm election results and a slowdown in the AI trade over the coming weeks.",
+   "publisher": "Barrons.com",
+   "published_at": "2026-11-03T11:50:41+00:00",
+   "url": "https://www.barrons.com/livecoverage/stock-market-news-today-110326/card/market-fear-gauge-nears-5-month-high-as-wall-street-braces-for-big-midterm-moves-cJeHuBPO224b1xsfnFVE?siteid=yhoof2&yptr=yahoo",
+   "topic": "リスク認識",
+   "scope": "macro"
+  },
+  {
+   "symbol": "GLD",
+   "title": "SLV Crashes To Near 52-Week Lows, GLD Falls Pre-Market – World Gold Council Cuts 2026 Gold Investment Forecast By Half",
+   "summary": "Gold futures for January 2027 fell on Tuesday; analysts highlighted $4,000 as the key level to watch for the precious metal.",
+   "publisher": "Stocktwits",
+   "published_at": "2026-11-03T11:41:50+00:00",
+   "url": "https://stocktwits.com/news-articles/markets/equity/slv-crashes-to-near-52-week-lows-gld-falls-pre-market-world-gold-council-cuts-2026-gold-investment-forecast-by-half/cNGXTZMR95V",
+   "topic": "金・実物資産",
+   "scope": "macro"
+  },
+  {
+   "symbol": "TLT",
+   "title": "\"Capital... Is Growing More Discerning and More Expensive\"",
+   "summary": "<p>Cameron Dawson, Matt Zeigler, and Dave Nadig on what would have to break in markets if yields are wrong about Fed hikes, why a longer-term sideways market is on the table, how a 17x semiconductor multiple is a warning and not a bargain, and the Scott Stapp (Creed) halftime show in this episode of <em>Click Beta</em>. </p>",
+   "publisher": "etf.com",
+   "published_at": "2026-11-02T22:29:07+00:00",
+   "url": "http://www.etf.com/sections/podcasts/capital-growing-more-discerning-and-more-expensive?utm_source=yahoo-finance&utm_medium=rss&utm_campaign=yahoo-finance-rss",
+   "topic": "米国債・金利",
+   "scope": "macro"
+  },
+  {
+   "symbol": "GLD",
+   "title": "What Is Behind The Move In Kinross Gold Stock?",
+   "summary": "For questions about this article or underlying research, email help@trefis.com.",
+   "publisher": "Trefis",
+   "published_at": "2026-11-02T19:19:31+00:00",
+   "url": "https://www.trefis.com/stock/kgc/articles/621891/what-is-behind-the-move-in-kinross-gold-stock/2026-11-02",
+   "topic": "金・実物資産",
+   "scope": "macro"
+  },
+  {
+   "symbol": "USO",
+   "title": "Exchange-Traded Funds Higher as US Equities Rise After Midday",
+   "summary": "Broad Market Indicators Broad-market exchange-traded funds IWM and IVV rose. Actively traded I",
+   "publisher": "MT Newswires",
+   "published_at": "2026-11-02T18:21:41+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-higher-us-182141612.html",
+   "topic": "原油・エネルギー",
+   "scope": "macro"
+  }
+ ],
+ "filings": [],
+ "edgar_fulltext": [],
+ "corporate_events": {
+  "earnings": [
+   {
+    "symbol": "AMD",
+    "date": "2026-11-03",
+    "days_until": -1
+   },
+   {
+    "symbol": "MPC",
+    "date": "2026-11-03",
+    "days_until": -1
+   },
+   {
+    "symbol": "APA",
+    "date": "2026-11-04",
+    "days_until": 0
+   },
+   {
+    "symbol": "DDOG",
+    "date": "2026-11-04",
+    "days_until": 0
+   },
+   {
+    "symbol": "EW",
+    "date": "2026-11-04",
+    "days_until": 0
+   },
+   {
+    "symbol": "SPG",
+    "date": "2026-11-05",
+    "days_until": 1
+   },
+   {
+    "symbol": "MNST",
+    "date": "2026-11-05",
+    "days_until": 1
+   },
+   {
+    "symbol": "CAH",
+    "date": "2026-11-05",
+    "days_until": 1
+   },
+   {
+    "symbol": "TRGP",
+    "date": "2026-11-05",
+    "days_until": 1
+   },
+   {
+    "symbol": "VTRS",
+    "date": "2026-11-05",
+    "days_until": 1
+   },
+   {
+    "symbol": "TAP",
+    "date": "2026-11-05",
+    "days_until": 1
+   },
+   {
+    "symbol": "MRNA",
+    "date": "2026-11-06",
+    "days_until": 2
+   },
+   {
+    "symbol": "PANW",
+    "date": "2026-11-18",
+    "days_until": 14
+   },
+   {
+    "symbol": "TGT",
+    "date": "2026-11-18",
+    "days_until": 14
+   },
+   {
+    "symbol": "HPE",
+    "date": "2026-11-23",
+    "days_until": 19
+   },
+   {
+    "symbol": "DELL",
+    "date": "2026-11-24",
+    "days_until": 20
+   },
+   {
+    "symbol": "ADI",
+    "date": "2026-11-24",
+    "days_until": 20
+   },
+   {
+    "symbol": "CRWD",
+    "date": "2026-12-01",
+    "days_until": 27
+   },
+   {
+    "symbol": "NTAP",
+    "date": "2026-12-01",
+    "days_until": 27
+   },
+   {
+    "symbol": "MRVL",
+    "date": "2026-12-01",
+    "days_until": 27
+   },
+   {
+    "symbol": "CIEN",
+    "date": "2026-12-10",
+    "days_until": 36
+   },
+   {
+    "symbol": "ORCL",
+    "date": "2026-12-14",
+    "days_until": 40
+   },
+   {
+    "symbol": "MU",
+    "date": "2026-12-23",
+    "days_until": 49
+   }
+  ],
+  "ex_dividends": [
+   {
+    "symbol": "TRGP",
+    "date": "2026-10-30",
+    "days_until": -5,
+    "amount": null
+   },
+   {
+    "symbol": "TXN",
+    "date": "2026-10-30",
+    "days_until": -5,
+    "amount": null
+   },
+   {
+    "symbol": "NSC",
+    "date": "2026-11-06",
+    "days_until": 2,
+    "amount": null
+   },
+   {
+    "symbol": "HWM",
+    "date": "2026-11-06",
+    "days_until": 2,
+    "amount": null
+   },
+   {
+    "symbol": "TGT",
+    "date": "2026-11-10",
+    "days_until": 6,
+    "amount": null
+   },
+   {
+    "symbol": "CRH",
+    "date": "2026-11-13",
+    "days_until": 9,
+    "amount": null
+   },
+   {
+    "symbol": "PSX",
+    "date": "2026-11-17",
+    "days_until": 13,
+    "amount": null
+   },
+   {
+    "symbol": "MPC",
+    "date": "2026-11-18",
+    "days_until": 14,
+    "amount": null
+   },
+   {
+    "symbol": "VLO",
+    "date": "2026-11-24",
+    "days_until": 20,
+    "amount": null
+   },
+   {
+    "symbol": "CSX",
+    "date": "2026-11-30",
+    "days_until": 26,
+    "amount": null
+   }
+  ],
+  "alerts": [
+   {
+    "symbol": "SPG",
+    "date": "2026-11-05",
+    "days_until": 1,
+    "risk": "決算跨ぎ",
+    "note": "保有期間(60日)の中に決算がある"
+   },
+   {
+    "symbol": "MNST",
+    "date": "2026-11-05",
+    "days_until": 1,
+    "risk": "決算跨ぎ",
+    "note": "保有期間(60日)の中に決算がある"
+   },
+   {
+    "symbol": "CAH",
+    "date": "2026-11-05",
+    "days_until": 1,
+    "risk": "決算跨ぎ",
+    "note": "保有期間(60日)の中に決算がある"
+   },
+   {
+    "symbol": "MRNA",
+    "date": "2026-11-06",
+    "days_until": 2,
+    "risk": "決算跨ぎ",
+    "note": "保有期間(60日)の中に決算がある"
+   },
+   {
+    "symbol": "MU",
+    "date": "2026-12-23",
+    "days_until": 49,
+    "risk": "決算跨ぎ",
+    "note": "保有期間(60日)の中に決算がある"
+   },
+   {
+    "symbol": "DELL",
+    "date": "2026-11-24",
+    "days_until": 20,
+    "risk": "決算跨ぎ",
+    "note": "保有期間(60日)の中に決算がある"
+   },
+   {
+    "symbol": "HPE",
+    "date": "2026-11-23",
+    "days_until": 19,
+    "risk": "決算跨ぎ",
+    "note": "保有期間(60日)の中に決算がある"
+   },
+   {
+    "symbol": "CRWD",
+    "date": "2026-12-01",
+    "days_until": 27,
+    "risk": "決算跨ぎ",
+    "note": "保有期間(60日)の中に決算がある"
+   },
+   {
+    "symbol": "APA",
+    "date": "2026-11-04",
+    "days_until": 0,
+    "risk": "決算跨ぎ",
+    "note": "保有期間(60日)の中に決算がある"
+   },
+   {
+    "symbol": "NTAP",
+    "date": "2026-12-01",
+    "days_until": 27,
+    "risk": "決算跨ぎ",
+    "note": "保有期間(60日)の中に決算がある"
+   },
+   {
+    "symbol": "TRGP",
+    "date": "2026-11-05",
+    "days_until": 1,
+    "risk": "決算跨ぎ",
+    "note": "保有期間(60日)の中に決算がある"
+   },
+   {
+    "symbol": "PANW",
+    "date": "2026-11-18",
+    "days_until": 14,
+    "risk": "決算跨ぎ",
+    "note": "保有期間(60日)の中に決算がある"
+   },
+   {
+    "symbol": "ADI",
+    "date": "2026-11-24",
+    "days_until": 20,
+    "risk": "決算跨ぎ",
+    "note": "保有期間(60日)の中に決算がある"
+   },
+   {
+    "symbol": "DDOG",
+    "date": "2026-11-04",
+    "days_until": 0,
+    "risk": "決算跨ぎ",
+    "note": "保有期間(60日)の中に決算がある"
+   },
+   {
+    "symbol": "VTRS",
+    "date": "2026-11-05",
+    "days_until": 1,
+    "risk": "決算跨ぎ",
+    "note": "保有期間(60日)の中に決算がある"
+   },
+   {
+    "symbol": "TGT",
+    "date": "2026-11-18",
+    "days_until": 14,
+    "risk": "決算跨ぎ",
+    "note": "保有期間(60日)の中に決算がある"
+   },
+   {
+    "symbol": "EW",
+    "date": "2026-11-04",
+    "days_until": 0,
+    "risk": "決算跨ぎ",
+    "note": "保有期間(60日)の中に決算がある"
+   },
+   {
+    "symbol": "MRVL",
+    "date": "2026-12-01",
+    "days_until": 27,
+    "risk": "決算跨ぎ",
+    "note": "保有期間(60日)の中に決算がある"
+   },
+   {
+    "symbol": "TAP",
+    "date": "2026-11-05",
+    "days_until": 1,
+    "risk": "決算跨ぎ",
+    "note": "保有期間(60日)の中に決算がある"
+   },
+   {
+    "symbol": "CIEN",
+    "date": "2026-12-10",
+    "days_until": 36,
+    "risk": "決算跨ぎ",
+    "note": "保有期間(60日)の中に決算がある"
+   },
+   {
+    "symbol": "ORCL",
+    "date": "2026-12-14",
+    "days_until": 40,
+    "risk": "決算跨ぎ",
+    "note": "保有期間(60日)の中に決算がある"
+   }
+  ]
+ },
+ "correlation": {
+  "pairs": [
+   {
+    "a": "VLO",
+    "b": "MPC",
+    "corr": 0.915
+   },
+   {
+    "a": "CSX",
+    "b": "NSC",
+    "corr": 0.815
+   },
+   {
+    "a": "DELL",
+    "b": "HPE",
+    "corr": 0.778
+   }
+  ],
+  "max_corr": 0.915,
+  "lookback_days": 60,
+  "note": "3組が相関0.75以上。実質同じ賭けになっている可能性があります"
+ },
+ "concentration": {
+  "held_by_sector": {
+   "Real Estate": 1,
+   "Materials": 1,
+   "Consumer Staples": 1,
+   "Industrials": 2,
+   "Health Care": 2
+  },
+  "held_plus_candidates_by_sector": {
+   "Real Estate": 1,
+   "Materials": 1,
+   "Consumer Staples": 1,
+   "Industrials": 2,
+   "Health Care": 3,
+   "Information Technology": 4,
+   "Energy": 2,
+   "ETF": 1
+  },
+  "warnings": [
+   "Health Care に 3 銘柄が集中",
+   "Information Technology に 4 銘柄が集中"
+  ]
+ },
+ "paper": {
+  "book": "rule",
+  "cash": 226.08,
+  "market_value": 1763.7,
+  "equity": 1989.78,
+  "initial_cash": 2000.0,
+  "return_pct": -0.0051,
+  "positions": [
+   {
+    "symbol": "SPG",
+    "shares": 1.087,
+    "entry_price": 209.6776,
+    "entry_date": "2026-09-09",
+    "price": 221.73,
+    "pnl_pct": 0.0575,
+    "dividends": 0.0,
+    "bars_held": 33,
+    "stop_price": 192.9034,
+    "exit_flags": [],
+    "action": "継続保有",
+    "reason": "ルールのシグナル"
+   },
+   {
+    "symbol": "PKG",
+    "shares": 0.9879,
+    "entry_price": 235.6183,
+    "entry_date": "2026-09-11",
+    "price": 258.64,
+    "pnl_pct": 0.103,
+    "dividends": 1.23,
+    "bars_held": 31,
+    "stop_price": 215.5289,
+    "exit_flags": [],
+    "action": "継続保有",
+    "reason": "ルールのシグナル"
+   },
+   {
+    "symbol": "MNST",
+    "shares": 5.4459,
+    "entry_price": 44.0352,
+    "entry_date": "2026-09-15",
+    "price": 48.02,
+    "pnl_pct": 0.0905,
+    "dividends": 0.0,
+    "bars_held": 29,
+    "stop_price": 40.5124,
+    "exit_flags": [],
+    "action": "継続保有",
+    "reason": "ルールのシグナル"
+   },
+   {
+    "symbol": "CSX",
+    "shares": 4.8941,
+    "entry_price": 47.0676,
+    "entry_date": "2026-09-24",
+    "price": 51.62,
+    "pnl_pct": 0.0967,
+    "dividends": 0.0,
+    "bars_held": 22,
+    "stop_price": 43.3022,
+    "exit_flags": [],
+    "action": "継続保有",
+    "reason": "ルールのシグナル"
+   },
+   {
+    "symbol": "NSC",
+    "shares": 0.705,
+    "entry_price": 315.0018,
+    "entry_date": "2026-09-24",
+    "price": 345.68,
+    "pnl_pct": 0.0974,
+    "dividends": 0.0,
+    "bars_held": 22,
+    "stop_price": 289.8017,
+    "exit_flags": [],
+    "action": "継続保有",
+    "reason": "ルールのシグナル"
+   },
+   {
+    "symbol": "CAH",
+    "shares": 1.0382,
+    "entry_price": 222.1776,
+    "entry_date": "2026-09-25",
+    "price": 254.33,
+    "pnl_pct": 0.1592,
+    "dividends": 3.33,
+    "bars_held": 21,
+    "stop_price": 201.1934,
+    "exit_flags": [],
+    "action": "継続保有",
+    "reason": "ルールのシグナル"
+   },
+   {
+    "symbol": "MRNA",
+    "shares": 1.1107,
+    "entry_price": 216.6031,
+    "entry_date": "2026-10-29",
+    "price": 220.83,
+    "pnl_pct": 0.0195,
+    "dividends": 0.0,
+    "bars_held": 2,
+    "stop_price": 199.2749,
+    "exit_flags": [],
+    "action": "継続保有",
+    "reason": "ルールのシグナル"
+   }
+  ],
+  "pending": [
+   {
+    "symbol": "MU",
+    "rank": 2,
+    "reason": "ルールのシグナル"
+   }
+  ],
+  "trades_total": 13,
+  "win_rate": 0.0769,
+  "losing_streak": 10,
+  "skipped": false,
+  "log": [
+   "2026-11-02 はすでに処理済みのため、何もしません"
+  ]
+ },
+ "positions": [
+  {
+   "symbol": "SPG",
+   "shares": 1.087,
+   "entry_price": 209.6776,
+   "entry_date": "2026-09-09",
+   "price": 221.73,
+   "pnl_pct": 0.0575,
+   "dividends": 0.0,
+   "bars_held": 33,
+   "stop_price": 192.9034,
+   "exit_flags": [],
+   "action": "継続保有",
+   "reason": "ルールのシグナル"
+  },
+  {
+   "symbol": "PKG",
+   "shares": 0.9879,
+   "entry_price": 235.6183,
+   "entry_date": "2026-09-11",
+   "price": 258.64,
+   "pnl_pct": 0.103,
+   "dividends": 1.23,
+   "bars_held": 31,
+   "stop_price": 215.5289,
+   "exit_flags": [],
+   "action": "継続保有",
+   "reason": "ルールのシグナル"
+  },
+  {
+   "symbol": "MNST",
+   "shares": 5.4459,
+   "entry_price": 44.0352,
+   "entry_date": "2026-09-15",
+   "price": 48.02,
+   "pnl_pct": 0.0905,
+   "dividends": 0.0,
+   "bars_held": 29,
+   "stop_price": 40.5124,
+   "exit_flags": [],
+   "action": "継続保有",
+   "reason": "ルールのシグナル"
+  },
+  {
+   "symbol": "CSX",
+   "shares": 4.8941,
+   "entry_price": 47.0676,
+   "entry_date": "2026-09-24",
+   "price": 51.62,
+   "pnl_pct": 0.0967,
+   "dividends": 0.0,
+   "bars_held": 22,
+   "stop_price": 43.3022,
+   "exit_flags": [],
+   "action": "継続保有",
+   "reason": "ルールのシグナル"
+  },
+  {
+   "symbol": "NSC",
+   "shares": 0.705,
+   "entry_price": 315.0018,
+   "entry_date": "2026-09-24",
+   "price": 345.68,
+   "pnl_pct": 0.0974,
+   "dividends": 0.0,
+   "bars_held": 22,
+   "stop_price": 289.8017,
+   "exit_flags": [],
+   "action": "継続保有",
+   "reason": "ルールのシグナル"
+  },
+  {
+   "symbol": "CAH",
+   "shares": 1.0382,
+   "entry_price": 222.1776,
+   "entry_date": "2026-09-25",
+   "price": 254.33,
+   "pnl_pct": 0.1592,
+   "dividends": 3.33,
+   "bars_held": 21,
+   "stop_price": 201.1934,
+   "exit_flags": [],
+   "action": "継続保有",
+   "reason": "ルールのシグナル"
+  },
+  {
+   "symbol": "MRNA",
+   "shares": 1.1107,
+   "entry_price": 216.6031,
+   "entry_date": "2026-10-29",
+   "price": 220.83,
+   "pnl_pct": 0.0195,
+   "dividends": 0.0,
+   "bars_held": 2,
+   "stop_price": 199.2749,
+   "exit_flags": [],
+   "action": "継続保有",
+   "reason": "ルールのシグナル"
+  }
+ ],
+ "cash": 226.08,
+ "account": {
+  "cash": 226.08,
+  "initial_cash": 2000.0
+ },
+ "names": {
+  "ADI": "Analog Devices",
+  "ALLE": "Allegion",
+  "AMD": "Advanced Micro Devices",
+  "AME": "Ametek",
+  "APA": "APA Corporation",
+  "APP": "AppLovin",
+  "ARE": "Alexandria Real Estate Equities",
+  "BAX": "Baxter International",
+  "BEN": "Franklin Resources",
+  "BIIB": "Biogen",
+  "BSX": "Boston Scientific",
+  "CAH": "Cardinal Health",
+  "CBRE": "CBRE Group",
+  "CIEN": "Ciena",
+  "CNC": "Centene Corporation",
+  "COIN": "Coinbase",
+  "COP": "ConocoPhillips",
+  "CPAY": "Corpay",
+  "CPRT": "Copart",
+  "CRH": "CRH plc",
+  "CRL": "Charles River Laboratories",
+  "CRWD": "CrowdStrike",
+  "CSCO": "Cisco",
+  "CSGP": "CoStar Group",
+  "CSX": "CSX Corporation",
+  "CVNA": "Carvana",
+  "DAL": "Delta Air Lines",
+  "DASH": "DoorDash",
+  "DDOG": "Datadog",
+  "DE": "Deere & Company",
+  "DELL": "Dell Technologies",
+  "DVA": "DaVita",
+  "DVN": "Devon Energy",
+  "EL": "Estée Lauder Companies (The)",
+  "EW": "Edwards Lifesciences",
+  "EXPD": "Expeditors International",
+  "EXR": "Extra Space Storage",
+  "FDX": "FedEx",
+  "FTNT": "Fortinet",
+  "FTV": "Fortive",
+  "GLD": "金",
+  "GM": "General Motors",
+  "GOOG": "Alphabet Inc. (Class C)",
+  "GOOGL": "Alphabet Inc. (Class A)",
+  "GPN": "Global Payments",
+  "HPE": "Hewlett Packard Enterprise",
+  "HST": "Host Hotels & Resorts",
+  "HWM": "Howmet Aerospace",
+  "HYG": "ハイイールド債",
+  "ICE": "Intercontinental Exchange",
+  "IDXX": "Idexx Laboratories",
+  "IEF": "米中期国債7-10年",
+  "INTC": "Intel",
+  "J": "Jacobs Solutions",
+  "KDP": "Keurig Dr Pepper",
+  "LITE": "Lumentum",
+  "LLY": "Lilly (Eli)",
+  "MAS": "Masco",
+  "MNST": "Monster Beverage",
+  "MPC": "Marathon Petroleum",
+  "MRK": "Merck & Co.",
+  "MRNA": "Moderna",
+  "MRVL": "Marvell Technology",
+  "MU": "Micron Technology",
+  "NFLX": "Netflix",
+  "NSC": "Norfolk Southern",
+  "NTAP": "NetApp",
+  "NUE": "Nucor",
+  "ORCL": "Oracle Corporation",
+  "PANW": "Palo Alto Networks",
+  "PKG": "Packaging Corporation of America",
+  "PNR": "Pentair",
+  "PSA": "Public Storage",
+  "PSX": "Phillips 66",
+  "RDDT": "Reddit",
+  "REGN": "Regeneron Pharmaceuticals",
+  "ROP": "Roper Technologies",
+  "RVTY": "Revvity",
+  "SHW": "Sherwin-Williams",
+  "SMCI": "Supermicro",
+  "SPG": "Simon Property Group",
+  "STLD": "Steel Dynamics",
+  "STT": "State Street Corporation",
+  "STX": "Seagate Technology",
+  "SWK": "Stanley Black & Decker",
+  "TAP": "Molson Coors Beverage Company",
+  "TDG": "TransDigm Group",
+  "TGT": "Target Corporation",
+  "TRGP": "Targa Resources",
+  "TTWO": "Take-Two Interactive",
+  "TXN": "Texas Instruments",
+  "UBER": "Uber",
+  "UNG": "天然ガス",
+  "USO": "原油",
+  "VLO": "Valero Energy",
+  "VLTO": "Veralto",
+  "VRTX": "Vertex Pharmaceuticals",
+  "VST": "Vistra Corp.",
+  "VTRS": "Viatris",
+  "WDC": "Western Digital",
+  "WST": "West Pharmaceutical Services",
+  "XEL": "Xcel Energy",
+  "XLC": "通信サービス",
+  "XLE": "エネルギー",
+  "XOM": "ExxonMobil"
+ },
+ "trades": [
+  {
+   "symbol": "ODFL",
+   "entry_date": "2026-09-01",
+   "exit_date": "2026-09-02",
+   "entry_price": 199.8998,
+   "exit_price": 183.7607,
+   "shares": 1.2506,
+   "pnl": -20.18,
+   "pnl_pct": -0.0807,
+   "bars_held": 1,
+   "exit_reason": "損切り",
+   "book": "rule"
+  },
+  {
+   "symbol": "FRT",
+   "entry_date": "2026-09-02",
+   "exit_date": "2026-09-04",
+   "entry_price": 117.7241,
+   "exit_price": 117.0563,
+   "shares": 2.1062,
+   "pnl": -1.41,
+   "pnl_pct": -0.0057,
+   "bars_held": 2,
+   "exit_reason": "手仕舞いシグナル",
+   "book": "rule"
+  },
+  {
+   "symbol": "HWM",
+   "entry_date": "2026-09-02",
+   "exit_date": "2026-09-08",
+   "entry_price": 257.9762,
+   "exit_price": 237.1482,
+   "shares": 0.9611,
+   "dividends": 0.0,
+   "pnl": -20.02,
+   "pnl_pct": -0.0807,
+   "bars_held": 3,
+   "exit_reason": "損切り",
+   "book": "rule"
+  },
+  {
+   "symbol": "CASY",
+   "entry_date": "2026-09-02",
+   "exit_date": "2026-09-09",
+   "entry_price": 764.2709,
+   "exit_price": 702.5667,
+   "shares": 0.3244,
+   "dividends": 0.0,
+   "pnl": -20.02,
+   "pnl_pct": -0.0807,
+   "bars_held": 4,
+   "exit_reason": "損切り",
+   "book": "rule"
+  },
+  {
+   "symbol": "KLAC",
+   "entry_date": "2026-09-04",
+   "exit_date": "2026-09-10",
+   "entry_price": 178.0974,
+   "exit_price": 176.4487,
+   "shares": 1.3843,
+   "dividends": 0.0,
+   "pnl": -2.28,
+   "pnl_pct": -0.0093,
+   "bars_held": 3,
+   "exit_reason": "手仕舞いシグナル",
+   "book": "rule"
+  },
+  {
+   "symbol": "CAT",
+   "entry_date": "2026-09-03",
+   "exit_date": "2026-09-15",
+   "entry_price": 797.5375,
+   "exit_price": 788.8584,
+   "shares": 0.3096,
+   "dividends": 0.0,
+   "pnl": -2.69,
+   "pnl_pct": -0.0109,
+   "bars_held": 7,
+   "exit_reason": "手仕舞いシグナル",
+   "book": "rule"
+  },
+  {
+   "symbol": "KIM",
+   "entry_date": "2026-09-02",
+   "exit_date": "2026-09-23",
+   "entry_price": 24.2494,
+   "exit_price": 22.2916,
+   "shares": 10.2253,
+   "dividends": 0.0,
+   "pnl": -20.02,
+   "pnl_pct": -0.0807,
+   "bars_held": 14,
+   "exit_reason": "損切り",
+   "book": "rule"
+  },
+  {
+   "symbol": "EXPE",
+   "entry_date": "2026-09-11",
+   "exit_date": "2026-09-23",
+   "entry_price": 280.7244,
+   "exit_price": 258.0598,
+   "shares": 0.8528,
+   "dividends": 0.0,
+   "pnl": -19.33,
+   "pnl_pct": -0.0807,
+   "bars_held": 8,
+   "exit_reason": "損切り",
+   "book": "rule"
+  },
+  {
+   "symbol": "D",
+   "entry_date": "2026-09-01",
+   "exit_date": "2026-09-24",
+   "entry_price": 66.303,
+   "exit_price": 60.95,
+   "shares": 3.7705,
+   "dividends": 0.0,
+   "pnl": -20.18,
+   "pnl_pct": -0.0807,
+   "bars_held": 16,
+   "exit_reason": "損切り",
+   "book": "rule"
+  },
+  {
+   "symbol": "DVA",
+   "entry_date": "2026-09-03",
+   "exit_date": "2026-09-25",
+   "entry_price": 179.8137,
+   "exit_price": 175.2397,
+   "shares": 1.3523,
+   "dividends": 0.0,
+   "pnl": -6.19,
+   "pnl_pct": -0.0254,
+   "bars_held": 15,
+   "exit_reason": "手仕舞いシグナル",
+   "book": "rule"
+  },
+  {
+   "symbol": "BMY",
+   "entry_date": "2026-09-25",
+   "exit_date": "2026-10-26",
+   "entry_price": 61.7994,
+   "exit_price": 61.3409,
+   "shares": 3.7328,
+   "dividends": 5.52,
+   "pnl": 3.81,
+   "pnl_pct": 0.0165,
+   "bars_held": 16,
+   "exit_reason": "手仕舞いシグナル",
+   "book": "rule"
+  },
+  {
+   "symbol": "REG",
+   "entry_date": "2026-09-02",
+   "exit_date": "2026-10-29",
+   "entry_price": 76.5012,
+   "exit_price": 74.0007,
+   "shares": 3.2412,
+   "dividends": 2.17,
+   "pnl": -5.93,
+   "pnl_pct": -0.0239,
+   "bars_held": 35,
+   "exit_reason": "手仕舞いシグナル",
+   "book": "rule"
+  },
+  {
+   "symbol": "SNDK",
+   "entry_date": "2026-10-26",
+   "exit_date": "2026-11-02",
+   "entry_price": 1252.8815,
+   "exit_price": 1151.7289,
+   "shares": 0.1963,
+   "dividends": 0.0,
+   "pnl": -19.86,
+   "pnl_pct": -0.0807,
+   "bars_held": 4,
+   "exit_reason": "損切り",
+   "book": "rule"
+  }
+ ],
+ "data_feed": {
+  "dividend_column": true,
+  "dividends_today": 8,
+  "splits_today": 0
+ },
+ "performance": {
+  "initial": 2000,
+  "equity": [
+   [
+    "2026-08-31",
+    2000.0
+   ],
+   [
+    "2026-09-01",
+    1984.17
+   ],
+   [
+    "2026-09-02",
+    1967.06
+   ],
+   [
+    "2026-09-03",
+    1979.04
+   ],
+   [
+    "2026-09-04",
+    1985.7
+   ],
+   [
+    "2026-09-07",
+    1985.7
+   ],
+   [
+    "2026-09-08",
+    1964.35
+   ],
+   [
+    "2026-09-09",
+    1934.09
+   ],
+   [
+    "2026-09-10",
+    1916.61
+   ],
+   [
+    "2026-09-11",
+    1914.31
+   ],
+   [
+    "2026-09-14",
+    1919.53
+   ],
+   [
+    "2026-09-15",
+    1921.75
+   ],
+   [
+    "2026-09-16",
+    1911.19
+   ],
+   [
+    "2026-09-17",
+    1902.25
+   ],
+   [
+    "2026-09-18",
+    1894.47
+   ],
+   [
+    "2026-09-21",
+    1892.21
+   ],
+   [
+    "2026-09-22",
+    1896.86
+   ],
+   [
+    "2026-09-23",
+    1865.59
+   ],
+   [
+    "2026-09-24",
+    1843.05
+   ],
+   [
+    "2026-09-25",
+    1847.41
+   ],
+   [
+    "2026-09-28",
+    1841.8
+   ],
+   [
+    "2026-09-30",
+    1841.8
+   ],
+   [
+    "2026-10-01",
+    1838.23
+   ],
+   [
+    "2026-10-02",
+    1826.39
+   ],
+   [
+    "2026-10-03",
+    1834.87
+   ],
+   [
+    "2026-10-06",
+    1842.87
+   ],
+   [
+    "2026-10-07",
+    1846.19
+   ],
+   [
+    "2026-10-08",
+    1846.19
+   ],
+   [
+    "2026-10-09",
+    1851.83
+   ],
+   [
+    "2026-10-10",
+    1851.83
+   ],
+   [
+    "2026-10-13",
+    1851.5
+   ],
+   [
+    "2026-10-14",
+    1851.5
+   ],
+   [
+    "2026-10-15",
+    1907.11
+   ],
+   [
+    "2026-10-17",
+    1907.11
+   ],
+   [
+    "2026-10-20",
+    1914.22
+   ],
+   [
+    "2026-10-21",
+    1903.28
+   ],
+   [
+    "2026-10-22",
+    1932.73
+   ],
+   [
+    "2026-10-23",
+    1926.99
+   ],
+   [
+    "2026-10-24",
+    1982.78
+   ],
+   [
+    "2026-10-27",
+    1953.18
+   ],
+   [
+    "2026-10-28",
+    1968.48
+   ],
+   [
+    "2026-10-29",
+    1976.98
+   ],
+   [
+    "2026-10-30",
+    1984.28
+   ],
+   [
+    "2026-10-31",
+    2004.46
+   ],
+   [
+    "2026-11-03",
+    1989.78
+   ],
+   [
+    "2026-11-04",
+    1989.78
+   ]
+  ],
+  "stats": {
+   "max_dd": -0.0868,
+   "trades": 13,
+   "win_rate": 0.0769,
+   "losing_streak": 10
+  }
+ }
+}
