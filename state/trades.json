@@ -192,5 +192,19 @@
   "bars_held": 1,
   "exit_reason": "損切り",
   "book": "rule"
+ },
+ {
+  "symbol": "MU",
+  "entry_date": "2026-11-05",
+  "exit_date": "2026-11-05",
+  "entry_price": 753.2922,
+  "exit_price": 692.4744,
+  "shares": 0.2758,
+  "dividends": 0.0,
+  "pnl": -16.77,
+  "pnl_pct": -0.0807,
+  "bars_held": 0,
+  "exit_reason": "損切り",
+  "book": "rule"
  }
 ]
