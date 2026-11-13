@@ -1,99 +1,99 @@
 {
- "generated_at": "2026-11-12T02:36:52+00:00",
- "date": "2026-11-12",
+ "generated_at": "2026-11-13T02:17:39+00:00",
+ "date": "2026-11-13",
  "strategy": "米国株_12-1モメンタム_v1",
  "errors": [],
  "data_date": "2026-11-11",
  "macro": {
   "^GSPC": {
    "label": "S&P500",
-   "last": 7619.3799,
-   "chg_1d": 0.01309,
-   "chg_5d": -0.00901,
-   "chg_20d": -0.0129,
-   "vs_ma200": 0.03887,
-   "pctile_1y": 0.757
+   "last": 7592.3999,
+   "chg_1d": -0.00354,
+   "chg_5d": 0.03246,
+   "chg_20d": -0.01958,
+   "vs_ma200": 0.03476,
+   "pctile_1y": 0.741
   },
   "^VIX": {
    "label": "VIX(恐怖指数)",
-   "last": 17.49,
-   "chg_1d": -0.10123,
-   "chg_5d": 0.05298,
-   "chg_20d": 0.03675,
-   "vs_ma200": -0.05112,
-   "pctile_1y": 0.559
+   "last": 18.7,
+   "chg_1d": 0.06918,
+   "chg_5d": -0.33641,
+   "chg_20d": 0.13609,
+   "vs_ma200": 0.01417,
+   "pctile_1y": 0.697
   },
   "^TNX": {
    "label": "米10年金利",
-   "last": 4.998,
-   "chg_1d": 0.00301,
-   "chg_5d": 0.02125,
-   "chg_20d": -0.03699,
-   "vs_ma200": 0.09266,
-   "pctile_1y": 0.901
+   "last": 5.103,
+   "chg_1d": 0.02101,
+   "chg_5d": 0.05499,
+   "chg_20d": 0.00275,
+   "vs_ma200": 0.11458,
+   "pctile_1y": 0.921
   },
   "^IRX": {
    "label": "米3ヶ月金利",
-   "last": 4.115,
-   "chg_1d": 0.0,
-   "chg_5d": 0.02236,
-   "chg_20d": 0.00734,
-   "vs_ma200": 0.10403,
+   "last": 4.128,
+   "chg_1d": 0.00316,
+   "chg_5d": 0.03536,
+   "chg_20d": 0.00978,
+   "vs_ma200": 0.10671,
    "pctile_1y": 0.996
   },
   "DX-Y.NYB": {
    "label": "ドル指数",
-   "last": 102.942,
-   "chg_1d": 0.00696,
-   "chg_5d": 0.01411,
-   "chg_20d": 0.00382,
-   "vs_ma200": 0.03165,
+   "last": 103.151,
+   "chg_1d": 0.00234,
+   "chg_5d": 0.01577,
+   "chg_20d": 0.01128,
+   "vs_ma200": 0.0334,
    "pctile_1y": 0.996
   },
   "CL=F": {
    "label": "WTI原油",
-   "last": 85.99,
-   "chg_1d": -0.00058,
-   "chg_5d": -0.02417,
-   "chg_20d": -0.0957,
-   "vs_ma200": -0.01761,
-   "pctile_1y": 0.516
+   "last": 88.07,
+   "chg_1d": 0.0178,
+   "chg_5d": -0.02707,
+   "chg_20d": -0.10105,
+   "vs_ma200": 0.0047,
+   "pctile_1y": 0.548
   },
   "GC=F": {
    "label": "金",
-   "last": 3992.5,
-   "chg_1d": -0.00935,
-   "chg_5d": -0.01976,
-   "chg_20d": -0.02809,
-   "vs_ma200": -0.1101,
-   "pctile_1y": 0.016
+   "last": 3913.8,
+   "chg_1d": -0.02167,
+   "chg_5d": -0.04855,
+   "chg_20d": -0.06146,
+   "vs_ma200": -0.1263,
+   "pctile_1y": 0.004
   },
   "HG=F": {
    "label": "銅",
-   "last": 6.266,
-   "chg_1d": 0.00748,
-   "chg_5d": -0.0214,
-   "chg_20d": -0.05226,
-   "vs_ma200": 0.00642,
-   "pctile_1y": 0.583
+   "last": 6.2415,
+   "chg_1d": -0.00526,
+   "chg_5d": -0.0012,
+   "chg_20d": -0.04147,
+   "vs_ma200": 0.0022,
+   "pctile_1y": 0.552
   },
   "BTC-USD": {
    "label": "ビットコイン",
-   "last": 73813.2422,
-   "chg_1d": 0.00126,
-   "chg_5d": -0.02553,
-   "chg_20d": -0.09222,
-   "vs_ma200": 0.00953,
-   "pctile_1y": 0.416
+   "last": 70475.4688,
+   "chg_1d": -0.04717,
+   "chg_5d": -0.0696,
+   "chg_20d": -0.13073,
+   "vs_ma200": -0.0356,
+   "pctile_1y": 0.345
   },
   "^N225": {
    "label": "日経平均",
-   "last": 61763.4805,
-   "chg_1d": 0.00841,
-   "chg_5d": 0.01122,
-   "chg_20d": -0.08829,
-   "vs_ma200": -0.00535,
-   "pctile_1y": 0.514
+   "last": 61863.3008,
+   "chg_1d": 0.01004,
+   "chg_5d": 0.01286,
+   "chg_20d": -0.08681,
+   "vs_ma200": -0.00375,
+   "pctile_1y": 0.512
   },
   "^STOXX50E": {
    "label": "欧州株",
@@ -107,23 +107,23 @@
  },
  "breadth": {
   "above_ma50_pct": 0.722,
-  "above_ma200_pct": 0.659,
+  "above_ma200_pct": 0.66,
   "advancers_pct": 0.663,
-  "near_52w_high_pct": 0.324,
+  "near_52w_high_pct": 0.325,
   "near_52w_low_pct": 0.025,
-  "symbols_counted": 525
+  "symbols_counted": 526
  },
  "regime": {
   "regime": "順行",
   "note": "トレンドフォロー・モメンタムが効きやすい局面",
   "spy_above_ma200": true,
   "breadth_healthy": true,
-  "vix": 17.49,
-  "vix_percentile_1y": 0.559,
-  "rate_10y": 4.998,
-  "rate_10y_chg_20d": -0.03699
+  "vix": 18.7,
+  "vix_percentile_1y": 0.697,
+  "rate_10y": 5.103,
+  "rate_10y_chg_20d": 0.00275
  },
- "universe_size": 525,
+ "universe_size": 526,
  "sectors": [
   {
    "sector": "Communication Services",
@@ -199,11 +199,11 @@
   },
   {
    "sector": "Materials",
-   "銘柄数": 24,
-   "平均1日": 0.0021,
-   "平均5日": -0.0138,
-   "平均21日": 0.0668,
-   "MA200超え比率": 0.7083
+   "銘柄数": 25,
+   "平均1日": 0.0024,
+   "平均5日": -0.0137,
+   "平均21日": 0.0677,
+   "MA200超え比率": 0.72
   },
   {
    "sector": "Real Estate",
@@ -223,15 +223,17 @@
   }
  ],
  "data_quality": {
-  "level": "ok",
+  "level": "warn",
   "usable": true,
   "data_date": "2026-11-11",
-  "expected_trading_day": "2026-11-11",
-  "generated_at_utc": "2026-11-12T02:36:52+00:00",
+  "expected_trading_day": "2026-11-12",
+  "generated_at_utc": "2026-11-13T02:17:39+00:00",
   "market_open_at_fetch": false,
   "volume_ratio_median": 0.74,
-  "problems": [],
-  "summary": "データは大引け後の確定値です"
+  "problems": [
+   "データが1日古いままです（直近の取引日は2026-11-12）。祝日か、データ取得の失敗が考えられます"
+  ],
+  "summary": "データが1日古いままです（直近の取引日は2026-11-12）。祝日か、データ取得の失敗が考えられます"
  },
  "track_a_signals": [
   {
@@ -272,7 +274,7 @@
    "vs_ma50": -0.2509,
    "vs_ma200": 0.0984,
    "atr_pct": 0.0915,
-   "vol_ratio": 1.22,
+   "vol_ratio": 1.23,
    "dollar_vol": 2909960272,
    "from_52w_high": -0.364,
    "from_52w_low": 2.385,
@@ -295,7 +297,7 @@
    "vs_ma50": -0.1464,
    "vs_ma200": 0.0649,
    "atr_pct": 0.0749,
-   "vol_ratio": 1.15,
+   "vol_ratio": 1.17,
    "dollar_vol": 24256534121,
    "from_52w_high": -0.3313,
    "from_52w_low": 3.0335,
@@ -364,7 +366,7 @@
    "vs_ma50": 0.0045,
    "vs_ma200": 0.3163,
    "atr_pct": 0.0725,
-   "vol_ratio": 1.4,
+   "vol_ratio": 1.43,
    "dollar_vol": 14615251399,
    "from_52w_high": -0.1486,
    "from_52w_low": 1.8955,
@@ -525,7 +527,7 @@
    "vs_ma50": -0.0618,
    "vs_ma200": 0.3325,
    "atr_pct": 0.0613,
-   "vol_ratio": 0.75,
+   "vol_ratio": 0.76,
    "dollar_vol": 2230005363,
    "from_52w_high": -0.1786,
    "from_52w_low": 1.616,
@@ -594,7 +596,7 @@
    "vs_ma50": 0.0412,
    "vs_ma200": 0.0925,
    "atr_pct": 0.0463,
-   "vol_ratio": 0.77,
+   "vol_ratio": 0.78,
    "dollar_vol": 1793674980,
    "from_52w_high": -0.0789,
    "from_52w_low": 0.8392,
@@ -622,8 +624,8 @@
    "from_52w_high": -0.0586,
    "from_52w_low": 0.8359,
    "sector": "Materials",
-   "rel_chg_5d": -0.0105,
-   "rel_chg_21d": -0.0369
+   "rel_chg_5d": -0.0106,
+   "rel_chg_21d": -0.0378
   },
   {
    "rank": 18,
@@ -829,8 +831,8 @@
    "from_52w_high": -0.1509,
    "from_52w_low": 0.5852,
    "sector": "Materials",
-   "rel_chg_5d": 0.0091,
-   "rel_chg_21d": -0.0736
+   "rel_chg_5d": 0.009,
+   "rel_chg_21d": -0.0745
   },
   {
    "rank": 27,
@@ -1128,8 +1130,8 @@
    "from_52w_high": -0.1151,
    "from_52w_low": 0.6434,
    "sector": "Materials",
-   "rel_chg_5d": 0.1173,
-   "rel_chg_21d": -0.0157
+   "rel_chg_5d": 0.1172,
+   "rel_chg_21d": -0.0166
   },
   {
    "rank": 40,
@@ -1162,7 +1164,7 @@
     "symbol": "SNDK",
     "price": 977.69,
     "chg_1d": 0.1369,
-    "vol_ratio": 1.37,
+    "vol_ratio": 1.4,
     "rsi14": 37.4,
     "vs_ma200": -0.2354,
     "from_52w_high": -0.5813
@@ -1171,7 +1173,7 @@
     "symbol": "MU",
     "price": 811.3,
     "chg_1d": 0.1189,
-    "vol_ratio": 1.15,
+    "vol_ratio": 1.17,
     "rsi14": 45.1,
     "vs_ma200": 0.0649,
     "from_52w_high": -0.3313
@@ -1180,7 +1182,7 @@
     "symbol": "DELL",
     "price": 373.68,
     "chg_1d": 0.1175,
-    "vol_ratio": 1.22,
+    "vol_ratio": 1.23,
     "rsi14": 39.8,
     "vs_ma200": 0.0984,
     "from_52w_high": -0.364
@@ -1189,7 +1191,7 @@
     "symbol": "LITE",
     "price": 648.06,
     "chg_1d": 0.1067,
-    "vol_ratio": 0.97,
+    "vol_ratio": 0.98,
     "rsi14": 40.6,
     "vs_ma200": -0.2015,
     "from_52w_high": -0.4282
@@ -1207,7 +1209,7 @@
     "symbol": "SMCI",
     "price": 30.43,
     "chg_1d": 0.095,
-    "vol_ratio": 0.95,
+    "vol_ratio": 0.97,
     "rsi14": 42.9,
     "vs_ma200": -0.066,
     "from_52w_high": -0.3935
@@ -1216,7 +1218,7 @@
     "symbol": "MRVL",
     "price": 168.8,
     "chg_1d": 0.0933,
-    "vol_ratio": 1.11,
+    "vol_ratio": 1.12,
     "rsi14": 38.3,
     "vs_ma200": -0.0932,
     "from_52w_high": -0.4663
@@ -1225,7 +1227,7 @@
     "symbol": "COHR",
     "price": 234.51,
     "chg_1d": 0.0925,
-    "vol_ratio": 1.17,
+    "vol_ratio": 1.19,
     "rsi14": 49.8,
     "vs_ma200": -0.2097,
     "from_52w_high": -0.4507
@@ -1243,7 +1245,7 @@
     "symbol": "ORCL",
     "price": 128.38,
     "chg_1d": 0.0882,
-    "vol_ratio": 0.89,
+    "vol_ratio": 0.9,
     "rsi14": 49.4,
     "vs_ma200": -0.1642,
     "from_52w_high": -0.4789
@@ -1279,7 +1281,7 @@
     "symbol": "INTC",
     "price": 62.5,
     "chg_1d": 0.0752,
-    "vol_ratio": 0.88,
+    "vol_ratio": 0.89,
     "rsi14": 34.2,
     "vs_ma200": -0.2839,
     "from_52w_high": -0.5565
@@ -1299,7 +1301,7 @@
     "symbol": "VIXY",
     "price": 16.93,
     "chg_1d": -0.0677,
-    "vol_ratio": 0.45,
+    "vol_ratio": 0.46,
     "rsi14": 46.4,
     "vs_ma200": -0.2765,
     "from_52w_high": -0.5572
@@ -1440,6 +1442,15 @@
     "rsi14": 81.7,
     "vs_ma200": 0.1041,
     "from_52w_high": -0.1266
+   },
+   {
+    "symbol": "NVDA",
+    "price": 173.73,
+    "chg_1d": 0.0287,
+    "vol_ratio": 2.05,
+    "rsi14": 28.7,
+    "vs_ma200": -0.1492,
+    "from_52w_high": -0.2738
    }
   ],
   "breakouts": [
@@ -1602,7 +1613,7 @@
     "symbol": "GLD",
     "price": 365.17,
     "chg_1d": -0.0113,
-    "vol_ratio": 0.65,
+    "vol_ratio": 0.66,
     "rsi14": 43.2,
     "vs_ma200": -0.1089,
     "from_52w_high": -0.2636
@@ -1649,6 +1660,7 @@
   "CRWD": "買い候補",
   "PANW": "買い候補",
   "CLX": "出来高異常",
+  "NVDA": "出来高異常",
   "SNDK": "大幅高",
   "LITE": "大幅高",
   "STX": "大幅高",
@@ -1670,625 +1682,875 @@
  },
  "news": [
   {
-   "symbol": "AMD",
-   "title": "Dow Jones Futures Rise, Techs Fall As Nvidia May Oust CEO Huang After CoreWave Leads Rally",
-   "summary": "Techs fell as Nvidia dived on news that it may oust CEO Jensen Huang. AMD extended gains. Will that spoil Wednesday's rally?",
-   "publisher": "Investor's Business Daily",
-   "published_at": "2026-11-12T02:31:16+00:00",
-   "url": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-coreweave-sandisk-nvidia-amd-nebius-bloom/?src=A00220&yptr=yahoo",
-   "scope": "stock",
-   "topic": "買い候補"
-  },
-  {
-   "symbol": "MCD",
-   "title": "Warren Buffett’s 1991 Playbook Points The Path Forward As Nvidia Reportedly Prepares To Oust Jensen Huang. Buffett Said He Could Forgive Losses, But There Was One Thing He Would Be Ruthless About",
-   "summary": "A board with no chair, no succession plan, and a CEO under fire. When Salomon Brothers hit a similar crisis in 1991, Warren Buffett stepped in with a strict rule. Nvidia's directors may need the same one.",
-   "publisher": "24/7 Wall St.",
-   "published_at": "2026-11-12T02:26:06+00:00",
-   "url": "https://247wallst.com/investing/2026/11/11/warren-buffetts-1991-playbook-points-the-path-forward-as-nvidia-reportedly-prepares-to-oust-jensen-huang-buffett-said-he-could-forgive-losses-but-there-was-one-thing-he-would-be-ruthless-about/",
-   "scope": "stock",
-   "topic": "大幅安"
-  },
-  {
-   "symbol": "MU",
-   "title": "Nvidia board meets to decide CEO Huang's future as leadership crisis deepens",
-   "summary": "By Aishwarya Venugopal and Alexandra Alper Nov 11 (Reuters) - Nvidia's board is meeting late Wednesday to decide whether to oust CEO Jensen Huang, a source familiar with the matter told Reuters, as",
-   "publisher": "Reuters",
-   "published_at": "2026-11-12T02:21:13+00:00",
-   "url": "https://finance.yahoo.com/news/nvidia-preparing-oust-ceo-jensen-223546395.html",
-   "scope": "stock",
-   "topic": "買い候補"
-  },
-  {
-   "symbol": "HPE",
-   "title": "What Comes Next For Hewlett Packard Enterprise After A 118% Gain",
-   "summary": "If you only glanced at headlines about lawsuits, tariffs and activist pressure around Hewlett Packard Enterprise, you might not expect the share chart that followed. Investors who held Hewlett Packard Enterprise over the past year are up 117.9%, including dividends. If you had been weighing those DOJ challenges against hopes for AI servers, Juniper networking and GreenLake recurring revenue on 11 November 2025, what, exactly, did that contrast invite you to focus on? Narratives are how...",
+   "symbol": "MRNA",
+   "title": "GSK (LSE:GSK) Settles Key Vaccine Patent Case And Wins Broad Europe Injunction",
+   "summary": "GSK (LSE:GSK) reached a cross-licensing agreement with Moderna resolving their COVID-19 vaccine patent dispute in Europe. The pharma group secured a significant injunction against Pfizer-BioNTech covering liposome delivery technology used in RNA vaccines across multiple European markets. Ongoing legal actions and expected appeals around this RNA and liposome IP framework now shape how the largest vaccine makers operate in Europe. This combination of a Moderna settlement and a broad...",
    "publisher": "Simply Wall St.",
-   "published_at": "2026-11-12T02:14:55+00:00",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/comes-next-hewlett-packard-enterprise-021455177.html",
+   "published_at": "2026-11-13T01:18:33+00:00",
+   "url": "https://finance.yahoo.com/healthcare/articles/gsk-lse-gsk-settles-key-011833121.html",
    "scope": "stock",
    "topic": "保有中"
   },
   {
-   "symbol": "MU",
-   "title": "5-star analyst flags surprise Micron stock catalyst after CoreWeave rally",
-   "summary": "One unexpected trend is catching Wall Street’s attention.",
-   "publisher": "TheStreet",
-   "published_at": "2026-11-12T02:03:00+00:00",
-   "url": "https://www.thestreet.com/investing/stocks/micron-keybanc-server-demand",
-   "scope": "stock",
-   "topic": "買い候補"
-  },
-  {
-   "symbol": "MU",
-   "title": "3 Growth Stocks With Earnings Growth Over 20%",
-   "summary": "The Strait of Hormuz closure has shaken global energy supply chains and pushed governments to rethink how and where future growth comes from. Capital is chasing companies that can grow earnings while keeping their balance sheets in good shape, because reliability has become a premium. This article looks at three stocks from a high quality growth screener and explains why these businesses score well on both potential and financial health. The three stocks highlighted here offer a compelling...",
-   "publisher": "Simply Wall St.",
-   "published_at": "2026-11-12T01:13:11+00:00",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/3-growth-stocks-earnings-growth-011311704.html",
-   "scope": "stock",
-   "topic": "買い候補"
-  },
-  {
-   "symbol": "MRVL",
-   "title": "How Much Could You Lose In Credo Stock?",
-   "summary": "For questions about this article or underlying research, email help@trefis.com.",
-   "publisher": "Trefis",
-   "published_at": "2026-11-12T01:12:25+00:00",
-   "url": "https://www.trefis.com/stock/crdo/articles/624229/how-much-could-you-lose-in-credo-stock/2026-11-11",
-   "scope": "stock",
-   "topic": "大幅高"
-  },
-  {
-   "symbol": "STX",
-   "title": "Seagate Technology Holdings (STX) Gains Fresh Backing As AI Storage Demand Tests Its Valuation",
-   "summary": "Seagate Technology Holdings (STX) is back in focus after a sharp move tied to stronger fiscal guidance, fresh AI driven storage demand, and the launch of its Alkemi powered FireCuda Forge drive. The latest jump in Seagate Technology Holdings’ share price, with a 1 day share price return of about 10%, comes after weeks of pressure that left the 30 day share price return down 27% and the 90 day share price return down 40%. As a result, the move looks more like a rebound within a strong longer...",
-   "publisher": "Simply Wall St.",
-   "published_at": "2026-11-12T01:12:22+00:00",
-   "url": "https://finance.yahoo.com/technology/ai/articles/seagate-technology-holdings-stx-gains-011222679.html",
-   "scope": "stock",
-   "topic": "大幅高"
-  },
-  {
-   "symbol": "AMD",
-   "title": "Meet Ian Buck: The NVIDIA Executive Insiders Believe Is the One Man Who Can Replace Jensen Huang",
-   "summary": "Nvidia's board is reportedly preparing to oust Jensen Huang, and the company has never named a successor. Ian Buck, a key architect of CUDA who runs Nvidia's hyperscale business, is the name that keeps coming up: an essay in Time called him a 'hugely strong replacement' with endorsements including Jim Cramer's.",
-   "publisher": "24/7 Wall St.",
-   "published_at": "2026-11-12T01:11:50+00:00",
-   "url": "https://247wallst.com/investing/2026/11/11/meet-ian-buck-the-nvidia-executive-insiders-believe-is-the-one-man-who-can-replace-jensen-huang/",
-   "scope": "stock",
-   "topic": "買い候補"
-  },
-  {
-   "symbol": "NTAP",
-   "title": "Hansa Biopharma AB (HNSBF) (Q3 2026) Earnings Call Highlights: Cash-Rich and Launch-Ready Ahead ...",
-   "summary": "Hansa Biopharma AB (HNSBF) enters the final stretch before its U.S. Imlifidase decision with SEK 1.3 billion in cash, a targeted 100-center launch plan, and a next-generation GBS program underway.",
-   "publisher": "GuruFocus.com",
-   "published_at": "2026-11-12T01:04:46+00:00",
-   "url": "https://finance.yahoo.com/healthcare/articles/hansa-biopharma-ab-hnsbf-q3-010446522.html",
-   "scope": "stock",
-   "topic": "買い候補"
-  },
-  {
-   "symbol": "CRWD",
-   "title": "What Are Datadog Investors Betting On?",
-   "summary": "For questions about this article or underlying research, email help@trefis.com.",
-   "publisher": "Trefis",
-   "published_at": "2026-11-12T00:26:25+00:00",
-   "url": "https://www.trefis.com/stock/ddog/articles/624343/what-are-datadog-investors-betting-on/2026-11-11",
-   "scope": "stock",
-   "topic": "買い候補"
-  },
-  {
-   "symbol": "SNDK",
-   "title": "Nasdaq 100 Futures Drop As Reports Relating To Jensen Huang’s Ousting Outweigh CoreWeave’s Strong Outlook —  NVDA, TSLA, SNDK, CAPR, CRWV In Focus",
-   "summary": "Nvidia’s board is preparing to meet as soon as today to determine Jensen Huang’s future as the chipmaker’s chief executive, WSJ reported.",
-   "publisher": "Stocktwits",
-   "published_at": "2026-11-12T00:22:06+00:00",
-   "url": "https://stocktwits.com/news-articles/markets/equity/nasdaq-100-futures-drop-as-reports-relating-to-jensen-huang-s-ousting/cNGzQslR997",
-   "scope": "stock",
-   "topic": "大幅高"
-  },
-  {
-   "symbol": "DELL",
-   "title": "Dell Technologies vs. Taiwan Semiconductor: Which Technology Stock Is a Better Buy for 2027?",
-   "summary": "Dell trades at a far lower forward multiple, but Taiwan Semiconductor's 44.6% net margin tells a very different story about pricing power.",
-   "publisher": "Motley Fool",
-   "published_at": "2026-11-11T23:50:02+00:00",
-   "url": "https://www.fool.com/coverage/better-buy/2026/11/11/dell-technologies-vs-taiwan-semiconductor-which-technology-stock-is-a-better-buy-for-2027/",
-   "scope": "stock",
-   "topic": "買い候補"
-  },
-  {
-   "symbol": "MCD",
-   "title": "Nvidia’s Board Is Reportedly Preparing to Oust Jensen Huang. When Intel and McDonald’s Pushed Out CEOs Over Workplace Relationships, Shareholders Got Opposite Results",
-   "summary": "Nvidia's board is preparing to oust Jensen Huang, the Wall Street Journal reported, after a Times report of his relationship with executive Kimberly Powell; Nvidia fell 7.4% after hours to $160.95. When Intel (2018) and McDonald's (2019) pushed out CEOs over relationships with employees, Intel trailed the S&P 500 by 17 points over a year and McDonald's beat it. The difference was a ready successor.",
-   "publisher": "24/7 Wall St.",
-   "published_at": "2026-11-11T23:34:19+00:00",
-   "url": "https://247wallst.com/investing/2026/11/11/nvidias-board-is-reportedly-preparing-to-oust-jensen-huang-when-intel-and-mcdonalds-pushed-out-ceos-over-workplace-relationships-shareholders-got-opposite-results/",
-   "scope": "stock",
-   "topic": "大幅安"
-  },
-  {
-   "symbol": "SNDK",
-   "title": "Analyst Says Sandisk Corp. (SNDK) Offers More Than 100% Upside. Should You Buy?",
-   "summary": "Sandisk Corp. (NASDAQ:SNDK) is on the AI Stocks Dominating List of Biggest Winners. Sandisk saw its share price climb by 13.69 percent on Wednesday to end at $977.69 apiece, after an analyst reiterated its bullish rating and a price target with over 150 percent upside potential. In its market note, investment firm Evercore ISI reiterated […]",
+   "symbol": "SMCI",
+   "title": "Super Micro (SMCI) Takes Another Hit as Fresh Probe Weighs on Shares",
+   "summary": "Super Micro Computer Inc. (NASDAQ:SMCI) is one of the 10 Stocks Underperforming the Broader Market. Super Micro Computer saw its share price decline by 11.30 percent on Thursday to close at $26.99 per share, as investors disposed of positions following news that the Department of Justice has initiated a probe into alleged smuggling of its […]",
    "publisher": "Insider Monkey",
-   "published_at": "2026-11-11T23:28:56+00:00",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/analyst-says-sandisk-corp-sndk-232856312.html",
+   "published_at": "2026-11-13T01:07:18+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/super-micro-smci-takes-another-010718435.html",
    "scope": "stock",
    "topic": "大幅高"
   },
   {
-   "symbol": "MSI",
-   "title": "What Is The True Hidden Price Of Axon Stock?",
-   "summary": "For questions about this article or underlying research, email help@trefis.com.",
-   "publisher": "Trefis",
-   "published_at": "2026-11-11T23:26:28+00:00",
-   "url": "https://www.trefis.com/stock/axon/articles/624344/what-is-the-true-hidden-price-of-axon-stock/2026-11-11",
-   "scope": "stock",
-   "topic": "52週高値圏"
-  },
-  {
-   "symbol": "ABNB",
-   "title": "Airbnb vs. MercadoLibre: Which Consumer Stock Is a Better Buy for 2027?",
-   "summary": "Airbnb's lean marketplace model and MercadoLibre's sprawling Latin American ecosystem pull in very different directions, and the margin gap between them tells a story worth weighing.",
-   "publisher": "Motley Fool",
-   "published_at": "2026-11-11T23:20:02+00:00",
-   "url": "https://www.fool.com/coverage/better-buy/2026/11/11/airbnb-vs-mercadolibre-which-consumer-stock-is-a-better-buy-for-2027/",
-   "scope": "stock",
-   "topic": "大幅安"
-  },
-  {
-   "symbol": "VTRS",
-   "title": "Ingram Micro jumps after securing spot in S&P SmallCap 600",
-   "summary": "Investing.com -- Ingram Micro Holding Ltd (NYSE:INGM) shares climbed 4.8% in extended trading Wednesday after S&P Dow Jones Indices announced the technology distributor will join the S&P SmallCap 600. The Irvine, California-based company is scheduled to enter the benchmark prior to the open of trading on Tuesday, November 17, replacing Pacira Pharmaceuticals Inc (NASDAQ:PCRX).",
-   "publisher": "Investing.com",
-   "published_at": "2026-11-11T23:14:24+00:00",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/ingram-micro-jumps-securing-spot-231424658.html",
-   "scope": "stock",
-   "topic": "52週高値圏"
-  },
-  {
-   "symbol": "STX",
-   "title": "Every December the Nasdaq-100 Reshuffles. QQQ Holders Feel It Even If They Never Trade",
-   "summary": "Every December, the Nasdaq-100 reshuffles. When the index changes its lineup, your fund's holdings change that week whether you do anything or not.",
-   "publisher": "24/7 Wall St.",
-   "published_at": "2026-11-11T23:03:03+00:00",
-   "url": "https://247wallst.com/investing/etf/2026/11/11/every-december-the-nasdaq-100-reshuffles-qqq-holders-feel-it-even-if-they-never-trade/",
-   "scope": "stock",
-   "topic": "大幅高"
-  },
-  {
-   "symbol": "CRWD",
-   "title": "Mercedes-Benz F1 co-owner Kurtz on betting on Kimi Antonelli: 'Lights out'",
-   "summary": "Mercedes-Benz F1 co-owner and CrowdStrike (CRWD) founder and CEO George Kurtz joins Yahoo Finance Executive Editor Brian Sozzi at Yahoo Finance's 2026 Invest conference to discuss the success of F1's 20-year-old breakout star Kimi Antonelli.",
-   "publisher": "Yahoo Finance Video",
-   "published_at": "2026-11-11T22:48:01+00:00",
-   "url": "https://finance.yahoo.com/video/mercedes-benz-f1-co-owner-kurtz-on-betting-on-kimi-antonelli-lights-out-224801417.html",
-   "scope": "stock",
-   "topic": "買い候補"
-  },
-  {
-   "symbol": "CRWD",
-   "title": "CrowdStrike CEO describes what a Hugging Face 2.0 would look like",
-   "summary": "CrowdStrike (CRWD) founder and CEO George Kurtz joins Yahoo Finance Executive Editor Brian Sozzi at Yahoo Finance's 2026 Invest conference to discuss the future of cybersecurity and how to combat AI agentic swarms that could disrupt finance, the power grid, and water systems, and avoid a repeat of the Hugging Face rogue agent incident in July.\n\n",
-   "publisher": "Yahoo Finance Video",
-   "published_at": "2026-11-11T22:46:45+00:00",
-   "url": "https://finance.yahoo.com/video/crowdstrike-ceo-describes-what-a-hugging-face-20-would-look-like-224645652.html",
-   "scope": "stock",
-   "topic": "買い候補"
-  },
-  {
-   "symbol": "MRVL",
-   "title": "Jensen Huang’s Shattered Credibility",
-   "summary": "The Nvidia chief has lost his most powerful weapon: his word.",
+   "symbol": "MRNA",
+   "title": "BioNTech May Be the Next Moderna. Even if it Isn’t, the Stock Is a Buy.",
+   "summary": "BioNTech has multiple catalysts that could generate a rally of 35% for the stock.",
    "publisher": "Barrons.com",
-   "published_at": "2026-11-11T22:46:00+00:00",
-   "url": "https://www.barrons.com/articles/jensen-huangs-nvidia-shattered-credibility-460e1448?siteid=yhoof2&yptr=yahoo",
+   "published_at": "2026-11-13T01:02:00+00:00",
+   "url": "https://www.barrons.com/articles/buy-biontech-stock-price-pick-a64ac494?siteid=yhoof2&yptr=yahoo",
+   "scope": "stock",
+   "topic": "保有中"
+  },
+  {
+   "symbol": "SMCI",
+   "title": "S&P 500, Dow, Nasdaq Futures Recover After Markets End Lower On Jensen Huang’s Exit, Oil Price Pressure  —  CRWV, CBRS, NVDA, TSLA In Focus",
+   "summary": "Nvidia’s CEO Jensen Huang ousted; CFO Colette Kress named interim chief executive officer.",
+   "publisher": "Stocktwits",
+   "published_at": "2026-11-13T00:19:00+00:00",
+   "url": "https://stocktwits.com/news-articles/markets/equity/s-and-p-500-dow-nasdaq-futures-recover-after-markets-end-lower-on-jensen-huang-s-exit-oil-price-pressure-crwv-cbrs-nvda-tsla-in-focus/cNbbkHFR9OI",
    "scope": "stock",
    "topic": "大幅高"
   },
   {
    "symbol": "SNDK",
-   "title": "Jim Cramer Says Micron Isn’t Going Away. Here’s Why He Picks It Over Sandisk",
-   "summary": "Memory stocks just ripped higher, yet both names remain deep in the red for the month. Cramer sees one clear winner in the group, but the bull case for its rival is stronger than his pick suggests.",
-   "publisher": "24/7 Wall St.",
-   "published_at": "2026-11-11T22:07:24+00:00",
-   "url": "https://247wallst.com/investing/2026/11/11/jim-cramer-says-micron-isnt-going-away-heres-why-he-picks-it-over-sandisk/",
+   "title": "Sandisk Stock Is Back Above the $900 Price I Set for Buying It. Here's Why I'm Holding Off.",
+   "summary": "Should a quick bounce change what I'm willing to pay for the same guided profits?",
+   "publisher": "Motley Fool",
+   "published_at": "2026-11-13T00:01:02+00:00",
+   "url": "https://www.fool.com/investing/2026/11/12/sandisk-stock-is-back-above-the-usd900-price-i-set-for-buying-it-here-s-why-i-m-holding-off/",
    "scope": "stock",
    "topic": "大幅高"
   },
   {
-   "symbol": "PANW",
-   "title": "How Big Could Cloudflare Stock's Next Fall Be?",
-   "summary": "For questions about this article or underlying research, email help@trefis.com.",
-   "publisher": "Trefis",
-   "published_at": "2026-11-11T22:05:03+00:00",
-   "url": "https://www.trefis.com/stock/net/articles/624233/how-big-could-cloudflare-stocks-next-fall-be/2026-11-11",
+   "symbol": "GLD",
+   "title": "What If You Had Invested $10,000 in Bitcoin 5 Years Ago?",
+   "summary": "One investor bought Bitcoin near its 2021 peak, then watched most of the money vanish after the FTX collapse. Five years later, how does that patient bet stack up against gold and the S&P 500?",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-11-12T23:29:56+00:00",
+   "url": "https://247wallst.com/investing/cryptocurrency/2026/11/12/what-if-you-had-invested-10000-in-bitcoin-5-years-ago/",
    "scope": "stock",
-   "topic": "買い候補"
+   "topic": "52週安値圏"
   },
   {
-   "symbol": "AMD",
-   "title": "Anthropic's Mythos claim may put Nvidia’s CUDA moat in a vulnerable spot",
-   "summary": "Yahoo Finance's Deirdre Bosa discusses an Anthropic (ANTH.PVT) claim that its Mythos model got Claude running on AMD (AMD) chips in about three days, raising questions about whether AI can erode the value of Nvidia's (NVDA) CUDA moat.",
-   "publisher": "Yahoo Finance Video",
-   "published_at": "2026-11-11T21:43:46+00:00",
-   "url": "https://finance.yahoo.com/video/anthropics-mythos-claim-may-put-nvidias-cuda-moat-in-a-vulnerable-spot-214346380.html",
+   "symbol": "SNDK",
+   "title": "5 Best AI Stocks to Buy After Wells Fargo’s Outlook Upgrade",
+   "summary": "Wells Fargo is no longer telling investors to stay away from the AI infrastructure trade. In a new note, analysts led by Ohsung Kwon raised the firm’s view on US AI infrastructure to neutral from negative. The change follows a deep selloff. Semiconductor shares trade about 38% below their June highs, and the multiples investors […]",
+   "publisher": "Insider Monkey",
+   "published_at": "2026-11-12T23:14:28+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/5-best-ai-stocks-buy-231428418.html",
+   "scope": "stock",
+   "topic": "大幅高"
+  },
+  {
+   "symbol": "MU",
+   "title": "5 Best Growth Stocks for the Next 5 Years",
+   "summary": "Technology stocks went from celebration to rout within two sessions this month. On Wednesday, November 4, equities rallied after Democrats swept Congress in the midterm elections. By Thursday, the S&P 500 had fallen 4.36% and the Dow had lost 3.44%, while the Nasdaq Composite closed 5.52% lower, its worst day since April 2025. The drop […]",
+   "publisher": "Insider Monkey",
+   "published_at": "2026-11-12T23:11:19+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/5-best-growth-stocks-next-231119066.html",
    "scope": "stock",
    "topic": "買い候補"
   },
   {
    "symbol": "LULU",
-   "title": "Michael Burry Re-Enters LULU On Weakness, Boosts Positions In MercadoLibre, PayPal, JD And More",
-   "summary": "Burry cited lululemon’s new management’s failure so far to reverse a prolonged “black hole” in marketing and messaging, which has left the stock overlooked during a low-information stretch.",
-   "publisher": "Stocktwits",
-   "published_at": "2026-11-11T21:38:07+00:00",
-   "url": "https://stocktwits.com/news-articles/markets/equity/michael-burry-re-enters-lulu-on-weakness-boosts-positions-in-mercado-libre-pay-pal-jd-and-more/cNGxRoiR99d",
+   "title": "e.l.f. Beauty vs. lululemon athletica: Which Consumer Goods Stock Is a Better Buy for 2027?",
+   "summary": "Two very different valuations and a growth-versus-margin trade-off could tip the scales for your portfolio. Here is how the numbers stack up.",
+   "publisher": "Motley Fool",
+   "published_at": "2026-11-12T22:53:38+00:00",
+   "url": "https://www.fool.com/coverage/better-buy/2026/11/12/elf-beauty-vs-lululemon-athletica-which-consumer-goods-stock-is-a-better-buy-for-2027/",
    "scope": "stock",
    "topic": "大幅安"
   },
   {
-   "symbol": "NVR",
-   "title": "Existing Home Sales Data Will Be Ugly. What Matters Now For Housing Stocks.",
-   "summary": "October home sales data won’t be pretty. Investors should keep their eyes on the 10-year Treasury yield instead.",
+   "symbol": "NVDA",
+   "title": "Nvidia market cap plunges $490 billion following former CEO Huang's affair scandals",
+   "summary": "Nvidia's market cap has plummeted nearly half a trillion dollars.",
+   "publisher": "Yahoo Finance",
+   "published_at": "2026-11-12T22:44:12+00:00",
+   "url": "https://finance.yahoo.com/technology/article/nvidia-market-cap-plunges-490-billion-following-former-ceo-huangs-affair-scandals-224412004.html",
+   "scope": "stock",
+   "topic": "出来高異常"
+  },
+  {
+   "symbol": "MU",
+   "title": "5 Unrivaled Stocks to Buy for the Next Decade",
+   "summary": "Wall Street had its worst day since April 2025 last Thursday. The Nasdaq Composite fell 5.5%, the S&P 500 dropped 4.4%, and the Philadelphia Semiconductor Index plunged 12.2%. Two worries drove the selling. Investors doubt that heavy spending on artificial intelligence will pay off, and candidates who ran against data center expansion won races in […]",
+   "publisher": "Insider Monkey",
+   "published_at": "2026-11-12T22:33:21+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/5-unrivaled-stocks-buy-next-223321955.html",
+   "scope": "stock",
+   "topic": "買い候補"
+  },
+  {
+   "symbol": "MU",
+   "title": "Micron, Other Memory Chip Stocks Fall on Nvidia Shakeup. Why They’re at Risk.",
+   "summary": "Shares of Micron, SK Hynix, and Sandisk were all down.",
    "publisher": "Barrons.com",
-   "published_at": "2026-11-11T21:30:00+00:00",
-   "url": "https://www.barrons.com/articles/home-sales-data-housing-stocks-mortgage-rates-24c26680?siteid=yhoof2&yptr=yahoo",
+   "published_at": "2026-11-12T22:24:00+00:00",
+   "url": "https://www.barrons.com/articles/micron-memory-chip-stocks-nvidia-shakeup-adf6b711?siteid=yhoof2&yptr=yahoo",
    "scope": "stock",
-   "topic": "大幅安"
+   "topic": "買い候補"
   },
   {
-   "symbol": "STX",
-   "title": "Micron, Sandisk Soar as CoreWeave CEO Says AI Demand Outpaces World's Capacity",
-   "summary": "Memory and storage stocks surged Wednesday after CoreWeave (NASDAQ:CRWV) reported blockbuster earnings, with CEO Michael Intrator dismissing fears that the artificial intelligence infrastructure boom was slowing. Sandisk (NASDAQ:SNDK) jumped nearly 17%, while Micron Technology (NASDAQ:MU) gained almost 14%. Seagate Technology...",
-   "publisher": "Benzinga Prediction Markets",
-   "published_at": "2026-11-11T21:25:11+00:00",
-   "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63169587/ai-memory-stocks?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral",
+   "symbol": "MU",
+   "title": "Applied Materials’ Beat Gets a Lukewarm Reception as Nvidia Fallout Lingers",
+   "summary": "Sometimes even exceeding expectations doesn’t do the trick.",
+   "publisher": "Barrons.com",
+   "published_at": "2026-11-12T22:21:00+00:00",
+   "url": "https://www.barrons.com/articles/applied-materials-earnings-stock-price-66c09c50?siteid=yhoof2&yptr=yahoo",
    "scope": "stock",
-   "topic": "大幅高"
+   "topic": "買い候補"
   },
   {
-   "symbol": "HPE",
-   "title": "Is Dell Stock Priced Right Against Its Peers?",
-   "summary": "For questions about this article or underlying research, email help@trefis.com.",
-   "publisher": "Trefis",
-   "published_at": "2026-11-11T20:49:00+00:00",
-   "url": "https://www.trefis.com/stock/dell/articles/624271/is-dell-stock-priced-right-against-its-peers/2026-11-11",
+   "symbol": "NVDA",
+   "title": "How Nvidia's stock decline might impact your 401(k) and portfolio",
+   "summary": "Kelly Intelligence founder, CEO, and CCO Kevin Kelly joins Yahoo Finance Senior Reporter Brooke DiPalma at Yahoo Finance's 2026 Invest conference to offer some insight for investors who might be worried about how Nvidia (NVDA) stock is impacting their portfolios and retirement accounts.",
+   "publisher": "Yahoo Finance Video",
+   "published_at": "2026-11-12T22:19:25+00:00",
+   "url": "https://finance.yahoo.com/video/how-nvidias-stock-decline-might-impact-your-401k-and-portfolio-221925275.html",
+   "scope": "stock",
+   "topic": "出来高異常"
+  },
+  {
+   "symbol": "MRNA",
+   "title": "Moderna Targets 2027 Cancer Therapy Launch, Raises 2026 Revenue Growth Outlook",
+   "summary": "Moderna (NASDAQ:MRNA) is preparing to seek U.S. approval of its individualized cancer treatment intismeran by year-end, with executives aiming for a 2027 launch alongside partner Merck if regulators approve the therapy. At an investor event in Marlborough, Massachusetts, company leaders highlighted",
+   "publisher": "MarketBeat",
+   "published_at": "2026-11-12T22:14:48+00:00",
+   "url": "https://www.marketbeat.com/instant-alerts/event-moderna-targets-2027-cancer-therapy-launch-raises-2026-revenue-growth-outlook-2026-11-12/?utm_source=yahoofinance&utm_medium=yahoofinance",
    "scope": "stock",
    "topic": "保有中"
   },
   {
-   "symbol": "STX",
-   "title": "Morgan Stanley sees 129% tech company rebound brewing after crash",
-   "summary": "Sales are up 61%, yet the Seagate stock has fallen 43% in three months. Here’s what’s behind the disconnect.",
-   "publisher": "TheStreet",
-   "published_at": "2026-11-11T20:37:00+00:00",
-   "url": "https://www.thestreet.com/investing/stocks/stx-seagate-morgan-stanley-stock-analysis",
+   "symbol": "NTAP",
+   "title": "Why the Market Dipped But NetApp (NTAP) Gained Today",
+   "summary": "NetApp (NTAP) concluded the recent trading session at $186.34, signifying a +1.76% move from its prior day's close.",
+   "publisher": "Zacks",
+   "published_at": "2026-11-12T21:50:02+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/why-market-dipped-netapp-ntap-215002995.html",
+   "scope": "stock",
+   "topic": "買い候補"
+  },
+  {
+   "symbol": "NVDA",
+   "title": "Alleged spy at center of Nvidia CEO affair reportedly being probed over Super Micro smuggling effort",
+   "summary": "The woman at the center of the Nvidia affair scandal is also reportedly being probed for involvement in a separate chip smuggling scheme.",
+   "publisher": "Yahoo Finance",
+   "published_at": "2026-11-12T21:47:12+00:00",
+   "url": "https://finance.yahoo.com/technology/article/alleged-spy-at-center-of-nvidia-ceo-affair-reportedly-being-probed-over-super-micro-smuggling-effort-214712179.html",
+   "scope": "stock",
+   "topic": "出来高異常"
+  },
+  {
+   "symbol": "NVDA",
+   "title": "Cathie Wood: After Huang, AI push isn’t ‘going to stop’",
+   "summary": "ARK Invest CEO and CIO Cathie Wood joins Yahoo Finance's Deirdre Bosa at Yahoo Finance's 2026 Invest conference to discuss why the AI industry will outlast any one leader, amid the  Jensen Huang crisis at Nvidia (NVDA).",
+   "publisher": "Yahoo Finance Video",
+   "published_at": "2026-11-12T21:41:00+00:00",
+   "url": "https://finance.yahoo.com/video/cathie-wood-huang-ai-push-214100089.html",
+   "scope": "stock",
+   "topic": "出来高異常"
+  },
+  {
+   "symbol": "DELL",
+   "title": "Nvidia, AMD, CoreWeave, Nebius, Tesla, and More Stocks That Explain Today’s Market",
+   "summary": "Nvidia stock drops after CEO Jensen Huang resigns.",
+   "publisher": "Barrons.com",
+   "published_at": "2026-11-12T21:35:00+00:00",
+   "url": "https://www.barrons.com/articles/stock-movers-cd2d0ebf?siteid=yhoof2&yptr=yahoo",
+   "scope": "stock",
+   "topic": "買い候補"
+  },
+  {
+   "symbol": "MRNA",
+   "title": "Moderna Needs a Post-Covid Hit. Its Cancer-Drug Spending Plan Ups the Stakes.",
+   "summary": "The biotech plans to reinvest in its pipeline, particularly oncology treatments like its personalized cancer vaccine.",
+   "publisher": "Barrons.com",
+   "published_at": "2026-11-12T21:29:00+00:00",
+   "url": "https://www.barrons.com/articles/moderna-stock-covid-cancer-drug-biotech-f3865a56?siteid=yhoof2&yptr=yahoo",
+   "scope": "stock",
+   "topic": "保有中"
+  },
+  {
+   "symbol": "MSI",
+   "title": "Has Buying Axon Stock's Dips Paid Off?",
+   "summary": "For questions about this article or underlying research, email help@trefis.com.",
+   "publisher": "Trefis",
+   "published_at": "2026-11-12T21:24:28+00:00",
+   "url": "https://www.trefis.com/stock/axon/articles/624530/has-buying-axon-stocks-dips-paid-off-2/2026-11-12",
+   "scope": "stock",
+   "topic": "52週高値圏"
+  },
+  {
+   "symbol": "PANW",
+   "title": "Palo Alto Networks (PANW): Its AI Security Tool Became the Company’s Fastest Product Ramp",
+   "summary": "Palo Alto Networks (NASDAQ:PANW) ranks 7th on our newly published list of the 10 Best Stocks to Buy After Democrats’ Election Sweep, According to CIBC. CIBC Capital Markets recommended a list of top stock picks after the Democratic sweep of Congress, according to CNBC, citing a potentially tougher regulatory environment for corporate America. In a […]",
+   "publisher": "Insider Monkey",
+   "published_at": "2026-11-12T21:11:37+00:00",
+   "url": "https://finance.yahoo.com/technology/ai/articles/palo-alto-networks-panw-ai-211137568.html",
+   "scope": "stock",
+   "topic": "買い候補"
+  },
+  {
+   "symbol": "MRVL",
+   "title": "Chip Stocks Finish Lower as Industry Digests Jensen Huang Exit",
+   "summary": "Chip stocks bounced around today in reaction to the sudden exit of Nvidia CEO Jensen Huang, but as the trading day wound down, the tone grew more negative.",
+   "publisher": "The Wall Street Journal",
+   "published_at": "2026-11-12T21:11:03+00:00",
+   "url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-11-12-2026/card/chip-stocks-down-as-industry-digests-jensen-huang-exit-Lq6UDhwOoZUotX38oTUL?siteid=yhoof2&yptr=yahoo",
    "scope": "stock",
    "topic": "大幅高"
   },
   {
-   "symbol": "ABNB",
-   "title": "Should You Invest in Airbnb (ABNB) Based on Bullish Wall Street Views?",
-   "summary": "According to the average brokerage recommendation (ABR), one should invest in Airbnb (ABNB). It is debatable whether this highly sought-after metric is effective because Wall Street analysts' recommendations tend to be overly optimistic. Would it be worth investing in the stock?",
-   "publisher": "Zacks",
-   "published_at": "2026-11-11T20:22:43+00:00",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/invest-airbnb-abnb-based-bullish-202243348.html",
+   "symbol": "PANW",
+   "title": "Palo Alto Networks CEO has a blunt warning before earnings",
+   "summary": "Nikesh Arora had a clear message for companies running older security systems, and it could shape how investors read its Nov. 18 results.",
+   "publisher": "TheStreet",
+   "published_at": "2026-11-12T21:07:00+00:00",
+   "url": "https://www.thestreet.com/investing/palo-alto-networks-ceo-warns-major-breaches",
+   "scope": "stock",
+   "topic": "買い候補"
+  },
+  {
+   "symbol": "SRE",
+   "title": "Could Sempra Be The Value Stock For Your Portfolio?",
+   "summary": "For questions about this article or underlying research, email help@trefis.com.",
+   "publisher": "Trefis",
+   "published_at": "2026-11-12T21:00:32+00:00",
+   "url": "https://www.trefis.com/stock/sre/articles/624553/could-sempra-be-the-value-stock-for-your-portfolio/2026-11-12",
+   "scope": "stock",
+   "topic": "52週安値圏"
+  },
+  {
+   "symbol": "LDOS",
+   "title": "What Is Driving The Fall In Planet Labs Stock?",
+   "summary": "For questions about this article or underlying research, email help@trefis.com.",
+   "publisher": "Trefis",
+   "published_at": "2026-11-12T20:32:58+00:00",
+   "url": "https://www.trefis.com/stock/pl/articles/624561/what-is-driving-the-fall-in-planet-labs-stock/2026-11-12",
    "scope": "stock",
    "topic": "大幅安"
+  },
+  {
+   "symbol": "DELL",
+   "title": "Super Micro Stock Falls as DOJ Probes Smuggling Allegations",
+   "summary": "The Department of Justice is investigating whether entities linked to former Megaspeed executive Alice Huang were involved in efforts to smuggle Super Micro products into China.",
+   "publisher": "Barrons.com",
+   "published_at": "2026-11-12T20:19:00+00:00",
+   "url": "https://www.barrons.com/articles/super-micro-stock-falls-doj-probe-43f8d63d?siteid=yhoof2&yptr=yahoo",
+   "scope": "stock",
+   "topic": "買い候補"
   },
   {
    "symbol": "MPC",
-   "title": "Here is What to Know Beyond Why Marathon Petroleum Corporation (MPC) is a Trending Stock",
-   "summary": "Zacks.com users have recently been watching Marathon Petroleum (MPC) quite a bit. Thus, it is worth knowing the facts that could determine the stock's prospects.",
+   "title": "Top Research Reports for Home Depot, Gilead & TotalEnergies",
+   "summary": "Today's Research Daily features new research reports on 16 major stocks, including The Home Depot, Inc. (HD), Gilead Sciences, Inc. (GILD), TotalEnergies SE (TTE) as well as two micro-cap stocks, Key Tronic Corporation (KTCC) and iPower Inc. (IPW).",
    "publisher": "Zacks",
-   "published_at": "2026-11-11T20:21:20+00:00",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/know-beyond-why-marathon-petroleum-202120528.html",
+   "published_at": "2026-11-12T20:07:00+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/top-research-reports-home-depot-200700776.html",
    "scope": "stock",
    "topic": "買い候補"
   },
   {
    "symbol": "LITE",
-   "title": "Marvell Acquires Lumentum in Blockbuster $80 Billion Deal",
-   "summary": "There has been no shortage of news these last few weeks coming out of the memory and optics sectors in regards to AI investing. Eric Bleeker and Austin Smith are here to break down just a few of them, including Marvell's purchase of Lumentum in a huge $80 billion deal. Marvell has enjoyed a nice surge since the acquisition - one of the largest in tech history - and the company has a history of needing to reshape its brand and business which could be helpful. The two also shared some updates in regards to companies including Micron, Semtech and Alphabet, as well as what investors can expect fro",
-   "publisher": "24/7 Wall St.",
-   "published_at": "2026-11-11T20:19:34+00:00",
-   "url": "https://247wallst.com/videos/marvell-acquires-lumentum-in-blockbuster-80-billion-deal/",
+   "title": "Marvell makes major board move ahead of $115 billion AI deal",
+   "summary": "The chipmaker expands its board to 10 members as it prepares for a major deal in optical networking.",
+   "publisher": "GuruFocus.com",
+   "published_at": "2026-11-12T19:44:50+00:00",
+   "url": "https://finance.yahoo.com/technology/ai/articles/marvell-makes-major-board-move-194450481.html",
    "scope": "stock",
    "topic": "大幅高"
   },
   {
-   "symbol": "APA",
-   "title": "Should Value Investors Buy APA (APA) Stock?",
-   "summary": "Here at Zacks, our focus is on the proven Zacks Rank system, which emphasizes earnings estimates and estimate revisions to find great stocks. Nevertheless, we are always paying attention to the latest value, growth, and momentum trends to underscore strong picks.",
-   "publisher": "Zacks",
-   "published_at": "2026-11-11T20:08:02+00:00",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/value-investors-buy-apa-apa-200802092.html",
+   "symbol": "GLD",
+   "title": "Gold Prices Plunge as Fed Rate Hike Fears Intensify",
+   "summary": "A traditional safe haven faces an unexpected financial challenge.",
+   "publisher": "GuruFocus.com",
+   "published_at": "2026-11-12T19:44:27+00:00",
+   "url": "https://finance.yahoo.com/markets/commodities/articles/gold-prices-plunge-fed-rate-194427220.html",
    "scope": "stock",
-   "topic": "買い候補"
-  },
-  {
-   "symbol": "ABNB",
-   "title": "Are Consumer Discretionary Stocks Lagging  Airbnb (ABNB) This Year?",
-   "summary": "Here is how Airbnb, Inc. (ABNB) and Sony (SONY) have performed compared to their sector so far this year.",
-   "publisher": "Zacks",
-   "published_at": "2026-11-11T20:07:11+00:00",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/consumer-discretionary-stocks-lagging-airbnb-200711703.html",
-   "scope": "stock",
-   "topic": "大幅安"
-  },
-  {
-   "symbol": "MCD",
-   "title": "McDonald’s or Home Depot: I Can Only Pick One Dividend Stock for the Next 20 Years. Here’s Mine",
-   "summary": "Key TakeawaysMcDonald’s and Home Depot both yield 2. 8%, so $10,000 in either pays $280 a year today.",
-   "publisher": "TIKR",
-   "published_at": "2026-11-11T19:55:41+00:00",
-   "url": "https://www.tikr.com/blog/mcdonalds-or-home-depot-i-can-only-pick-one-dividend-stock-for-the-next-20-years-heres-mine?ref=yahoofinancedividend&tlnk=yf-261111-x4v987x6",
-   "scope": "stock",
-   "topic": "大幅安"
-  },
-  {
-   "symbol": "VTRS",
-   "title": "David Einhorn’s Best Buy Is Already Up 36%. Is It Too Late to Follow Him?",
-   "summary": "Key TakeawaysPayPal is up 36% since June 30, the best of the seven stocks David Einhorn’s Greenlight Capital bought or added to in the second quarter. Even after that run, PayPal trades at 10x forward earnings, well below its five-year average, so it isn’t too late to follow him.",
-   "publisher": "TIKR",
-   "published_at": "2026-11-11T19:49:53+00:00",
-   "url": "https://www.tikr.com/blog/david-einhorns-best-buy-is-already-up-36-is-it-too-late-to-follow-him?ref=yahoofinance&tlnk=yf-261111-cp5pxqw7",
-   "scope": "stock",
-   "topic": "52週高値圏"
-  },
-  {
-   "symbol": "LULU",
-   "title": "Michael Burry buys back into Lululemon, adds to other positions",
-   "summary": "Investing.com -- Michael Burry disclosed that he purchased shares of Lululemon on Wednesday after previously exiting his position in the athletic apparel company in October.",
-   "publisher": "Investing.com",
-   "published_at": "2026-11-11T19:24:55+00:00",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/michael-burry-buys-back-lululemon-192455774.html",
-   "scope": "stock",
-   "topic": "大幅安"
+   "topic": "52週安値圏"
   },
   {
    "symbol": "CSX",
-   "title": "CSX Targets Higher Prices and More Freight in 2027 as Trucking Capacity Tightens",
-   "summary": "CSX (NASDAQ:CSX) is looking to build on freight volume growth and pursue higher prices in 2027, as tight trucking capacity creates opportunities to move more goods by rail, Chief Financial Officer Kevin Boone said at a Baird transportation conference. Boone said infrastructure spending, strong aggr",
-   "publisher": "MarketBeat",
-   "published_at": "2026-11-11T19:15:21+00:00",
-   "url": "https://www.marketbeat.com/instant-alerts/event-csx-targets-higher-prices-and-more-freight-in-2027-as-trucking-capacity-tightens-2026-11-11/?utm_source=yahoofinance&utm_medium=yahoofinance",
-   "scope": "stock",
-   "topic": "保有中"
-  },
-  {
-   "symbol": "HPE",
-   "title": "Why Is Hewlett Packard Enterprise (HPE) Winning Clients With $2.1 Million Savings?",
-   "summary": "Hewlett Packard Enterprise (NYSE:HPE) is supplying private cloud services to the Royal Australasian College of Surgeons under a new deployment. The College reports projected operational and cost efficiencies of about A$2.1 million over five years from the HPE Private Cloud migration. HPE GreenLake is part of the deployment, with the platform used to support the institution's technology transformation and simplification goals. The College's expected A$2.1 million saving from HPE Private Cloud...",
-   "publisher": "Simply Wall St.",
-   "published_at": "2026-11-11T19:12:08+00:00",
-   "url": "https://finance.yahoo.com/technology/articles/why-hewlett-packard-enterprise-hpe-191208238.html",
-   "scope": "stock",
-   "topic": "保有中"
-  },
-  {
-   "symbol": "LITE",
-   "title": "Lumentum Stocks Jump 14.85% as AI Optics Rebound Narrows Marvell Deal Gap",
-   "summary": "Each Lumentum share converts into 4.5 Marvell shares, and Wednesday's rally reshapes the arbitrage spread.",
-   "publisher": "GuruFocus.com",
-   "published_at": "2026-11-11T19:03:00+00:00",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/lumentum-stocks-jump-14-85-190300667.html",
-   "scope": "stock",
-   "topic": "大幅高"
-  },
-  {
-   "symbol": "LITE",
-   "title": "Marvell Technology Stocks Surge 12.22% as AI Optics Rally Eases Lumentum Deal Doubts",
-   "summary": "Marvell shares recover part of their post-deal slide as investors revisit the $115 billion AI connectivity bet.",
-   "publisher": "GuruFocus.com",
-   "published_at": "2026-11-11T19:01:44+00:00",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/marvell-technology-stocks-surge-12-190144170.html",
-   "scope": "stock",
-   "topic": "大幅高"
-  },
-  {
-   "symbol": "LITE",
-   "title": "Credo Technology Stocks Climb 10.8% as AI Connectivity Names Rally",
-   "summary": "Credo guided October-quarter revenue to $525 million to $535 million after a 115% jump in its previous quarter.",
-   "publisher": "GuruFocus.com",
-   "published_at": "2026-11-11T18:56:15+00:00",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/credo-technology-stocks-climb-10-185615961.html",
-   "scope": "stock",
-   "topic": "大幅高"
-  },
-  {
-   "symbol": "MSI",
-   "title": "Is TE Connectivity’s Buyback Still Lifting Earnings Per Share?",
+   "title": "Could You Have Seen The Run In CSX Stock Coming?",
    "summary": "For questions about this article or underlying research, email help@trefis.com.",
    "publisher": "Trefis",
-   "published_at": "2026-11-11T18:51:53+00:00",
-   "url": "https://www.trefis.com/stock/tel/articles/624323/is-te-connectivitys-buyback-still-lifting-earnings-per-share/2026-11-11",
+   "published_at": "2026-11-12T19:44:20+00:00",
+   "url": "https://www.trefis.com/stock/csx/articles/624603/could-you-have-seen-the-run-in-csx-stock-coming/2026-11-12",
    "scope": "stock",
-   "topic": "52週高値圏"
+   "topic": "保有中"
   },
   {
-   "symbol": "DELL",
-   "title": "Dell Stocks Jump 11.42% as CoreWeave's Bigger Spending Plan Revives AI Server Bets",
-   "summary": "CoreWeave lifted the low end of its 2026 capex range to $37 billion, a read-through for Dell's record $95 billion AI backlog.",
+   "symbol": "SNDK",
+   "title": "Sandisk Stocks Slide 7.83% as NVIDIA Exit Hits Storage a Week Before 8-for-1 Split",
+   "summary": "Sandisk gives back most of Wednesday's 13.69% jump, with split-adjusted trading set to begin November 20.",
    "publisher": "GuruFocus.com",
-   "published_at": "2026-11-11T18:29:58+00:00",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/dell-stocks-jump-11-42-182958094.html",
+   "published_at": "2026-11-12T19:44:01+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/sandisk-stocks-slide-7-83-194401943.html",
+   "scope": "stock",
+   "topic": "大幅高"
+  },
+  {
+   "symbol": "CLX",
+   "title": "A $1,500,000 Portfolio in Clorox, Kimberly-Clark and PepsiCo Pays $67,627 a Year in Dividends. Here’s What Happens if One Cuts",
+   "summary": "Key TakeawaysA $1. 5 million portfolio split evenly across Clorox, Kimberly-Clark and PepsiCo pays $67,627 a year in dividends at today’s prices, or about $5,640 a month.",
+   "publisher": "TIKR",
+   "published_at": "2026-11-12T19:35:21+00:00",
+   "url": "https://www.tikr.com/blog/a-1500000-portfolio-in-clorox-kimberly-clark-and-pepsico-pays-67128-a-year-in-dividends-heres-what-happens-if-one-cuts?ref=yahoofinancedividend&tlnk=yf-261112-2x74qxgx",
+   "scope": "stock",
+   "topic": "出来高異常"
+  },
+  {
+   "symbol": "USO",
+   "title": "SolarEdge Slides 5% as Rising Yields Weigh on Solar Stocks; Sunrun Drops 4%, Enphase Falls 3%",
+   "summary": "A blowout earnings beat sounded like good news for SolarEdge, yet its stock is sliding with the whole solar sector. The culprit sits in the bond market, and some solar names feel it far more than others.",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-11-12T18:57:56+00:00",
+   "url": "https://247wallst.com/investing/2026/11/12/solaredge-slides-5-as-rising-yields-weigh-on-solar-stocks-sunrun-drops-4-enphase-falls-3/",
    "scope": "stock",
    "topic": "買い候補"
   },
   {
-   "symbol": "LULU",
-   "title": "Lululemon Brings Enzymatically Recycled Polyester to Running Shorts",
-   "summary": "The limited Australia and New Zealand launch builds on the brand’s 10-year sourcing plan with Samsara Eco.",
-   "publisher": "Sourcing Journal",
-   "published_at": "2026-11-11T18:18:02+00:00",
-   "url": "https://wwd.com/sourcing-journal/sustainability/lululemon-samsara-eco-enzymaitic-recycling-polyester-shorts-1239410883/",
+   "symbol": "DELL",
+   "title": "CoreWeave and Other Stocks in the Nvidia Danger Zone",
+   "summary": "Shares of companies with ties to the $4 trillion chip maker are dropping as investors wonder what will happen next.",
+   "publisher": "Barrons.com",
+   "published_at": "2026-11-12T18:25:00+00:00",
+   "url": "https://www.barrons.com/articles/coreweave-stock-drops-nvidia-huang-ai-3b3bbc9b?siteid=yhoof2&yptr=yahoo",
    "scope": "stock",
-   "topic": "大幅安"
-  },
-  {
-   "symbol": "SMCI",
-   "title": "Super Micro Computer (SMCI) Unveils H15 Servers As Export Scrutiny Draws Focus",
-   "summary": "Super Micro Computer (NasdaqGS:SMCI) launched its new H15 server portfolio built around 6th Gen AMD EPYC processors for AI and cloud workloads. The H15 line is designed to support higher core density and next generation GPUs aimed at advanced AI inference and training use cases. Regulators are scrutinizing reports that Super Micro servers with Nvidia chips were rented to China's Moonshot AI despite export control concerns. The launch of H15 EPYC servers and the Moonshot AI rental scrutiny...",
-   "publisher": "Simply Wall St.",
-   "published_at": "2026-11-11T18:14:19+00:00",
-   "url": "https://finance.yahoo.com/technology/ai/articles/super-micro-computer-smci-unveils-181419192.html",
-   "scope": "stock",
-   "topic": "大幅高"
+   "topic": "買い候補"
   },
   {
    "symbol": "MCD",
-   "title": "Can Chipotle Stock Hit $54?",
-   "summary": "For questions about this article or underlying research, email help@trefis.com.",
-   "publisher": "Trefis",
-   "published_at": "2026-11-11T18:10:46+00:00",
-   "url": "https://www.trefis.com/stock/cmg/articles/624340/can-chipotle-stock-hit-54/2026-11-11",
+   "title": "McDonald's Is a Dividend King With 50 Years of Raises. Here's What $10,000 Invested Pays.",
+   "summary": "McDonald's has raised its dividend for decades, and its rent-and-royalty model can support more increases over the long term.",
+   "publisher": "Motley Fool",
+   "published_at": "2026-11-12T18:20:02+00:00",
+   "url": "https://www.fool.com/investing/2026/11/12/mcdonalds-dividend-king-50-years-raises-what-10000-invested-pays/",
    "scope": "stock",
    "topic": "大幅安"
   },
   {
-   "symbol": "ABNB",
-   "title": "Airbnb and Travel Stocks Fall as OpenAI Acquisition Raises New AI Threat",
-   "summary": "OpenAI’s acquisition of Odessia raises fresh concerns about artificial-intelligence disruption.",
-   "publisher": "Barrons.com",
-   "published_at": "2026-11-11T18:01:00+00:00",
-   "url": "https://www.barrons.com/articles/airbnb-stock-openai-travel-odessia-6c8a589b?siteid=yhoof2&yptr=yahoo",
-   "scope": "stock",
-   "topic": "大幅安"
-  },
-  {
-   "symbol": "PANW",
-   "title": "Citi Sees Powerful Upside for Palo Alto Network Stock",
-   "summary": "A premium valuation is testing Wall Street's growing optimism.",
-   "publisher": "GuruFocus.com",
-   "published_at": "2026-11-11T17:45:44+00:00",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/citi-sees-powerful-upside-palo-174544657.html",
-   "scope": "stock",
-   "topic": "買い候補"
-  },
-  {
-   "symbol": "PSX",
-   "title": "Can HF Sinclair Capitalize on Tight Global Refined Product Supplies?",
-   "summary": "DINO stands to benefit from tight global fuel supplies and strong refining margins, leveraging operational efficiency and its strategically located refineries.",
-   "publisher": "Zacks",
-   "published_at": "2026-11-11T17:28:00+00:00",
-   "url": "https://finance.yahoo.com/energy/articles/hf-sinclair-capitalize-tight-global-172800044.html",
-   "scope": "stock",
-   "topic": "買い候補"
-  },
-  {
-   "symbol": "PANW",
-   "title": "Palo Alto needs a 3% beat to justify its premium valuation, says Bank of America",
-   "summary": "Bank of America believes Palo Alto Networks Inc (NASDAQ:PANW, XETRA:5AP), will need to deliver a quarterly beat of at least 3% and raise its outlook to support its elevated valuation. The bank reiterated its 'buy' rating on the cybersecurity group and $420 price target ahead of first-quarter...",
-   "publisher": "Proactive",
-   "published_at": "2026-11-11T17:27:00+00:00",
-   "url": "https://www.proactiveinvestors.com/companies/news/1101612/palo-alto-needs-a-3-beat-to-justify-its-premium-valuation-says-bank-of-america-1101612.html",
-   "scope": "stock",
-   "topic": "買い候補"
-  },
-  {
-   "symbol": "VLO",
-   "title": "Will Wider Heavy Crude Discounts Strengthen Phillips 66's Margins?",
-   "summary": "PSX stands to benefit from widening heavy crude discounts, leveraging its vast processing capacity and pipeline network to boost margins and profitability.",
-   "publisher": "Zacks",
-   "published_at": "2026-11-11T17:17:00+00:00",
-   "url": "https://finance.yahoo.com/energy/articles/wider-heavy-crude-discounts-strengthen-171700183.html",
-   "scope": "stock",
-   "topic": "買い候補"
-  },
-  {
-   "symbol": "DELL",
-   "title": "Why Is Dell Technologies (DELL) Talking Up 157 PB Storage And AI Racks?",
-   "summary": "Dell Technologies (NYSE:DELL) and KIOXIA introduced an industry first 157 PB single rack object storage solution for data heavy workloads. Dell OEM Solutions also launched the AMD Instinct Coder 355 platform, powered by Dell PowerEdge servers, for turnkey AI coding infrastructure. Both products target enterprise clients seeking higher density storage and scalable AI compute inside existing data center footprints. The 157 PB rack and AMD Instinct Coder 355 launch matter, but investors need a...",
-   "publisher": "Simply Wall St.",
-   "published_at": "2026-11-11T17:15:57+00:00",
-   "url": "https://finance.yahoo.com/technology/ai/articles/why-dell-technologies-dell-talking-171557642.html",
-   "scope": "stock",
-   "topic": "買い候補"
-  },
-  {
-   "symbol": "SMCI",
-   "title": "Supermicro (SMCI) Stock May Be Undervalued Following Fresh AI Server Launches",
-   "summary": "Super Micro Computer has seen its share price swing sharply in recent years, which puts fresh attention on a simple question for you as an investor. Are you paying a sensible price for Super Micro Computer today given what its earnings are already delivering? Over the past 5 years the stock has gained about 531.4%, so a lot of future profit expectations are already tied to where the valuation settles. New AI focused server launches, partnerships and product architectures may support...",
-   "publisher": "Simply Wall St.",
-   "published_at": "2026-11-11T17:15:15+00:00",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/supermicro-smci-stock-may-undervalued-171515034.html",
-   "scope": "stock",
-   "topic": "大幅高"
-  },
-  {
-   "symbol": "HPE",
-   "title": "Nutanix Stock Down 15%: Is Slower Growth Really The Supply Chain?",
-   "summary": "For questions about this article or underlying research, email help@trefis.com.",
-   "publisher": "Trefis",
-   "published_at": "2026-11-11T17:08:53+00:00",
-   "url": "https://www.trefis.com/stock/ntnx/articles/624369/nutanix-stock-down-15-is-slower-growth-really-the-supply-chain/2026-11-11",
-   "scope": "stock",
-   "topic": "保有中"
-  },
-  {
-   "symbol": "NTAP",
-   "title": "NetApp's Q2 Gross Margin Guide: Is Another Sequential Dip Ahead?",
-   "summary": "NTAP expects lower gross margins in Q2 fiscal 2027 as rising component costs and a higher product revenue mix offset pricing gains and strong sales growth.",
-   "publisher": "Zacks",
-   "published_at": "2026-11-11T17:04:00+00:00",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/netapps-q2-gross-margin-guide-170400624.html",
+   "symbol": "CRWD",
+   "title": "Why CrowdStrike CEO George Kurtz is looking forward to Anthropic and OpenAI going public",
+   "summary": "Anthropic going public could bring clarity to the company, CrowdStrike CEO George Kurtz says.",
+   "publisher": "Yahoo Finance",
+   "published_at": "2026-11-12T18:03:57+00:00",
+   "url": "https://finance.yahoo.com/markets/article/why-crowdstrike-ceo-george-kurtz-is-looking-forward-to-anthropic-and-openai-going-public-180357028.html",
    "scope": "stock",
    "topic": "買い候補"
   },
   {
    "symbol": "CRWD",
-   "title": "Here’s Why Baron Fund Maintains High Conviction in CrowdStrike (CRWD)",
-   "summary": "Baron Capital, an investment management company, released its third-quarter 2026 investor letter for its “Baron Global Opportunity Fund”. The letter can be downloaded here. The fund gained 3.3% (Institutional Shares) in the quarter, outperforming the 1.6% gain for the MSCI ACWI Index (the Index) and the 0.5% decline for the MSCI ACWI Growth Index, the […]",
-   "publisher": "Insider Monkey",
-   "published_at": "2026-11-11T16:56:01+00:00",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/why-baron-fund-maintains-high-165601065.html",
+   "title": "'The world is not going to end in 2030': CrowdStrike CEO George Kurtz on Anthropic IPO's warning to humanity",
+   "summary": "CrowdStrike CEO George Kurtz offers perspective on Anthropic's warning in its IPO prospectus.",
+   "publisher": "Yahoo Finance",
+   "published_at": "2026-11-12T17:57:55+00:00",
+   "url": "https://finance.yahoo.com/technology/article/the-world-is-not-going-to-end-in-2030-crowdstrike-ceo-george-kurtz-on-anthropic-ipos-warning-to-humanity-180658214.html",
    "scope": "stock",
    "topic": "買い候補"
   },
   {
-   "symbol": "SMCI",
-   "title": "CoreWeave’s Rise Takes Super Micro Along for the Ride, Sending Stock Higher",
-   "summary": "The artificial intelligence server company also announced it was shipping some new products.",
-   "publisher": "Barrons.com",
-   "published_at": "2026-11-11T16:51:00+00:00",
-   "url": "https://www.barrons.com/articles/coreweave-super-micro-stock-higher-570a7632?siteid=yhoof2&yptr=yahoo",
+   "symbol": "CRWD",
+   "title": "'If the race is there, you win it': CrowdStrike CEO and Mercedes F1 investor George Kurtz on driving phenom Kimi Antonelli",
+   "summary": "CrowdStrike CEO and Mercedes F1 investor George Kurtz talks about why his top driver is so hot right now.",
+   "publisher": "Yahoo Finance",
+   "published_at": "2026-11-12T17:52:29+00:00",
+   "url": "https://finance.yahoo.com/markets/article/if-the-race-is-there-you-win-it-crowdstrike-ceo-and-mercedes-f1-investor-george-kurtz-on-driving-phenom-kimi-antonelli-175229483.html",
+   "scope": "stock",
+   "topic": "買い候補"
+  },
+  {
+   "symbol": "SRE",
+   "title": "Do Edison's Dividends Make Up For A Lagging Stock?",
+   "summary": "For questions about this article or underlying research, email help@trefis.com.",
+   "publisher": "Trefis",
+   "published_at": "2026-11-12T17:37:40+00:00",
+   "url": "https://www.trefis.com/stock/eix/articles/624702/do-edisons-dividends-make-up-for-a-lagging-stock/2026-11-12",
+   "scope": "stock",
+   "topic": "52週安値圏"
+  },
+  {
+   "symbol": "CSX",
+   "title": "Amid Stubborn Diesel Prices, These Railroad Stocks Eye Breakouts",
+   "summary": "Railroad stocks benefit when diesel prices rise because shippers prefer train travel to trucking. CSX, Union Pacific, Norfolk Southern and Wabtec gain.",
+   "publisher": "Investor's Business Daily",
+   "published_at": "2026-11-12T17:37:31+00:00",
+   "url": "https://www.investors.com/news/diesel-prices-railroad-stocks-csx-union-pacific-norfolk-southern-merger-wabtec/?src=A00220&yptr=yahoo",
+   "scope": "stock",
+   "topic": "保有中"
+  },
+  {
+   "symbol": "PANW",
+   "title": "Top Cybersecurity Stocks to Watch, According to Mizuho",
+   "summary": "Investing.com -- Mizuho has released its latest rankings of top-performing cybersecurity stocks, with analysts highlighting strong momentum across multiple companies based on quarterly channel checks and partner feedback. The firm's analysis points to robust demand for data warehousing, zero trust solutions, and cyber-resiliency products.",
+   "publisher": "Investing.com",
+   "published_at": "2026-11-12T17:29:25+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/top-cybersecurity-stocks-watch-according-172925761.html",
+   "scope": "stock",
+   "topic": "買い候補"
+  },
+  {
+   "symbol": "USO",
+   "title": "The Treasury Secretary Is Now Living on a Military Base After Iranian Threats",
+   "summary": "Markets barely flinched when news broke that a cabinet secretary had moved onto a military base. Yet the quiet in oil and long bonds may hide a bigger risk for anyone holding USO or TLT, and a few scheduled events could expose it.",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-11-12T17:23:15+00:00",
+   "url": "https://247wallst.com/investing/2026/11/12/the-treasury-secretary-is-now-living-on-a-military-base-after-iranian-threats/",
+   "scope": "stock",
+   "topic": "買い候補"
+  },
+  {
+   "symbol": "ABNB",
+   "title": "What Airbnb Holders Bought Into",
+   "summary": "If you only skimmed the 2025 debate on Airbnb, with bulls calling it a lifestyle platform in the making and bears warning of regulatory walls and slowing core markets, you might not have expected the outcome. Holding Airbnb over the past year would have returned 49.5%, including dividends. If you had faced that split view back in November 2025, what in the record could have justified taking the risk anyway? The useful thing about a Narrative is that the reasoning is checkable: the assumptions...",
+   "publisher": "Simply Wall St.",
+   "published_at": "2026-11-12T17:11:14+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/airbnb-holders-bought-171114523.html",
+   "scope": "stock",
+   "topic": "大幅安"
+  },
+  {
+   "symbol": "HPE",
+   "title": "How Risky Is Hewlett Packard Enterprise Stock?",
+   "summary": "For questions about this article or underlying research, email help@trefis.com.",
+   "publisher": "Trefis",
+   "published_at": "2026-11-12T17:10:12+00:00",
+   "url": "https://www.trefis.com/stock/hpe/articles/624688/how-risky-is-hewlett-packard-enterprise-stock/2026-11-12",
+   "scope": "stock",
+   "topic": "保有中"
+  },
+  {
+   "symbol": "HPE",
+   "title": "Cisco (CSCO) vs. ANET and HPE: Can AI Networking Turn Strong Orders Into Lasting Earnings Growth?",
+   "summary": "Is CSCO a good stock to buy? We came across a bullish thesis on Cisco Systems, Inc. on Astute Optics – US’s Substack. In this article, we will summarize the bulls’ thesis on CSCO. Cisco Systems, Inc.’s share was trading at $102 as of November 12th. CSCO’s trailing and forward P/E were 31 and 19 respectively according […]",
+   "publisher": "Insider Monkey",
+   "published_at": "2026-11-12T17:00:46+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/cisco-csco-vs-anet-hpe-170046904.html",
+   "scope": "stock",
+   "topic": "保有中"
+  },
+  {
+   "symbol": "SRE",
+   "title": "What Changed In PG&E's Story?",
+   "summary": "For questions about this article or underlying research, email help@trefis.com.",
+   "publisher": "Trefis",
+   "published_at": "2026-11-12T16:56:07+00:00",
+   "url": "https://www.trefis.com/stock/pcg/articles/624640/what-changed-in-pges-story-2/2026-11-12",
+   "scope": "stock",
+   "topic": "52週安値圏"
+  },
+  {
+   "symbol": "PANW",
+   "title": "Intellectual Property: Valuing, Protecting and Securitizing, 6th Palm Beach CorpGov Forum",
+   "summary": "CorpGov hosted the sixth annual Palm Beach CorpGov Forum on Nov. 4-5, 2026, at the Palm Beach Lake Pavilion and The Cove Club, both located waterfront with sweeping views of Palm Beach Island, along with a reception at Cucina Palm Beach. The panel called “Intellectual Property: Valuing, Protecting and Securitizing” took place on Thursday afternoon. […] The post Intellectual Property: Valuing, Protecting and Securitizing, 6th Palm Beach CorpGov Forum appeared first on CorpGov.",
+   "publisher": "CorpGov.com",
+   "published_at": "2026-11-12T16:39:15+00:00",
+   "url": "https://finance.yahoo.com/small-business/articles/intellectual-property-valuing-protecting-securitizing-163915128.html",
+   "scope": "stock",
+   "topic": "買い候補"
+  },
+  {
+   "symbol": "LITE",
+   "title": "Microsoft Is Fighting a Ban on Chinese Parts Inside AI Data Centers",
+   "summary": "Microsoft took its fight against a proposed FCC transceiver ban straight to the White House, yet the stock barely flinched while optical suppliers surged. The real story hinges on a speed threshold and a date years away.",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-11-12T16:38:14+00:00",
+   "url": "https://247wallst.com/investing/2026/11/12/microsoft-is-fighting-a-ban-on-chinese-parts-inside-ai-data-centers/",
    "scope": "stock",
    "topic": "大幅高"
   },
   {
-   "symbol": "VLO",
-   "title": "3 Reasons Why Growth Investors Shouldn't Overlook Valero Energy (VLO)",
-   "summary": "Valero Energy (VLO) is well positioned to outperform the market, as it exhibits above-average growth in financials.",
-   "publisher": "Zacks",
-   "published_at": "2026-11-11T16:45:02+00:00",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/3-reasons-why-growth-investors-164502537.html",
+   "symbol": "GLD",
+   "title": "What $10,000 in Silver on Jan. 1 Is Worth Today",
+   "summary": "Silver prices have pulled back nearly 30% in 2026.",
+   "publisher": "Motley Fool",
+   "published_at": "2026-11-12T16:35:00+00:00",
+   "url": "https://www.fool.com/investing/2026/11/12/what-10000-in-silver-on-jan-1-is-worth-today/",
+   "scope": "stock",
+   "topic": "52週安値圏"
+  },
+  {
+   "symbol": "LULU",
+   "title": "The Big Short Investor Is Buying This Stock At a 50% Discount",
+   "summary": "Michael Burry just bought back a beaten-down retail stock he dumped a month ago, and he calls the downside small. Two guidance cuts, a wave of short sellers, and one December date could prove him right or wrong.",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-11-12T16:34:17+00:00",
+   "url": "https://247wallst.com/investing/2026/11/12/the-big-short-investor-is-buying-this-stock-at-a-50-discount/",
+   "scope": "stock",
+   "topic": "大幅安"
+  },
+  {
+   "symbol": "AMD",
+   "title": "AMD CEO Lisa Su on data center backlash: Tech has to sell the vision",
+   "summary": "AMD CEO Lisa Su says tech has to do a better job of selling the data center vision to the public.",
+   "publisher": "Yahoo Finance",
+   "published_at": "2026-11-12T16:26:04+00:00",
+   "url": "https://finance.yahoo.com/technology/article/amd-ceo-lisa-su-on-data-center-backlash-tech-has-to-sell-the-vision-162604989.html",
    "scope": "stock",
    "topic": "買い候補"
+  },
+  {
+   "symbol": "NSC",
+   "title": "3 Legacy Industrial Dividend Stocks That Never Go Out of Style",
+   "summary": "Two recessions and a pandemic could not stop these three industrial giants from paying shareholders. Each one also hides a risk retirees should weigh before counting on the next raise, and one stock has already tumbled 24% in a month.",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-11-12T16:19:49+00:00",
+   "url": "https://247wallst.com/investing/2026/11/12/3-legacy-industrial-dividend-stocks-that-never-go-out-of-style/",
+   "scope": "stock",
+   "topic": "保有中"
+  },
+  {
+   "symbol": "MNST",
+   "title": "Monster Energy CEO delivers a striking admission on drink prices",
+   "summary": "Hilton Schlosberg believes Monster can keep raising prices because its drinks still beat pricier alternatives such as coffee.",
+   "publisher": "TheStreet",
+   "published_at": "2026-11-12T16:07:00+00:00",
+   "url": "https://www.thestreet.com/investing/stocks/mnst-monster-energy-ceo-says-higher-prices-wont-deter-consumers-affordable-luxury",
+   "scope": "stock",
+   "topic": "保有中"
+  },
+  {
+   "symbol": "CLX",
+   "title": "My Forever Portfolio: 5 Dividend-Paying Value Stocks That Are Too Cheap to Ignore",
+   "summary": "These five dividend payers sell things people don't stop buying, and the market is pricing them accordingly.",
+   "publisher": "Motley Fool",
+   "published_at": "2026-11-12T16:05:00+00:00",
+   "url": "https://www.fool.com/investing/2026/11/12/my-forever-portfolio-5-dividend-paying-value-stock/",
+   "scope": "stock",
+   "topic": "出来高異常"
+  },
+  {
+   "symbol": "HPE",
+   "title": "Super Micro Slides 7% Despite Gartner’s $957 Billion AI Server Forecast; Dell Falls 4%, Hewlett Packard Enterprise Dips",
+   "summary": "Gartner just pointed to a near trillion dollar AI server market, yet Wall Street is selling the very companies that build the machines. A sudden shake-up at the top of the chip world explains why, and one server maker looks far more exposed than its rivals.",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-11-12T16:02:50+00:00",
+   "url": "https://247wallst.com/investing/2026/11/12/super-micro-slides-7-despite-gartners-957-billion-ai-server-forecast-dell-falls-4-hewlett-packard-enterprise-dips/",
+   "scope": "stock",
+   "topic": "保有中"
+  },
+  {
+   "symbol": "SPG",
+   "title": "Retail Landlords Are Nearly Full, and $120,000 Across These 3 REITs Pays $4,997 a Year",
+   "summary": "Mall, grocery-anchored, and open-air landlords are packing in tenants at levels not seen in years, and each of these three REITs just raised its payout. One simple number tells you whether the checks will keep coming.",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-11-12T15:54:16+00:00",
+   "url": "https://247wallst.com/investing/2026/11/12/retail-landlords-are-nearly-full-and-120000-across-these-3-reits-pays-4997-a-year/",
+   "scope": "stock",
+   "topic": "保有中"
+  },
+  {
+   "symbol": "MNST",
+   "title": "Coca-Cola Stock Hits 52-Week High: Should You Buy Now or Wait?",
+   "summary": "KO's strong revenue growth, rising volumes, brand innovation and upbeat 2026 outlook bolster its prospects, but a premium valuation warrants caution.",
+   "publisher": "Zacks",
+   "published_at": "2026-11-12T15:43:00+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/coca-cola-stock-hits-52-154300742.html",
+   "scope": "stock",
+   "topic": "保有中"
+  },
+  {
+   "symbol": "AMD",
+   "title": "AMD CEO Dr. Lisa Su reflects on her biggest lessons of 2026",
+   "summary": "CEO of the Year winner, AMD (AMD) chair and CEO Dr. Lisa Su joins Yahoo Finance Executive Editor Brian Sozzi at Yahoo Finance's 2026 Invest conference to reflect on lessons learned in 2026.",
+   "publisher": "Yahoo Finance Video",
+   "published_at": "2026-11-12T15:36:56+00:00",
+   "url": "https://finance.yahoo.com/video/amd-ceo-dr-lisa-su-reflects-on-her-biggest-lessons-of-2026-153656562.html",
+   "scope": "stock",
+   "topic": "買い候補"
+  },
+  {
+   "symbol": "HPE",
+   "title": "The Open Question Under Arista Networks Stock's Price",
+   "summary": "For questions about this article or underlying research, email help@trefis.com.",
+   "publisher": "Trefis",
+   "published_at": "2026-11-12T15:26:17+00:00",
+   "url": "https://www.trefis.com/stock/anet/articles/624676/the-open-question-under-arista-networks-stocks-price/2026-11-12",
+   "scope": "stock",
+   "topic": "保有中"
   }
  ],
  "world_news": [
   {
    "symbol": "^GSPC",
-   "title": "Dow Jones Futures Rise, Techs Fall As Nvidia May Oust CEO Huang After CoreWave Leads Rally",
-   "summary": "Techs fell as Nvidia dived on news that it may oust CEO Jensen Huang. AMD extended gains. Will that spoil Wednesday's rally?",
+   "title": "Dow Jones Futures Rise After Market Weathers Nvidia CEO Huang's Exit, Surging Yields; SpaceX-Tesla Merger Deal Close",
+   "summary": "The stock market held up well given Nvidia CEO Jensen Huang's exit, surging yields and more. Cisco led key earnings reports late.",
    "publisher": "Investor's Business Daily",
-   "published_at": "2026-11-12T02:31:16+00:00",
-   "url": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-coreweave-sandisk-nvidia-amd-nebius-bloom/?src=A00220&yptr=yahoo",
+   "published_at": "2026-11-13T01:55:24+00:00",
+   "url": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-nvidia-ceo-huang-exit-surging-yields-spacex-tesla-merger-deal/?src=A00220&yptr=yahoo",
+   "topic": "米国株全体",
+   "scope": "macro"
+  },
+  {
+   "symbol": "SPY",
+   "title": "What If You Had Invested $10,000 in Bitcoin 5 Years Ago?",
+   "summary": "One investor bought Bitcoin near its 2021 peak, then watched most of the money vanish after the FTX collapse. Five years later, how does that patient bet stack up against gold and the S&P 500?",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-11-12T23:29:56+00:00",
+   "url": "https://247wallst.com/investing/cryptocurrency/2026/11/12/what-if-you-had-invested-10000-in-bitcoin-5-years-ago/",
+   "topic": "米国株全体",
+   "scope": "macro"
+  },
+  {
+   "symbol": "^VIX",
+   "title": "Now Comes the Hard Part for the Stock Market",
+   "summary": "The S&P 500 has held up through Nvidia’s steep decline. But Huang’s departure raises new questions about the AI trade and the broader market outlook.",
+   "publisher": "Barrons.com",
+   "published_at": "2026-11-12T22:53:00+00:00",
+   "url": "https://www.barrons.com/articles/nvidia-jensen-huang-stock-market-ai-trade-outlook-25292506?siteid=yhoof2&yptr=yahoo",
+   "topic": "リスク認識",
+   "scope": "macro"
+  },
+  {
+   "symbol": "QQQ",
+   "title": "How Nvidia's stock decline might impact your 401(k) and portfolio",
+   "summary": "Kelly Intelligence founder, CEO, and CCO Kevin Kelly joins Yahoo Finance Senior Reporter Brooke DiPalma at Yahoo Finance's 2026 Invest conference to offer some insight for investors who might be worried about how Nvidia (NVDA) stock is impacting their portfolios and retirement accounts.",
+   "publisher": "Yahoo Finance Video",
+   "published_at": "2026-11-12T22:19:25+00:00",
+   "url": "https://finance.yahoo.com/video/how-nvidias-stock-decline-might-impact-your-401k-and-portfolio-221925275.html",
+   "topic": "ハイテク",
+   "scope": "macro"
+  },
+  {
+   "symbol": "SPY",
+   "title": "For the Couple Where One Wants to Spend It and the Other Wants to Leave It to the Kids: 3 ETFs That Do Both",
+   "summary": "One spouse is booking trips and remodeling the kitchen while the other worries about what the kids will inherit. A three-bucket approach lets each priority get its own job, but each piece carries a trade-off worth understanding first.",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-11-12T21:36:47+00:00",
+   "url": "https://247wallst.com/investing/etf/2026/11/12/for-the-couple-where-one-wants-to-spend-it-and-the-other-wants-to-leave-it-to-the-kids-3-etfs-that-do-both/",
+   "topic": "米国株全体",
+   "scope": "macro"
+  },
+  {
+   "symbol": "QQQ",
+   "title": "5 Bullish Signs the AI Rally is Back on Track",
+   "summary": "While volatility and headline shocks can easily shake weak hands out of the market, the price action and fundamentals ultimately tell the true story.",
+   "publisher": "Zacks",
+   "published_at": "2026-11-12T21:31:00+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/5-bullish-signs-ai-rally-213100169.html",
+   "topic": "ハイテク",
+   "scope": "macro"
+  },
+  {
+   "symbol": "XLE",
+   "title": "Sector Update: Energy Stocks Rise Thursday",
+   "summary": "Energy stocks rose Thursday with the NYSE Energy Sector Index gaining 1.3% and the State Street Ener",
+   "publisher": "MT Newswires",
+   "published_at": "2026-11-12T21:08:01+00:00",
+   "url": "https://finance.yahoo.com/energy/articles/sector-energy-stocks-rise-thursday-210801384.html",
+   "topic": "エネルギー",
+   "scope": "macro"
+  },
+  {
+   "symbol": "XLF",
+   "title": "Sector Update: Financial Stocks Softer Late Afternoon",
+   "summary": "Financial stocks declined in late Thursday afternoon trading, with the NYSE Financial Index decreasi",
+   "publisher": "MT Newswires",
+   "published_at": "2026-11-12T21:03:02+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-softer-afternoon-210302142.html",
+   "topic": "金融",
+   "scope": "macro"
+  },
+  {
+   "symbol": "XLK",
+   "title": "Sector Update: Tech Stocks Fall Late Afternoon",
+   "summary": "Tech stocks were lower late Thursday afternoon, with the State Street Technology Select Sector SPDR",
+   "publisher": "MT Newswires",
+   "published_at": "2026-11-12T20:45:44+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-fall-afternoon-204544398.html",
+   "topic": "テクノロジー",
+   "scope": "macro"
+  },
+  {
+   "symbol": "GLD",
+   "title": "Gold Prices Plunge as Fed Rate Hike Fears Intensify",
+   "summary": "A traditional safe haven faces an unexpected financial challenge.",
+   "publisher": "GuruFocus.com",
+   "published_at": "2026-11-12T19:44:27+00:00",
+   "url": "https://finance.yahoo.com/markets/commodities/articles/gold-prices-plunge-fed-rate-194427220.html",
+   "topic": "金・実物資産",
+   "scope": "macro"
+  },
+  {
+   "symbol": "USO",
+   "title": "SolarEdge Slides 5% as Rising Yields Weigh on Solar Stocks; Sunrun Drops 4%, Enphase Falls 3%",
+   "summary": "A blowout earnings beat sounded like good news for SolarEdge, yet its stock is sliding with the whole solar sector. The culprit sits in the bond market, and some solar names feel it far more than others.",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-11-12T18:57:56+00:00",
+   "url": "https://247wallst.com/investing/2026/11/12/solaredge-slides-5-as-rising-yields-weigh-on-solar-stocks-sunrun-drops-4-enphase-falls-3/",
+   "topic": "原油・エネルギー",
+   "scope": "macro"
+  },
+  {
+   "symbol": "XLE",
+   "title": "Sector Update: Energy Stocks Gain Thursday Afternoon",
+   "summary": "Energy stocks were higher Thursday afternoon, with the NYSE Energy Sector Index rising 1.7% and the",
+   "publisher": "MT Newswires",
+   "published_at": "2026-11-12T18:51:41+00:00",
+   "url": "https://finance.yahoo.com/energy/articles/sector-energy-stocks-gain-thursday-185141928.html",
+   "topic": "エネルギー",
+   "scope": "macro"
+  },
+  {
+   "symbol": "TLT",
+   "title": "How Large Does Your Portfolio Need to Be to Generate $9,400 a Month?",
+   "summary": "Six income holdings, one monthly paycheck target, and a stretch of the portfolio that could vanish in a merger. See which pick carries the shakiest check and which one quietly raises its payout every year.",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-11-12T18:48:08+00:00",
+   "url": "https://247wallst.com/personal-finance/2026/11/12/how-large-does-your-portfolio-need-to-be-to-generate-9400-a-month/",
+   "topic": "米国債・金利",
+   "scope": "macro"
+  },
+  {
+   "symbol": "XLF",
+   "title": "Sector Update: Financial Stocks Softer Thursday Afternoon",
+   "summary": "Financial stocks declined in Thursday afternoon trading with the NYSE Financial Index and the State",
+   "publisher": "MT Newswires",
+   "published_at": "2026-11-12T18:38:38+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-softer-thursday-183838010.html",
+   "topic": "金融",
+   "scope": "macro"
+  },
+  {
+   "symbol": "",
+   "topic": "FRB発表",
+   "scope": "world",
+   "title": "Federal Reserve Board announces pricing, effective January 1, 2027, for payment services the Federal Reserve Banks provide to banks and credit unions, and changes to streamline and adjust their check services",
+   "summary": "Federal Reserve Board announces pricing, effective January 1, 2027, for payment services the Federal Reserve Banks provide to banks and credit unions, and changes to streamline and adjust their check services",
+   "publisher": "FRB発表",
+   "published_at": "2026-11-12T18:30:00+00:00",
+   "url": "https://www.federalreserve.gov/newsevents/pressreleases/other20261112a.htm"
+  },
+  {
+   "symbol": "XLE",
+   "title": "Sector Update: Energy",
+   "summary": "Energy stocks were higher Thursday afternoon, with the NYSE Energy Sector Index rising 1.7% and the",
+   "publisher": "MT Newswires",
+   "published_at": "2026-11-12T18:23:00+00:00",
+   "url": "https://finance.yahoo.com/energy/articles/sector-energy-182300366.html",
+   "topic": "エネルギー",
+   "scope": "macro"
+  },
+  {
+   "symbol": "QQQ",
+   "title": "Exchange-Traded Funds, US Equities Mixed After Midday",
+   "summary": "Broad Market Indicators Broad-market exchange-traded fund IWM fell and IVV rose. Actively trad",
+   "publisher": "MT Newswires",
+   "published_at": "2026-11-12T18:20:08+00:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-us-equities-182008157.html",
+   "topic": "ハイテク",
+   "scope": "macro"
+  },
+  {
+   "symbol": "",
+   "topic": "FRB発表",
+   "scope": "world",
+   "title": "Federal Reserve announces revised tentative schedule of Federal Open Market Committee meetings in 2027",
+   "summary": "Federal Reserve announces revised tentative schedule of Federal Open Market Committee meetings in 2027",
+   "publisher": "FRB発表",
+   "published_at": "2026-11-12T17:45:00+00:00",
+   "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261112a.htm"
+  },
+  {
+   "symbol": "TLT",
+   "title": "The Treasury Secretary Is Now Living on a Military Base After Iranian Threats",
+   "summary": "Markets barely flinched when news broke that a cabinet secretary had moved onto a military base. Yet the quiet in oil and long bonds may hide a bigger risk for anyone holding USO or TLT, and a few scheduled events could expose it.",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-11-12T17:23:15+00:00",
+   "url": "https://247wallst.com/investing/2026/11/12/the-treasury-secretary-is-now-living-on-a-military-base-after-iranian-threats/",
+   "topic": "米国債・金利",
+   "scope": "macro"
+  },
+  {
+   "symbol": "^GSPC",
+   "title": "Why bond king Jeffrey Gundlach is steering clear of the AI 'blast radius'",
+   "summary": "DoubleLine founder Jeffrey Gundlach is still sitting out the AI stock dance.",
+   "publisher": "Yahoo Finance",
+   "published_at": "2026-11-12T17:17:58+00:00",
+   "url": "https://finance.yahoo.com/markets/article/why-bond-king-jeffrey-gundlach-is-steering-clear-of-the-ai-blast-radius-171758414.html",
    "topic": "米国株全体",
    "scope": "macro"
   },
   {
    "symbol": "^GSPC",
-   "title": "Warren Buffett’s 1991 Playbook Points The Path Forward As Nvidia Reportedly Prepares To Oust Jensen Huang. Buffett Said He Could Forgive Losses, But There Was One Thing He Would Be Ruthless About",
-   "summary": "A board with no chair, no succession plan, and a CEO under fire. When Salomon Brothers hit a similar crisis in 1991, Warren Buffett stepped in with a strict rule. Nvidia's directors may need the same one.",
-   "publisher": "24/7 Wall St.",
-   "published_at": "2026-11-12T02:26:06+00:00",
-   "url": "https://247wallst.com/investing/2026/11/11/warren-buffetts-1991-playbook-points-the-path-forward-as-nvidia-reportedly-prepares-to-oust-jensen-huang-buffett-said-he-could-forgive-losses-but-there-was-one-thing-he-would-be-ruthless-about/",
+   "title": "Why investors are rethinking their bond strategies",
+   "summary": "DoubleLine (DSL) founder and CEO Jeffrey Gundlach joins Yahoo Finance Executive Editor Brian Sozzi at Yahoo Finance's 2026 Invest conference to discuss market action following a hot Consumer Price Index (CPI).",
+   "publisher": "Yahoo Finance Video",
+   "published_at": "2026-11-12T17:06:28+00:00",
+   "url": "https://finance.yahoo.com/video/why-investors-are-rethinking-their-bond-strategies-170628499.html",
    "topic": "米国株全体",
+   "scope": "macro"
+  },
+  {
+   "symbol": "GLD",
+   "title": "What $10,000 in Silver on Jan. 1 Is Worth Today",
+   "summary": "Silver prices have pulled back nearly 30% in 2026.",
+   "publisher": "Motley Fool",
+   "published_at": "2026-11-12T16:35:00+00:00",
+   "url": "https://www.fool.com/investing/2026/11/12/what-10000-in-silver-on-jan-1-is-worth-today/",
+   "topic": "金・実物資産",
+   "scope": "macro"
+  },
+  {
+   "symbol": "XLK",
+   "title": "Jensen Huang Is Out. Here’s How Much Nvidia’s Selloff Cost a $10,000 QQQ Position",
+   "summary": "Nvidia's stock dropped after its CEO walked away, yet millions of investors own it without ever buying a share directly. Why did the fund holders barely flinch, and which popular ETFs could leave them far more exposed?",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-11-12T16:29:07+00:00",
+   "url": "https://247wallst.com/investing/etf/2026/11/12/jensen-huang-is-out-heres-how-much-nvidias-selloff-cost-a-10000-qqq-position/",
+   "topic": "テクノロジー",
+   "scope": "macro"
+  },
+  {
+   "symbol": "",
+   "topic": "FRB発表",
+   "scope": "world",
+   "title": "Federal Reserve Board issues enforcement action with former employee of United Community Bank",
+   "summary": "Federal Reserve Board issues enforcement action with former employee of United Community Bank",
+   "publisher": "FRB発表",
+   "published_at": "2026-11-12T16:00:00+00:00",
+   "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261112a.htm"
+  },
+  {
+   "symbol": "SPY",
+   "title": "NVIDIA’s Leadership Crisis Is Dragging the S&P 500 Lower. Here’s What Else Is Moving",
+   "summary": "One company's boardroom shake-up is rattling an entire index, but the harshest losses are landing somewhere unexpected. Behind the headline, a bond market signal near a key threshold may matter even more for your portfolio.",
+   "publisher": "24/7 Wall St.",
+   "published_at": "2026-11-12T15:38:49+00:00",
+   "url": "https://247wallst.com/investing/2026/11/12/nvidias-leadership-crisis-is-dragging-the-sp-500-lower-heres-what-else-is-moving/",
+   "topic": "米国株全体",
+   "scope": "macro"
+  },
+  {
+   "symbol": "USO",
+   "title": "Sector Update: Energy Stocks Rise Pre-Bell Thursday",
+   "summary": "Energy stocks were rising pre-bell Thursday, with the State Street Energy Select Sector SPDR ETF (XL",
+   "publisher": "MT Newswires",
+   "published_at": "2026-11-12T14:26:39+00:00",
+   "url": "https://finance.yahoo.com/energy/articles/sector-energy-stocks-rise-pre-142639076.html",
+   "topic": "原油・エネルギー",
+   "scope": "macro"
+  },
+  {
+   "symbol": "UUP",
+   "title": "Is Invesco DB US Dollar Index Bullish ETF (UUP) a Strong ETF Right Now?",
+   "summary": "Smart Beta ETF report for UUP",
+   "publisher": "Zacks",
+   "published_at": "2026-11-12T10:20:02+00:00",
+   "url": "https://finance.yahoo.com/markets/currencies/articles/invesco-db-us-dollar-index-102002666.html",
+   "topic": "ドル・為替",
    "scope": "macro"
   },
   {
@@ -2300,206 +2562,6 @@
    "url": "https://www.fool.com/coverage/etfs/2026/11/11/which-long-term-bond-etf-is-the-better-buy-state-street-s-splb-or-ishares-tlt/",
    "topic": "米国債・金利",
    "scope": "macro"
-  },
-  {
-   "symbol": "QQQ",
-   "title": "Every December the Nasdaq-100 Reshuffles. QQQ Holders Feel It Even If They Never Trade",
-   "summary": "Every December, the Nasdaq-100 reshuffles. When the index changes its lineup, your fund's holdings change that week whether you do anything or not.",
-   "publisher": "24/7 Wall St.",
-   "published_at": "2026-11-11T23:03:03+00:00",
-   "url": "https://247wallst.com/investing/etf/2026/11/11/every-december-the-nasdaq-100-reshuffles-qqq-holders-feel-it-even-if-they-never-trade/",
-   "topic": "ハイテク",
-   "scope": "macro"
-  },
-  {
-   "symbol": "QQQ",
-   "title": "Apple Shares (AAPL) Look Expensive Heading into 2027",
-   "summary": "Apple (AAPL) shares look expensive heading into 2027, despite the company’s strong growth prospects. Shares of the iPhone maker have soared in 2026, easily outperforming the Nasdaq-100 (NDX) as tracked by the Invesco QQQ Trust (QQQ). This comes as Apple has delivered higher sales and revenues this year, a trend analysts expect to continue into Fiscal 2027. What is more, Apple may benefit from higher device sales should memory costs normalize, potentially making the shares interesting for investo",
-   "publisher": "TipRanks",
-   "published_at": "2026-11-11T21:15:00+00:00",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/apple-shares-aapl-look-expensive-211500629.html",
-   "topic": "ハイテク",
-   "scope": "macro"
-  },
-  {
-   "symbol": "XLK",
-   "title": "Sector Update: Tech Stocks Gain Late Afternoon",
-   "summary": "Tech stocks were higher late Wednesday afternoon, with the State Street Technology Select Sector SPD",
-   "publisher": "MT Newswires",
-   "published_at": "2026-11-11T21:00:17+00:00",
-   "url": "https://finance.yahoo.com/technology/articles/sector-tech-stocks-gain-afternoon-210017667.html",
-   "topic": "テクノロジー",
-   "scope": "macro"
-  },
-  {
-   "symbol": "XLE",
-   "title": "Sector Update: Energy Stocks Higher Late Afternoon",
-   "summary": "Energy stocks advanced late Wednesday afternoon, with the NYSE Energy Sector Index rising 0.9% and t",
-   "publisher": "MT Newswires",
-   "published_at": "2026-11-11T20:55:45+00:00",
-   "url": "https://finance.yahoo.com/energy/articles/sector-energy-stocks-higher-afternoon-205545591.html",
-   "topic": "エネルギー",
-   "scope": "macro"
-  },
-  {
-   "symbol": "XLF",
-   "title": "Sector Update: Financial Stocks Rise Late Afternoon",
-   "summary": "Financial stocks were higher in late Wednesday afternoon trading, with the NYSE Financial Index incr",
-   "publisher": "MT Newswires",
-   "published_at": "2026-11-11T20:46:12+00:00",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-rise-afternoon-204612688.html",
-   "topic": "金融",
-   "scope": "macro"
-  },
-  {
-   "symbol": "TLT",
-   "title": "The 2-Year Treasury Yield Just Had Its Biggest Jump in 19 Months",
-   "summary": "A hawkish Fed governor and a stubborn inflation print hit bond markets on the same day, and two Treasury ETFs reacted in very different ways. Which one is better placed for the rate shock, and what could flip that view?",
-   "publisher": "24/7 Wall St.",
-   "published_at": "2026-11-11T20:24:39+00:00",
-   "url": "https://247wallst.com/investing/2026/11/11/the-2-year-treasury-yield-just-had-its-biggest-jump-in-19-months/",
-   "topic": "米国債・金利",
-   "scope": "macro"
-  },
-  {
-   "symbol": "SPY",
-   "title": "Home Equity Borrowing Jumps the Most Since 2005 as Household Debt Passes $19 Trillion",
-   "summary": "Some homeowners tap their equity because it's cheap. Others tap it to cover gas and groceries. The same record-setting number hides both, and which group dominates could decide whether consumer spending, and the index funds riding on it, holds up.",
-   "publisher": "24/7 Wall St.",
-   "published_at": "2026-11-11T19:42:35+00:00",
-   "url": "https://247wallst.com/investing/2026/11/11/home-equity-borrowing-jumps-the-most-since-2005-as-household-debt-passes-19-trillion/",
-   "topic": "米国株全体",
-   "scope": "macro"
-  },
-  {
-   "symbol": "SPY",
-   "title": "Tractor Supply Turned $1,000 Into Over $3,200 in 10 Years. Then Came 2026",
-   "summary": "A buyer from 2016 tripled their money, yet a buyer from 2021 is still underwater. Tractor Supply's pandemic-era boom has hit a hangover, and one number in its latest quarter could decide which story comes next.",
-   "publisher": "24/7 Wall St.",
-   "published_at": "2026-11-11T19:17:44+00:00",
-   "url": "https://247wallst.com/investing/2026/11/11/tractor-supply-turned-1000-into-over-3200-in-10-years-then-came-2026/",
-   "topic": "米国株全体",
-   "scope": "macro"
-  },
-  {
-   "symbol": "XLF",
-   "title": "Sector Update: Financial Stocks Advance Wednesday Afternoon",
-   "summary": "Financial stocks were higher in Wednesday afternoon trading, with the NYSE Financial Index increasin",
-   "publisher": "MT Newswires",
-   "published_at": "2026-11-11T18:48:08+00:00",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-advance-wednesday-184808367.html",
-   "topic": "金融",
-   "scope": "macro"
-  },
-  {
-   "symbol": "SPY",
-   "title": "Cramer Says Apple Investors Who Sold After Steve Jobs Missed Years Of Gains. The Stock Is Up Nearly 3,000% Since. Now He’s Asking If Nvidia Needs Jensen Huang",
-   "summary": "Jim Cramer is bending his own \"own it, don't trade it\" rule for Nvidia as its founder faces a board probe. Apple's post-Jobs history offers a tempting parallel, but one key difference could make it a dangerous guide.",
-   "publisher": "24/7 Wall St.",
-   "published_at": "2026-11-11T18:46:57+00:00",
-   "url": "https://247wallst.com/investing/2026/11/11/cramer-says-apple-investors-who-sold-after-steve-jobs-missed-years-of-gains-the-stock-is-up-nearly-3000-since-now-hes-asking-if-nvidia-needs-jensen-huang/",
-   "topic": "米国株全体",
-   "scope": "macro"
-  },
-  {
-   "symbol": "^GSPC",
-   "title": "Market rally offers a much-needed boost for investors, CoreWeave beats third-quarter estimates",
-   "summary": "Host Kevin Kelly, Kelly Intelligence Founder, CEO, and CCO, and his panel of experts weigh in on today's market relief, including CoreWeave (CRWV) jumping 24% in morning trading. Plus, a comparison of Anthropic (ANTH.PVT) and OpenAI (OPAI.PVT) in terms of revenue and leadership.Today's panel includes EP Wealth Advisors Managing Director of Investments Adam Phillips, Zacks Investment Management Chief Market Strategist Brian Mulberry, and ProShares Global Investment Strategist Simeon Hyman.",
-   "publisher": "Yahoo Finance Video",
-   "published_at": "2026-11-11T18:42:31+00:00",
-   "url": "https://finance.yahoo.com/video/market-rally-offers-a-much-needed-boost-for-investors-coreweave-beats-third-quarter-estimates-184231615.html",
-   "topic": "米国株全体",
-   "scope": "macro"
-  },
-  {
-   "symbol": "XLE",
-   "title": "Sector Update: Energy Stocks Rise Wednesday Afternoon",
-   "summary": "Energy stocks were higher Wednesday afternoon, with the NYSE Energy Sector Index rising 1% and the S",
-   "publisher": "MT Newswires",
-   "published_at": "2026-11-11T18:38:55+00:00",
-   "url": "https://finance.yahoo.com/energy/articles/sector-energy-stocks-rise-wednesday-183855251.html",
-   "topic": "エネルギー",
-   "scope": "macro"
-  },
-  {
-   "symbol": "QQQ",
-   "title": "OKXICE Gets Ready for 24/7 Markets",
-   "summary": "If you thought traders were stressed now, OKXICE says just you wait.",
-   "publisher": "Moby",
-   "published_at": "2026-11-11T18:36:07+00:00",
-   "url": "https://app.moby.co/home/news/news-okxice-gets-ready-for-247-markets?utm_source=yahoo_finance&utm_medium=rss",
-   "topic": "ハイテク",
-   "scope": "macro"
-  },
-  {
-   "symbol": "XLK",
-   "title": "Sector Update: Tech Stocks Gain Wednesday Afternoon",
-   "summary": "Tech stocks were sharply higher Wednesday afternoon, with the State Street Technology Select Sector",
-   "publisher": "MT Newswires",
-   "published_at": "2026-11-11T18:25:10+00:00",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-gain-wednesday-182510344.html",
-   "topic": "テクノロジー",
-   "scope": "macro"
-  },
-  {
-   "symbol": "XLK",
-   "title": "Amphenol Stock: Analyst Estimates & Ratings",
-   "summary": "As Amphenol has outperformed the SPX over the past year, Wall Street analysts maintain a bullish outlook on the stock’s prospects.",
-   "publisher": "Barchart",
-   "published_at": "2026-11-11T18:21:48+00:00",
-   "url": "https://www.barchart.com/story/news/8785611/amphenol-stock-analyst-estimates-ratings",
-   "topic": "テクノロジー",
-   "scope": "macro"
-  },
-  {
-   "symbol": "XLE",
-   "title": "Exchange-Traded Funds Higher as US Equities Advance After Midday",
-   "summary": "Broad Market Indicators Broad-market exchange-traded funds IWM and IVV rose. Actively traded I",
-   "publisher": "MT Newswires",
-   "published_at": "2026-11-11T18:11:34+00:00",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-higher-us-181134424.html",
-   "topic": "エネルギー",
-   "scope": "macro"
-  },
-  {
-   "symbol": "USO",
-   "title": "Sector Update: Energy Stocks Edge Higher Pre-Bell Wednesday",
-   "summary": "Energy stocks were edging higher pre-bell Wednesday, with the State Street Energy Select Sector SPDR",
-   "publisher": "MT Newswires",
-   "published_at": "2026-11-11T14:26:00+00:00",
-   "url": "https://finance.yahoo.com/energy/articles/sector-energy-stocks-edge-higher-142600570.html",
-   "topic": "原油・エネルギー",
-   "scope": "macro"
-  },
-  {
-   "symbol": "TLT",
-   "title": "Foreign-Linked Buyers Took Their Smallest Share of a 3-Year Treasury Auction in 15 Months",
-   "summary": "A Treasury auction drew unusually weak demand from the buyers who usually signal overseas appetite, yet dealers were left holding almost nothing. Three dates this week will show whether that mixed picture is a warning for bond fund holders or just noise.",
-   "publisher": "24/7 Wall St.",
-   "published_at": "2026-11-10T19:38:45+00:00",
-   "url": "https://247wallst.com/investing/2026/11/10/foreign-linked-buyers-took-their-smallest-share-of-a-3-year-treasury-auction-in-15-months/",
-   "topic": "米国債・金利",
-   "scope": "macro"
-  },
-  {
-   "symbol": "USO",
-   "title": "Oil Prices Just Fell to Their Lowest Since August as Trump Says the Iran War Is ‘Effectively Over’",
-   "summary": "Futures sank on words alone, with no signed deal and Iran denying any talks exist. Why did one oil fund crater while Exxon and Chevron barely flinched, and what number could reverse the slide?",
-   "publisher": "24/7 Wall St.",
-   "published_at": "2026-11-10T18:34:53+00:00",
-   "url": "https://247wallst.com/investing/2026/11/10/oil-prices-just-fell-to-their-lowest-since-august-as-trump-says-the-iran-war-is-effectively-over/",
-   "topic": "原油・エネルギー",
-   "scope": "macro"
-  },
-  {
-   "symbol": "",
-   "topic": "ECB発表",
-   "scope": "world",
-   "title": "Philip R. Lane: The science and practice of monetary policy communication: the ECB experience",
-   "summary": "",
-   "publisher": "ECB発表",
-   "published_at": "2026-11-10T17:45:00+01:00",
-   "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261110_1~9725b7aa07.en.html"
   }
  ],
  "filings": [],
@@ -2507,97 +2569,102 @@
  "corporate_events": {
   "earnings": [
    {
+    "symbol": "NVDA",
+    "date": "2026-11-17",
+    "days_until": 4
+   },
+   {
     "symbol": "PANW",
     "date": "2026-11-18",
-    "days_until": 6
+    "days_until": 5
    },
    {
     "symbol": "HPE",
     "date": "2026-11-23",
-    "days_until": 11
+    "days_until": 10
    },
    {
     "symbol": "DELL",
     "date": "2026-11-24",
-    "days_until": 12
+    "days_until": 11
    },
    {
     "symbol": "ADI",
     "date": "2026-11-24",
-    "days_until": 12
+    "days_until": 11
    },
    {
     "symbol": "NTAP",
     "date": "2026-12-01",
-    "days_until": 19
+    "days_until": 18
    },
    {
     "symbol": "CRWD",
     "date": "2026-12-01",
-    "days_until": 19
+    "days_until": 18
    },
    {
     "symbol": "MRVL",
     "date": "2026-12-01",
-    "days_until": 19
+    "days_until": 18
    },
    {
     "symbol": "BF-B",
     "date": "2026-12-03",
-    "days_until": 21
+    "days_until": 20
    },
    {
     "symbol": "LULU",
     "date": "2026-12-10",
-    "days_until": 28
+    "days_until": 27
    },
    {
     "symbol": "MU",
     "date": "2026-12-23",
-    "days_until": 41
+    "days_until": 40
    }
   ],
   "ex_dividends": [
    {
     "symbol": "PSX",
     "date": "2026-11-17",
-    "days_until": 5,
+    "days_until": 4,
     "amount": null
    },
    {
     "symbol": "MPC",
     "date": "2026-11-18",
-    "days_until": 6,
+    "days_until": 5,
     "amount": null
    },
    {
     "symbol": "VTRS",
     "date": "2026-11-23",
-    "days_until": 11,
+    "days_until": 10,
     "amount": null
    },
    {
     "symbol": "VLO",
     "date": "2026-11-24",
-    "days_until": 12,
+    "days_until": 11,
     "amount": null
    },
    {
     "symbol": "CSX",
     "date": "2026-11-30",
-    "days_until": 18,
+    "days_until": 17,
     "amount": null
    },
    {
     "symbol": "MCD",
     "date": "2026-12-01",
-    "days_until": 19,
+    "days_until": 18,
     "amount": null
    },
    {
     "symbol": "SPG",
     "date": "2026-12-10",
-    "days_until": 28,
+    "days_until": 27,
     "amount": null
    }
   ],
@@ -2605,70 +2672,77 @@
    {
     "symbol": "HPE",
     "date": "2026-11-23",
-    "days_until": 11,
+    "days_until": 10,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "DELL",
     "date": "2026-11-24",
-    "days_until": 12,
+    "days_until": 11,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "MU",
     "date": "2026-12-23",
-    "days_until": 41,
+    "days_until": 40,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "NTAP",
     "date": "2026-12-01",
-    "days_until": 19,
+    "days_until": 18,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "CRWD",
     "date": "2026-12-01",
-    "days_until": 19,
+    "days_until": 18,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "PANW",
     "date": "2026-11-18",
-    "days_until": 6,
+    "days_until": 5,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "ADI",
     "date": "2026-11-24",
-    "days_until": 12,
+    "days_until": 11,
+    "risk": "決算跨ぎ",
+    "note": "保有期間(60日)の中に決算がある"
+   },
+   {
+    "symbol": "NVDA",
+    "date": "2026-11-17",
+    "days_until": 4,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "MRVL",
     "date": "2026-12-01",
-    "days_until": 19,
+    "days_until": 18,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "LULU",
     "date": "2026-12-10",
-    "days_until": 28,
+    "days_until": 27,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    },
    {
     "symbol": "BF-B",
     "date": "2026-12-03",
-    "days_until": 21,
+    "days_until": 20,
     "risk": "決算跨ぎ",
     "note": "保有期間(60日)の中に決算がある"
    }
@@ -2862,8 +2936,7 @@
   "losing_streak": 10,
   "skipped": false,
   "log": [
-   "配当を推定 MRNA 1株 $18.1700",
-   "配当 MRNA $20.18 受取（1株 $18.1700）"
+   "2026-11-11 はすでに処理済みのため、何もしません"
   ]
  },
  "positions": [
@@ -3047,6 +3120,7 @@
   "NSC": "Norfolk Southern",
   "NTAP": "NetApp",
   "NUE": "Nucor",
+  "NVDA": "Nvidia",
   "NVR": "NVR, Inc.",
   "ORCL": "Oracle Corporation",
   "OXY": "Occidental Petroleum",
@@ -3502,6 +3576,10 @@
    ],
    [
     "2026-11-12",
+    2032.65
+   ],
+   [
+    "2026-11-13",
     2032.65
    ]
   ],
