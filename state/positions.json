@@ -5,14 +5,14 @@
   "entry_price": 209.6776,
   "entry_date": "2026-09-09",
   "entry_fee": 0.0,
-  "bars_held": 42,
+  "bars_held": 43,
   "high_water": 235.3699951171875,
   "stop_ref": 209.6776,
   "dividends": 0.0,
   "stop_price": 192.9034,
   "reason": "ルールのシグナル",
-  "last_close": 230.24,
-  "last_close_date": "2026-11-17"
+  "last_close": 231.38,
+  "last_close_date": "2026-11-18"
  },
  {
   "symbol": "PKG",
@@ -20,31 +20,14 @@
   "entry_price": 235.6183,
   "entry_date": "2026-09-11",
   "entry_fee": 0.0,
-  "bars_held": 40,
+  "bars_held": 41,
   "high_water": 262.5899963378906,
   "stop_ref": 234.3783,
   "dividends": 1.225,
   "stop_price": 215.5289,
   "reason": "ルールのシグナル",
-  "last_close": 244.45,
-  "last_close_date": "2026-11-17"
- },
- {
-  "symbol": "MNST",
-  "shares": 5.4459,
-  "entry_price": 44.0352,
-  "entry_date": "2026-09-15",
-  "entry_fee": 0.0,
-  "bars_held": 38,
-  "high_water": 49.5,
-  "stop_ref": 44.0352,
-  "dividends": 0.0,
-  "stop_price": 40.5124,
-  "reason": "ルールのシグナル",
-  "last_close": 44.44,
-  "last_close_date": "2026-11-17",
-  "exit_queued": true,
-  "exit_reason": "手仕舞いシグナル"
+  "last_close": 243.0,
+  "last_close_date": "2026-11-18"
  },
  {
   "symbol": "CSX",
@@ -52,31 +35,14 @@
   "entry_price": 47.0676,
   "entry_date": "2026-09-24",
   "entry_fee": 0.0,
-  "bars_held": 31,
+  "bars_held": 32,
   "high_water": 52.900001525878906,
   "stop_ref": 47.0676,
   "dividends": 0.0,
   "stop_price": 43.3022,
   "reason": "ルールのシグナル",
-  "last_close": 51.14,
-  "last_close_date": "2026-11-17"
- },
- {
-  "symbol": "NSC",
-  "shares": 0.705,
-  "entry_price": 315.0018,
-  "entry_date": "2026-09-24",
-  "entry_fee": 0.0,
-  "bars_held": 31,
-  "high_water": 347.4100036621094,
-  "stop_ref": 315.0018,
-  "dividends": 0.0,
-  "stop_price": 289.8017,
-  "reason": "ルールのシグナル",
-  "last_close": 320.15,
-  "last_close_date": "2026-11-17",
-  "exit_queued": true,
-  "exit_reason": "手仕舞いシグナル"
+  "last_close": 51.33,
+  "last_close_date": "2026-11-18"
  },
  {
   "symbol": "CAH",
@@ -84,14 +50,14 @@
   "entry_price": 222.1776,
   "entry_date": "2026-09-25",
   "entry_fee": 0.0,
-  "bars_held": 30,
+  "bars_held": 31,
   "high_water": 286.2900085449219,
   "stop_ref": 218.9676,
   "dividends": 3.3326,
   "stop_price": 201.1934,
   "reason": "ルールのシグナル",
-  "last_close": 279.25,
-  "last_close_date": "2026-11-17"
+  "last_close": 278.32,
+  "last_close_date": "2026-11-18"
  },
  {
   "symbol": "MRNA",
@@ -99,14 +65,16 @@
   "entry_price": 216.6031,
   "entry_date": "2026-10-29",
   "entry_fee": 0.0,
-  "bars_held": 11,
+  "bars_held": 12,
   "high_water": 280.79998779296875,
   "stop_ref": 190.4531,
   "dividends": 29.0448,
   "stop_price": 173.1249,
   "reason": "ルールのシグナル",
-  "last_close": 206.8,
-  "last_close_date": "2026-11-17"
+  "last_close": 196.79,
+  "last_close_date": "2026-11-18",
+  "exit_queued": true,
+  "exit_reason": "手仕舞いシグナル"
  },
  {
   "symbol": "HPE",
@@ -114,13 +82,13 @@
   "entry_price": 45.9868,
   "entry_date": "2026-11-09",
   "entry_fee": 0.0,
-  "bars_held": 6,
+  "bars_held": 7,
   "high_water": 51.779998779296875,
   "stop_ref": 44.1168,
   "dividends": 7.7691,
   "stop_price": 40.4378,
   "reason": "ルールのシグナル",
-  "last_close": 46.09,
-  "last_close_date": "2026-11-17"
+  "last_close": 45.78,
+  "last_close_date": "2026-11-18"
  }
 ]

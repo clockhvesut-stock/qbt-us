@@ -206,5 +206,33 @@
   "bars_held": 0,
   "exit_reason": "損切り",
   "book": "rule"
+ },
+ {
+  "symbol": "MNST",
+  "entry_date": "2026-09-15",
+  "exit_date": "2026-11-18",
+  "entry_price": 44.0352,
+  "exit_price": 44.0847,
+  "shares": 5.4459,
+  "dividends": 0.0,
+  "pnl": 0.27,
+  "pnl_pct": 0.0011,
+  "bars_held": 38,
+  "exit_reason": "手仕舞いシグナル",
+  "book": "rule"
+ },
+ {
+  "symbol": "NSC",
+  "entry_date": "2026-09-24",
+  "exit_date": "2026-11-18",
+  "entry_price": 315.0018,
+  "exit_price": 318.8347,
+  "shares": 0.705,
+  "dividends": 0.0,
+  "pnl": 2.7,
+  "pnl_pct": 0.0122,
+  "bars_held": 31,
+  "exit_reason": "手仕舞いシグナル",
+  "book": "rule"
  }
 ]
