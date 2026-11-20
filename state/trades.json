@@ -234,5 +234,19 @@
   "bars_held": 31,
   "exit_reason": "手仕舞いシグナル",
   "book": "rule"
+ },
+ {
+  "symbol": "MRNA",
+  "entry_date": "2026-10-29",
+  "exit_date": "2026-11-19",
+  "entry_price": 216.6031,
+  "exit_price": 206.6346,
+  "shares": 1.1107,
+  "dividends": 29.04,
+  "pnl": 17.97,
+  "pnl_pct": 0.0747,
+  "bars_held": 12,
+  "exit_reason": "手仕舞いシグナル",
+  "book": "rule"
  }
 ]
