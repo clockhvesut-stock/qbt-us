@@ -248,5 +248,19 @@
   "bars_held": 12,
   "exit_reason": "手仕舞いシグナル",
   "book": "rule"
+ },
+ {
+  "symbol": "PKG",
+  "entry_date": "2026-09-11",
+  "exit_date": "2026-11-20",
+  "entry_price": 235.6183,
+  "exit_price": 239.1885,
+  "shares": 0.9879,
+  "dividends": 1.23,
+  "pnl": 4.75,
+  "pnl_pct": 0.0204,
+  "bars_held": 42,
+  "exit_reason": "手仕舞いシグナル",
+  "book": "rule"
  }
 ]
