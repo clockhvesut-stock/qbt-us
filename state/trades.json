@@ -262,5 +262,19 @@
   "bars_held": 42,
   "exit_reason": "手仕舞いシグナル",
   "book": "rule"
+ },
+ {
+  "symbol": "CSX",
+  "entry_date": "2026-09-24",
+  "exit_date": "2026-11-23",
+  "entry_price": 47.0676,
+  "exit_price": 49.5403,
+  "shares": 4.8941,
+  "dividends": 0.0,
+  "pnl": 12.1,
+  "pnl_pct": 0.0525,
+  "bars_held": 34,
+  "exit_reason": "手仕舞いシグナル",
+  "book": "rule"
  }
 ]
