@@ -276,5 +276,19 @@
   "bars_held": 34,
   "exit_reason": "手仕舞いシグナル",
   "book": "rule"
+ },
+ {
+  "symbol": "HPE",
+  "entry_date": "2026-11-09",
+  "exit_date": "2026-11-24",
+  "entry_price": 45.9868,
+  "exit_price": 40.2884,
+  "shares": 4.1546,
+  "dividends": 8.97,
+  "pnl": -14.7,
+  "pnl_pct": -0.0769,
+  "bars_held": 10,
+  "exit_reason": "損切り",
+  "book": "rule"
  }
 ]

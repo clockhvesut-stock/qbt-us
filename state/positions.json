@@ -5,14 +5,14 @@
   "entry_price": 209.6776,
   "entry_date": "2026-09-09",
   "entry_fee": 0.0,
-  "bars_held": 46,
+  "bars_held": 47,
   "high_water": 235.3699951171875,
   "stop_ref": 209.6776,
   "dividends": 0.0,
   "stop_price": 192.9034,
   "reason": "ルールのシグナル",
-  "last_close": 227.07,
-  "last_close_date": "2026-11-23"
+  "last_close": 229.83,
+  "last_close_date": "2026-11-24"
  },
  {
   "symbol": "CAH",
@@ -20,28 +20,13 @@
   "entry_price": 222.1776,
   "entry_date": "2026-09-25",
   "entry_fee": 0.0,
-  "bars_held": 34,
+  "bars_held": 35,
   "high_water": 286.2900085449219,
   "stop_ref": 218.9676,
   "dividends": 3.3326,
   "stop_price": 201.1934,
   "reason": "ルールのシグナル",
-  "last_close": 271.97,
-  "last_close_date": "2026-11-23"
- },
- {
-  "symbol": "HPE",
-  "shares": 4.1546,
-  "entry_price": 45.9868,
-  "entry_date": "2026-11-09",
-  "entry_fee": 0.0,
-  "bars_held": 10,
-  "high_water": 51.779998779296875,
-  "stop_ref": 43.8268,
-  "dividends": 8.9739,
-  "stop_price": 40.1478,
-  "reason": "ルールのシグナル",
-  "last_close": 48.02,
-  "last_close_date": "2026-11-23"
+  "last_close": 279.65,
+  "last_close_date": "2026-11-24"
  }
 ]
