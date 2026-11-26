@@ -5,14 +5,14 @@
   "entry_price": 209.6776,
   "entry_date": "2026-09-09",
   "entry_fee": 0.0,
-  "bars_held": 47,
+  "bars_held": 48,
   "high_water": 235.3699951171875,
   "stop_ref": 209.6776,
   "dividends": 0.0,
   "stop_price": 192.9034,
   "reason": "ルールのシグナル",
-  "last_close": 229.83,
-  "last_close_date": "2026-11-24"
+  "last_close": 233.98,
+  "last_close_date": "2026-11-25"
  },
  {
   "symbol": "CAH",
@@ -20,13 +20,13 @@
   "entry_price": 222.1776,
   "entry_date": "2026-09-25",
   "entry_fee": 0.0,
-  "bars_held": 35,
+  "bars_held": 36,
   "high_water": 286.2900085449219,
   "stop_ref": 218.9676,
   "dividends": 3.3326,
   "stop_price": 201.1934,
   "reason": "ルールのシグナル",
-  "last_close": 279.65,
-  "last_close_date": "2026-11-24"
+  "last_close": 282.91,
+  "last_close_date": "2026-11-25"
  }
 ]
